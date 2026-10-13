@@ -8440,128 +8440,128 @@ msgstr "كم عدد صفحات هذه الطبعة؟"
 
 #: openlibrary/contribute/field_guides.py
 msgid "WorldCat lists the page count in the record's description. Google Books calls it Length. Make sure the record is for this ISBN, not another printing."
-msgstr ""
+msgstr "يذكر WorldCat عدد الصفحات في وصف السجل. يسميه Google Books Length. تأكد من أن السجل يخص رقم ISBN هذا، وليس طبعة أخرى."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Catalogs count front matter differently, so numbers within a few pages of each other are the same count. Use the last numbered page of the main text."
-msgstr ""
+msgstr "تحسب الفهارس المقدمة بطرق مختلفة، لذا فإن الأرقام المتقاربة ببضع صفحات تُعد نفس العدد. استخدم آخر صفحة مرقمة من النص الرئيسي."
 
 #: openlibrary/contribute/field_guides.py
 msgid "For example 320"
-msgstr ""
+msgstr "على سبيل المثال 320"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Fill in publisher"
-msgstr ""
+msgstr "إدخال الناشر"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Who published this edition?"
-msgstr ""
+msgstr "من نشر هذه الطبعة؟"
 
 #: openlibrary/contribute/field_guides.py
 msgid "The imprint is printed on the title page and the spine. WorldCat and the Library of Congress list it under Publisher."
-msgstr ""
+msgstr "بصمة الناشر مطبوعة على صفحة العنوان وعلى ظهر الكتاب. يدرجها WorldCat ومكتبة الكونغرس تحت الناشر."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Open Library records the imprint printed on the book, not the parent company. Anchor Books, not Penguin Random House."
-msgstr ""
+msgstr "تسجل Open Library بصمة الناشر المطبوعة على الكتاب، وليس الشركة الأم. Anchor Books، وليس Penguin Random House."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Publisher as printed"
-msgstr ""
+msgstr "الناشر كما هو مطبوع"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Library of Congress number (LCCN)"
-msgstr ""
+msgstr "رقم مكتبة الكونغرس (LCCN)"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Fill in LCCN"
-msgstr ""
+msgstr "إدخال رقم LCCN"
 
 #: openlibrary/contribute/field_guides.py
 msgid "What is this edition's Library of Congress number?"
-msgstr ""
+msgstr "ما هو رقم مكتبة الكونغرس لهذه الطبعة؟"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Search the Library of Congress catalog for this ISBN. Open the record whose year and publisher match this edition, and copy the number shown as LCCN."
-msgstr ""
+msgstr "ابحث عن رقم ISBN هذا في فهرس مكتبة الكونغرس. افتح السجل الذي تتطابق سنته وناشره مع هذه الطبعة، وانسخ الرقم الظاهر كـ LCCN."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Hyphenated and padded forms are the same number: 75-425165 and 75425165. Paste either; Open Library stores the padded form."
-msgstr ""
+msgstr "الصيغتان المفصولة بشرطة والمكتملة بالأصفار هما نفس الرقم: 75-425165 و75425165. ألصق أيًا منهما؛ تخزن Open Library الصيغة المكتملة."
 
 #: openlibrary/contribute/field_guides.py
 msgid "The number belongs to a different printing. Search results lead with the best-known one, not with yours."
-msgstr ""
+msgstr "الرقم يخص طبعة مختلفة. تعرض نتائج البحث الطبعة الأشهر أولاً، وليس طبعتك."
 
 #: openlibrary/contribute/field_guides.py
 msgid "The number is already on another edition of this work, which means one of the two records is wrong."
-msgstr ""
+msgstr "الرقم موجود بالفعل على طبعة أخرى من هذا العمل، مما يعني أن أحد السجلين خاطئ."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Pasting the web address instead of the number itself."
-msgstr ""
+msgstr "لصق عنوان الويب بدلاً من الرقم نفسه."
 
 #: openlibrary/contribute/field_guides.py
 msgid "For example 75425165"
-msgstr ""
+msgstr "على سبيل المثال 75425165"
 
 #: openlibrary/contribute/field_guides.py
 msgid "OCLC/WorldCat number"
-msgstr ""
+msgstr "رقم OCLC/WorldCat"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Fill in OCLC number"
-msgstr ""
+msgstr "إدخال رقم OCLC"
 
 #: openlibrary/contribute/field_guides.py
 msgid "What is this edition's WorldCat (OCLC) number?"
-msgstr ""
+msgstr "ما هو رقم WorldCat (OCLC) لهذه الطبعة؟"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Search WorldCat for this ISBN. Open the record whose year, publisher and format match this edition, and copy the number shown as OCLC Number."
-msgstr ""
+msgstr "ابحث عن رقم ISBN هذا في WorldCat. افتح السجل الذي تتطابق سنته وناشره وتنسيقه مع هذه الطبعة، وانسخ الرقم الظاهر كـ OCLC Number."
 
 #: openlibrary/contribute/field_guides.py
 msgid "The OCLC number is how libraries the world over refer to one catalogued edition. It is one of the few fields Open Library uses to find duplicates of this book when new records arrive."
-msgstr ""
+msgstr "رقم OCLC هو الطريقة التي تشير بها المكتبات حول العالم إلى طبعة مفهرسة واحدة. وهو أحد الحقول القليلة التي تستخدمها Open Library للعثور على نسخ مكررة من هذا الكتاب عند وصول سجلات جديدة."
 
 #: openlibrary/contribute/field_guides.py
 msgid "The prefixes ocm, ocn, on and (OCoLC) are padding added by library systems, not part of the number. ocm00047810608 is 47810608."
-msgstr ""
+msgstr "البادئات ocm وocn وon و(OCoLC) هي حشو تضيفه أنظمة المكتبات، وليست جزءًا من الرقم. ocm00047810608 هو 47810608."
 
 #: openlibrary/contribute/field_guides.py
 msgid "The number belongs to a different printing, a book club edition, or the ebook rather than the print copy."
-msgstr ""
+msgstr "الرقم يخص طبعة مختلفة، أو طبعة نادي كتاب، أو الكتاب الإلكتروني بدلاً من النسخة المطبوعة."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Pasting the web address, or leaving the ocm/ocn prefix on."
-msgstr ""
+msgstr "لصق عنوان الويب، أو ترك بادئة ocm/ocn."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Digits only, for example 47810608"
-msgstr ""
+msgstr "أرقام فقط، على سبيل المثال 47810608"
 
 #: openlibrary/contribute/save.py
 msgid "Pick a language from the list."
-msgstr ""
+msgstr "اختر لغة من القائمة."
 
 #: openlibrary/contribute/save.py
 msgid "Enter the page count as a whole number."
-msgstr ""
+msgstr "أدخل عدد الصفحات كرقم صحيح."
 
 #: openlibrary/contribute/save.py
 msgid "Fill in an answer, or choose “I couldn't find it”."
-msgstr ""
+msgstr "أدخل إجابة، أو اختر «لم أتمكن من العثور عليه»."
 
 #: openlibrary/contribute/save.py
 msgid "This field can't be filled in here."
-msgstr ""
+msgstr "لا يمكن ملء هذا الحقل هنا."
 
 #: openlibrary/contribute/save.py
 #, python-format
 msgid "Filled in %(field)s from Open Library Tasks"
-msgstr ""
+msgstr "تم ملء %(field)s من مهام Open Library"
 
 #: openlibrary/core/bookshelves.py
 #, fuzzy
@@ -9126,40 +9126,40 @@ msgstr "الفلبينية"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Tasks are open to librarians only, for now"
-msgstr ""
+msgstr "المهام متاحة للمكتبيين فقط، في الوقت الحالي"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Published"
-msgstr ""
+msgstr "تاريخ النشر"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "OCLC"
-msgstr ""
+msgstr "OCLC"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "All open tasks"
-msgstr ""
+msgstr "جميع المهام المفتوحة"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 #, python-format
 msgid "Missing: %(field)s"
-msgstr ""
+msgstr "ناقص: %(field)s"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Most needed"
-msgstr ""
+msgstr "الأكثر احتياجًا"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Nothing missing here right now. Thank you."
-msgstr ""
+msgstr "لا يوجد شيء ناقص هنا الآن. شكرًا لك."
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Nothing to fill in here"
-msgstr ""
+msgstr "لا يوجد شيء لملئه هنا"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Open the record and confirm it matches this edition first."
-msgstr ""
+msgstr "افتح السجل وتأكد أولاً من أنه يطابق هذه الطبعة."
 
 #: openlibrary/plugins/openlibrary/home.py
 #, fuzzy
@@ -9467,12 +9467,12 @@ msgstr "اختر كلمة مرور"
 #: openlibrary/plugins/upstream/lenny.py
 #, python-format
 msgid "Borrowed from %(library)s. Your loan is due %(due)s."
-msgstr ""
+msgstr "مُستعار من %(library)s. موعد استحقاق استعارتك %(due)s."
 
 #: openlibrary/plugins/upstream/lenny.py
 #, python-format
 msgid "Borrowed from %(library)s."
-msgstr ""
+msgstr "مُستعار من %(library)s."
 
 #: openlibrary/plugins/upstream/models.py
 #, python-format
