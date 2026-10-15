@@ -8438,43 +8438,43 @@ msgstr "تم تعديل هذا الكتاب"
 
 #: openlibrary/contribute/feed.py
 msgid "Added this book"
-msgstr ""
+msgstr "تمت إضافة هذا الكتاب"
 
 #: openlibrary/contribute/feed.py
 msgid "Added a cover"
-msgstr ""
+msgstr "تمت إضافة غلاف"
 
 #: openlibrary/contribute/feed.py
 msgid "Merged duplicate authors"
-msgstr ""
+msgstr "تم دمج المؤلفين المكررين"
 
 #: openlibrary/contribute/feed.py
 msgid "Merged duplicate works"
-msgstr ""
+msgstr "تم دمج الأعمال المكررة"
 
 #: openlibrary/contribute/feed.py
 msgid "Updated this record"
-msgstr ""
+msgstr "تم تحديث هذا السجل"
 
 #: openlibrary/contribute/feed.py
 msgid "Edited this author"
-msgstr ""
+msgstr "تم تعديل هذا المؤلف"
 
 #: openlibrary/contribute/feed.py
 msgid "Reverted an edit"
-msgstr ""
+msgstr "تم التراجع عن تعديل"
 
 #: openlibrary/contribute/feed.py
 msgid "a visitor"
-msgstr ""
+msgstr "زائر"
 
 #: openlibrary/contribute/field_guides.py
 msgid "WorldCat"
-msgstr ""
+msgstr "WorldCat"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Google Books"
-msgstr ""
+msgstr "Google Books"
 
 #: openlibrary/contribute/field_guides.py openlibrary/plugins/openlibrary/partials.py
 msgid "Amazon"
@@ -8482,164 +8482,164 @@ msgstr "أمازون"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Library of Congress"
-msgstr ""
+msgstr "مكتبة الكونغرس"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Fill in language"
-msgstr ""
+msgstr "أدخل اللغة"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Look the ISBN up in WorldCat or Google Books; both list the language of the text. The title page and cover tell you too."
-msgstr ""
+msgstr "ابحث عن رقم ISBN في WorldCat أو Google Books؛ فكلاهما يذكر لغة النص. كما تخبرك صفحة العنوان والغلاف بذلك أيضاً."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Editions of a work usually share a language, but a translation won't. Check this edition's own text."
-msgstr ""
+msgstr "عادةً ما تشترك طبعات العمل الواحد في اللغة نفسها، لكن الترجمة لا تفعل ذلك. تحقق من نص هذه الطبعة بنفسها."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Record the language of the text, not the language of the title page. A translation is in the language it was translated into."
-msgstr ""
+msgstr "سجّل لغة النص، لا لغة صفحة العنوان. فالترجمة تكون باللغة التي تُرجم إليها."
 
 #: openlibrary/contribute/field_guides.py
 msgid "For example English"
-msgstr ""
+msgstr "على سبيل المثال الإنجليزية"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Page count"
-msgstr ""
+msgstr "عدد الصفحات"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Fill in page count"
-msgstr ""
+msgstr "أدخل عدد الصفحات"
 
 #: openlibrary/contribute/field_guides.py
 msgid "How many pages does this edition have?"
-msgstr ""
+msgstr "كم عدد صفحات هذه الطبعة؟"
 
 #: openlibrary/contribute/field_guides.py
 msgid "WorldCat lists the page count in the record's description. Google Books calls it Length. Make sure the record is for this ISBN, not another printing."
-msgstr ""
+msgstr "يذكر WorldCat عدد الصفحات في وصف السجل. ويسميه Google Books Length (الطول). تأكد من أن السجل يخص رقم ISBN هذا، وليس طبعة أخرى."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Catalogs count front matter differently, so numbers within a few pages of each other are the same count. Use the last numbered page of the main text."
-msgstr ""
+msgstr "تحتسب الفهارس المقدمة بطرق مختلفة، لذا فالأرقام المتقاربة ببضع صفحات تُعد العدد نفسه. استخدم آخر صفحة مرقّمة من النص الأساسي."
 
 #: openlibrary/contribute/field_guides.py
 msgid "For example 320"
-msgstr ""
+msgstr "على سبيل المثال 320"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Fill in publisher"
-msgstr ""
+msgstr "أدخل الناشر"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Who published this edition?"
-msgstr ""
+msgstr "من نشر هذه الطبعة؟"
 
 #: openlibrary/contribute/field_guides.py
 msgid "The imprint is printed on the title page and the spine. WorldCat and the Library of Congress list it under Publisher."
-msgstr ""
+msgstr "بصمة الناشر مطبوعة على صفحة العنوان وعلى كعب الكتاب. ويذكرها كل من WorldCat ومكتبة الكونغرس تحت حقل الناشر."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Open Library records the imprint printed on the book, not the parent company. Anchor Books, not Penguin Random House."
-msgstr ""
+msgstr "تُسجّل Open Library بصمة الناشر المطبوعة على الكتاب، لا الشركة الأم. مثل Anchor Books، لا Penguin Random House."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Publisher as printed"
-msgstr ""
+msgstr "الناشر كما هو مطبوع"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Library of Congress number (LCCN)"
-msgstr ""
+msgstr "رقم مكتبة الكونغرس (LCCN)"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Fill in LCCN"
-msgstr ""
+msgstr "أدخل رقم LCCN"
 
 #: openlibrary/contribute/field_guides.py
 msgid "What is this edition's Library of Congress number?"
-msgstr ""
+msgstr "ما رقم مكتبة الكونغرس لهذه الطبعة؟"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Search the Library of Congress catalog for this ISBN. Open the record whose year and publisher match this edition, and copy the number shown as LCCN."
-msgstr ""
+msgstr "ابحث في فهرس مكتبة الكونغرس عن رقم ISBN هذا. افتح السجل الذي يطابق عامه وناشره هذه الطبعة، وانسخ الرقم الظاهر باسم LCCN."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Hyphenated and padded forms are the same number: 75-425165 and 75425165. Paste either; Open Library stores the padded form."
-msgstr ""
+msgstr "الصيغ المفصولة بشرطة والمُكمَّلة بأصفار هي الرقم نفسه: 75-425165 و75425165. الصق أياً منهما؛ تُخزّن Open Library الصيغة المُكمَّلة."
 
 #: openlibrary/contribute/field_guides.py
 msgid "The number belongs to a different printing. Search results lead with the best-known one, not with yours."
-msgstr ""
+msgstr "الرقم يخص طبعة أخرى. تُبرز نتائج البحث الطبعة الأشهر، لا طبعتك."
 
 #: openlibrary/contribute/field_guides.py
 msgid "The number is already on another edition of this work, which means one of the two records is wrong."
-msgstr ""
+msgstr "الرقم موجود بالفعل في طبعة أخرى من هذا العمل، مما يعني أن أحد السجلين خاطئ."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Pasting the web address instead of the number itself."
-msgstr ""
+msgstr "لصق عنوان الويب بدلاً من الرقم نفسه."
 
 #: openlibrary/contribute/field_guides.py
 msgid "For example 75425165"
-msgstr ""
+msgstr "على سبيل المثال 75425165"
 
 #: openlibrary/contribute/field_guides.py
 msgid "OCLC/WorldCat number"
-msgstr ""
+msgstr "رقم OCLC/WorldCat"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Fill in OCLC number"
-msgstr ""
+msgstr "أدخل رقم OCLC"
 
 #: openlibrary/contribute/field_guides.py
 msgid "What is this edition's WorldCat (OCLC) number?"
-msgstr ""
+msgstr "ما رقم WorldCat (OCLC) لهذه الطبعة؟"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Search WorldCat for this ISBN. Open the record whose year, publisher and format match this edition, and copy the number shown as OCLC Number."
-msgstr ""
+msgstr "ابحث في WorldCat عن رقم ISBN هذا. افتح السجل الذي يطابق عامه وناشره وتنسيقه هذه الطبعة، وانسخ الرقم الظاهر باسم OCLC Number."
 
 #: openlibrary/contribute/field_guides.py
 msgid "The OCLC number is how libraries the world over refer to one catalogued edition. It is one of the few fields Open Library uses to find duplicates of this book when new records arrive."
-msgstr ""
+msgstr "رقم OCLC هو الطريقة التي تشير بها المكتبات حول العالم إلى طبعة مُفهرسة واحدة. وهو أحد الحقول القليلة التي تستخدمها Open Library للعثور على نسخ مكررة من هذا الكتاب عند وصول سجلات جديدة."
 
 #: openlibrary/contribute/field_guides.py
 msgid "The prefixes ocm, ocn, on and (OCoLC) are padding added by library systems, not part of the number. ocm00047810608 is 47810608."
-msgstr ""
+msgstr "البادئات ocm وocn وon و(OCoLC) هي حشو تضيفه أنظمة المكتبات، وليست جزءاً من الرقم. فـ ocm00047810608 هو 47810608."
 
 #: openlibrary/contribute/field_guides.py
 msgid "The number belongs to a different printing, a book club edition, or the ebook rather than the print copy."
-msgstr ""
+msgstr "الرقم يخص طبعة أخرى، أو إصدار نادي كتاب، أو الكتاب الإلكتروني بدلاً من النسخة المطبوعة."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Pasting the web address, or leaving the ocm/ocn prefix on."
-msgstr ""
+msgstr "لصق عنوان الويب، أو ترك بادئة ocm/ocn كما هي."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Digits only, for example 47810608"
-msgstr ""
+msgstr "أرقام فقط، على سبيل المثال 47810608"
 
 #: openlibrary/contribute/save.py
 msgid "Pick a language from the list."
-msgstr ""
+msgstr "اختر لغة من القائمة."
 
 #: openlibrary/contribute/save.py
 msgid "Enter the page count as a whole number."
-msgstr ""
+msgstr "أدخل عدد الصفحات كرقم صحيح."
 
 #: openlibrary/contribute/save.py
 msgid "Fill in an answer, or choose “I couldn't find it”."
-msgstr ""
+msgstr "أدخل إجابة، أو اختر “لم أتمكن من إيجاده”."
 
 #: openlibrary/contribute/save.py
 msgid "This field can't be filled in here."
-msgstr ""
+msgstr "لا يمكن ملء هذا الحقل هنا."
 
 #: openlibrary/contribute/save.py
 #, python-format
 msgid "Filled in %(field)s from Open Library Tasks"
-msgstr ""
+msgstr "تم ملء %(field)s من مهام Open Library"
 
 #: openlibrary/core/bookshelves.py
 #, fuzzy
@@ -9204,64 +9204,64 @@ msgstr "الفلبينية"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Tasks are open to librarians only, for now"
-msgstr ""
+msgstr "المهام متاحة للأمناء فقط حالياً"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Published"
-msgstr ""
+msgstr "نُشر"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "OCLC"
-msgstr ""
+msgstr "OCLC"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "All open tasks"
-msgstr ""
+msgstr "كل المهام المفتوحة"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Become an Open Librarian"
-msgstr ""
+msgstr "كن أمين Open Library"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Tasks are for Open Librarians. Applying takes a few minutes."
-msgstr ""
+msgstr "المهام مخصصة لأمناء Open Library. يستغرق التقديم بضع دقائق."
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Applying takes a few minutes and asks for your Open Library username, so create a free account first."
-msgstr ""
+msgstr "يستغرق التقديم بضع دقائق ويطلب اسم مستخدمك في Open Library، لذا أنشئ حساباً مجانياً أولاً."
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Create an account"
-msgstr ""
+msgstr "إنشاء حساب"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Log in"
-msgstr ""
+msgstr "تسجيل الدخول"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Book cover"
-msgstr ""
+msgstr "غلاف الكتاب"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 #, python-format
 msgid "Missing: %(field)s"
-msgstr ""
+msgstr "ناقص: %(field)s"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Most needed"
-msgstr ""
+msgstr "الأكثر احتياجاً"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Nothing missing here right now. Thank you."
-msgstr ""
+msgstr "لا يوجد أي نقص هنا الآن. شكراً لك."
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Nothing to fill in here"
-msgstr ""
+msgstr "لا يوجد ما يمكن ملؤه هنا"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Open the record and confirm it matches this edition first."
-msgstr ""
+msgstr "افتح السجل وتأكد من تطابقه مع هذه الطبعة أولاً."
 
 #: openlibrary/plugins/openlibrary/home.py
 #, fuzzy
@@ -9568,29 +9568,29 @@ msgstr "اختر كلمة مرور"
 
 #: openlibrary/plugins/upstream/lenny.py
 msgid "Open Library could not reach that library to return this book. Please try again later."
-msgstr ""
+msgstr "تعذر على Open Library الوصول إلى تلك المكتبة لإرجاع هذا الكتاب. يرجى المحاولة مرة أخرى لاحقاً."
 
 #: openlibrary/plugins/upstream/lenny.py
 msgid "Open Library is no longer connected to that library. Please borrow again to reconnect, then return."
-msgstr ""
+msgstr "لم تعد Open Library متصلة بتلك المكتبة. يرجى الاستعارة مرة أخرى لإعادة الاتصال، ثم الإرجاع."
 
 #: openlibrary/plugins/upstream/lenny.py
 msgid "That library could not return this book right now. Please try again later."
-msgstr ""
+msgstr "تعذر على تلك المكتبة إرجاع هذا الكتاب الآن. يرجى المحاولة مرة أخرى لاحقاً."
 
 #: openlibrary/plugins/upstream/lenny.py
 msgid "This book has been returned."
-msgstr ""
+msgstr "تم إرجاع هذا الكتاب."
 
 #: openlibrary/plugins/upstream/lenny.py
 #, python-format
 msgid "Borrowed from %(library)s. Your loan is due %(due)s."
-msgstr ""
+msgstr "مُستعار من %(library)s. موعد استحقاق إعارتك %(due)s."
 
 #: openlibrary/plugins/upstream/lenny.py
 #, python-format
 msgid "Borrowed from %(library)s."
-msgstr ""
+msgstr "مُستعار من %(library)s."
 
 #: openlibrary/plugins/upstream/models.py
 #, python-format
