@@ -88,6 +88,13 @@ jobs:
       matrix:
         batch: ${{ fromJSON(needs.plan.outputs.batches) }}
       fail-fast: false
+      # One PR per language can fan a single run out to ~1 agent per incomplete
+      # language (~24 after a large messages.pot update). Each shard is a full
+      # claude-code-action run against a shared API token, and the fleet has hit
+      # token exhaustion before, so cap concurrency to pace the fan-out. This
+      # stays effectively one-PR-per-language -- the cap only queues the shards,
+      # it does not group languages.
+      max-parallel: 4
     steps:
       - uses: actions/checkout@v4
         with:
