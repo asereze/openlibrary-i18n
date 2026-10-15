@@ -6,7 +6,7 @@ You ARE the translation engine — you generate translations directly. You do no
 
 ## Your assignment
 
-Your batch of languages is at the end of this prompt as a JSON array, e.g. `["de", "fr"]` or `["ja"]`. Translate all languages in your batch. Nothing outside your batch.
+Your batch is at the end of this prompt as a JSON array holding a single language, e.g. `["ja"]` (one PR per language). Translate that language. Nothing outside your batch.
 
 The `.po` files are already synced with the latest `messages.pot`. Do not run `pull` or `sync`.
 
@@ -35,14 +35,11 @@ if [ "$HAS_WORK" -eq 0 ]; then
   echo "Nothing to translate — all languages in batch are complete. Exiting without opening a PR."
   exit 0
 fi
-
-# Count open i18n PRs
-OPEN=$(gh pr list --state open --json headRefName \
-  --jq '[.[] | select(.headRefName | startswith("i18n/"))] | length')
-echo "Open i18n PRs: $OPEN"
 ```
 
-If no untranslated strings exist, stop (no PR). If ≥ 5 open PRs, open a GitHub issue explaining the backlog and stop.
+If no untranslated strings exist, stop (no PR).
+
+You do **not** need to count open PRs here. Serialization is handled upstream: the `plan` job in `translate.yml` skips the whole run (emits no batches) whenever any `i18n/ai-*` PR is still open, so a run only ever starts when the previous run's PRs have landed. Within a run, your batch is a single language (one PR per language), so your PR touches only `locale/<lang>/*` and cannot collide with a sibling language's PR.
 
 ## Step 2: Resume existing work, or create a fresh branch
 
@@ -67,12 +64,11 @@ Skip Step 3 (branch and PR already exist) and go straight to Step 4 — `./i18n 
 
 Always branch from `origin/main` — never from whatever is currently checked out.
 
-Single language: `i18n/ai-{lang}-YYYYMMDD`
-Multiple languages: `i18n/ai-batch-YYYYMMDD`
+One PR per language, so your batch is a single language: `i18n/ai-{lang}-YYYYMMDD`.
 
 ```bash
 DATE=$(date +%Y%m%d)
-BRANCH="i18n/ai-ro-${DATE}"   # or ai-batch-${DATE} for multiple languages
+BRANCH="i18n/ai-ro-${DATE}"   # {lang} = your batch's single language
 git fetch origin
 git checkout -b "$BRANCH" origin/main
 ```
@@ -327,6 +323,11 @@ Never push a branch where `validate` or `test` exits non-zero.
 
 ---
 
-## PR limit
+## Serialization (handled by the workflow, not by you)
 
-Max 5 open i18n PRs. If ≥ 5 when you check, open a GitHub issue noting the backlog and stop.
+You do not police the open-PR count. The `plan` job in `translate.yml` serializes
+runs for you: it emits no batches — so no translation job starts — whenever any
+`i18n/ai-*` PR is still open. A run therefore begins only once the previous run's
+PRs have landed, which is what keeps two runs from diverging on `messages.pot` and
+jamming auto-merge (#151). If a run's PR fails its checks and stays open, the next
+run is paused by design until a human resolves it — that is intended, not a bug.

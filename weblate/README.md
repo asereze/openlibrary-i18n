@@ -102,6 +102,13 @@ OPEN=$(gh pr list --state open --json headRefName \
 So a handful of open Weblate PRs under `i18n/*` would **silently pause daily
 translation** for everyone.
 
+> **Update (#151):** the backlog stop is no longer an instruction-level `i18n/`
+> count; it is now a hard gate in `translate.yml`'s `plan` job keyed on
+> `i18n/ai-*` only (a run emits no batches while any `i18n/ai-*` PR is open).
+> This narrows the trigger to the AI pipeline's own PRs, so the conclusion below
+> holds even more strongly: a Weblate branch under `i18n/*` that is *not*
+> `i18n/ai-*` no longer counts toward the stop at all.
+
 **`weblate` / `weblate/<lang>` avoids both:** it doesn't match `i18n/ai-` (never
 auto-merged) and doesn't match `i18n/` (never counted), it only ever reaches `main`
 through a human-reviewed PR, and — because it's a distinct namespace — the two
