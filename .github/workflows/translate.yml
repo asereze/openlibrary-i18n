@@ -54,8 +54,15 @@ jobs:
             # only `gh pr list` with github.token triggers no workflows.
             OPEN=$(gh pr list --repo "$GITHUB_REPOSITORY" --state open \
               --json headRefName \
-              --jq '[.[] | select(.headRefName | startswith("i18n/ai-"))] | length')
-            if [ "$OPEN" -gt 0 ]; then
+              --jq '[.[] | select(.headRefName | startswith("i18n/ai-"))] | length' \
+              2>/dev/null || true)
+            if ! printf '%s' "$OPEN" | grep -qE '^[0-9]+$'; then
+              # Fail CLOSED: if we cannot determine the open-PR count, skip this
+              # run rather than translate and risk stacking a divergent
+              # messages.pot on top of PRs we could not see (#151).
+              echo "::warning::could not read open i18n/ai-* PR count (got '$OPEN'); skipping this run to stay safe."
+              BATCHES='[]'
+            elif [ "$OPEN" -gt 0 ]; then
               echo "::notice::$OPEN open i18n/ai-* PR(s) pending; skipping this run until they land (serialize, #151)."
               BATCHES='[]'
             else
@@ -125,8 +132,27 @@ jobs:
           claude_code_oauth_token: ${{ secrets.OL_BOT_CLAUDE_OAUTH_TOKEN }}
           github_token: ${{ secrets.OL_BOT_PAT }}
 
+  merge:
+    # Merge green translation PRs. This runs as its OWN job, after translate,
+    # with `if: always()` so it ALSO runs on a serialized no-op run (when plan
+    # emitted no batches because i18n/ai-* PRs are still open) and on a run where
+    # translate failed. The merge sweep used to be a step inside translate, but
+    # the serialize gate (#151) skips translate whenever a PR is open -- which
+    # would leave a PR that went green *after* its own run's bounded poll with
+    # nothing to ever merge it, wedging the pipeline until a human stepped in.
+    # As its own always-on job it sweeps pending green PRs on every dispatch,
+    # which is also what clears the serialize gate for the next run.
+    needs: translate
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
       - name: Merge translation PRs that pass required checks
-        if: success()
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -157,8 +183,8 @@ jobs:
                 checks="$(gh pr checks "$pr" --json name,bucket 2>/dev/null || echo '[]')"
                 if printf '%s' "$checks" \
                      | python3 scripts/merge_gate.py --require validate --require bake-regression; then
-                  # Another matrix shard runs this same loop, so a merge may
-                  # already have happened; tolerate that without aborting (set -e).
+                  # Another iteration/run may have merged already; tolerate that
+                  # without aborting (set -e).
                   gh pr merge "$pr" --squash --delete-branch \
                     || echo "note: merge of PR #$pr did not complete (already merged, or its state changed)"
                   break

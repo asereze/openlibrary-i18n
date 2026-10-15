@@ -6,7 +6,7 @@ You ARE the translation engine — you generate translations directly. You do no
 
 ## Your assignment
 
-Your batch of languages is at the end of this prompt as a JSON array, e.g. `["de", "fr"]` or `["ja"]`. Translate all languages in your batch. Nothing outside your batch.
+Your batch is at the end of this prompt as a JSON array holding a single language, e.g. `["ja"]` (one PR per language). Translate that language. Nothing outside your batch.
 
 The `.po` files are already synced with the latest `messages.pot`. Do not run `pull` or `sync`.
 
