@@ -38,11 +38,29 @@ jobs:
 
       - name: Compute batches
         id: get-batches
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           if [ -n "${{ inputs.language }}" ]; then
+            # Manual single-language debug run bypasses the serialize gate.
             BATCHES='[["${{ inputs.language }}"]]'
           else
-            BATCHES=$(./i18n batch | python3 -c "import json,sys; print(json.dumps(json.load(sys.stdin)['batches']))")
+            # Serialize across runs. The per-language PRs from ONE run all carry
+            # the same messages.pot snapshot and merge cleanly; but a PR left open
+            # from an EARLIER run carries a different snapshot, so starting a new
+            # run on top of it reintroduces the pairwise messages.pot conflict
+            # that jammed auto-merge (#151). So: if any i18n/ai-* PR is still
+            # open, do nothing this run and let the open ones land first. A read-
+            # only `gh pr list` with github.token triggers no workflows.
+            OPEN=$(gh pr list --repo "$GITHUB_REPOSITORY" --state open \
+              --json headRefName \
+              --jq '[.[] | select(.headRefName | startswith("i18n/ai-"))] | length')
+            if [ "$OPEN" -gt 0 ]; then
+              echo "::notice::$OPEN open i18n/ai-* PR(s) pending; skipping this run until they land (serialize, #151)."
+              BATCHES='[]'
+            else
+              BATCHES=$(./i18n batch | python3 -c "import json,sys; print(json.dumps(json.load(sys.stdin)['batches']))")
+            fi
           fi
           echo "batches=$BATCHES" >> $GITHUB_OUTPUT
           echo "Batches: $BATCHES"
@@ -65,6 +83,17 @@ jobs:
       fail-fast: false
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Persist OL_BOT_PAT -- NOT the default GITHUB_TOKEN -- as the git
+          # credential, so the translation agent's `git push` is authenticated
+          # as the PAT. Pushes made with GITHUB_TOKEN spawn no new workflow runs
+          # (documented GitHub behavior), so validate-pr / bake-regression never
+          # fired on bot-pushed PRs and `gh pr merge` then waited forever on
+          # checks that never arrived (#151: e.g. #131 had 0 checks, committer
+          # github-actions[bot]). A PAT push triggers the `pull_request` checks
+          # the merge gate below requires. `repo` scope suffices -- translation
+          # branches never touch .github/workflows, so no `workflow` scope needed.
+          token: ${{ secrets.OL_BOT_PAT }}
 
       - uses: actions/setup-python@v5
         with:
