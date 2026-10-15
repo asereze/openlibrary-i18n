@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: account.html account/notifications.html account/privacy.html lib/nav_head.html type/user/view.html
+#: account.html account/notifications.html account/privacy.html shell/header.html.jinja type/user/view.html
 msgid "Settings"
 msgstr "Налаштування"
 
@@ -467,7 +467,7 @@ msgstr "Скасувати"
 msgid "Continue without waiting"
 msgstr "Продовжити без очікування"
 
-#: library_explorer.html openlibrary/plugins/openlibrary/nav.py
+#: library_explorer.html openlibrary/core/shell/nav.py
 msgid "Library Explorer"
 msgstr "Дослідник бібліотеки"
 
@@ -476,7 +476,7 @@ msgstr "Дослідник бібліотеки"
 msgid "Loading..."
 msgstr "Редагування..."
 
-#: lib/nav_head.html login.html
+#: login.html shell/header.html.jinja
 msgid "Log In"
 msgstr "Увійти"
 
@@ -566,7 +566,7 @@ msgstr "Додано нову книгу."
 msgid "Thank you for improving the Open Library catalog!"
 msgstr "Дуже дякуємо за те, що покращили наші дані!"
 
-#: ObservationsModal.html account/loans.html lists/lists.html merge/authors.html native_dialog.html.jinja type/edition/notes_modal_i18n.html type/list/view_body.html
+#: ObservationsModal.html account/loans.html contribute/task.html.jinja lists/lists.html merge/authors.html native_dialog.html.jinja type/edition/notes_modal_i18n.html type/list/view_body.html
 msgid "Close"
 msgstr "Закрити"
 
@@ -693,14 +693,6 @@ msgstr "Завантажити зараз"
 msgid "Next"
 msgstr "Далі"
 
-#: site.html.jinja
-msgid "Skip to main content"
-msgstr "Перейти до основного вмісту"
-
-#: site.html.jinja
-msgid "It looks like you're offline."
-msgstr "Схоже, ви офлайн."
-
 #: status.html
 #, fuzzy
 msgid "Open Library server status"
@@ -788,7 +780,7 @@ msgstr "Цього року"
 msgid "All Time"
 msgstr "За весь час"
 
-#: home/index.html openlibrary/plugins/openlibrary/api.py trending.html
+#: openlibrary/plugins/openlibrary/api.py trending.html
 msgid "Trending Books"
 msgstr "Популярні книги"
 
@@ -810,7 +802,7 @@ msgstr "Хочу прочитати"
 msgid "Currently Reading"
 msgstr "Зараз читаю"
 
-#: LoanReadForm.html ReadButton.html admin/inspect/memcache.html book_providers/read_button.html books/edit/edition.html trending.html type/list/embed.html widget.html
+#: LoanReadForm.html ReadButton.html account/loan_actions.html admin/inspect/memcache.html book_providers/read_button.html books/edit/edition.html trending.html type/list/embed.html widget.html
 msgid "Read"
 msgstr "Читати"
 
@@ -875,7 +867,7 @@ msgstr "Читати \"%(title)s\""
 msgid "Borrow \"%(title)s\""
 msgstr "Позичити \"%(title)s\""
 
-#: ReadButton.html books/edit/edition.html type/list/embed.html widget.html
+#: ReadButton.html book_providers/read_button.html books/edit/edition.html borrow/provider_popup_result.html.jinja type/list/embed.html widget.html
 msgid "Borrow"
 msgstr "Позичити"
 
@@ -923,7 +915,7 @@ msgstr "Це можуть бачити лише супербібліотекар
 msgid "Solr Editions"
 msgstr "Solr видання"
 
-#: account/reading_log.html openlibrary/plugins/worksearch/code.py search/availability_i18n.html search/inside.html type/author/view.html work_search.html
+#: account/reading_log.html openlibrary/core/shell/search_modal.py openlibrary/plugins/worksearch/code.py search/inside.html type/author/view.html work_search.html
 #, fuzzy
 msgid "Readable Only"
 msgstr "Лише для адмінів"
@@ -933,20 +925,20 @@ msgstr "Лише для адмінів"
 msgid "Filter by availability"
 msgstr "Фільтрувати результати за наявністю електронної книги"
 
-#: openlibrary/plugins/worksearch/code.py search/inside.html search/search_modal_i18n.html type/edition/view.html type/work/view.html work_search.html
+#: openlibrary/contribute/field_guides.py openlibrary/core/shell/search_modal.py openlibrary/plugins/openlibrary/contribute.py openlibrary/plugins/worksearch/code.py search/inside.html type/edition/view.html type/work/view.html work_search.html
 msgid "Language"
 msgstr "Мова"
 
-#: search/inside.html search/search_modal_i18n.html work_search.html
+#: openlibrary/core/shell/search_modal.py search/inside.html work_search.html
 #, fuzzy
 msgid "Search languages…"
 msgstr "Обрати цю мову"
 
-#: books/edit/edition.html languages/index.html search/search_modal_i18n.html work_search.html
+#: books/edit/edition.html contribute/parts.html.jinja languages/index.html openlibrary/core/shell/search_modal.py work_search.html
 msgid "Languages"
 msgstr "Мови"
 
-#: search/inside.html search/search_modal_i18n.html work_search.html
+#: openlibrary/core/shell/search_modal.py search/inside.html work_search.html
 msgid "Loading…"
 msgstr "Завантаження…"
 
@@ -983,7 +975,7 @@ msgstr "Налагодження Solr:"
 msgid "Full URL:"
 msgstr "Повна URL-адреса:"
 
-#: search/search_modal_i18n.html work_search.html
+#: openlibrary/core/shell/search_modal.py work_search.html
 msgid "No matching books or authors"
 msgstr "Немає відповідних книг або авторів"
 
@@ -991,11 +983,11 @@ msgstr "Немає відповідних книг або авторів"
 msgid "Add a new book"
 msgstr "Додати нову книгу"
 
-#: SearchNavigation.html authors/index.html.jinja lib/nav_foot.html.jinja merge/authors.html openlibrary/plugins/openlibrary/authors.py publishers/view.html search/search_modal_i18n.html work_search.html
+#: SearchNavigation.html authors/index.html.jinja merge/authors.html openlibrary/core/shell/search_modal.py openlibrary/plugins/openlibrary/authors.py publishers/view.html shell/footer.html.jinja work_search.html
 msgid "Authors"
 msgstr "Автори"
 
-#: SearchNavigation.html books/mybooks_breadcrumb_select.html lib/nav_foot.html.jinja openlibrary/plugins/upstream/mybooks.py search/search_modal_i18n.html work_search.html
+#: SearchNavigation.html books/mybooks_breadcrumb_select.html openlibrary/core/shell/search_modal.py openlibrary/plugins/upstream/mybooks.py shell/footer.html.jinja work_search.html
 msgid "Books"
 msgstr "Книги"
 
@@ -1095,7 +1087,7 @@ msgstr "Необхідно вибрати відповідну програму"
 msgid "Sign Up to Open Library"
 msgstr "Зареєструватися в Open Library"
 
-#: account/create.html lib/nav_head.html
+#: account/create.html shell/header.html.jinja
 msgid "Sign Up"
 msgstr "Зареєструватися"
 
@@ -1281,6 +1273,23 @@ msgstr "Редагування"
 msgid "No ISBN"
 msgstr "ISBN"
 
+#: account/loan_actions.html
+#, python-format
+msgid "Borrowed from %(library)s"
+msgstr "Позичено з %(library)s"
+
+#: account/loan_actions.html books/custom_carousel_card.html.jinja
+msgid "Not yet downloaded."
+msgstr "Ще не завантажено."
+
+#: account/loan_actions.html books/custom_carousel_card.html.jinja
+msgid "Download Now"
+msgstr "Завантажити зараз"
+
+#: account/loan_actions.html
+msgid "Return via<br/>Adobe Digital Editions"
+msgstr "Повернути через<br/>Adobe Digital Editions"
+
 #: account/loans.html
 #, python-format
 msgid "Active Loan (%(count)d)"
@@ -1288,6 +1297,22 @@ msgid_plural "Active Loans (%(count)d)"
 msgstr[0] "Активна позика (%(count)d)"
 msgstr[1] "Активні позики (%(count)d)"
 msgstr[2] ""
+
+#: account/loans.html
+#, python-format
+msgid "%(libraries)s could not be reached, so any loans there are not shown."
+msgid_plural "These libraries could not be reached, so any loans there are not shown: %(libraries)s."
+msgstr[0] "%(libraries)s недоступна, тому позики з неї не показано."
+msgstr[1] "%(libraries)s недоступні, тому позики з них не показано."
+msgstr[2] "%(libraries)s недоступні, тому позики з них не показано."
+
+#: account/loans.html
+#, python-format
+msgid "%(libraries)s needs reconnecting before its loans can be shown. Borrowing a book from it again will restore the connection."
+msgid_plural "These libraries need reconnecting before their loans can be shown: %(libraries)s. Borrowing a book from one again will restore the connection."
+msgstr[0] "%(libraries)s потребує повторного підключення, перш ніж можна буде показати позики з неї. Повторна позика книги з неї відновить з’єднання."
+msgstr[1] "%(libraries)s потребують повторного підключення, перш ніж можна буде показати позики з них. Повторна позика книги з однієї з них відновить з’єднання."
+msgstr[2] "%(libraries)s потребують повторного підключення, перш ніж можна буде показати позики з них. Повторна позика книги з однієї з них відновить з’єднання."
 
 #: account/loans.html
 msgid "You've not checked out any books at this moment."
@@ -1308,18 +1333,6 @@ msgid_plural "There are %(count)d people waiting for this book."
 msgstr[0] "На цю книгу чекає %(count)d людина."
 msgstr[1] "На цю книгу чекають %(count)d людини."
 msgstr[2] "На цю книгу чекають %(count)d людей."
-
-#: account/loans.html books/custom_carousel_card.html.jinja
-msgid "Not yet downloaded."
-msgstr "Ще не завантажено."
-
-#: account/loans.html books/custom_carousel_card.html.jinja
-msgid "Download Now"
-msgstr "Завантажити зараз"
-
-#: account/loans.html
-msgid "Return via<br/>Adobe Digital Editions"
-msgstr "Повернути через<br/>Adobe Digital Editions"
 
 #: account/loans.html
 msgid "Books You're Waiting For"
@@ -1358,7 +1371,7 @@ msgstr "Дії"
 #, python-format
 msgid "Waiting for 1 day"
 msgid_plural "Waiting for %(count)d days"
-msgstr[0] "Очікування 1 день"
+msgstr[0] "Очікування %(count)d день"
 msgstr[1] "Очікування %(count)d дні"
 msgstr[2] "Очікування %(count)d днів"
 
@@ -1370,7 +1383,7 @@ msgstr "Ви наступна людина, яка отримає цю книг�
 #, python-format
 msgid "There is one person ahead of you in the waiting list."
 msgid_plural "There are %(count)d people ahead of you in the waiting list."
-msgstr[0] "Перед вами в черзі одна людина."
+msgstr[0] "Перед вами в черзі %(count)d людина."
 msgstr[1] "Перед вами в черзі %(count)d людини."
 msgstr[2] "Перед вами в черзі %(count)d людей."
 
@@ -1382,7 +1395,7 @@ msgstr "У вас є менш години, щоб позичити її."
 #, python-format
 msgid "You have one more hour to borrow it."
 msgid_plural "You have %(hours)d more hours to borrow it."
-msgstr[0] "У вас є ще 1 година, щоб позичити."
+msgstr[0] "У вас є ще %(hours)d година, щоб позичити."
 msgstr[1] "У вас є ще %(hours)d години, щоб позичити."
 msgstr[2] "У вас є ще %(hours)d годин, щоб позичити."
 
@@ -1403,10 +1416,10 @@ msgid "<a href=\"/search\">Search for a book</a> to borrow."
 msgstr "<a href=\"/search\">Знайдіть книгу</a> для позичення."
 
 #: account/loans.html
-msgid "Looking for a book to borrow?  Check out our staff picks, or search for a book on a specific subject:"
-msgstr "Шукаєте книгу для позичення? Перегляньте рекомендації нашої команди або знайдіть книгу за певною темою:"
+msgid "Looking for a book to borrow? Check out our staff picks:"
+msgstr "Шукаєте книгу, яку можна позичити? Перегляньте добірку від нашої команди:"
 
-#: account/loans.html home/index.html
+#: account/loans.html
 msgid "Books We Love"
 msgstr "Книги, які нам подобаються"
 
@@ -1520,7 +1533,7 @@ msgstr "Ні, дякую"
 msgid "Yes! Please!"
 msgstr "Так! Будь ласка!"
 
-#: EditButtons.html account/notifications.html account/privacy.html admin/block.html admin/spamwords.html covers/manage.html my_books/shelf_button_i18n.html
+#: EditButtons.html account/notifications.html account/privacy.html admin/block.html admin/spamwords.html contribute/parts.html.jinja covers/manage.html my_books/shelf_button_i18n.html
 msgid "Save"
 msgstr "Зберегти"
 
@@ -1683,7 +1696,7 @@ msgstr "Хочу прочитати"
 msgid "My %(shelf_name)s Stats"
 msgstr "\"%(shelf_name)s\" Статистика"
 
-#: account/readinglog_stats.html lib/nav_head.html
+#: account/readinglog_stats.html openlibrary/core/shell/header.py shell/header.html.jinja
 msgid "My Books"
 msgstr "Мої книги"
 
@@ -1747,12 +1760,12 @@ msgid "Works by Time Period"
 msgstr "Роботи за часовим періодом"
 
 #: account/readinglog_stats.html
-msgid "Matching works"
-msgstr "Відповідні роботи"
-
-#: account/readinglog_stats.html
 msgid "Click on a bar to see matching works"
 msgstr "Натисніть на рядок, щоб побачити відповідні роботи"
+
+#: account/readinglog_stats.html
+msgid "Matching works"
+msgstr "Відповідні роботи"
 
 #: account/sidebar.html books/mybooks_breadcrumb_select.html openlibrary/plugins/upstream/mybooks.py
 #, fuzzy
@@ -1778,7 +1791,7 @@ msgstr "Читацький журнал"
 msgid "My lists"
 msgstr "Мої списки"
 
-#: EditionNavBar.html SearchNavigation.html account/sidebar.html lists/home.html openlibrary/plugins/openlibrary/nav.py recentchanges/index.html type/edition/view.html type/list/embed.html type/user/view.html type/work/view.html
+#: EditionNavBar.html SearchNavigation.html account/sidebar.html lists/home.html openlibrary/core/shell/nav.py recentchanges/index.html type/edition/view.html type/list/embed.html type/user/view.html type/work/view.html
 msgid "Lists"
 msgstr "Списки"
 
@@ -1999,7 +2012,7 @@ msgstr "Нових книг імпортовано за день"
 msgid "You need to have JavaScript turned on to see the nifty chart!"
 msgstr "JavaScript має бути ввімкненим, щоб бачити гарний графік!"
 
-#: admin/imports.html admin/imports_by_date.html admin/pd_dashboard.html site/stats.html.jinja
+#: admin/imports.html admin/imports_by_date.html admin/pd_dashboard.html shell/stats.html.jinja
 #, fuzzy
 msgid "Summary"
 msgstr "Травень"
@@ -2165,7 +2178,7 @@ msgstr "Додавання обкладинок"
 msgid "Covers Added"
 msgstr "Додавання обкладинок"
 
-#: admin/index.html home/stats.html
+#: admin/index.html openlibrary/plugins/openlibrary/home.py
 msgid "New Members"
 msgstr "Нові користувачі"
 
@@ -2225,7 +2238,7 @@ msgstr "Додані книги"
 msgid "Star Rating Patrons"
 msgstr "Читачі з зірковими оцінками"
 
-#: admin/index.html home/stats.html
+#: admin/index.html
 msgid "Unique Visitors"
 msgstr "Унікальні відвідувачі"
 
@@ -2875,7 +2888,7 @@ msgstr "Не знайдено."
 msgid "Search for an Author"
 msgstr "Шукати автора"
 
-#: PreviewSearchInside.html SubjectSearch.html authors/index.html.jinja lib/nav_head.html lists/home.html publishers/index.html publishers/notfound.html publishers/view.html search/advancedsearch.html search/publishers.html search/search_modal_i18n.html search/searchbox.html type/local_id/view.html
+#: PreviewSearchInside.html SubjectSearch.html authors/index.html.jinja lists/home.html openlibrary/core/shell/search_modal.py publishers/index.html publishers/notfound.html publishers/view.html search/advancedsearch.html search/publishers.html search/searchbox.html shell/header.html.jinja type/local_id/view.html
 msgid "Search"
 msgstr "Шукати"
 
@@ -3008,6 +3021,11 @@ msgstr "Більше на OpenStax"
 
 #: book_providers/read_button.html
 #, python-format
+msgid "Read your loan from %s"
+msgstr "Читати вашу позичену книгу з %s"
+
+#: book_providers/read_button.html
+#, python-format
 msgid "Listen to a reading from %s"
 msgstr "Слухати читання з %s"
 
@@ -3019,6 +3037,11 @@ msgstr "Слухати"
 #, python-format
 msgid "Read free online from %s"
 msgstr "Читати безкоштовно онлайн з %s"
+
+#: book_providers/read_button.html
+#, python-format
+msgid "Borrow ebook from %s"
+msgstr "Позичити електронну книгу з %s"
 
 #: book_providers/runeberg_download_options.html
 #, fuzzy
@@ -3195,7 +3218,7 @@ msgstr "Використовуйте <b><i>Заголовок: підзагол�
 msgid "Required field"
 msgstr "Обов'язкові поля"
 
-#: SearchAuthorSuggestion.html TestingEnvironment.html.jinja books/add.html books/edit.html books/edit/edition.html openlibrary/plugins/worksearch/code.py openlibrary/plugins/worksearch/facets.py search/advancedsearch.html search/search_modal_i18n.html
+#: SearchAuthorSuggestion.html TestingEnvironment.html.jinja books/add.html books/edit.html books/edit/edition.html openlibrary/core/shell/search_modal.py openlibrary/plugins/worksearch/code.py openlibrary/plugins/worksearch/facets.py search/advancedsearch.html
 msgid "Author"
 msgstr "Автор"
 
@@ -3249,7 +3272,7 @@ msgstr "ISBN"
 msgid "ISBN 13"
 msgstr "ISBN"
 
-#: books/add.html
+#: books/add.html openlibrary/plugins/openlibrary/contribute.py
 msgid "LCCN"
 msgstr "LCCN"
 
@@ -3305,7 +3328,7 @@ msgstr "Вилучити цього автора"
 msgid "Add another author?"
 msgstr "Додати іншого автора?"
 
-#: books/check.html lib/nav_foot.html.jinja lib/nav_head.html
+#: books/check.html shell/footer.html.jinja shell/header.html.jinja
 msgid "Add a Book"
 msgstr "Додати книгу"
 
@@ -3343,6 +3366,37 @@ msgstr "Жоден із них не відповідає книзі, яку я �
 #, fuzzy
 msgid "Continue"
 msgstr "Зробити внесок"
+
+#: books/custom_carousel.html.jinja
+#, python-format
+msgid "See all %(title)s"
+msgstr "Переглянути всі %(title)s"
+
+#: CarouselSkeleton.html.jinja books/custom_carousel.html.jinja lists/carousel.html.jinja lists/home.html lists/showcase.html
+msgid "See all"
+msgstr "Побачити всі"
+
+#: books/custom_carousel.html.jinja
+msgid "Previous page"
+msgstr "Попередня сторінка"
+
+#: books/custom_carousel.html.jinja
+msgid "Next page"
+msgstr "Наступна сторінка"
+
+#: books/custom_carousel.html.jinja
+msgid "Carousel pages"
+msgstr "Сторінки каруселі"
+
+#: books/custom_carousel.html.jinja
+#, python-brace-format
+msgid "Go to page {page} of {total}"
+msgstr "Перейти на сторінку {page} з {total}"
+
+#: books/custom_carousel.html.jinja
+#, python-brace-format
+msgid "Page {page} of {total}"
+msgstr "Сторінка {page} з {total}"
 
 #: books/custom_carousel_card.html.jinja
 #, python-format
@@ -3815,7 +3869,7 @@ msgstr "Авторство:"
 msgid "For example: <em>edited by David Anderson</em>"
 msgstr "Наприклад: <em>за редакцією Девіда Андерсона</em>"
 
-#: books/edit/edition.html
+#: books/edit/edition.html openlibrary/contribute/field_guides.py
 msgid "What language is this edition written in?"
 msgstr "Якою мовою написане це видання?"
 
@@ -4008,7 +4062,7 @@ msgstr "Нумерація?"
 msgid "Note the highest number in each pagination pattern."
 msgstr "Введіть найвище число у кожній схемі нумерації."
 
-#: books/edit/edition.html lib/nav_foot.html.jinja
+#: books/edit/edition.html shell/footer.html.jinja
 msgid "Help"
 msgstr "Допомога"
 
@@ -4191,10 +4245,179 @@ msgstr "Видалити це посилання"
 msgid "\"Good\" means no spammy links, please. Keep them relevant to the book. Irrelevant sites may be removed. Blatant spam will be deleted without remorse."
 msgstr "Під \"хорошими\" маються на увазі ті, що мають відношення до книги. Недоречні посилання будуть видалятися. Явний спам видалятиметься без вагань."
 
+#: borrow/provider_popup_result.html.jinja
+msgid "Borrowed"
+msgstr "Позичено"
+
+#: borrow/provider_popup_result.html.jinja openlibrary/plugins/openlibrary/api.py shell/footer.html.jinja shell/head.html.jinja
+msgid "Open Library"
+msgstr "Open Library"
+
+#: borrow/provider_popup_result.html.jinja
+#, python-format
+msgid "Your loan is due %(due)s."
+msgstr "Термін повернення вашої позики — %(due)s."
+
+#: borrow/provider_popup_result.html.jinja
+msgid "Your loan has been created."
+msgstr "Вашу позику оформлено."
+
+#: borrow/provider_popup_result.html.jinja
+msgid "Read it now"
+msgstr "Читати зараз"
+
+#: borrow/provider_popup_result.html.jinja
+msgid "Back to Open Library"
+msgstr "Повернутися до Open Library"
+
 #: bulk_search/bulk_search.html search/advancedsearch.html
 #, fuzzy
 msgid "Bulk Search (beta)"
 msgstr "Шукати теми"
+
+#: contribute/dashboard.html.jinja openlibrary/plugins/openlibrary/contribute.py
+msgid "Tasks"
+msgstr "Завдання"
+
+#: contribute/dashboard.html.jinja
+msgid "Fill in what's missing on real books, one detail at a time."
+msgstr "Заповнюйте відсутні дані в реальних книгах, по одній деталі за раз."
+
+#: contribute/dashboard.html.jinja
+msgid "Surprise me"
+msgstr "Здивуйте мене"
+
+#: contribute/dashboard.html.jinja
+msgid "A random book that needs a hand."
+msgstr "Випадкова книга, якій потрібна допомога."
+
+#: contribute/dashboard.html.jinja
+msgid "Filter tasks"
+msgstr "Фільтрувати завдання"
+
+#: contribute/dashboard.html.jinja
+msgid "Missing"
+msgstr "Відсутнє"
+
+#: contribute/dashboard.html.jinja
+msgid "Your recent fixes"
+msgstr "Ваші останні виправлення"
+
+#: contribute/dashboard.html.jinja
+msgid "See all your edits"
+msgstr "Переглянути всі ваші редагування"
+
+#: contribute/dashboard.html.jinja
+msgid "Fixes you save here show up in this list."
+msgstr "Виправлення, які ви зберігаєте тут, з'являються в цьому списку."
+
+#: contribute/done.html.jinja openlibrary/plugins/openlibrary/contribute.py
+msgid "Saved"
+msgstr "Збережено"
+
+#: contribute/done.html.jinja openlibrary/plugins/openlibrary/contribute.py
+msgid "Skipped"
+msgstr "Пропущено"
+
+#: contribute/done.html.jinja
+#, python-format
+msgid "%(field)s for %(title)s: %(value)s"
+msgstr "%(field)s для %(title)s: %(value)s"
+
+#: contribute/done.html.jinja
+#, python-format
+msgid "%(field)s for %(title)s"
+msgstr "%(field)s для %(title)s"
+
+#: contribute/done.html.jinja
+msgid "The record is updated."
+msgstr "Запис оновлено."
+
+#: contribute/done.html.jinja
+msgid "See it in the record's history"
+msgstr "Переглянути в історії запису"
+
+#: contribute/done.html.jinja
+msgid "Nothing on the record changed."
+msgstr "У записі нічого не змінилося."
+
+#: contribute/done.html.jinja
+msgid "While you're on this book"
+msgstr "Поки ви на сторінці цієї книги"
+
+#: contribute/done.html.jinja
+msgid "Next task"
+msgstr "Наступне завдання"
+
+#: contribute/done.html.jinja
+msgid "Pick a different book"
+msgstr "Обрати іншу книгу"
+
+#: contribute/landing.html.jinja
+msgid "Open Library Tasks"
+msgstr "Завдання Open Library"
+
+#: contribute/landing.html.jinja
+#, python-format
+msgid "Open Library serves %(readers)s readers every month across %(books)s catalogued books, and its %(mark_start)sOpen Librarians%(mark_end)s make thousands of edits every week."
+msgstr "Open Library обслуговує %(readers)s читачів щомісяця серед %(books)s каталогізованих книг, а її %(mark_start)sбібліотекарі Open Library%(mark_end)s роблять тисячі правок щотижня."
+
+#: contribute/landing.html.jinja
+msgid "Many books on Open Library are still missing a detail: a cover, a language, a publisher. You can help fill them in."
+msgstr "У багатьох книгах на Open Library досі бракує якоїсь деталі: обкладинки, мови, видавця. Ви можете допомогти заповнити ці дані."
+
+#: contribute/landing.html.jinja
+msgid "Recent edits"
+msgstr "Останні правки"
+
+#: FulltextResultIA.html.jinja contribute/landing.html.jinja contribute/parts.html.jinja
+#, python-format
+msgid "by %(authors)s"
+msgstr "автор: %(authors)s"
+
+#: contribute/landing.html.jinja
+msgid "Quiet for the moment. Edits show up here as they happen."
+msgstr "Поки що тихо. Правки з'являтимуться тут одразу після внесення."
+
+#: contribute/landing.html.jinja
+msgid "What a task looks like"
+msgstr "Як виглядає завдання"
+
+#: contribute/landing.html.jinja
+msgid "Each task is one book and one empty field. Here are just a few examples."
+msgstr "Кожне завдання — це одна книга і одне порожнє поле. Ось кілька прикладів."
+
+#: contribute/landing.html.jinja
+#, python-format
+msgid "Add %(field)s"
+msgstr "Додати %(field)s"
+
+#: contribute/landing.html.jinja
+msgid "Join in"
+msgstr "Приєднатися"
+
+#: contribute/nothing.html.jinja
+#, python-format
+msgid "%(field)s is already filled in on this edition"
+msgstr "%(field)s вже заповнено для цього видання"
+
+#: contribute/nothing.html.jinja
+msgid "Someone filled it in since the list was made. Thank you for checking."
+msgstr "Хтось уже заповнив це відтоді, як список було складено. Дякуємо за перевірку."
+
+#: contribute/nothing.html.jinja contribute/task.html.jinja
+msgid "Back to the list"
+msgstr "Назад до списку"
+
+#: contribute/task.html.jinja
+#, python-format
+msgid "Saved %(field)s for %(link_start)s%(title)s%(link_end)s: %(value)s"
+msgstr "Збережено %(field)s для %(link_start)s%(title)s%(link_end)s: %(value)s"
+
+#: contribute/task.html.jinja
+#, python-format
+msgid "Saved %(field)s for %(link_start)s%(title)s%(link_end)s"
+msgstr "Збережено %(field)s для %(link_start)s%(title)s%(link_end)s"
 
 #: covers/add.html
 #, fuzzy
@@ -4410,113 +4633,97 @@ msgstr "Прямо як у Вікіпедії, ви можете додават�
 msgid "Latest Blog Posts"
 msgstr "Останні блог пости"
 
-#: home/categories.html
-msgid "Browse by Subject"
-msgstr "Шукати за темами"
+#: home/browse_stacks.html.jinja
+msgid "Browse the stacks"
+msgstr "Переглянути полиці"
 
-#: home/categories.html
+#: home/browse_stacks.html.jinja home/genre_shelf.html.jinja openlibrary/core/shell/nav.py openlibrary/plugins/openlibrary/partials.py search/sort_options.html
+msgid "Trending"
+msgstr "Популярне"
+
+#: home/browse_stacks.html.jinja openlibrary/plugins/openlibrary/partials.py
 #, python-format
-msgid "%(count)s Book"
-msgid_plural "%(count)s Books"
-msgstr[0] "%(count)s книга"
-msgstr[1] "%(count)s книги"
-msgstr[2] "%(count)s книг"
+msgid "Trending in %(genre)s"
+msgstr "Популярне в категорії %(genre)s"
+
+#: home/browse_stacks.html.jinja home/genre_shelf.html.jinja
+msgid "Jump to"
+msgstr "Перейти до"
+
+#: home/genre_shelf.html.jinja
+#, python-format
+msgid "%(genre)s subgenres"
+msgstr "Піджанри %(genre)s"
+
+#: home/genre_shelf.html.jinja merge_request_table/table_header.html
+#, fuzzy
+msgid "Newest"
+msgstr "Новіші"
+
+#: home/genre_shelf.html.jinja
+msgid "Top rated"
+msgstr "Найкраще оцінене"
+
+#: home/genre_shelf.html.jinja search/sort_options.html
+msgid "Sort by"
+msgstr "Сортувати за"
 
 #: home/index.html home/welcome.html
 msgid "Welcome to Open Library"
 msgstr "Ласкаво просимо до Open Library"
 
-#: home/index.html openlibrary/plugins/openlibrary/api.py
-msgid "Classic Books"
-msgstr "Класичні книги"
-
 #: home/index.html
-msgid "Recently Returned"
-msgstr "Недавно повернені"
+msgid "Couldn't load this shelf. Try again?"
+msgstr "Не вдалося завантажити цю полицю. Спробувати ще раз?"
 
-#: home/index.html openlibrary/plugins/openlibrary/api.py openlibrary/plugins/openlibrary/home.py
-msgid "Romance"
-msgstr "Романтика"
+#: home/library_row.html.jinja
+msgid "A library made by the people who use it."
+msgstr "Бібліотека, створена людьми, які нею користуються."
 
-#: home/index.html openlibrary/plugins/openlibrary/api.py
-msgid "Kids"
-msgstr "Дитячі"
+#: home/library_row.html.jinja
+msgid "A catalog for every book ever published, maintained by readers like you."
+msgstr "Каталог кожної книги, коли-небудь опублікованої, який підтримують такі читачі, як ви."
 
-#: home/index.html openlibrary/plugins/openlibrary/api.py
-msgid "Thrillers"
-msgstr "Трилери"
+#: home/library_row.html.jinja openlibrary/plugins/openlibrary/contribute.py
+msgid "Become an Open Librarian"
+msgstr "Станьте бібліотекарем"
 
-#: home/index.html openlibrary/plugins/openlibrary/api.py openlibrary/plugins/openlibrary/home.py
-msgid "Textbooks"
-msgstr "Підручники"
+#: home/library_row.html.jinja
+msgid "Editable"
+msgstr "Редагований"
 
-#: home/index.html
-msgid "Authors Alliance & MIT Press"
-msgstr "Authors Alliance та MIT Press"
+#: home/library_row.html.jinja
+msgid "By anyone, like Wikipedia"
+msgstr "Будь-ким, як у Вікіпедії"
 
-#: home/index.html
-msgid "Books in Local Environment"
-msgstr "Книги в локальному середовищі"
+#: home/library_row.html.jinja
+msgid "Public"
+msgstr "Публічний"
 
-#: home/stats.html
-msgid "Around the Library"
-msgstr "У бібліотеці"
+#: home/library_row.html.jinja
+msgid "Every record, free to download"
+msgstr "Кожен запис можна безкоштовно завантажити"
 
-#: home/stats.html
-msgid "Here's what's happened over the last 28 days. More <a href=\"/recentchanges\">recent changes</a>"
-msgstr "Ось що відбулося за останні 28 днів. Більше <a href=\"/recentchanges\">останні зміни</a>"
+#: home/library_row.html.jinja
+msgid "Nonprofit"
+msgstr "Некомерційний"
 
-#: home/stats.html
-msgid "See all visitors to OpenLibrary.org"
-msgstr "Побачити усіх відвідувачів OpenLibrary.org"
+#: home/library_row.html.jinja
+msgid "Run by the Internet Archive"
+msgstr "Працює завдяки Internet Archive"
 
-#: home/stats.html
-msgid "Area graph of recent unique visitors"
-msgstr "Графік унікальних відвідувачів за останній час"
+#: home/library_row.html.jinja
+msgid "In the last month"
+msgstr "За останній місяць"
 
-#: home/stats.html
-msgid "How many new Open Library members have we welcomed?"
-msgstr "Скількох нових користувачів ми привітали?"
+#: home/library_row.html.jinja
+msgid "Change over the month, by 7-day average"
+msgstr "Зміна за місяць (середнє за 7 днів)"
 
-#: home/stats.html
-msgid "Area graph of new members"
-msgstr "Графік нових учасників"
-
-#: home/stats.html
-msgid "People are constantly updating the catalog"
-msgstr "Люди постійно оновлюють каталог"
-
-#: home/stats.html
-msgid "Area graph of recent catalog edits"
-msgstr "Графік нещодавніх редагувань каталогу"
-
-#: home/stats.html
-msgid "Catalog Edits"
-msgstr "Редагувань каталогу"
-
-#: home/stats.html
-msgid "Members can create Lists"
-msgstr "Користувачі можуть створювати списки"
-
-#: home/stats.html
-msgid "Area graph of lists created recently"
-msgstr "Графік нещодавно створених списків"
-
-#: home/stats.html
-msgid "Lists Created"
-msgstr "Списків створено"
-
-#: home/stats.html
-msgid "We're a library, so we lend books, too"
-msgstr "Ми бібліотека, тому ми також позичаємо книги"
-
-#: home/stats.html
-msgid "Area graph of ebooks borrowed recently"
-msgstr "Графік нещодавно позичених електронних книг"
-
-#: home/stats.html
-msgid "eBooks Borrowed"
-msgstr "Книг позичено"
+#: home/library_row.html.jinja
+#, python-format
+msgid "Up %(percent)d%% over the month"
+msgstr "Зростання на %(percent)d%% за місяць"
 
 #: home/welcome.html
 msgid "Read Free Library Books Online"
@@ -4557,14 +4764,6 @@ msgstr "Пошук у тексті книг"
 #: home/welcome.html
 msgid "Find matching results within the text of millions of books"
 msgstr "Знайдіть збіги серед текстів мільйонів книг"
-
-#: home/welcome.html
-msgid "Be an Open Librarian"
-msgstr "Станьте бібліотекарем"
-
-#: home/welcome.html
-msgid "Dozens of ways you can help improve the library"
-msgstr "Багато шляхів, щоб допомогти покращити бібліотеку"
 
 #: home/welcome.html
 #, fuzzy
@@ -4614,26 +4813,6 @@ msgstr[0] "%s електронне видання"
 msgstr[1] "%s електронні видання"
 msgstr[2] "%s електронних видань"
 
-#: lib/browse_popover.html
-msgid "Browse books by topic"
-msgstr "Шукати книги за темою"
-
-#: lib/browse_popover.html
-msgid "Most popular right now"
-msgstr "Найпопулярніше зараз"
-
-#: lib/browse_popover.html
-msgid "Browse the virtual shelves"
-msgstr "Переглянути віртуальні полиці"
-
-#: lib/browse_popover.html
-msgid "Reader-curated collections"
-msgstr "Добірки, укладені читачами"
-
-#: databarWork.html lib/browse_popover.html lib/nav_head.html
-msgid "Browse"
-msgstr "Шукати"
-
 #: lib/edit_head.html lib/view_head.html
 msgid "This doc was last edited by"
 msgstr "Цей документ востаннє був відредагований"
@@ -4677,11 +4856,7 @@ msgstr "Скопіюйте і вставте цей код на сторінку
 msgid "Copy Wikipedia citation"
 msgstr "Скопіювати цитування для Вікіпедії"
 
-#: lib/header_dropdown.html lib/nav_head.html
-msgid "Menu"
-msgstr "Меню"
-
-#: databarDiff.html databarEdit.html databarTemplate.html databarView.html lib/history.html openlibrary/plugins/openlibrary/home.py
+#: databarDiff.html databarEdit.html databarTemplate.html databarView.html lib/history.html openlibrary/plugins/openlibrary/home.py openlibrary/plugins/openlibrary/home_genres.py
 msgid "History"
 msgstr "Історія"
 
@@ -4712,262 +4887,6 @@ msgstr "Створено %(user)s"
 msgid "Edited by %(user)s"
 msgstr "Редаговано %(user)s"
 
-#: lib/nav_foot.html.jinja openlibrary/plugins/openlibrary/api.py site/head.html
-msgid "Open Library"
-msgstr "Open Library"
-
-#: lib/nav_foot.html.jinja
-msgid "Vision"
-msgstr "Бачення"
-
-#: lib/nav_foot.html.jinja
-msgid "Volunteer"
-msgstr "Стати волонтером"
-
-#: lib/nav_foot.html.jinja
-msgid "Partner With Us"
-msgstr "Стати партнером"
-
-#: lib/nav_foot.html.jinja
-msgid "Jobs"
-msgstr "Роботи"
-
-#: lib/nav_foot.html.jinja
-msgid "Careers"
-msgstr "Вакансії"
-
-#: lib/nav_foot.html.jinja
-msgid "Blog"
-msgstr "Блог"
-
-#: lib/nav_foot.html.jinja
-msgid "Terms of Service"
-msgstr "Умови використання"
-
-#: lib/nav_foot.html.jinja site/alert.html.jinja
-msgid "Donate"
-msgstr "Пожертвувати"
-
-#: lib/nav_foot.html.jinja
-msgid "Discover"
-msgstr "Досліджуйте"
-
-#: lib/nav_foot.html.jinja
-msgid "Go home"
-msgstr "Перейти на головну"
-
-#: lib/nav_foot.html.jinja
-msgid "Home"
-msgstr "Головна"
-
-#: lib/nav_foot.html.jinja
-msgid "Explore Books"
-msgstr "Дослідити книги"
-
-#: lib/nav_foot.html.jinja
-msgid "Explore authors"
-msgstr "Дослідити авторів"
-
-#: lib/nav_foot.html.jinja
-msgid "Explore subjects"
-msgstr "Дослідити теми"
-
-#: RelatedSubjects.html.jinja SearchNavigation.html SubjectTags.html lib/nav_foot.html.jinja openlibrary/plugins/openlibrary/nav.py openlibrary/plugins/worksearch/code.py subjects/notfound.html type/author/view.html type/list/view_body.html
-msgid "Subjects"
-msgstr "Теми"
-
-#: lib/nav_foot.html.jinja
-msgid "Explore collections"
-msgstr "Дослідити колекції"
-
-#: lib/nav_foot.html.jinja openlibrary/plugins/openlibrary/nav.py type/page/view.html
-msgid "Collections"
-msgstr "Колекції"
-
-#: SearchNavigation.html lib/nav_foot.html.jinja openlibrary/plugins/openlibrary/nav.py search/advancedsearch.html
-msgid "Advanced Search"
-msgstr "Розширений пошук"
-
-#: lib/nav_foot.html.jinja
-msgid "Navigate to top of this page"
-msgstr "Перейти на верх цієї сторінки"
-
-#: lib/nav_foot.html.jinja
-msgid "Return to Top"
-msgstr "Повернутися наверх"
-
-#: lib/nav_foot.html.jinja
-msgid "Develop"
-msgstr "Розробка"
-
-#: lib/nav_foot.html.jinja
-msgid "Explore Open Library Developer Center"
-msgstr "Дослідити центр розробників Open Library"
-
-#: lib/nav_foot.html.jinja lib/nav_head.html
-msgid "Developer Center"
-msgstr "Центр розробників"
-
-#: lib/nav_foot.html.jinja
-msgid "Explore Open Library APIs"
-msgstr "Дослідити API Open Library"
-
-#: lib/nav_foot.html.jinja
-msgid "API Documentation"
-msgstr "Документація API"
-
-#: lib/nav_foot.html.jinja
-msgid "Bulk Open Library data"
-msgstr "Дані Open Library"
-
-#: lib/nav_foot.html.jinja
-msgid "Bulk Data Dumps"
-msgstr "Дампи даних"
-
-#: lib/nav_foot.html.jinja
-msgid "Write a bot"
-msgstr "Написати бота"
-
-#: lib/nav_foot.html.jinja
-msgid "Writing Bots"
-msgstr "Написання ботів"
-
-#: lib/nav_foot.html.jinja
-msgid "Help Center"
-msgstr "Центр допомоги"
-
-#: lib/nav_foot.html.jinja
-#, fuzzy
-msgid "Contact"
-msgstr "Пожертвувати"
-
-#: lib/nav_foot.html.jinja
-#, fuzzy
-msgid "Contact Us"
-msgstr "Статус позики"
-
-#: lib/nav_foot.html.jinja
-msgid "Suggest Edits"
-msgstr "Запропонувати зміну"
-
-#: lib/nav_foot.html.jinja
-msgid "Suggesting Edits"
-msgstr "Запропонувати зміну"
-
-#: lib/nav_foot.html.jinja
-msgid "Add a new book to Open Library"
-msgstr "Додати нову книгу до Open Library"
-
-#: lib/nav_foot.html.jinja
-#, fuzzy
-msgid "Release Notes"
-msgstr "Видалити нотатку"
-
-#: lib/nav_foot.html.jinja
-#, fuzzy
-msgid "Bluesky"
-msgstr "Купити"
-
-#: lib/nav_foot.html.jinja
-#, fuzzy
-msgid "Open Library on Bluesky"
-msgstr "Логотип Open Library"
-
-#: lib/nav_foot.html.jinja
-#, fuzzy
-msgid "Twitter"
-msgstr "Назва"
-
-#: lib/nav_foot.html.jinja
-#, fuzzy
-msgid "Open Library on Twitter"
-msgstr "Логотип Open Library"
-
-#: lib/nav_foot.html.jinja
-msgid "GitHub"
-msgstr "GitHub"
-
-#: lib/nav_foot.html.jinja
-#, fuzzy
-msgid "Open Library on GitHub"
-msgstr "Логотип Open Library"
-
-#: lib/nav_foot.html.jinja site/alert.html.jinja
-msgid "Change Website Language"
-msgstr "Змінити мову вебсайту"
-
-#: lib/nav_foot.html.jinja lib/nav_head.html type/list/embed.html
-msgid "Open Library logo"
-msgstr "Логотип Open Library"
-
-#: lib/nav_foot.html.jinja
-msgid "Open Library is an initiative of the <a href=\"//archive.org/\">Internet Archive</a>, a 501(c)(3) non-profit, building a digital library of Internet sites and other cultural artifacts in  digital form. Other <a href=\"//archive.org/projects/\">projects</a> include the <a href=\"//archive.org/web/\">Wayback Machine</a>, <a href=\"//archive.org/\">archive.org</a> and <a href=\"//archive-it.org\">archive-it.org</a>"
-msgstr "Open Library — це ініціатива <a href=\"//archive.org/\">Internet Archive</a>, a 501(c)(3) неприбуткової організації, що займається побудовою цифрової бібліотеки інтернет-сайтів та інших культурних артифактів. Інші <a href=\"//archive.org/projects/\">проєкти</a> включають <a href=\"//archive.org/web/\">Wayback Machine</a>, <a href=\"//archive.org/\">archive.org</a> і  <a href=\"//archive-it.org\">archive-it.org</a>"
-
-#: lib/nav_foot.html.jinja
-#, python-format
-msgid "version <a href=\"https://github.com/internetarchive/openlibrary/commit/%(git_rev_hash)s\">%(git_rev_hash)s</a>"
-msgstr "версія <a href=\"https://github.com/internetarchive/openlibrary/commit/%(git_rev_hash)s\">%(git_rev_hash)s</a>"
-
-#: lib/nav_head.html
-msgid "The Internet Archive's Open Library: One page for every book"
-msgstr "Open Library від Internet Archive: одна сторінка для кожної книги"
-
-#: lib/nav_head.html
-#, fuzzy
-msgid "Search by barcode"
-msgstr "Шукати книги"
-
-#: lib/nav_head.html
-#, fuzzy
-msgid "My account"
-msgstr "Знайти профіль"
-
-#: lib/nav_head.html type/user/view.html
-#, python-format
-msgid "Joined %(date)s"
-msgstr "Приєднався %(date)s"
-
-#: lib/nav_head.html
-msgid "My Open Library"
-msgstr "Моя Open Library"
-
-#: lib/nav_head.html
-msgid "Loans, Reading Log, Lists, Stats"
-msgstr "Позики, читацький журнал, списки, статистика"
-
-#: lib/nav_head.html
-msgid "My Profile"
-msgstr "Мій профіль"
-
-#: lib/nav_head.html
-msgid "Pending Merge Requests"
-msgstr "Невирішені запити на об'єднання"
-
-#: lib/nav_head.html
-msgid "Log out"
-msgstr "Вийти"
-
-#: lib/nav_head.html
-msgid "Contribute"
-msgstr "Зробити внесок"
-
-#: lib/nav_head.html
-msgid "Recent Community Edits"
-msgstr "Останні зміни від спільноти"
-
-#: lib/nav_head.html
-msgid "Resources"
-msgstr "Ресурси"
-
-#: lib/nav_head.html
-msgid "Help & Support"
-msgstr "Допомога і підтримка"
-
-#: lib/nav_head.html
-msgid "Librarians Portal"
-msgstr "Бібліотекарський портал"
-
 #: lib/not_logged.html
 msgid "<strong>You are not <a href=\"/account/login\" title=\"Log in now\">logged in</a>.</strong> Open Library will record your IP address and include it in this page's publicly accessible edit history. If you <a href=\"/account/create\" title=\"Create an Open Library account\">create an account</a>, your IP address is concealed and you can more easily keep track of all your edits and additions."
 msgstr "<strong>Ви не <a href=\"/account/login\" title=\"Log in now\">ввійшли</a>.</strong> Open Library запише вашу IP адресу і додасть його в публічно доступну історію редагувань. Якщо ви <a href=\"/account/create\" title=\"Create an Open Library account\">створите акаунт</a>, вашу IP адресу буде приховано і ви зможете легше відслідковувати свої редагування."
@@ -4988,10 +4907,6 @@ msgstr "Таблиця якості даних"
 #: librarian_dashboard/data_quality_table.html
 msgid "Quality Criteria"
 msgstr "Критерії якості"
-
-#: lists/carousel.html.jinja lists/home.html lists/showcase.html
-msgid "See all"
-msgstr "Побачити всі"
 
 #: lists/export_as_html.html
 #, python-format
@@ -5026,7 +4941,7 @@ msgstr "Список <a href=\"%(href)s\">%(name)s</a> /"
 #, python-format
 msgid "This author is on <strong>1 list</strong>."
 msgid_plural "This author is on <strong>%(count)s lists</strong>."
-msgstr[0] "Цей автор є в <strong>1 списку</strong>."
+msgstr[0] "Цей автор є в <strong>%(count)s списку</strong>."
 msgstr[1] "Цей автор є в <strong>%(count)s списках</strong>."
 msgstr[2] "Цей автор є в <strong>%(count)s списках</strong>."
 
@@ -5034,7 +4949,7 @@ msgstr[2] "Цей автор є в <strong>%(count)s списках</strong>."
 #, python-format
 msgid "This is edition is on <strong>1 list</strong>."
 msgid_plural "This edition is on <strong>%(count)s lists</strong>."
-msgstr[0] "Це видання є в <strong>1 списку</strong>."
+msgstr[0] "Це видання є в <strong>%(count)s списку</strong>."
 msgstr[1] "Це видання є в <strong>%(count)s списках</strong>."
 msgstr[2] "Це видання є в <strong>%(count)s списках</strong>."
 
@@ -5042,7 +4957,7 @@ msgstr[2] "Це видання є в <strong>%(count)s списках</strong>."
 #, python-format
 msgid "This work is on <strong>1 list</strong>."
 msgid_plural "This work is on <strong>%(count)s lists</strong>."
-msgstr[0] "Цей твір є в <strong>1 списку</strong>."
+msgstr[0] "Цей твір є в <strong>%(count)s списку</strong>."
 msgstr[1] "Цей твір є в <strong>%(count)s списках</strong>."
 msgstr[2] "Цей твір є в <strong>%(count)s списках</strong>."
 
@@ -5050,7 +4965,7 @@ msgstr[2] "Цей твір є в <strong>%(count)s списках</strong>."
 #, python-format
 msgid "%(name)s has 1 list."
 msgid_plural "%(name)s has %(count)s lists."
-msgstr[0] "%(name)s має 1 список."
+msgstr[0] "%(name)s має %(count)s список."
 msgstr[1] "%(name)s має %(count)s списки."
 msgstr[2] "%(name)s має %(count)s списків."
 
@@ -5058,7 +4973,7 @@ msgstr[2] "%(name)s має %(count)s списків."
 #, python-format
 msgid "This subject is on <strong>1 list</strong>."
 msgid_plural "This subject is on <strong>%(count)s lists</strong>."
-msgstr[0] "Ця тема є в <strong>1 списку</strong>."
+msgstr[0] "Ця тема є в <strong>%(count)s списку</strong>."
 msgstr[1] "Ця тема є в <strong>%(count)s списках</strong>."
 msgstr[2] "Ця тема є в <strong>%(count)s списках</strong>."
 
@@ -5435,11 +5350,6 @@ msgstr "Solr"
 
 #: merge_request_table/table_header.html
 #, fuzzy
-msgid "Newest"
-msgstr "Новіші"
-
-#: merge_request_table/table_header.html
-#, fuzzy
 msgid "Oldest"
 msgstr "Старіші"
 
@@ -5745,7 +5655,7 @@ msgstr "Спробувати щось інше?"
 msgid "Publisher: %(name)s"
 msgstr "Видавець: %(name)s"
 
-#: openlibrary/plugins/worksearch/code.py publishers/view.html search/advancedsearch.html type/edition/view.html type/work/view.html
+#: openlibrary/contribute/field_guides.py openlibrary/plugins/openlibrary/contribute.py openlibrary/plugins/worksearch/code.py publishers/view.html search/advancedsearch.html type/edition/view.html type/work/view.html
 msgid "Publisher"
 msgstr "Видавець"
 
@@ -5948,7 +5858,7 @@ msgstr "Об'єднано %(page_type)s з основним записом %(rec
 #, python-format
 msgid "%(who)s merged one duplicate of %(master)s"
 msgid_plural "%(who)s merged %(count)d duplicates of %(master)s"
-msgstr[0] "%(who)s об'єднав один дублікат %(master)s"
+msgstr[0] "%(who)s об'єднав %(count)d дублікат %(master)s"
 msgstr[1] "%(who)s об'єднав %(count)d дублікати %(master)s"
 msgstr[2] "%(who)s об'єднав %(count)d дублікатів %(master)s"
 
@@ -5956,7 +5866,7 @@ msgstr[2] "%(who)s об'єднав %(count)d дублікатів %(master)s"
 #, python-format
 msgid "one duplicate of %(master)s was merged anonymously"
 msgid_plural "%(count)d duplicates of %(master)s were merged anonymously"
-msgstr[0] "один дублікат %(master)s об'єднано анонімно"
+msgstr[0] "%(count)d дублікат %(master)s об'єднано анонімно"
 msgstr[1] "%(count)d дублікати %(master)s об'єднано анонімно"
 msgstr[2] "%(count)d дублікатів %(master)s об'єднано анонімно"
 
@@ -5990,11 +5900,15 @@ msgstr "Скасування <a href=\"$parent.url()\">%(kind)s</a>."
 msgid "%(count)d records modified."
 msgstr "%(count)d запис змінено."
 
+#: SearchNavigation.html openlibrary/core/shell/nav.py search/advancedsearch.html shell/footer.html.jinja
+msgid "Advanced Search"
+msgstr "Розширений пошук"
+
 #: search/advancedsearch.html
 msgid "All fields"
 msgstr "Усі поля"
 
-#: search/advancedsearch.html
+#: openlibrary/plugins/openlibrary/contribute.py search/advancedsearch.html
 msgid "ISBN"
 msgstr "ISBN"
 
@@ -6041,26 +5955,12 @@ msgstr "Об'єднати авторів"
 msgid "No <strong>authors</strong> directly matched your search"
 msgstr "Жоден <strong>автор</strong> не відповідає вашому запиту"
 
-#: openlibrary/plugins/worksearch/code.py search/availability_i18n.html
-#, fuzzy
-msgid "All books"
-msgstr "Завантажити книги"
-
-#: openlibrary/plugins/worksearch/code.py search/availability_i18n.html
-msgid "Free to read now"
-msgstr "Безкоштовно для читання зараз"
-
-#: openlibrary/plugins/worksearch/code.py search/availability_i18n.html
-#, fuzzy
-msgid "Borrow online"
-msgstr "Позичити зараз"
-
 #: search/inside.html
 #, python-format
 msgid "Search Open Library for %s"
 msgstr "Шукати %s в Open Library"
 
-#: SearchNavigation.html search/inside.html search/search_modal_i18n.html
+#: SearchNavigation.html openlibrary/core/shell/search_modal.py search/inside.html
 msgid "Search Inside"
 msgstr "Шукати всередині"
 
@@ -6123,162 +6023,6 @@ msgstr "Жоден <strong>список</strong> не відповідає ва�
 #: search/publishers.html
 msgid "Publishers Search"
 msgstr "Пошук серед видавців"
-
-#: search/search_modal_i18n.html
-msgid "Search Open Library"
-msgstr "Пошук в Open Library"
-
-#: search/search_modal_i18n.html
-#, fuzzy
-msgid "Search books and authors…"
-msgstr "Шукати автора"
-
-#: search/search_modal_i18n.html
-#, fuzzy
-msgid "Close search"
-msgstr "Пошук серед видавців"
-
-#: search/search_modal_i18n.html
-#, fuzzy
-msgid "Clear search"
-msgstr "Пошук серед видавців"
-
-#: search/search_modal_i18n.html
-msgid "See results"
-msgstr "Переглянути результати"
-
-#: search/search_modal_i18n.html
-msgid "Go to full search"
-msgstr "Перейти до повного пошуку"
-
-#: search/search_modal_i18n.html
-#, python-format
-msgid "See %s book"
-msgstr "Переглянути %s книгу"
-
-#: search/search_modal_i18n.html
-#, python-format
-msgid "See %s books"
-msgstr "Переглянути %s книг"
-
-#: search/search_modal_i18n.html
-#, python-format
-msgid "See all %s books"
-msgstr "Переглянути всі %s книг"
-
-#: search/search_modal_i18n.html
-#, python-format
-msgid "All %s books"
-msgstr "Усі %s книг"
-
-#: search/search_modal_i18n.html
-#, fuzzy
-msgid "Clear all"
-msgstr "Побачити всі"
-
-#: search/search_modal_i18n.html
-msgid "Search scope"
-msgstr "Область пошуку"
-
-#: search/search_modal_i18n.html
-msgid "Inside books"
-msgstr "Усередині книг"
-
-#: search/search_modal_i18n.html
-#, fuzzy
-msgid "Search filters"
-msgstr "Шукати авторів"
-
-#: search/search_modal_i18n.html type/work/editions_datatable.html
-msgid "Availability"
-msgstr "Доступність"
-
-#: search/search_modal_i18n.html
-msgid "Searching books and authors…"
-msgstr "Пошук книг і авторів…"
-
-#: search/search_modal_i18n.html
-msgid "Searching inside books…"
-msgstr "Пошук усередині книг…"
-
-#: search/search_modal_i18n.html
-#, fuzzy
-msgid "No results found"
-msgstr "Нічого не знайдено."
-
-#: search/search_modal_i18n.html
-#, python-format
-msgid "Showing %s of %s results"
-msgstr "Показано %s з %s результатів"
-
-#: search/search_modal_i18n.html
-#, fuzzy
-msgid "Untitled"
-msgstr "Назва"
-
-#: search/search_modal_i18n.html
-#, fuzzy
-msgid "Readable"
-msgstr "Менше"
-
-#: search/search_modal_i18n.html
-#, python-format
-msgid "Readable in %s"
-msgstr "Доступно для читання на %s"
-
-#: search/search_modal_i18n.html
-#, fuzzy
-msgid "Recent searches"
-msgstr "Останні зміни"
-
-#: search/search_modal_i18n.html
-#, python-format
-msgid "Remove \"%s\" from recent searches"
-msgstr "Видалити «%s» з нещодавніх пошуків"
-
-#: FulltextSearchSuggestion.html.jinja search/search_modal_i18n.html
-msgid "Search inside books"
-msgstr "Пошук усередині книг"
-
-#: search/search_modal_i18n.html
-#, python-format
-msgid "Search Inside %s book"
-msgstr "Пошук усередині %s книги"
-
-#: search/search_modal_i18n.html
-#, python-format
-msgid "Search Inside %s books"
-msgstr "Пошук усередині %s книг"
-
-#: search/search_modal_i18n.html
-msgid "View all"
-msgstr "Переглянути все"
-
-#: search/search_modal_i18n.html
-msgid "Search inside books…"
-msgstr "Пошук усередині книг…"
-
-#: search/search_modal_i18n.html
-msgid "Type a word or phrase to find it on the pages of millions of books."
-msgstr "Введіть слово або фразу, щоб знайти їх на сторінках мільйонів книг."
-
-#: search/search_modal_i18n.html
-msgid "No matches inside books"
-msgstr "Немає збігів усередині книг"
-
-#: search/search_modal_i18n.html
-msgid "Search inside books is temporarily unavailable. Please try again later."
-msgstr "Пошук усередині книг тимчасово недоступний. Будь ласка, спробуйте пізніше."
-
-#: search/search_modal_i18n.html
-#, python-format
-msgid "%s match found inside books"
-msgstr "%s збіг знайдено всередині книг"
-
-#: search/search_modal_i18n.html
-#, python-format
-msgid "%s matches found inside books"
-msgstr "%s збігів знайдено всередині книг"
 
 #: search/sort_options.html
 msgid "Relevance"
@@ -6351,17 +6095,9 @@ msgstr "Списків створено"
 msgid "Any"
 msgstr "Травень"
 
-#: openlibrary/plugins/openlibrary/nav.py search/sort_options.html
-msgid "Trending"
-msgstr "Популярне"
-
 #: search/sort_options.html
 msgid "Work Title (beta: Librarian only)"
 msgstr "Назва твору (бета: лише для бібліотекарів)"
-
-#: search/sort_options.html
-msgid "Sort by"
-msgstr "Сортувати за"
 
 #: search/sort_options.html
 msgid "Sort results"
@@ -6432,21 +6168,300 @@ msgstr "Об'єднати дублікатів"
 msgid "Less"
 msgstr "менше"
 
-#: site/alert.html.jinja
+#: shell/alert.html.jinja
 #, fuzzy
 msgid "Internet Archive logo"
 msgstr "Забули вашу поштову адресу від Internet Archive?"
 
-#: site/head.html
+#: shell/alert.html.jinja shell/footer.html.jinja
+msgid "Donate"
+msgstr "Пожертвувати"
+
+#: shell/alert.html.jinja shell/footer.html.jinja
+msgid "Change Website Language"
+msgstr "Змінити мову вебсайту"
+
+#: shell/base.html.jinja
+msgid "Skip to main content"
+msgstr "Перейти до основного вмісту"
+
+#: shell/base.html.jinja
+msgid "It looks like you're offline."
+msgstr "Схоже, ви офлайн."
+
+#: shell/browse_popover.html.jinja
+msgid "Browse books by topic"
+msgstr "Шукати книги за темою"
+
+#: shell/browse_popover.html.jinja
+msgid "Most popular right now"
+msgstr "Найпопулярніше зараз"
+
+#: shell/browse_popover.html.jinja
+msgid "Browse the virtual shelves"
+msgstr "Переглянути віртуальні полиці"
+
+#: shell/browse_popover.html.jinja
+msgid "Reader-curated collections"
+msgstr "Добірки, укладені читачами"
+
+#: databarWork.html shell/browse_popover.html.jinja shell/header.html.jinja
+msgid "Browse"
+msgstr "Шукати"
+
+#: shell/footer.html.jinja
+msgid "Vision"
+msgstr "Бачення"
+
+#: shell/footer.html.jinja
+msgid "Volunteer"
+msgstr "Стати волонтером"
+
+#: shell/footer.html.jinja
+msgid "Partner With Us"
+msgstr "Стати партнером"
+
+#: shell/footer.html.jinja
+msgid "Jobs"
+msgstr "Роботи"
+
+#: shell/footer.html.jinja
+msgid "Careers"
+msgstr "Вакансії"
+
+#: shell/footer.html.jinja
+msgid "Blog"
+msgstr "Блог"
+
+#: shell/footer.html.jinja
+msgid "Terms of Service"
+msgstr "Умови використання"
+
+#: shell/footer.html.jinja
+msgid "Discover"
+msgstr "Досліджуйте"
+
+#: shell/footer.html.jinja
+msgid "Go home"
+msgstr "Перейти на головну"
+
+#: shell/footer.html.jinja
+msgid "Home"
+msgstr "Головна"
+
+#: shell/footer.html.jinja
+msgid "Explore Books"
+msgstr "Дослідити книги"
+
+#: shell/footer.html.jinja
+msgid "Explore authors"
+msgstr "Дослідити авторів"
+
+#: shell/footer.html.jinja
+msgid "Explore subjects"
+msgstr "Дослідити теми"
+
+#: RelatedSubjects.html.jinja SearchNavigation.html SubjectTags.html openlibrary/core/shell/nav.py openlibrary/plugins/worksearch/code.py shell/footer.html.jinja subjects/notfound.html type/author/view.html type/list/view_body.html
+msgid "Subjects"
+msgstr "Теми"
+
+#: shell/footer.html.jinja
+msgid "Explore collections"
+msgstr "Дослідити колекції"
+
+#: openlibrary/core/shell/nav.py shell/footer.html.jinja type/page/view.html
+msgid "Collections"
+msgstr "Колекції"
+
+#: shell/footer.html.jinja
+msgid "Navigate to top of this page"
+msgstr "Перейти на верх цієї сторінки"
+
+#: shell/footer.html.jinja
+msgid "Return to Top"
+msgstr "Повернутися наверх"
+
+#: shell/footer.html.jinja
+msgid "Develop"
+msgstr "Розробка"
+
+#: shell/footer.html.jinja
+msgid "Explore Open Library Developer Center"
+msgstr "Дослідити центр розробників Open Library"
+
+#: shell/footer.html.jinja shell/header.html.jinja
+msgid "Developer Center"
+msgstr "Центр розробників"
+
+#: shell/footer.html.jinja
+msgid "Explore Open Library APIs"
+msgstr "Дослідити API Open Library"
+
+#: shell/footer.html.jinja
+msgid "API Documentation"
+msgstr "Документація API"
+
+#: shell/footer.html.jinja
+msgid "Bulk Open Library data"
+msgstr "Дані Open Library"
+
+#: shell/footer.html.jinja
+msgid "Bulk Data Dumps"
+msgstr "Дампи даних"
+
+#: shell/footer.html.jinja
+msgid "Write a bot"
+msgstr "Написати бота"
+
+#: shell/footer.html.jinja
+msgid "Writing Bots"
+msgstr "Написання ботів"
+
+#: shell/footer.html.jinja
+msgid "Help Center"
+msgstr "Центр допомоги"
+
+#: shell/footer.html.jinja
+#, fuzzy
+msgid "Contact"
+msgstr "Пожертвувати"
+
+#: shell/footer.html.jinja
+#, fuzzy
+msgid "Contact Us"
+msgstr "Статус позики"
+
+#: shell/footer.html.jinja
+msgid "Suggest Edits"
+msgstr "Запропонувати зміну"
+
+#: shell/footer.html.jinja
+msgid "Suggesting Edits"
+msgstr "Запропонувати зміну"
+
+#: shell/footer.html.jinja
+msgid "Add a new book to Open Library"
+msgstr "Додати нову книгу до Open Library"
+
+#: shell/footer.html.jinja
+#, fuzzy
+msgid "Release Notes"
+msgstr "Видалити нотатку"
+
+#: shell/footer.html.jinja
+#, fuzzy
+msgid "Bluesky"
+msgstr "Купити"
+
+#: shell/footer.html.jinja
+#, fuzzy
+msgid "Open Library on Bluesky"
+msgstr "Логотип Open Library"
+
+#: shell/footer.html.jinja
+#, fuzzy
+msgid "Twitter"
+msgstr "Назва"
+
+#: shell/footer.html.jinja
+#, fuzzy
+msgid "Open Library on Twitter"
+msgstr "Логотип Open Library"
+
+#: shell/footer.html.jinja
+msgid "GitHub"
+msgstr "GitHub"
+
+#: shell/footer.html.jinja
+#, fuzzy
+msgid "Open Library on GitHub"
+msgstr "Логотип Open Library"
+
+#: shell/footer.html.jinja shell/header.html.jinja type/list/embed.html
+msgid "Open Library logo"
+msgstr "Логотип Open Library"
+
+#: shell/footer.html.jinja
+msgid "Open Library is an initiative of the <a href=\"//archive.org/\">Internet Archive</a>, a 501(c)(3) non-profit, building a digital library of Internet sites and other cultural artifacts in  digital form. Other <a href=\"//archive.org/projects/\">projects</a> include the <a href=\"//archive.org/web/\">Wayback Machine</a>, <a href=\"//archive.org/\">archive.org</a> and <a href=\"//archive-it.org\">archive-it.org</a>"
+msgstr "Open Library — це ініціатива <a href=\"//archive.org/\">Internet Archive</a>, a 501(c)(3) неприбуткової організації, що займається побудовою цифрової бібліотеки інтернет-сайтів та інших культурних артифактів. Інші <a href=\"//archive.org/projects/\">проєкти</a> включають <a href=\"//archive.org/web/\">Wayback Machine</a>, <a href=\"//archive.org/\">archive.org</a> і  <a href=\"//archive-it.org\">archive-it.org</a>"
+
+#: shell/footer.html.jinja
+#, python-format
+msgid "version <a href=\"https://github.com/internetarchive/openlibrary/commit/%(git_rev_hash)s\">%(git_rev_hash)s</a>"
+msgstr "версія <a href=\"https://github.com/internetarchive/openlibrary/commit/%(git_rev_hash)s\">%(git_rev_hash)s</a>"
+
+#: shell/head.html.jinja
 msgid "Open Library is an open, editable library catalog, building towards a web page for every book ever published. Read, borrow, and discover more than 3M books for free."
 msgstr "Open Library — це відкритий бібліотечний каталог, який може редагувати кожен, створюючи вебсторінку для кожної книги, яка була опублікована. Читайте, позичайте та відкривайте для себе понад 3 мільйони книг безплатно."
 
-#: site/stats.html.jinja
+#: shell/header.html.jinja
+msgid "The Internet Archive's Open Library: One page for every book"
+msgstr "Open Library від Internet Archive: одна сторінка для кожної книги"
+
+#: shell/header.html.jinja
+#, fuzzy
+msgid "Search by barcode"
+msgstr "Шукати книги"
+
+#: shell/header.html.jinja shell/header_dropdown.html.jinja
+msgid "Menu"
+msgstr "Меню"
+
+#: shell/header.html.jinja
+#, fuzzy
+msgid "My account"
+msgstr "Знайти профіль"
+
+#: shell/header.html.jinja
+msgid "My Open Library"
+msgstr "Моя Open Library"
+
+#: shell/header.html.jinja
+msgid "Loans, Reading Log, Lists, Stats"
+msgstr "Позики, читацький журнал, списки, статистика"
+
+#: shell/header.html.jinja
+msgid "My Profile"
+msgstr "Мій профіль"
+
+#: shell/header.html.jinja
+msgid "Pending Merge Requests"
+msgstr "Невирішені запити на об'єднання"
+
+#: shell/header.html.jinja
+msgid "Log out"
+msgstr "Вийти"
+
+#: shell/header.html.jinja
+msgid "Contribute"
+msgstr "Зробити внесок"
+
+#: shell/header.html.jinja
+msgid "Improve the Catalog"
+msgstr "Покращити каталог"
+
+#: shell/header.html.jinja
+msgid "Recent Community Edits"
+msgstr "Останні зміни від спільноти"
+
+#: shell/header.html.jinja
+msgid "Resources"
+msgstr "Ресурси"
+
+#: shell/header.html.jinja
+msgid "Help & Support"
+msgstr "Допомога і підтримка"
+
+#: shell/header.html.jinja
+msgid "Librarians Portal"
+msgstr "Бібліотекарський портал"
+
+#: shell/stats.html.jinja
 #, fuzzy
 msgid "Debug Stats"
 msgstr "Статистика"
 
-#: EditionNavBar.html site/stats.html.jinja
+#: EditionNavBar.html shell/stats.html.jinja
 msgid "Details"
 msgstr "Деталі"
 
@@ -6595,7 +6610,7 @@ msgstr "Чи відомий цей автор під іншими іменами
 msgid "For example: Lev Nikolayevich Tolstoy was also known as Leo Tolstoy. Please list one name per line."
 msgstr "Наприклад: Лев Миколайович Толстой також відомий як Лео Толстой. Будь ласка, вказуйте одне ім'я в рядку."
 
-#: type/author/edit.html
+#: openlibrary/plugins/openlibrary/contribute.py type/author/edit.html
 msgid "Identifiers"
 msgstr "Ідентифікатори"
 
@@ -6797,7 +6812,7 @@ msgstr "Дата публікації"
 msgid "Show other books from %(publisher)s"
 msgstr "Показати інші книги від %(publisher)s"
 
-#: type/edition/view.html type/work/view.html
+#: openlibrary/plugins/openlibrary/contribute.py type/edition/view.html type/work/view.html
 msgid "Pages"
 msgstr "Сторінок"
 
@@ -6854,7 +6869,7 @@ msgstr "Перекладено з"
 msgid "External Links"
 msgstr "Зовнішні посилання"
 
-#: type/edition/view.html type/work/view.html
+#: openlibrary/plugins/openlibrary/contribute.py type/edition/view.html type/work/view.html
 msgid "Format"
 msgstr "Формат"
 
@@ -7193,7 +7208,7 @@ msgstr "фільтри"
 msgid "Readers"
 msgstr "Читачі"
 
-#: type/permission/view.html
+#: openlibrary/plugins/openlibrary/home_genres.py type/permission/view.html
 msgid "Writers"
 msgstr "Автори"
 
@@ -7356,6 +7371,11 @@ msgstr "Наразі редагується:"
 msgid "Display Name"
 msgstr "Відображуване ім'я"
 
+#: openlibrary/core/shell/header.py type/user/view.html
+#, python-format
+msgid "Joined %(date)s"
+msgstr "Приєднався %(date)s"
+
 #: type/user/view.html
 msgid "admin page"
 msgstr "сторінка адміністратора"
@@ -7429,6 +7449,10 @@ msgstr "Показати усі %(count)d видання?"
 #: type/work/editions_datatable.html
 msgid "Edition"
 msgstr "Видання"
+
+#: openlibrary/core/shell/search_modal.py type/work/editions_datatable.html
+msgid "Availability"
+msgstr "Доступність"
 
 #: OlPagination.html OlPaginationArrows.html type/work/editions_datatable.html
 msgid "Go to previous page"
@@ -7571,6 +7595,11 @@ msgstr "Попередній перегляд книги"
 msgid "See more about this book on Archive.org"
 msgstr "Дізнайтеся більше про цю книгу на Archive.org"
 
+#: CarouselSkeleton.html.jinja
+#, fuzzy
+msgid "Loading carousel"
+msgstr "Не можете ввійти"
+
 #: CheckWorldcat.html ReadingOptionsMenu.html
 msgid "Nearby Libraries"
 msgstr "Бібліотеки поблизу"
@@ -7621,10 +7650,9 @@ msgstr "Перейти до наступного розділу"
 msgid "Expires"
 msgstr "Закінчується"
 
-#: FulltextResultIA.html.jinja
-#, python-format
-msgid "by %(authors)s"
-msgstr "автор: %(authors)s"
+#: FulltextSearchSuggestion.html.jinja openlibrary/core/shell/search_modal.py
+msgid "Search inside books"
+msgstr "Пошук усередині книг"
 
 #: FulltextSearchSuggestion.html.jinja
 #, python-format
@@ -8280,6 +8308,352 @@ msgstr "Переглянути том %(num)d"
 msgid "Buy this book"
 msgstr "Купити цю книгу"
 
+#: contribute/parts.html.jinja
+#, python-format
+msgid "one of %(count)s editions of this work"
+msgstr "одне з %(count)s видань цього твору"
+
+#: contribute/parts.html.jinja
+#, python-format
+msgid "Why this book: on about %(count)s readers' shelves."
+msgstr "Чому ця книга: приблизно на %(count)s полицях читачів."
+
+#: contribute/parts.html.jinja
+msgid "Go to book page"
+msgstr "Перейти на сторінку книги"
+
+#: contribute/parts.html.jinja
+msgid "Go to edit page"
+msgstr "Перейти на сторінку редагування"
+
+#: contribute/parts.html.jinja
+msgid "How to answer"
+msgstr "Як відповісти"
+
+#: contribute/parts.html.jinja
+msgid "This edition has no ISBN to search by, so look it up by title and author."
+msgstr "Це видання не має ISBN для пошуку, тож шукайте за назвою та автором."
+
+#: contribute/parts.html.jinja
+msgid "Guideline"
+msgstr "Настанова"
+
+#: contribute/parts.html.jinja
+msgid "How this edit goes wrong"
+msgstr "Як це редагування може піти не так"
+
+#: contribute/parts.html.jinja
+#, python-format
+msgid "The other edition"
+msgid_plural "The other %(count)d editions"
+msgstr[0] "Інше %(count)d видання"
+msgstr[1] "Інші %(count)d видання"
+msgstr[2] "Інших %(count)d видань"
+
+#: contribute/parts.html.jinja
+#, python-format
+msgid "1 other value"
+msgid_plural "%(count)d other values"
+msgstr[0] "%(count)d інше значення"
+msgstr[1] "%(count)d інших значення"
+msgstr[2] "%(count)d інших значень"
+
+#: contribute/parts.html.jinja
+msgid "Not filled in"
+msgstr "Не заповнено"
+
+#: contribute/parts.html.jinja
+msgid "See each edition"
+msgstr "Переглянути кожне видання"
+
+#: contribute/parts.html.jinja
+#, python-format
+msgid "And %(count)s more."
+msgstr "І ще %(count)s."
+
+#: contribute/parts.html.jinja
+msgid "That looks like a valid number."
+msgstr "Схоже, це дійсне число."
+
+#: contribute/parts.html.jinja
+#, python-format
+msgid "Will be stored as %(value)s."
+msgstr "Буде збережено як %(value)s."
+
+#: contribute/parts.html.jinja
+msgid "Paste only the number, not the web address."
+msgstr "Вставте лише число, а не веб-адресу."
+
+#: contribute/parts.html.jinja openlibrary/contribute/save.py
+msgid "That is not a valid number for this catalog."
+msgstr "Це недійсне число для цього каталогу."
+
+#: contribute/parts.html.jinja
+msgid "Choose a language"
+msgstr "Оберіть мову"
+
+#: contribute/parts.html.jinja
+msgid "Filter languages"
+msgstr "Фільтрувати мови"
+
+#: contribute/parts.html.jinja
+msgid "No matching language"
+msgstr "Відповідної мови не знайдено"
+
+#: contribute/parts.html.jinja
+msgid "Other editions say"
+msgstr "Інші видання вказують"
+
+#: contribute/parts.html.jinja
+#, python-format
+msgid "%(value)s, on 1 edition"
+msgid_plural "%(value)s, on %(count)d editions"
+msgstr[0] "%(value)s, на %(count)d виданні"
+msgstr[1] "%(value)s, на %(count)d виданнях"
+msgstr[2] "%(value)s, на %(count)d виданнях"
+
+#: contribute/parts.html.jinja
+msgid "I opened the record and the year and publisher match this edition."
+msgstr "Рік і видавець у записі збігаються з цим виданням."
+
+#: contribute/parts.html.jinja
+msgid "Add a comment about your edit"
+msgstr "Додати коментар до вашого редагування"
+
+#: contribute/parts.html.jinja
+msgid "Edit comment"
+msgstr "Коментар до редагування"
+
+#: contribute/parts.html.jinja
+msgid "Where you found it"
+msgstr "Де ви це знайшли"
+
+#: contribute/parts.html.jinja
+msgid "Save and next"
+msgstr "Зберегти і далі"
+
+#: contribute/parts.html.jinja
+msgid "I couldn't find it"
+msgstr "Не вдалося знайти"
+
+#: contribute/parts.html.jinja
+#, python-format
+msgid "Next: a random task from %(filter)s"
+msgstr "Далі: випадкове завдання з %(filter)s"
+
+#: contribute/parts.html.jinja
+msgid "Next: a random task from all open tasks"
+msgstr "Далі: випадкове завдання з усіх відкритих завдань"
+
+#: openlibrary/contribute/feed.py
+msgid "Edited this book"
+msgstr "Відредаговано цю книгу"
+
+#: openlibrary/contribute/feed.py
+msgid "Added this book"
+msgstr "Додано цю книгу"
+
+#: openlibrary/contribute/feed.py
+msgid "Added a cover"
+msgstr "Додано обкладинку"
+
+#: openlibrary/contribute/feed.py
+msgid "Merged duplicate authors"
+msgstr "Об'єднано дублікати авторів"
+
+#: openlibrary/contribute/feed.py
+msgid "Merged duplicate works"
+msgstr "Об'єднано дублікати творів"
+
+#: openlibrary/contribute/feed.py
+msgid "Updated this record"
+msgstr "Оновлено цей запис"
+
+#: openlibrary/contribute/feed.py
+msgid "Edited this author"
+msgstr "Відредаговано цього автора"
+
+#: openlibrary/contribute/feed.py
+msgid "Reverted an edit"
+msgstr "Скасовано правку"
+
+#: openlibrary/contribute/feed.py
+msgid "a visitor"
+msgstr "відвідувач"
+
+#: openlibrary/contribute/field_guides.py
+msgid "WorldCat"
+msgstr "WorldCat"
+
+#: openlibrary/contribute/field_guides.py
+msgid "Google Books"
+msgstr "Google Books"
+
+#: openlibrary/contribute/field_guides.py openlibrary/plugins/openlibrary/partials.py
+msgid "Amazon"
+msgstr "Amazon"
+
+#: openlibrary/contribute/field_guides.py
+msgid "Library of Congress"
+msgstr "Бібліотека Конгресу"
+
+#: openlibrary/contribute/field_guides.py
+msgid "Fill in language"
+msgstr "Вказати мову"
+
+#: openlibrary/contribute/field_guides.py
+msgid "Look the ISBN up in WorldCat or Google Books; both list the language of the text. The title page and cover tell you too."
+msgstr "Знайдіть ISBN у WorldCat або Google Books; обидва джерела вказують мову тексту. Титульна сторінка та обкладинка також підкажуть."
+
+#: openlibrary/contribute/field_guides.py
+msgid "Editions of a work usually share a language, but a translation won't. Check this edition's own text."
+msgstr "Видання одного твору зазвичай мають спільну мову, але переклад — ні. Перевірте текст саме цього видання."
+
+#: openlibrary/contribute/field_guides.py
+msgid "Record the language of the text, not the language of the title page. A translation is in the language it was translated into."
+msgstr "Вказуйте мову тексту, а не мову титульної сторінки. Переклад подається мовою, якою його перекладено."
+
+#: openlibrary/contribute/field_guides.py
+msgid "For example English"
+msgstr "Наприклад, англійська"
+
+#: openlibrary/contribute/field_guides.py
+msgid "Page count"
+msgstr "Кількість сторінок"
+
+#: openlibrary/contribute/field_guides.py
+msgid "Fill in page count"
+msgstr "Вказати кількість сторінок"
+
+#: openlibrary/contribute/field_guides.py
+msgid "How many pages does this edition have?"
+msgstr "Скільки сторінок у цьому виданні?"
+
+#: openlibrary/contribute/field_guides.py
+msgid "WorldCat lists the page count in the record's description. Google Books calls it Length. Make sure the record is for this ISBN, not another printing."
+msgstr "WorldCat вказує кількість сторінок в описі запису. У Google Books це поле називається Length. Переконайтеся, що запис стосується саме цього ISBN, а не іншого друку."
+
+#: openlibrary/contribute/field_guides.py
+msgid "Catalogs count front matter differently, so numbers within a few pages of each other are the same count. Use the last numbered page of the main text."
+msgstr "Каталоги по-різному рахують вступні сторінки, тому числа, що відрізняються на кілька сторінок, вважаються однаковими. Використовуйте номер останньої пронумерованої сторінки основного тексту."
+
+#: openlibrary/contribute/field_guides.py
+msgid "For example 320"
+msgstr "Наприклад, 320"
+
+#: openlibrary/contribute/field_guides.py
+msgid "Fill in publisher"
+msgstr "Вказати видавця"
+
+#: openlibrary/contribute/field_guides.py
+msgid "Who published this edition?"
+msgstr "Хто видав це видання?"
+
+#: openlibrary/contribute/field_guides.py
+msgid "The imprint is printed on the title page and the spine. WorldCat and the Library of Congress list it under Publisher."
+msgstr "Імпринт надруковано на титульній сторінці та корінці. WorldCat і Бібліотека Конгресу вказують його в полі Publisher."
+
+#: openlibrary/contribute/field_guides.py
+msgid "Open Library records the imprint printed on the book, not the parent company. Anchor Books, not Penguin Random House."
+msgstr "Open Library фіксує імпринт, надрукований на книзі, а не материнську компанію. Anchor Books, а не Penguin Random House."
+
+#: openlibrary/contribute/field_guides.py
+msgid "Publisher as printed"
+msgstr "Видавець, як надруковано"
+
+#: openlibrary/contribute/field_guides.py
+msgid "Library of Congress number (LCCN)"
+msgstr "Номер Бібліотеки Конгресу (LCCN)"
+
+#: openlibrary/contribute/field_guides.py
+msgid "Fill in LCCN"
+msgstr "Вказати LCCN"
+
+#: openlibrary/contribute/field_guides.py
+msgid "What is this edition's Library of Congress number?"
+msgstr "Який номер Бібліотеки Конгресу має це видання?"
+
+#: openlibrary/contribute/field_guides.py
+msgid "Search the Library of Congress catalog for this ISBN. Open the record whose year and publisher match this edition, and copy the number shown as LCCN."
+msgstr "Знайдіть цей ISBN у каталозі Бібліотеки Конгресу. Відкрийте запис, рік і видавець якого збігаються з цим виданням, і скопіюйте номер, вказаний як LCCN."
+
+#: openlibrary/contribute/field_guides.py
+msgid "Hyphenated and padded forms are the same number: 75-425165 and 75425165. Paste either; Open Library stores the padded form."
+msgstr "Форми з дефісом і без нього — те саме число: 75-425165 і 75425165. Вставте будь-яку з них; Open Library зберігає форму без дефіса."
+
+#: openlibrary/contribute/field_guides.py
+msgid "The number belongs to a different printing. Search results lead with the best-known one, not with yours."
+msgstr "Це число належить іншому друку. Результати пошуку спершу показують найвідоміший, а не ваш."
+
+#: openlibrary/contribute/field_guides.py
+msgid "The number is already on another edition of this work, which means one of the two records is wrong."
+msgstr "Це число вже вказано для іншого видання цього твору, а отже, один з двох записів помилковий."
+
+#: openlibrary/contribute/field_guides.py
+msgid "Pasting the web address instead of the number itself."
+msgstr "Вставлення веб-адреси замість самого числа."
+
+#: openlibrary/contribute/field_guides.py
+msgid "For example 75425165"
+msgstr "Наприклад, 75425165"
+
+#: openlibrary/contribute/field_guides.py
+msgid "OCLC/WorldCat number"
+msgstr "Номер OCLC/WorldCat"
+
+#: openlibrary/contribute/field_guides.py
+msgid "Fill in OCLC number"
+msgstr "Вказати номер OCLC"
+
+#: openlibrary/contribute/field_guides.py
+msgid "What is this edition's WorldCat (OCLC) number?"
+msgstr "Який номер WorldCat (OCLC) має це видання?"
+
+#: openlibrary/contribute/field_guides.py
+msgid "Search WorldCat for this ISBN. Open the record whose year, publisher and format match this edition, and copy the number shown as OCLC Number."
+msgstr "Знайдіть цей ISBN у WorldCat. Відкрийте запис, рік, видавець і формат якого збігаються з цим виданням, і скопіюйте номер, вказаний як OCLC Number."
+
+#: openlibrary/contribute/field_guides.py
+msgid "The OCLC number is how libraries the world over refer to one catalogued edition. It is one of the few fields Open Library uses to find duplicates of this book when new records arrive."
+msgstr "Номер OCLC — це спосіб, яким бібліотеки всього світу позначають одне каталогизоване видання. Це одне з небагатьох полів, які Open Library використовує для пошуку дублікатів цієї книги, коли надходять нові записи."
+
+#: openlibrary/contribute/field_guides.py
+msgid "The prefixes ocm, ocn, on and (OCoLC) are padding added by library systems, not part of the number. ocm00047810608 is 47810608."
+msgstr "Префікси ocm, ocn, on і (OCoLC) додаються бібліотечними системами і не є частиною числа. ocm00047810608 — це 47810608."
+
+#: openlibrary/contribute/field_guides.py
+msgid "The number belongs to a different printing, a book club edition, or the ebook rather than the print copy."
+msgstr "Це число належить іншому друку, виданню книжкового клубу або електронній книзі, а не паперовому примірнику."
+
+#: openlibrary/contribute/field_guides.py
+msgid "Pasting the web address, or leaving the ocm/ocn prefix on."
+msgstr "Вставлення веб-адреси або залишання префікса ocm/ocn."
+
+#: openlibrary/contribute/field_guides.py
+msgid "Digits only, for example 47810608"
+msgstr "Лише цифри, наприклад 47810608"
+
+#: openlibrary/contribute/save.py
+msgid "Pick a language from the list."
+msgstr "Оберіть мову зі списку."
+
+#: openlibrary/contribute/save.py
+msgid "Enter the page count as a whole number."
+msgstr "Введіть кількість сторінок як ціле число."
+
+#: openlibrary/contribute/save.py
+msgid "Fill in an answer, or choose “I couldn't find it”."
+msgstr "Введіть відповідь або оберіть «Не вдалося знайти»."
+
+#: openlibrary/contribute/save.py
+msgid "This field can't be filled in here."
+msgstr "Це поле не можна заповнити тут."
+
+#: openlibrary/contribute/save.py
+#, python-format
+msgid "Filled in %(field)s from Open Library Tasks"
+msgstr "Заповнено %(field)s через Open Library Tasks"
+
 #: openlibrary/core/bookshelves.py
 #, fuzzy
 msgid "[Record deleted]"
@@ -8289,6 +8663,181 @@ msgstr "Деталі даних"
 #, fuzzy
 msgid "Unknown"
 msgstr "Невідомий автор"
+
+#: openlibrary/core/shell/nav.py
+msgid "K-12 Student Library"
+msgstr "Студентська бібліотека K-12"
+
+#: openlibrary/core/shell/nav.py
+#, fuzzy
+msgid "Book Talks"
+msgstr "Деталі книги"
+
+#: openlibrary/core/shell/nav.py
+msgid "Random Book"
+msgstr "Випадкова книга"
+
+#: openlibrary/core/shell/search_modal.py openlibrary/plugins/worksearch/code.py
+#, fuzzy
+msgid "All books"
+msgstr "Завантажити книги"
+
+#: openlibrary/core/shell/search_modal.py openlibrary/plugins/worksearch/code.py
+msgid "Free to read now"
+msgstr "Безкоштовно для читання зараз"
+
+#: openlibrary/core/shell/search_modal.py openlibrary/plugins/worksearch/code.py
+#, fuzzy
+msgid "Borrow online"
+msgstr "Позичити зараз"
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search Open Library"
+msgstr "Пошук в Open Library"
+
+#: openlibrary/core/shell/search_modal.py
+#, fuzzy
+msgid "Search books and authors…"
+msgstr "Шукати автора"
+
+#: openlibrary/core/shell/search_modal.py
+#, fuzzy
+msgid "Close search"
+msgstr "Пошук серед видавців"
+
+#: openlibrary/core/shell/search_modal.py
+#, fuzzy
+msgid "Clear search"
+msgstr "Пошук серед видавців"
+
+#: openlibrary/core/shell/search_modal.py
+msgid "See results"
+msgstr "Переглянути результати"
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Go to full search"
+msgstr "Перейти до повного пошуку"
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "See %s book"
+msgstr "Переглянути %s книгу"
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "See %s books"
+msgstr "Переглянути %s книг"
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "See all %s books"
+msgstr "Переглянути всі %s книг"
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "All %s books"
+msgstr "Усі %s книг"
+
+#: openlibrary/core/shell/search_modal.py
+#, fuzzy
+msgid "Clear all"
+msgstr "Побачити всі"
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search scope"
+msgstr "Область пошуку"
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Inside books"
+msgstr "Усередині книг"
+
+#: openlibrary/core/shell/search_modal.py
+#, fuzzy
+msgid "Search filters"
+msgstr "Шукати авторів"
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Searching books and authors…"
+msgstr "Пошук книг і авторів…"
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Searching inside books…"
+msgstr "Пошук усередині книг…"
+
+#: openlibrary/core/shell/search_modal.py
+#, fuzzy
+msgid "No results found"
+msgstr "Нічого не знайдено."
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "Showing %s of %s results"
+msgstr "Показано %s з %s результатів"
+
+#: openlibrary/core/shell/search_modal.py
+#, fuzzy
+msgid "Untitled"
+msgstr "Назва"
+
+#: openlibrary/core/shell/search_modal.py
+#, fuzzy
+msgid "Readable"
+msgstr "Менше"
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "Readable in %s"
+msgstr "Доступно для читання на %s"
+
+#: openlibrary/core/shell/search_modal.py
+#, fuzzy
+msgid "Recent searches"
+msgstr "Останні зміни"
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "Remove \"%s\" from recent searches"
+msgstr "Видалити «%s» з нещодавніх пошуків"
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "Search Inside %s book"
+msgstr "Пошук усередині %s книги"
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "Search Inside %s books"
+msgstr "Пошук усередині %s книг"
+
+#: openlibrary/core/shell/search_modal.py
+msgid "View all"
+msgstr "Переглянути все"
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search inside books…"
+msgstr "Пошук усередині книг…"
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Type a word or phrase to find it on the pages of millions of books."
+msgstr "Введіть слово або фразу, щоб знайти їх на сторінках мільйонів книг."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "No matches inside books"
+msgstr "Немає збігів усередині книг"
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search inside books is temporarily unavailable. Please try again later."
+msgstr "Пошук усередині книг тимчасово недоступний. Будь ласка, спробуйте пізніше."
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "%s match found inside books"
+msgstr "%s збіг знайдено всередині книг"
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "%s matches found inside books"
+msgstr "%s збігів знайдено всередині книг"
 
 #: openlibrary/edition_scorecard.py
 msgid "Can be accessed in full online (read / borrowed)"
@@ -8605,6 +9154,26 @@ msgstr "Наскільки добре відвідувач може визнач
 msgid "Search Results"
 msgstr "Шукати списки"
 
+#: openlibrary/plugins/openlibrary/api.py
+msgid "Classic Books"
+msgstr "Класичні книги"
+
+#: openlibrary/plugins/openlibrary/api.py openlibrary/plugins/openlibrary/home.py
+msgid "Romance"
+msgstr "Романтика"
+
+#: openlibrary/plugins/openlibrary/api.py openlibrary/plugins/openlibrary/home_genres.py
+msgid "Kids"
+msgstr "Дитячі"
+
+#: openlibrary/plugins/openlibrary/api.py
+msgid "Thrillers"
+msgstr "Трилери"
+
+#: openlibrary/plugins/openlibrary/api.py openlibrary/plugins/openlibrary/home.py openlibrary/plugins/openlibrary/home_genres.py
+msgid "Textbooks"
+msgstr "Підручники"
+
 #: openlibrary/plugins/openlibrary/code.py
 msgid "Arabic"
 msgstr "Арабська"
@@ -8679,7 +9248,80 @@ msgstr "Китайська"
 msgid "Filipino"
 msgstr "Філіппінська"
 
+#: openlibrary/plugins/openlibrary/contribute.py
+msgid "Tasks are open to librarians only, for now"
+msgstr "Наразі завдання доступні лише бібліотекарям"
+
+#: openlibrary/plugins/openlibrary/contribute.py
+msgid "Published"
+msgstr "Опубліковано"
+
+#: openlibrary/plugins/openlibrary/contribute.py
+msgid "OCLC"
+msgstr "OCLC"
+
+#: openlibrary/plugins/openlibrary/contribute.py
+msgid "All open tasks"
+msgstr "Усі відкриті завдання"
+
+#: openlibrary/plugins/openlibrary/contribute.py
+msgid "Tasks are for Open Librarians. Applying takes a few minutes."
+msgstr "Завдання призначені для бібліотекарів Open Library. Подача заявки займає кілька хвилин."
+
+#: openlibrary/plugins/openlibrary/contribute.py
+msgid "Applying takes a few minutes and asks for your Open Library username, so create a free account first."
+msgstr "Подача заявки займає кілька хвилин і потребує вашого імені користувача Open Library, тож спочатку створіть безкоштовний обліковий запис."
+
+#: openlibrary/plugins/openlibrary/contribute.py
+msgid "Create an account"
+msgstr "Створити обліковий запис"
+
+#: openlibrary/plugins/openlibrary/contribute.py
+msgid "Log in"
+msgstr "Увійти"
+
+#: openlibrary/plugins/openlibrary/contribute.py
+msgid "Book cover"
+msgstr "Обкладинка книги"
+
+#: openlibrary/plugins/openlibrary/contribute.py
+#, python-format
+msgid "Missing: %(field)s"
+msgstr "Відсутнє: %(field)s"
+
+#: openlibrary/plugins/openlibrary/contribute.py
+msgid "Most needed"
+msgstr "Найпотрібніше"
+
+#: openlibrary/plugins/openlibrary/contribute.py
+msgid "Nothing missing here right now. Thank you."
+msgstr "Наразі тут нічого не бракує. Дякуємо."
+
+#: openlibrary/plugins/openlibrary/contribute.py
+msgid "Nothing to fill in here"
+msgstr "Тут нічого заповнювати"
+
+#: openlibrary/plugins/openlibrary/contribute.py
+msgid "Open the record and confirm it matches this edition first."
+msgstr "Спочатку відкрийте запис і підтвердьте, що він відповідає цьому виданню."
+
 #: openlibrary/plugins/openlibrary/home.py
+msgid "Books Read"
+msgstr "Прочитані книги"
+
+#: openlibrary/plugins/openlibrary/home.py
+msgid "Catalog Edits"
+msgstr "Редагувань каталогу"
+
+#: openlibrary/plugins/openlibrary/home.py
+msgid "Lists Updated"
+msgstr "Оновлені списки"
+
+#: openlibrary/plugins/openlibrary/home.py
+msgid "Lists Created"
+msgstr "Списків створено"
+
+#: openlibrary/plugins/openlibrary/home.py openlibrary/plugins/openlibrary/home_genres.py
 #, fuzzy
 msgid "Art"
 msgstr "Запустити"
@@ -8689,7 +9331,7 @@ msgstr "Запустити"
 msgid "Science Fiction"
 msgstr "Класифікації"
 
-#: openlibrary/plugins/openlibrary/home.py
+#: openlibrary/plugins/openlibrary/home.py openlibrary/plugins/openlibrary/home_genres.py
 msgid "Fantasy"
 msgstr "Фентезі"
 
@@ -8712,7 +9354,7 @@ msgstr "Дитяча"
 msgid "Medicine"
 msgstr "Видання"
 
-#: openlibrary/plugins/openlibrary/home.py
+#: openlibrary/plugins/openlibrary/home.py openlibrary/plugins/openlibrary/home_genres.py
 #, fuzzy
 msgid "Religion"
 msgstr "Редагування"
@@ -8730,10 +9372,146 @@ msgstr "Місця"
 msgid "Music"
 msgstr "Музика"
 
-#: openlibrary/plugins/openlibrary/home.py
+#: openlibrary/plugins/openlibrary/home.py openlibrary/plugins/openlibrary/home_genres.py
 #, fuzzy
 msgid "Science"
 msgstr "Скасувати"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Biography"
+msgstr "Біографія"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Philosophy"
+msgstr "Філософія"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Psychology"
+msgstr "Психологія"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Poetry"
+msgstr "Поезія"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Travel"
+msgstr "Подорожі"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Cooking"
+msgstr "Кулінарія"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Friendship"
+msgstr "Дружба"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Adventure"
+msgstr "Пригоди"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Mystery"
+msgstr "Детектив"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "School"
+msgstr "Школа"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Picture books"
+msgstr "Книжки з картинками"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Humor"
+msgstr "Гумор"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "United States"
+msgstr "Сполучені Штати"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Great Britain"
+msgstr "Велика Британія"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "World War II"
+msgstr "Друга світова війна"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Military"
+msgstr "Військова справа"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Ancient"
+msgstr "Античність"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Middle Ages"
+msgstr "Середньовіччя"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Historical"
+msgstr "Історична проза"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Western"
+msgstr "Вестерн"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Regency"
+msgstr "Регентство"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Paranormal"
+msgstr "Паранормальне кохання"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Contemporary"
+msgstr "Сучасна проза"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Suspense"
+msgstr "Саспенс"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Women"
+msgstr "Жінки"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Memoir"
+msgstr "Мемуари"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Royalty"
+msgstr "Монархи"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Artists"
+msgstr "Митці"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Presidents"
+msgstr "Президенти"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "What's new"
+msgstr "Що нового"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Books we love"
+msgstr "Книги, які ми любимо"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Classics"
+msgstr "Класика"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Most wanted"
+msgstr "Найпопулярніші"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Featured"
+msgstr "Рекомендоване"
 
 #: openlibrary/plugins/openlibrary/librarian_dashboard.py
 #, fuzzy
@@ -8784,26 +9562,9 @@ msgstr "Класифікації"
 msgid "Has number of pages"
 msgstr "Кількість сторінок"
 
-#: openlibrary/plugins/openlibrary/nav.py
-msgid "K-12 Student Library"
-msgstr "Студентська бібліотека K-12"
-
-#: openlibrary/plugins/openlibrary/nav.py
-#, fuzzy
-msgid "Book Talks"
-msgstr "Деталі книги"
-
-#: openlibrary/plugins/openlibrary/nav.py
-msgid "Random Book"
-msgstr "Випадкова книга"
-
 #: openlibrary/plugins/openlibrary/partials.py
 msgid "Better World Books"
 msgstr "Better World Books"
-
-#: openlibrary/plugins/openlibrary/partials.py
-msgid "Amazon"
-msgstr "Amazon"
 
 #: openlibrary/plugins/openlibrary/partials.py
 msgid "Bookshop.org"
@@ -8814,9 +9575,14 @@ msgid "This work does not appear on any lists."
 msgstr "Цей твір не входить до жодного списку."
 
 #: openlibrary/plugins/openlibrary/partials.py
-#, fuzzy
-msgid "Loading carousel"
-msgstr "Не можете ввійти"
+#, python-format
+msgid "Newest in %(genre)s"
+msgstr "Найновіше в категорії %(genre)s"
+
+#: openlibrary/plugins/openlibrary/partials.py
+#, python-format
+msgid "Top rated in %(genre)s"
+msgstr "Найкраще оцінене в категорії %(genre)s"
 
 #: openlibrary/plugins/openlibrary/partials.py
 msgid "On the Same Shelf"
@@ -8999,6 +9765,32 @@ msgstr "Ваша адреса електронної пошти"
 #: openlibrary/plugins/upstream/forms.py
 msgid "Choose a password"
 msgstr "Виберіть пароль"
+
+#: openlibrary/plugins/upstream/lenny.py
+msgid "Open Library could not reach that library to return this book. Please try again later."
+msgstr "Open Library не вдалося зв'язатися з цією бібліотекою, щоб повернути цю книгу. Будь ласка, спробуйте пізніше."
+
+#: openlibrary/plugins/upstream/lenny.py
+msgid "Open Library is no longer connected to that library. Please borrow again to reconnect, then return."
+msgstr "Open Library більше не підключена до цієї бібліотеки. Будь ласка, позичте книгу знову, щоб відновити з'єднання, а потім поверніть її."
+
+#: openlibrary/plugins/upstream/lenny.py
+msgid "That library could not return this book right now. Please try again later."
+msgstr "Ця бібліотека наразі не може повернути цю книгу. Будь ласка, спробуйте пізніше."
+
+#: openlibrary/plugins/upstream/lenny.py
+msgid "This book has been returned."
+msgstr "Цю книгу повернено."
+
+#: openlibrary/plugins/upstream/lenny.py
+#, python-format
+msgid "Borrowed from %(library)s. Your loan is due %(due)s."
+msgstr "Позичено з %(library)s. Термін повернення — %(due)s."
+
+#: openlibrary/plugins/upstream/lenny.py
+#, python-format
+msgid "Borrowed from %(library)s."
+msgstr "Позичено з %(library)s."
 
 #: openlibrary/plugins/upstream/models.py
 #, python-format
@@ -10220,4 +11012,70 @@ msgstr "%(title)s - пошук"
 
 #~ msgid "Only a preview is available."
 #~ msgstr "Доступний лише передперегляд."
+
+#~ msgid "Looking for a book to borrow?  Check out our staff picks, or search for a book on a specific subject:"
+#~ msgstr "Шукаєте книгу для позичення? Перегляньте рекомендації нашої команди або знайдіть книгу за певною темою:"
+
+#~ msgid "Browse by Subject"
+#~ msgstr "Шукати за темами"
+
+#~ msgid "%(count)s Book"
+#~ msgid_plural "%(count)s Books"
+#~ msgstr[0] "%(count)s книга"
+#~ msgstr[1] "%(count)s книги"
+#~ msgstr[2] "%(count)s книг"
+
+#~ msgid "Recently Returned"
+#~ msgstr "Недавно повернені"
+
+#~ msgid "Authors Alliance & MIT Press"
+#~ msgstr "Authors Alliance та MIT Press"
+
+#~ msgid "Books in Local Environment"
+#~ msgstr "Книги в локальному середовищі"
+
+#~ msgid "Around the Library"
+#~ msgstr "У бібліотеці"
+
+#~ msgid "Here's what's happened over the last 28 days. More <a href=\"/recentchanges\">recent changes</a>"
+#~ msgstr "Ось що відбулося за останні 28 днів. Більше <a href=\"/recentchanges\">останні зміни</a>"
+
+#~ msgid "See all visitors to OpenLibrary.org"
+#~ msgstr "Побачити усіх відвідувачів OpenLibrary.org"
+
+#~ msgid "Area graph of recent unique visitors"
+#~ msgstr "Графік унікальних відвідувачів за останній час"
+
+#~ msgid "How many new Open Library members have we welcomed?"
+#~ msgstr "Скількох нових користувачів ми привітали?"
+
+#~ msgid "Area graph of new members"
+#~ msgstr "Графік нових учасників"
+
+#~ msgid "People are constantly updating the catalog"
+#~ msgstr "Люди постійно оновлюють каталог"
+
+#~ msgid "Area graph of recent catalog edits"
+#~ msgstr "Графік нещодавніх редагувань каталогу"
+
+#~ msgid "Members can create Lists"
+#~ msgstr "Користувачі можуть створювати списки"
+
+#~ msgid "Area graph of lists created recently"
+#~ msgstr "Графік нещодавно створених списків"
+
+#~ msgid "We're a library, so we lend books, too"
+#~ msgstr "Ми бібліотека, тому ми також позичаємо книги"
+
+#~ msgid "Area graph of ebooks borrowed recently"
+#~ msgstr "Графік нещодавно позичених електронних книг"
+
+#~ msgid "eBooks Borrowed"
+#~ msgstr "Книг позичено"
+
+#~ msgid "Be an Open Librarian"
+#~ msgstr "Станьте бібліотекарем"
+
+#~ msgid "Dozens of ways you can help improve the library"
+#~ msgstr "Багато шляхів, щоб допомогти покращити бібліотеку"
 
