@@ -748,7 +748,7 @@ msgstr "Cust'annu"
 msgid "All Time"
 msgstr "Semper"
 
-#: openlibrary/plugins/openlibrary/api.py trending.html
+#: home/index.html openlibrary/plugins/openlibrary/api.py trending.html
 msgid "Trending Books"
 msgstr "Libros de tendèntzia"
 
@@ -1228,7 +1228,7 @@ msgstr "Perunu ISBN"
 #: account/loan_actions.html
 #, python-format
 msgid "Borrowed from %(library)s"
-msgstr "Imprestadu dae %(library)s"
+msgstr "Pigadu in prèstidu dae %(library)s"
 
 #: account/loan_actions.html books/custom_carousel_card.html.jinja
 msgid "Not yet downloaded."
@@ -1253,15 +1253,15 @@ msgstr[1] "Prèstidos ativos (%(count)d)"
 #, python-format
 msgid "%(libraries)s could not be reached, so any loans there are not shown."
 msgid_plural "These libraries could not be reached, so any loans there are not shown: %(libraries)s."
-msgstr[0] "%(libraries)s no at pòdidu èssere cuntatada, duncas is imprèstidos suos no sunt mustrados."
-msgstr[1] "Custas bibliotecas no ant pòdidu èssere cuntatadas, duncas is imprèstidos issoro no sunt mustrados: %(libraries)s."
+msgstr[0] "No est istadu possìbile regiùnghere %(libraries)s, duncas sos prèstidos suos no sunt ammustrados."
+msgstr[1] "No est istadu possìbile regiùnghere custas bibliotecas, duncas sos prèstidos issoro no sunt ammustrados: %(libraries)s."
 
 #: account/loans.html
 #, python-format
 msgid "%(libraries)s needs reconnecting before its loans can be shown. Borrowing a book from it again will restore the connection."
 msgid_plural "These libraries need reconnecting before their loans can be shown: %(libraries)s. Borrowing a book from one again will restore the connection."
-msgstr[0] "%(libraries)s tenet bisòngiu de si torrare a connètere in antis chi is imprèstidos suos pòdant èssere mustrados. Imprestende de nou unu libru dae issa, sa connessione s'at a restaurare."
-msgstr[1] "Custas bibliotecas tenent bisòngiu de si torrare a connètere in antis chi is imprèstidos issoro pòdant èssere mustrados: %(libraries)s. Imprestende de nou unu libru dae una de issas, sa connessione s'at a restaurare."
+msgstr[0] "%(libraries)s depet torrare a si connètiere in antis chi sos prèstidos suos pòdant èssere ammustrados. Si pigas in prèstidu unu àteru libru dae cussa biblioteca, sa connessione s'at a restabilire."
+msgstr[1] "Custas bibliotecas depent torrare a si connètiere in antis chi sos prèstidos issoro pòdant èssere ammustrados: %(libraries)s. Si pigas in prèstidu unu libru dae una de issas un'àtera bia, sa connessione s'at a restabilire."
 
 #: account/loans.html
 msgid "You've not checked out any books at this moment."
@@ -1360,10 +1360,10 @@ msgid "<a href=\"/search\">Search for a book</a> to borrow."
 msgstr "<a href=\"/search\">Chirca unu libru</a> de pigare in prèstidu."
 
 #: account/loans.html
-msgid "Looking for a book to borrow? Check out our staff picks:"
-msgstr "Chirches unu libru de pigare in prèstidu? Pòmpia is seletziones nostras:"
+msgid "Looking for a book to borrow?  Check out our staff picks, or search for a book on a specific subject:"
+msgstr "Ses chirchende unu libru de pigare in prèstidu?  Pòmpia·ti sos issèberos de su personale nostru, o chirca unu libru subra de un'argumentu ispetzìficu:"
 
-#: account/loans.html
+#: account/loans.html home/index.html
 msgid "Books We Love"
 msgstr "Libros chi amamus"
 
@@ -2088,7 +2088,7 @@ msgstr "Autores annantos"
 msgid "Covers Added"
 msgstr "Coberteddas annantas"
 
-#: admin/index.html openlibrary/plugins/openlibrary/home.py
+#: admin/index.html home/stats.html
 msgid "New Members"
 msgstr "Membros noos"
 
@@ -2140,7 +2140,7 @@ msgstr "Libros isteddados"
 msgid "Star Rating Patrons"
 msgstr "Metzenates chi sunt ponende retzensiones cun isteddos"
 
-#: admin/index.html
+#: admin/index.html home/stats.html
 msgid "Unique Visitors"
 msgstr "Bisitadores ùnicos"
 
@@ -2880,7 +2880,7 @@ msgstr "De prus in OpenStax"
 #: book_providers/read_button.html
 #, python-format
 msgid "Read your loan from %s"
-msgstr "Lèghe s'imprèstidu tuo dae %s"
+msgstr "Leghe su prèstidu tuo dae %s"
 
 #: book_providers/read_button.html
 #, fuzzy, python-format
@@ -2899,7 +2899,7 @@ msgstr ""
 #: book_providers/read_button.html
 #, python-format
 msgid "Borrow ebook from %s"
-msgstr "Pìga in prèstidu s'e-book dae %s"
+msgstr "Piga in prèstidu su libru eletrònicu dae %s"
 
 #: book_providers/runeberg_download_options.html
 msgid "Download all scanned images from Project Runeberg"
@@ -3207,37 +3207,6 @@ msgstr "Perunu de custos currispondet cun su libru chi bògio annànghere."
 #: books/check.html
 msgid "Continue"
 msgstr "Sighi"
-
-#: books/custom_carousel.html.jinja
-#, python-format
-msgid "See all %(title)s"
-msgstr "Pòmpia totu %(title)s"
-
-#: CarouselSkeleton.html.jinja books/custom_carousel.html.jinja lists/carousel.html.jinja lists/home.html lists/showcase.html
-msgid "See all"
-msgstr "Abbista totu"
-
-#: books/custom_carousel.html.jinja
-msgid "Previous page"
-msgstr "Pàgina pretzedente"
-
-#: books/custom_carousel.html.jinja
-msgid "Next page"
-msgstr "Pàgina imbeniente"
-
-#: books/custom_carousel.html.jinja
-msgid "Carousel pages"
-msgstr "Pàginas de su carosellu"
-
-#: books/custom_carousel.html.jinja
-#, python-brace-format
-msgid "Go to page {page} of {total}"
-msgstr "Bae a sa pàgina {page} de {total}"
-
-#: books/custom_carousel.html.jinja
-#, python-brace-format
-msgid "Page {page} of {total}"
-msgstr "Pàgina {page} de {total}"
 
 #: books/custom_carousel_card.html.jinja
 #, python-format
@@ -4072,7 +4041,7 @@ msgstr "\"Bonas\" bolet nàrrere chi non siat ligàmenes de arga, pro praghere. 
 
 #: borrow/provider_popup_result.html.jinja
 msgid "Borrowed"
-msgstr "Imprestadu"
+msgstr "Pigadu in prèstidu"
 
 #: borrow/provider_popup_result.html.jinja openlibrary/plugins/openlibrary/api.py shell/footer.html.jinja shell/head.html.jinja
 msgid "Open Library"
@@ -4081,11 +4050,11 @@ msgstr "Open Library"
 #: borrow/provider_popup_result.html.jinja
 #, python-format
 msgid "Your loan is due %(due)s."
-msgstr "S'imprèstidu tuo iscadit su %(due)s."
+msgstr "Su prèstidu tuo iscadit su %(due)s."
 
 #: borrow/provider_popup_result.html.jinja
 msgid "Your loan has been created."
-msgstr "S'imprèstidu tuo est istadu creadu."
+msgstr "Su prèstidu tuo est istadu creadu."
 
 #: borrow/provider_popup_result.html.jinja
 msgid "Read it now"
@@ -4101,15 +4070,15 @@ msgstr "Chirca de lotos (beta)"
 
 #: contribute/dashboard.html.jinja openlibrary/plugins/openlibrary/contribute.py
 msgid "Tasks"
-msgstr "Cumpitos"
+msgstr "Fainas"
 
 #: contribute/dashboard.html.jinja
 msgid "Fill in what's missing on real books, one detail at a time."
-msgstr "Agiunghe su chi mancat in libros reales, unu detàlliu a sa borta."
+msgstr "Cumpleta su chi mancat in libros reales, unu detàllu a sa borta."
 
 #: contribute/dashboard.html.jinja
 msgid "Surprise me"
-msgstr "Sorprèndemi"
+msgstr "Sorprendemi"
 
 #: contribute/dashboard.html.jinja
 msgid "A random book that needs a hand."
@@ -4117,7 +4086,7 @@ msgstr "Unu libru a sorte chi tenet bisòngiu de agiudu."
 
 #: contribute/dashboard.html.jinja
 msgid "Filter tasks"
-msgstr "Filtra is cumpitos"
+msgstr "Filtra sas fainas"
 
 #: contribute/dashboard.html.jinja
 msgid "Missing"
@@ -4125,15 +4094,15 @@ msgstr "Mancante"
 
 #: contribute/dashboard.html.jinja
 msgid "Your recent fixes"
-msgstr "Is acontzos tuos reghentes"
+msgstr "Sas curretziones tuas reghentes"
 
 #: contribute/dashboard.html.jinja
 msgid "See all your edits"
-msgstr "Pòmpia totu is modìficas tuas"
+msgstr "Pòmpia totu sas modìficas tuas"
 
 #: contribute/dashboard.html.jinja
 msgid "Fixes you save here show up in this list."
-msgstr "Is acontzos chi sarvas inoghe comparent in custa lista."
+msgstr "Sas curretziones chi sarvas inoghe apàrrene in custa lista."
 
 #: contribute/done.html.jinja openlibrary/plugins/openlibrary/contribute.py
 msgid "Saved"
@@ -4146,32 +4115,32 @@ msgstr "Brincadu"
 #: contribute/done.html.jinja
 #, python-format
 msgid "%(field)s for %(title)s: %(value)s"
-msgstr "%(field)s de %(title)s: %(value)s"
+msgstr "%(field)s pro %(title)s: %(value)s"
 
 #: contribute/done.html.jinja
 #, python-format
 msgid "%(field)s for %(title)s"
-msgstr "%(field)s de %(title)s"
+msgstr "%(field)s pro %(title)s"
 
 #: contribute/done.html.jinja
 msgid "The record is updated."
-msgstr "Su registru est istadu atualizadu."
+msgstr "Su registru est atualizadu."
 
 #: contribute/done.html.jinja
 msgid "See it in the record's history"
-msgstr "Pòmpialu in s'istòria de su registru"
+msgstr "Pòmpia·lu in s'istòria de su registru"
 
 #: contribute/done.html.jinja
 msgid "Nothing on the record changed."
-msgstr "Nudda est mudadu in su registru."
+msgstr "Nudda in su registru est cambiadu."
 
 #: contribute/done.html.jinja
 msgid "While you're on this book"
-msgstr "Finas chi ses in custu libru"
+msgstr "Mentres ses in custu libru"
 
 #: contribute/done.html.jinja
 msgid "Next task"
-msgstr "Cumpitu imbeniente"
+msgstr "Faina sighente"
 
 #: contribute/done.html.jinja
 msgid "Pick a different book"
@@ -4179,16 +4148,16 @@ msgstr "Sèbera un'àteru libru"
 
 #: contribute/landing.html.jinja
 msgid "Open Library Tasks"
-msgstr "Cumpitos de Open Library"
+msgstr "Fainas de s'Open Library"
 
 #: contribute/landing.html.jinja
 #, python-format
 msgid "Open Library serves %(readers)s readers every month across %(books)s catalogued books, and its %(mark_start)sOpen Librarians%(mark_end)s make thousands of edits every week."
-msgstr "Open Library serbit %(readers)s letores onni mese in %(books)s libros catalogados, e is %(mark_start)sOpen Librarians%(mark_end)s suos faghent mìgias de modìficas onni chida."
+msgstr "S'Open Library servit a %(readers)s letores cada mese in %(books)s libros catalogados, e sos %(mark_start)sbibliotecàrios abertos%(mark_end)s suos faghent mìgias de modìficas cada chida."
 
 #: contribute/landing.html.jinja
 msgid "Many books on Open Library are still missing a detail: a cover, a language, a publisher. You can help fill them in."
-msgstr "Medas libros in Open Library ancora mancant de unu detàlliu: una cobertura, una limba, un'editore. Pòtzis agiudare a los cumprire."
+msgstr "Medas libros in s'Open Library mancant galu de unu detàlliu: una cobertedda, una limba, unu editore. Podes agiuare a los cumprire."
 
 #: contribute/landing.html.jinja
 msgid "Recent edits"
@@ -4201,20 +4170,20 @@ msgstr "de %(authors)s"
 
 #: contribute/landing.html.jinja
 msgid "Quiet for the moment. Edits show up here as they happen."
-msgstr "Chietu pro immoe. Is modìficas comparent inoghe apenas sutzedint."
+msgstr "Chietu pro immoe. Sas modìficas ant a aparèssere inoghe cando sutzedent."
 
 #: contribute/landing.html.jinja
 msgid "What a task looks like"
-msgstr "Comente est fatu unu cumpitu"
+msgstr "Comente est una faina"
 
 #: contribute/landing.html.jinja
 msgid "Each task is one book and one empty field. Here are just a few examples."
-msgstr "Dònnia cumpitu est unu libru e unu campu bòidu. Inoghe nche sunt pagos esempros."
+msgstr "Cada faina est unu libru e unu campu bòidu. Inoghe b'at giustu pacos esempros."
 
 #: contribute/landing.html.jinja
 #, python-format
 msgid "Add %(field)s"
-msgstr "Agiunghe %(field)s"
+msgstr "Annanghe %(field)s"
 
 #: contribute/landing.html.jinja
 msgid "Join in"
@@ -4223,11 +4192,11 @@ msgstr "Partètzipa"
 #: contribute/nothing.html.jinja
 #, python-format
 msgid "%(field)s is already filled in on this edition"
-msgstr "%(field)s est giai cumpridu in custa editzione"
+msgstr "%(field)s est giai cumpletadu in custa editzione"
 
 #: contribute/nothing.html.jinja
 msgid "Someone filled it in since the list was made. Thank you for checking."
-msgstr "Calecunu l'at giai cumpridu dae cando est istada fata sa lista. Gràtzias pro aer controlladu."
+msgstr "Calecunu l'at giai cumpletadu dae chi sa lista est istada fata. Gràtzias pro aer controlladu."
 
 #: contribute/nothing.html.jinja contribute/task.html.jinja
 msgid "Back to the list"
@@ -4453,96 +4422,112 @@ msgstr "Gasi comente in Wikipedia, podes frunire informatziones noas o curretzio
 msgid "Latest Blog Posts"
 msgstr "Ùrtimas publicatziones de su blog"
 
-#: home/browse_stacks.html.jinja
-msgid "Browse the stacks"
-msgstr "Esplora is iscafalis"
+#: home/categories.html
+msgid "Browse by Subject"
+msgstr "Esplora pro argumentu"
 
-#: home/browse_stacks.html.jinja home/genre_shelf.html.jinja openlibrary/core/shell/nav.py openlibrary/plugins/openlibrary/partials.py search/sort_options.html
-msgid "Trending"
-msgstr "De tendèntzia"
-
-#: home/browse_stacks.html.jinja openlibrary/plugins/openlibrary/partials.py
+#: home/categories.html
 #, python-format
-msgid "Trending in %(genre)s"
-msgstr "De tendèntzia in %(genre)s"
-
-#: home/browse_stacks.html.jinja home/genre_shelf.html.jinja
-msgid "Jump to"
-msgstr "Bae a"
-
-#: home/genre_shelf.html.jinja
-#, python-format
-msgid "%(genre)s subgenres"
-msgstr "Sutgèneres de %(genre)s"
-
-#: home/genre_shelf.html.jinja merge_request_table/table_header.html
-msgid "Newest"
-msgstr "Prus noas"
-
-#: home/genre_shelf.html.jinja
-msgid "Top rated"
-msgstr "Prus valutados"
-
-#: home/genre_shelf.html.jinja search/sort_options.html
-msgid "Sort by"
-msgstr "Òrdina pro"
+msgid "%(count)s Book"
+msgid_plural "%(count)s Books"
+msgstr[0] "%(count)s libru"
+msgstr[1] "%(count)s libros"
 
 #: home/index.html home/welcome.html
 msgid "Welcome to Open Library"
 msgstr "Bene bènnidu a s'Open Library"
 
+#: home/index.html openlibrary/plugins/openlibrary/api.py
+msgid "Classic Books"
+msgstr "Libros clàssicos"
+
 #: home/index.html
-msgid "Couldn't load this shelf. Try again?"
-msgstr "No est istadu possìbile carrigare custu iscafale. Torra a proare?"
+msgid "Recently Returned"
+msgstr "Torrados dae pagu"
 
-#: home/library_row.html.jinja
-msgid "A library made by the people who use it."
-msgstr "Una biblioteca fata dae sa gente chi la impreat."
+#: home/index.html openlibrary/plugins/openlibrary/api.py openlibrary/plugins/openlibrary/home.py
+msgid "Romance"
+msgstr "Libros de amore"
 
-#: home/library_row.html.jinja
-msgid "A catalog for every book ever published, maintained by readers like you."
-msgstr "Unu catàlogu pro dònnia libru publicadu, mantesu dae letores comente a tie."
+#: home/index.html openlibrary/plugins/openlibrary/api.py
+msgid "Kids"
+msgstr "Pitzinnos"
 
-#: home/library_row.html.jinja openlibrary/plugins/openlibrary/contribute.py
-msgid "Become an Open Librarian"
-msgstr "Diventa un'Open Librarian"
+#: home/index.html openlibrary/plugins/openlibrary/api.py
+msgid "Thrillers"
+msgstr "Thrillers"
 
-#: home/library_row.html.jinja
-msgid "Editable"
-msgstr "Modificàbile"
+#: home/index.html openlibrary/plugins/openlibrary/api.py openlibrary/plugins/openlibrary/home.py
+msgid "Textbooks"
+msgstr "Libros de testu"
 
-#: home/library_row.html.jinja
-msgid "By anyone, like Wikipedia"
-msgstr "Dae cale si siat, comente a Wikipedia"
+#: home/index.html
+msgid "Authors Alliance & MIT Press"
+msgstr "Authors Alliance & MIT Press"
 
-#: home/library_row.html.jinja
-msgid "Public"
-msgstr "Pùblicu"
+#: home/index.html
+msgid "Books in Local Environment"
+msgstr "Libros in s'Ambienti Locale"
 
-#: home/library_row.html.jinja
-msgid "Every record, free to download"
-msgstr "Dònnia registru, de badas de iscarrigare"
+#: home/stats.html
+msgid "Around the Library"
+msgstr "A giru in sa biblioteca"
 
-#: home/library_row.html.jinja
-msgid "Nonprofit"
-msgstr "Chene punna de lucru"
+#: home/stats.html
+msgid "Here's what's happened over the last 28 days. More <a href=\"/recentchanges\">recent changes</a>"
+msgstr "Custu est su chi est acontèssidu in sas ùrtimas 28 dies. Àteras <a href=\"/recentchanges\">modìficas reghentes</a>"
 
-#: home/library_row.html.jinja
-msgid "Run by the Internet Archive"
-msgstr "Amministradu dae s'Internet Archive"
+#: home/stats.html
+msgid "See all visitors to OpenLibrary.org"
+msgstr "Pòmpia totu sos bisitadores de OpenLibrary.org"
 
-#: home/library_row.html.jinja
-msgid "In the last month"
-msgstr "In s'ùrtimu mese"
+#: home/stats.html
+msgid "Area graph of recent unique visitors"
+msgstr "Gràficu a àrea de sos bisitadores ùnicos reghentes"
 
-#: home/library_row.html.jinja
-msgid "Change over the month, by 7-day average"
-msgstr "Mudamentu in su mese, cun mèdia de 7 dies"
+#: home/stats.html
+msgid "How many new Open Library members have we welcomed?"
+msgstr "A cantos membros noos de s'Open Library amus dadu su benebènnidu?"
 
-#: home/library_row.html.jinja
-#, python-format
-msgid "Up %(percent)d%% over the month"
-msgstr "In aumentu de %(percent)d%% in su mese"
+#: home/stats.html
+msgid "Area graph of new members"
+msgstr "Gràficu a àrea de sos membros noos"
+
+#: home/stats.html
+msgid "People are constantly updating the catalog"
+msgstr "Sa gente annoat su catàlogu in manera sighida"
+
+#: home/stats.html
+msgid "Area graph of recent catalog edits"
+msgstr "Gràficu a àrea de sas modìficas reghentes a su catàlogu"
+
+#: home/stats.html
+msgid "Catalog Edits"
+msgstr "Modìficas a su catàlogu"
+
+#: home/stats.html
+msgid "Members can create Lists"
+msgstr "Sos membros podent creare listas"
+
+#: home/stats.html
+msgid "Area graph of lists created recently"
+msgstr "Gràficu a àrea de listas creadas dae pagu"
+
+#: home/stats.html
+msgid "Lists Created"
+msgstr "Listas creadas"
+
+#: home/stats.html
+msgid "We're a library, so we lend books, too"
+msgstr "Semus una biblioteca, duncas imprestamus libros, fintzas"
+
+#: home/stats.html
+msgid "Area graph of ebooks borrowed recently"
+msgstr "Gràficu a àrea de sos libros eletrònicos pigados a prèstidu dae pagu"
+
+#: home/stats.html
+msgid "eBooks Borrowed"
+msgstr "Libros eletrònicos pigados a prèstidu"
 
 #: home/welcome.html
 msgid "Read Free Library Books Online"
@@ -4583,6 +4568,14 @@ msgstr "Proa sa chirca de testu integrale"
 #: home/welcome.html
 msgid "Find matching results within the text of millions of books"
 msgstr "Atzapa resurtados chi currispondent a intro de sos testos de milliones de libros"
+
+#: home/welcome.html
+msgid "Be an Open Librarian"
+msgstr "Faghe su bibliotecàriu abertu"
+
+#: home/welcome.html
+msgid "Dozens of ways you can help improve the library"
+msgstr "Dosinas de maneras cun chi podes agiudare sa biblioteca"
 
 #: home/welcome.html
 msgid "Volunteer at Open Library"
@@ -4666,7 +4659,7 @@ msgstr "Còpia e incolla custu còdighe in sa pàgina de Wikipedia tua."
 msgid "Copy Wikipedia citation"
 msgstr "Còpia sa tzita de Wikipedia"
 
-#: databarDiff.html databarEdit.html databarTemplate.html databarView.html lib/history.html openlibrary/plugins/openlibrary/home.py openlibrary/plugins/openlibrary/home_genres.py
+#: databarDiff.html databarEdit.html databarTemplate.html databarView.html lib/history.html openlibrary/plugins/openlibrary/home.py
 msgid "History"
 msgstr "Cronologia"
 
@@ -4717,6 +4710,10 @@ msgstr "Tabella de calidade de datos"
 #: librarian_dashboard/data_quality_table.html
 msgid "Quality Criteria"
 msgstr "Critèrios de Calidade"
+
+#: lists/carousel.html.jinja lists/home.html lists/showcase.html
+msgid "See all"
+msgstr "Abbista totu"
 
 #: lists/export_as_html.html
 #, python-format
@@ -5139,6 +5136,10 @@ msgstr "Òrdina ▾"
 #: merge_request_table/table_header.html
 msgid "Sort"
 msgstr "Òrdina"
+
+#: merge_request_table/table_header.html
+msgid "Newest"
+msgstr "Prus noas"
 
 #: merge_request_table/table_header.html
 msgid "Oldest"
@@ -5854,9 +5855,17 @@ msgstr "Votos prus artos"
 msgid "Any"
 msgstr "Cale si siat"
 
+#: openlibrary/core/shell/nav.py search/sort_options.html
+msgid "Trending"
+msgstr "De tendèntzia"
+
 #: search/sort_options.html
 msgid "Work Title (beta: Librarian only)"
 msgstr "Tìtulu de s'òpera (beta: bibliotecàrios ebbia)"
+
+#: search/sort_options.html
+msgid "Sort by"
+msgstr "Òrdina pro"
 
 #: search/sort_options.html
 msgid "Sort results"
@@ -6942,7 +6951,7 @@ msgstr "Iscritores:"
 msgid "Readers"
 msgstr "Letores"
 
-#: openlibrary/plugins/openlibrary/home_genres.py type/permission/view.html
+#: type/permission/view.html
 msgid "Writers"
 msgstr "Iscritores"
 
@@ -7312,11 +7321,6 @@ msgstr "Anteprima de su libru"
 #: BookPreviewFloater.html
 msgid "See more about this book on Archive.org"
 msgstr "Iscoberi de prus in contu de custu libru in Archive.org"
-
-#: CarouselSkeleton.html.jinja
-#, fuzzy
-msgid "Loading carousel"
-msgstr "Indicadore de carrigamentu"
 
 #: CheckWorldcat.html ReadingOptionsMenu.html
 msgid "Nearby Libraries"
@@ -8016,12 +8020,12 @@ msgstr "Còmpora custu libru"
 #: contribute/parts.html.jinja
 #, python-format
 msgid "one of %(count)s editions of this work"
-msgstr "una de is %(count)s editziones de custa òpera"
+msgstr "una de sas %(count)s editziones de custa opera"
 
 #: contribute/parts.html.jinja
 #, python-format
 msgid "Why this book: on about %(count)s readers' shelves."
-msgstr "Proite custu libru: in cìrca %(count)s iscafalis de letores."
+msgstr "Proite custu libru: in prus o mancu %(count)s ripianos de lettores."
 
 #: contribute/parts.html.jinja
 msgid "Go to book page"
@@ -8033,11 +8037,11 @@ msgstr "Bae a sa pàgina de modìfica"
 
 #: contribute/parts.html.jinja
 msgid "How to answer"
-msgstr "Comente rispòndere"
+msgstr "Comente rispondere"
 
 #: contribute/parts.html.jinja
 msgid "This edition has no ISBN to search by, so look it up by title and author."
-msgstr "Custa editzione no tenet ISBN pro chircare, duncas chirca·la pro tìtulu e autore."
+msgstr "Custa editzione no tenet ISBN pro chircare, pro cussu chirca·la pro tìtulu e autore."
 
 #: contribute/parts.html.jinja
 msgid "Guideline"
@@ -8045,14 +8049,14 @@ msgstr "Lìnia guida"
 
 #: contribute/parts.html.jinja
 msgid "How this edit goes wrong"
-msgstr "Comente custa modìfica andat male"
+msgstr "Comente custa modìfica podet andare male"
 
 #: contribute/parts.html.jinja
 #, python-format
 msgid "The other edition"
 msgid_plural "The other %(count)d editions"
 msgstr[0] "S'àtera editzione"
-msgstr[1] "Is àteras %(count)d editziones"
+msgstr[1] "Sas àteras %(count)d editziones"
 
 #: contribute/parts.html.jinja
 #, python-format
@@ -8063,7 +8067,7 @@ msgstr[1] "%(count)d àteros valores"
 
 #: contribute/parts.html.jinja
 msgid "Not filled in"
-msgstr "No cumpridu"
+msgstr "No cumpletadu"
 
 #: contribute/parts.html.jinja
 msgid "See each edition"
@@ -8085,7 +8089,7 @@ msgstr "At a èssere sarvadu comente %(value)s."
 
 #: contribute/parts.html.jinja
 msgid "Paste only the number, not the web address."
-msgstr "Incolla isceti su nùmeru, non s'indiritzu web."
+msgstr "Incolla isceti su nùmeru, no s'indiritzu web."
 
 #: contribute/parts.html.jinja openlibrary/contribute/save.py
 msgid "That is not a valid number for this catalog."
@@ -8097,7 +8101,7 @@ msgstr "Sèbera una limba"
 
 #: contribute/parts.html.jinja
 msgid "Filter languages"
-msgstr "Filtra is limbas"
+msgstr "Filtra sas limbas"
 
 #: contribute/parts.html.jinja
 msgid "No matching language"
@@ -8105,7 +8109,7 @@ msgstr "Peruna limba currispondente"
 
 #: contribute/parts.html.jinja
 msgid "Other editions say"
-msgstr "Àteras editziones nant"
+msgstr "Àteras editziones nàrrene"
 
 #: contribute/parts.html.jinja
 #, python-format
@@ -8124,11 +8128,11 @@ msgstr "Agiunghe unu cummentu subra sa modìfica tua"
 
 #: contribute/parts.html.jinja
 msgid "Edit comment"
-msgstr "Cummentu de modìfica"
+msgstr "Modìfica su cummentu"
 
 #: contribute/parts.html.jinja
 msgid "Where you found it"
-msgstr "In ue l'as atzapadu"
+msgstr "Inue l'as agatadu"
 
 #: contribute/parts.html.jinja
 msgid "Save and next"
@@ -8136,52 +8140,52 @@ msgstr "Sarva e sighi"
 
 #: contribute/parts.html.jinja
 msgid "I couldn't find it"
-msgstr "No l'apo atzapadu"
+msgstr "No l'apo agatadu"
 
 #: contribute/parts.html.jinja
 #, python-format
 msgid "Next: a random task from %(filter)s"
-msgstr "Imbeniente: unu cumpitu a sorte dae %(filter)s"
+msgstr "Sighente: una faina a sorte dae %(filter)s"
 
 #: contribute/parts.html.jinja
 msgid "Next: a random task from all open tasks"
-msgstr "Imbeniente: unu cumpitu a sorte dae totu is cumpitos abertos"
+msgstr "Sighente: una faina a sorte dae totu sas fainas abertas"
 
 #: openlibrary/contribute/feed.py
 msgid "Edited this book"
-msgstr "At modificadu custu libru"
+msgstr "Modificadu custu libru"
 
 #: openlibrary/contribute/feed.py
 msgid "Added this book"
-msgstr "At agiuntu custu libru"
+msgstr "Annantu custu libru"
 
 #: openlibrary/contribute/feed.py
 msgid "Added a cover"
-msgstr "At agiuntu una cobertura"
+msgstr "Annanta una cobertedda"
 
 #: openlibrary/contribute/feed.py
 msgid "Merged duplicate authors"
-msgstr "At aunidu autores duplicados"
+msgstr "Aunidos autores duplicados"
 
 #: openlibrary/contribute/feed.py
 msgid "Merged duplicate works"
-msgstr "At aunidu òperas duplicadas"
+msgstr "Aunidas òperas duplicadas"
 
 #: openlibrary/contribute/feed.py
 msgid "Updated this record"
-msgstr "At atualizadu custu registru"
+msgstr "Atualizadu custu registru"
 
 #: openlibrary/contribute/feed.py
 msgid "Edited this author"
-msgstr "At modificadu custu autore"
+msgstr "Modificadu custu autore"
 
 #: openlibrary/contribute/feed.py
 msgid "Reverted an edit"
-msgstr "At annulladu una modìfica"
+msgstr "Annullada una modìfica"
 
 #: openlibrary/contribute/feed.py
 msgid "a visitor"
-msgstr "unu visitadore"
+msgstr "unu visitante"
 
 #: openlibrary/contribute/field_guides.py
 msgid "WorldCat"
@@ -8201,23 +8205,23 @@ msgstr "Library of Congress"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Fill in language"
-msgstr "Cumpri sa limba"
+msgstr "Cumpleta sa limba"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Look the ISBN up in WorldCat or Google Books; both list the language of the text. The title page and cover tell you too."
-msgstr "Chirca s'ISBN in WorldCat o in Google Books; ambos duos elencant sa limba de su testu. Fintzas sa pàgina de tìtulu e sa cobertura ti lu narant."
+msgstr "Chirca s'ISBN in WorldCat o in Google Books; ambos duos elencant sa limba de su testu. Sa pàgina de tìtulu e sa cobertina ti lu narant etotu."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Editions of a work usually share a language, but a translation won't. Check this edition's own text."
-msgstr "Is editziones de un'òpera, de norma, cumpartint sa matessi limba, ma una tradutzione no. Controlla su testu de custa editzione."
+msgstr "Sas editziones de un'opera in generale cumpartzint sa matessi limba, ma una traduida nono. Controlla su testu etotu de custa editzione."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Record the language of the text, not the language of the title page. A translation is in the language it was translated into."
-msgstr "Registra sa limba de su testu, non sa limba de sa pàgina de tìtulu. Una tradutzione est in sa limba in sa cale est istada tradutzida."
+msgstr "Registra sa limba de su testu, no sa limba de sa pàgina de tìtulu. Una traduida est in sa limba in sa cale est istada traduida."
 
 #: openlibrary/contribute/field_guides.py
 msgid "For example English"
-msgstr "Pro esempiu, Inglesu"
+msgstr "Pro esempiu inglesu"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Page count"
@@ -8225,7 +8229,7 @@ msgstr "Nùmeru de pàginas"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Fill in page count"
-msgstr "Cumpri su nùmeru de pàginas"
+msgstr "Cumpleta su nùmeru de pàginas"
 
 #: openlibrary/contribute/field_guides.py
 msgid "How many pages does this edition have?"
@@ -8233,19 +8237,19 @@ msgstr "Cantas pàginas tenet custa editzione?"
 
 #: openlibrary/contribute/field_guides.py
 msgid "WorldCat lists the page count in the record's description. Google Books calls it Length. Make sure the record is for this ISBN, not another printing."
-msgstr "WorldCat elencat su nùmeru de pàginas in sa descritzione de su registru. Google Books lu tzèrriat Length. Assegura·ti chi su registru siat pro custu ISBN e non pro un'àtera impressione."
+msgstr "WorldCat elencat su nùmeru de pàginas in sa descritzione de su registru. Google Books lu tzèrriat Length. Assegura·ti chi su registru siat pro custu ISBN, no pro un'àtera istampa."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Catalogs count front matter differently, so numbers within a few pages of each other are the same count. Use the last numbered page of the main text."
-msgstr "Is catàlogos contant su material initziale in manera diferente, duncas nùmeros chi distant pagas pàginas s'unu dae s'àteru sunt su matessi contu. Imprea s'ùrtima pàgina numerada de su testu printzipale."
+msgstr "Sos catàlogos contant su material inghitzu in manera diferente, duncas nùmeros chi s'avortzinant de pagas pàginas s'unu a s'àteru sunt su matessi contu. Imprea s'ùrtima pàgina numerada de su testu printzipale."
 
 #: openlibrary/contribute/field_guides.py
 msgid "For example 320"
-msgstr "Pro esempiu, 320"
+msgstr "Pro esempiu 320"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Fill in publisher"
-msgstr "Cumpri s'editore"
+msgstr "Cumpleta s'editore"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Who published this edition?"
@@ -8257,7 +8261,7 @@ msgstr "S'imprenta est istampada in sa pàgina de tìtulu e in su dossu. WorldCa
 
 #: openlibrary/contribute/field_guides.py
 msgid "Open Library records the imprint printed on the book, not the parent company. Anchor Books, not Penguin Random House."
-msgstr "Open Library registrat s'imprenta istampada in su libru, non sa sotziedade mama. Anchor Books, non Penguin Random House."
+msgstr "Open Library registrat s'imprenta istampada in su libru, no sa sotziedade mama. Anchor Books, no Penguin Random House."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Publisher as printed"
@@ -8269,35 +8273,35 @@ msgstr "Nùmeru de sa Library of Congress (LCCN)"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Fill in LCCN"
-msgstr "Cumpri su LCCN"
+msgstr "Cumpleta s'LCCN"
 
 #: openlibrary/contribute/field_guides.py
 msgid "What is this edition's Library of Congress number?"
-msgstr "Cale est su nùmeru Library of Congress de custa editzione?"
+msgstr "Cale est su nùmeru de sa Library of Congress de custa editzione?"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Search the Library of Congress catalog for this ISBN. Open the record whose year and publisher match this edition, and copy the number shown as LCCN."
-msgstr "Chirca custu ISBN in su catàlogu de sa Library of Congress. Aberi su registru chi tenet s'annu e s'editore currispondente a custa editzione, e còpia su nùmeru mustradu comente LCCN."
+msgstr "Chirca custu ISBN in su catàlogu de sa Library of Congress. Aberi su registru chi s'annu e s'editore currispondent a custa editzione, e còpia su nùmeru mustradu comente LCCN."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Hyphenated and padded forms are the same number: 75-425165 and 75425165. Paste either; Open Library stores the padded form."
-msgstr "Is formas cun trattinu e cun zeros a manca sunt su matessi nùmeru: 75-425165 e 75425165. Incolla una de is duas; Open Library sarvat sa forma cun is zeros."
+msgstr "Sas formas cun trattinu e sas prenadas sunt su matessi nùmeru: 75-425165 e 75425165. Incolla una de sas duas; Open Library sarvat sa forma prenada."
 
 #: openlibrary/contribute/field_guides.py
 msgid "The number belongs to a different printing. Search results lead with the best-known one, not with yours."
-msgstr "Su nùmeru pertocat un'àtera impressione. Is resurtados de chirca mustrant primu sa prus connota, non sa tua."
+msgstr "Su nùmeru apartenet a un'àtera istampa. Sos resultados de chirca ammustrant in antis cussu prus connotu, no su tuo."
 
 #: openlibrary/contribute/field_guides.py
 msgid "The number is already on another edition of this work, which means one of the two records is wrong."
-msgstr "Su nùmeru est giai in un'àtera editzione de custa òpera, chi cheret nàrrere chi unu de is duos registros est errado."
+msgstr "Su nùmeru est giai in un'àtera editzione de custa opera, chi cheret nàrrere chi unu de sos duos registros est isballiadu."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Pasting the web address instead of the number itself."
-msgstr "Incollende s'indiritzu web imbetzes de su nùmeru matessi."
+msgstr "Incollare s'indiritzu web imbetzes de su nùmeru matessi."
 
 #: openlibrary/contribute/field_guides.py
 msgid "For example 75425165"
-msgstr "Pro esempiu, 75425165"
+msgstr "Pro esempiu 75425165"
 
 #: openlibrary/contribute/field_guides.py
 msgid "OCLC/WorldCat number"
@@ -8305,7 +8309,7 @@ msgstr "Nùmeru OCLC/WorldCat"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Fill in OCLC number"
-msgstr "Cumpri su nùmeru OCLC"
+msgstr "Cumpleta su nùmeru OCLC"
 
 #: openlibrary/contribute/field_guides.py
 msgid "What is this edition's WorldCat (OCLC) number?"
@@ -8313,27 +8317,27 @@ msgstr "Cale est su nùmeru WorldCat (OCLC) de custa editzione?"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Search WorldCat for this ISBN. Open the record whose year, publisher and format match this edition, and copy the number shown as OCLC Number."
-msgstr "Chirca custu ISBN in WorldCat. Aberi su registru chi tenet s'annu, s'editore e su formadu currispondentes a custa editzione, e còpia su nùmeru mustradu comente OCLC Number."
+msgstr "Chirca custu ISBN in WorldCat. Aberi su registru chi s'annu, s'editore e su formadu currispondent a custa editzione, e còpia su nùmeru mustradu comente OCLC Number."
 
 #: openlibrary/contribute/field_guides.py
 msgid "The OCLC number is how libraries the world over refer to one catalogued edition. It is one of the few fields Open Library uses to find duplicates of this book when new records arrive."
-msgstr "Su nùmeru OCLC est su modu in ue is bibliotecas de totu su mundu si referint a una editzione catalogada. Est unu de is pagos campos chi Open Library impreat pro agatare duplicados de custu libru cando arribant registros noos."
+msgstr "Su nùmeru OCLC est su modu in chi sas bibliotecas de totu su mundu si riferint a una editzione catalogada. Est unu de sos pagos campos chi Open Library impreat pro agatare duplicados de custu libru cando arrivint registros noos."
 
 #: openlibrary/contribute/field_guides.py
 msgid "The prefixes ocm, ocn, on and (OCoLC) are padding added by library systems, not part of the number. ocm00047810608 is 47810608."
-msgstr "Is prefissos ocm, ocn, on e (OCoLC) sunt agiuntas fatas dae is sistemas de bibliotecas, non fàghent parte de su nùmeru. ocm00047810608 est 47810608."
+msgstr "Sos prefissos ocm, ocn, on e (OCoLC) sunt prenamentu agiuntu dae sos sistemas de sas bibliotecas, no sunt parte de su nùmeru. ocm00047810608 est 47810608."
 
 #: openlibrary/contribute/field_guides.py
 msgid "The number belongs to a different printing, a book club edition, or the ebook rather than the print copy."
-msgstr "Su nùmeru pertocat un'àtera impressione, un'editzione de club de libru, o s'e-book imbetzes de sa còpia istampada."
+msgstr "Su nùmeru apartenet a un'àtera istampa, a un'editzione de club de libru, o a s'ebook imbetzes de sa còpia istampada."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Pasting the web address, or leaving the ocm/ocn prefix on."
-msgstr "Incollende s'indiritzu web, o lassende su prefissu ocm/ocn."
+msgstr "Incollare s'indiritzu web, o lassare su prefissu ocm/ocn."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Digits only, for example 47810608"
-msgstr "Isceti tzifras, pro esempiu 47810608"
+msgstr "Isceti chifras, pro esempiu 47810608"
 
 #: openlibrary/contribute/save.py
 msgid "Pick a language from the list."
@@ -8341,20 +8345,20 @@ msgstr "Sèbera una limba dae sa lista."
 
 #: openlibrary/contribute/save.py
 msgid "Enter the page count as a whole number."
-msgstr "Inserta su nùmeru de pàginas comente nùmeru intreu."
+msgstr "Introduzi su nùmeru de pàginas comente nùmeru intreu."
 
 #: openlibrary/contribute/save.py
 msgid "Fill in an answer, or choose “I couldn't find it”."
-msgstr "Cumpri una risposta, o sèbera “No l'apo atzapadu”."
+msgstr "Cumpleta una risposta, o sèbera “No l'apo agatadu”."
 
 #: openlibrary/contribute/save.py
 msgid "This field can't be filled in here."
-msgstr "Custu campu no si podet cumprire inoghe."
+msgstr "Custu campu no si podet cumpletare inoghe."
 
 #: openlibrary/contribute/save.py
 #, python-format
 msgid "Filled in %(field)s from Open Library Tasks"
-msgstr "Cumpridu %(field)s dae Open Library Tasks"
+msgstr "Cumpletadu %(field)s dae Open Library Tasks"
 
 #: openlibrary/core/bookshelves.py
 #, fuzzy
@@ -8844,26 +8848,6 @@ msgstr "Cantu bene podet unu utente detèrminare si custa editzione est pertinen
 msgid "Search Results"
 msgstr "Chirca listas"
 
-#: openlibrary/plugins/openlibrary/api.py
-msgid "Classic Books"
-msgstr "Libros clàssicos"
-
-#: openlibrary/plugins/openlibrary/api.py openlibrary/plugins/openlibrary/home.py
-msgid "Romance"
-msgstr "Libros de amore"
-
-#: openlibrary/plugins/openlibrary/api.py openlibrary/plugins/openlibrary/home_genres.py
-msgid "Kids"
-msgstr "Pitzinnos"
-
-#: openlibrary/plugins/openlibrary/api.py
-msgid "Thrillers"
-msgstr "Thrillers"
-
-#: openlibrary/plugins/openlibrary/api.py openlibrary/plugins/openlibrary/home.py openlibrary/plugins/openlibrary/home_genres.py
-msgid "Textbooks"
-msgstr "Libros de testu"
-
 #: openlibrary/plugins/openlibrary/code.py
 msgid "Arabic"
 msgstr "Àrabu"
@@ -8939,7 +8923,7 @@ msgstr "Filipino"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Tasks are open to librarians only, for now"
-msgstr "Pro immoe, is cumpitos sunt abertos isceti a is bibliotecàrios"
+msgstr "Pro immoe, sas fainas sunt abertas isceti a sos bibliotecàrios"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Published"
@@ -8951,15 +8935,19 @@ msgstr "OCLC"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "All open tasks"
-msgstr "Totu is cumpitos abertos"
+msgstr "Totu sas fainas abertas"
+
+#: openlibrary/plugins/openlibrary/contribute.py
+msgid "Become an Open Librarian"
+msgstr "Faghe·ti bibliotecàriu abertu"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Tasks are for Open Librarians. Applying takes a few minutes."
-msgstr "Is cumpitos sunt pro is Open Librarians. S'aplicatzione pigat pagos minutos."
+msgstr "Sas fainas sunt pro sos bibliotecàrios abertos. Sa dimanda b'at a bòlere pacos minutos."
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Applying takes a few minutes and asks for your Open Library username, so create a free account first."
-msgstr "S'aplicatzione pigat pagos minutos e pedit su nùmene utente tuo de Open Library, duncas crea prima unu contu a indonu."
+msgstr "Sa dimanda b'at a bòlere pacos minutos e pedit su nùmene de utente tuo de s'Open Library, duncas crea in antis unu contu de badas."
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Create an account"
@@ -8971,7 +8959,7 @@ msgstr "Intra"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Book cover"
-msgstr "Cobertura de su libru"
+msgstr "Cobertedda de libru"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 #, python-format
@@ -8980,7 +8968,7 @@ msgstr "Mancante: %(field)s"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Most needed"
-msgstr "Prus netzessàrios"
+msgstr "Sos prus netzessàrios"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Nothing missing here right now. Thank you."
@@ -8988,29 +8976,13 @@ msgstr "Nudda mancat inoghe pro immoe. Gràtzias."
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Nothing to fill in here"
-msgstr "Nudda de cumprire inoghe"
+msgstr "Nudda de cumpletare inoghe"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Open the record and confirm it matches this edition first."
-msgstr "Aberi su registru e cunfirma prima chi currispondet a custa editzione."
+msgstr "Aberi su registru e cunfirma chi currispondet a custa editzione in antis."
 
 #: openlibrary/plugins/openlibrary/home.py
-msgid "Books Read"
-msgstr "Libros leghidos"
-
-#: openlibrary/plugins/openlibrary/home.py
-msgid "Catalog Edits"
-msgstr "Modìficas a su catàlogu"
-
-#: openlibrary/plugins/openlibrary/home.py
-msgid "Lists Updated"
-msgstr "Listas atualizadas"
-
-#: openlibrary/plugins/openlibrary/home.py
-msgid "Lists Created"
-msgstr "Listas creadas"
-
-#: openlibrary/plugins/openlibrary/home.py openlibrary/plugins/openlibrary/home_genres.py
 #, fuzzy
 msgid "Art"
 msgstr "Incumintza"
@@ -9020,7 +8992,7 @@ msgstr "Incumintza"
 msgid "Science Fiction"
 msgstr "Classificatziones"
 
-#: openlibrary/plugins/openlibrary/home.py openlibrary/plugins/openlibrary/home_genres.py
+#: openlibrary/plugins/openlibrary/home.py
 #, fuzzy
 msgid "Fantasy"
 msgstr "Caràteres"
@@ -9044,7 +9016,7 @@ msgstr "Pitzinnos"
 msgid "Medicine"
 msgstr "Icona incorporada"
 
-#: openlibrary/plugins/openlibrary/home.py openlibrary/plugins/openlibrary/home_genres.py
+#: openlibrary/plugins/openlibrary/home.py
 #, fuzzy
 msgid "Religion"
 msgstr "Revisione"
@@ -9062,146 +9034,10 @@ msgstr "Logos"
 msgid "Music"
 msgstr "Mùsica"
 
-#: openlibrary/plugins/openlibrary/home.py openlibrary/plugins/openlibrary/home_genres.py
+#: openlibrary/plugins/openlibrary/home.py
 #, fuzzy
 msgid "Science"
 msgstr "Annulla"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Biography"
-msgstr "Biografia"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Philosophy"
-msgstr "Filosofia"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Psychology"
-msgstr "Psicologia"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Poetry"
-msgstr "Poesia"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Travel"
-msgstr "Biàgiu"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Cooking"
-msgstr "Cuxina"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Friendship"
-msgstr "Amistade"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Adventure"
-msgstr "Aventura"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Mystery"
-msgstr "Mistèriu"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "School"
-msgstr "Iscola"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Picture books"
-msgstr "Libros illustrados"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Humor"
-msgstr "Umorismu"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "United States"
-msgstr "Istados Unidos"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Great Britain"
-msgstr "Gran Bretagna"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "World War II"
-msgstr "Segunda gherra mundiale"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Military"
-msgstr "Militare"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Ancient"
-msgstr "Antigu"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Middle Ages"
-msgstr "Medioevu"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Historical"
-msgstr "Istòricu"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Western"
-msgstr "Western"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Regency"
-msgstr "Regency"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Paranormal"
-msgstr "Paranormale"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Contemporary"
-msgstr "Contemporàneu"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Suspense"
-msgstr "Suspense"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Women"
-msgstr "Fèminas"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Memoir"
-msgstr "Memòria"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Royalty"
-msgstr "Realesa"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Artists"
-msgstr "Artistas"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Presidents"
-msgstr "Presidentes"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "What's new"
-msgstr "Is novidades"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Books we love"
-msgstr "Libros chi amamus"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Classics"
-msgstr "Clàssicos"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Most wanted"
-msgstr "Is prus chircados"
-
-#: openlibrary/plugins/openlibrary/home_genres.py
-msgid "Featured"
-msgstr "In evidèntzia"
 
 #: openlibrary/plugins/openlibrary/librarian_dashboard.py
 #, fuzzy
@@ -9265,14 +9101,9 @@ msgid "This work does not appear on any lists."
 msgstr "Cust'òpera no aparit in peruna lista."
 
 #: openlibrary/plugins/openlibrary/partials.py
-#, python-format
-msgid "Newest in %(genre)s"
-msgstr "Prus noos in %(genre)s"
-
-#: openlibrary/plugins/openlibrary/partials.py
-#, python-format
-msgid "Top rated in %(genre)s"
-msgstr "Prus valutados in %(genre)s"
+#, fuzzy
+msgid "Loading carousel"
+msgstr "Indicadore de carrigamentu"
 
 #: openlibrary/plugins/openlibrary/partials.py
 msgid "On the Same Shelf"
@@ -9453,15 +9284,15 @@ msgstr "Issèbera una crae de intrada"
 
 #: openlibrary/plugins/upstream/lenny.py
 msgid "Open Library could not reach that library to return this book. Please try again later."
-msgstr "Open Library no at pòdidu cuntatare cussa biblioteca pro torrare custu libru. Torra a proare prus a tardu, pro favore."
+msgstr "S'Open Library no at pòtidu regiùnghere cussa biblioteca pro torrare custu libru. Torra a proare prus a tardu."
 
 #: openlibrary/plugins/upstream/lenny.py
 msgid "Open Library is no longer connected to that library. Please borrow again to reconnect, then return."
-msgstr "Open Library no est prus connìtida a cussa biblioteca. Pro favore, pìga de nou in prèstidu pro torrare a connètere, e pustis torra·lu."
+msgstr "S'Open Library no est prus connessa a cussa biblioteca. Pro praghere piga in prèstidu torra pro ti reconnètere, e a pustis torra·lu."
 
 #: openlibrary/plugins/upstream/lenny.py
 msgid "That library could not return this book right now. Please try again later."
-msgstr "Cussa biblioteca no at pòdidu torrare custu libru immoe. Torra a proare prus a tardu, pro favore."
+msgstr "Cussa biblioteca no at pòtidu torrare custu libru como. Torra a proare prus a tardu."
 
 #: openlibrary/plugins/upstream/lenny.py
 msgid "This book has been returned."
@@ -9470,12 +9301,12 @@ msgstr "Custu libru est istadu torradu."
 #: openlibrary/plugins/upstream/lenny.py
 #, python-format
 msgid "Borrowed from %(library)s. Your loan is due %(due)s."
-msgstr "Imprestadu dae %(library)s. S'imprèstidu tuo iscadit su %(due)s."
+msgstr "Pigadu in prèstidu dae %(library)s. Su prèstidu tuo iscadit su %(due)s."
 
 #: openlibrary/plugins/upstream/lenny.py
 #, python-format
 msgid "Borrowed from %(library)s."
-msgstr "Imprestadu dae %(library)s."
+msgstr "Pigadu in prèstidu dae %(library)s."
 
 #: openlibrary/plugins/upstream/models.py
 #, python-format
@@ -11210,69 +11041,4 @@ msgstr "%(title)s - chirca"
 
 #~ msgid "Only a preview is available."
 #~ msgstr "Un'anteprima est disponìbile isceti."
-
-#~ msgid "Looking for a book to borrow?  Check out our staff picks, or search for a book on a specific subject:"
-#~ msgstr "Ses chirchende unu libru de pigare in prèstidu?  Pòmpia·ti sos issèberos de su personale nostru, o chirca unu libru subra de un'argumentu ispetzìficu:"
-
-#~ msgid "Browse by Subject"
-#~ msgstr "Esplora pro argumentu"
-
-#~ msgid "%(count)s Book"
-#~ msgid_plural "%(count)s Books"
-#~ msgstr[0] "%(count)s libru"
-#~ msgstr[1] "%(count)s libros"
-
-#~ msgid "Recently Returned"
-#~ msgstr "Torrados dae pagu"
-
-#~ msgid "Authors Alliance & MIT Press"
-#~ msgstr "Authors Alliance & MIT Press"
-
-#~ msgid "Books in Local Environment"
-#~ msgstr "Libros in s'Ambienti Locale"
-
-#~ msgid "Around the Library"
-#~ msgstr "A giru in sa biblioteca"
-
-#~ msgid "Here's what's happened over the last 28 days. More <a href=\"/recentchanges\">recent changes</a>"
-#~ msgstr "Custu est su chi est acontèssidu in sas ùrtimas 28 dies. Àteras <a href=\"/recentchanges\">modìficas reghentes</a>"
-
-#~ msgid "See all visitors to OpenLibrary.org"
-#~ msgstr "Pòmpia totu sos bisitadores de OpenLibrary.org"
-
-#~ msgid "Area graph of recent unique visitors"
-#~ msgstr "Gràficu a àrea de sos bisitadores ùnicos reghentes"
-
-#~ msgid "How many new Open Library members have we welcomed?"
-#~ msgstr "A cantos membros noos de s'Open Library amus dadu su benebènnidu?"
-
-#~ msgid "Area graph of new members"
-#~ msgstr "Gràficu a àrea de sos membros noos"
-
-#~ msgid "People are constantly updating the catalog"
-#~ msgstr "Sa gente annoat su catàlogu in manera sighida"
-
-#~ msgid "Area graph of recent catalog edits"
-#~ msgstr "Gràficu a àrea de sas modìficas reghentes a su catàlogu"
-
-#~ msgid "Members can create Lists"
-#~ msgstr "Sos membros podent creare listas"
-
-#~ msgid "Area graph of lists created recently"
-#~ msgstr "Gràficu a àrea de listas creadas dae pagu"
-
-#~ msgid "We're a library, so we lend books, too"
-#~ msgstr "Semus una biblioteca, duncas imprestamus libros, fintzas"
-
-#~ msgid "Area graph of ebooks borrowed recently"
-#~ msgstr "Gràficu a àrea de sos libros eletrònicos pigados a prèstidu dae pagu"
-
-#~ msgid "eBooks Borrowed"
-#~ msgstr "Libros eletrònicos pigados a prèstidu"
-
-#~ msgid "Be an Open Librarian"
-#~ msgstr "Faghe su bibliotecàriu abertu"
-
-#~ msgid "Dozens of ways you can help improve the library"
-#~ msgstr "Dosinas de maneras cun chi podes agiudare sa biblioteca"
 

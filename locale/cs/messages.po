@@ -1312,17 +1312,17 @@ msgstr[2] ""
 #, python-format
 msgid "%(libraries)s could not be reached, so any loans there are not shown."
 msgid_plural "These libraries could not be reached, so any loans there are not shown: %(libraries)s."
-msgstr[0] "%(libraries)s nelze kontaktovat, výpůjčky odtud se proto nezobrazují."
-msgstr[1] "Tyto knihovny nelze kontaktovat, výpůjčky odtud se proto nezobrazují: %(libraries)s."
-msgstr[2] "Tyto knihovny nelze kontaktovat, výpůjčky odtud se proto nezobrazují: %(libraries)s."
+msgstr[0] "Nelze se připojit k %(libraries)s, takže zde nejsou zobrazeny žádné výpůjčky."
+msgstr[1] "Nelze se připojit k těmto knihovnám, takže zde nejsou zobrazeny žádné výpůjčky: %(libraries)s."
+msgstr[2] "Nelze se připojit k těmto knihovnám, takže zde nejsou zobrazeny žádné výpůjčky: %(libraries)s."
 
 #: account/loans.html
 #, python-format
 msgid "%(libraries)s needs reconnecting before its loans can be shown. Borrowing a book from it again will restore the connection."
 msgid_plural "These libraries need reconnecting before their loans can be shown: %(libraries)s. Borrowing a book from one again will restore the connection."
-msgstr[0] "%(libraries)s je třeba znovu připojit, než budou moci být zobrazeny její výpůjčky. Vypůjčení knihy z ní znovu obnoví spojení."
-msgstr[1] "Tyto knihovny je třeba znovu připojit, než budou moci být zobrazeny jejich výpůjčky: %(libraries)s. Vypůjčení knihy z jedné z nich znovu obnoví spojení."
-msgstr[2] "Tyto knihovny je třeba znovu připojit, než budou moci být zobrazeny jejich výpůjčky: %(libraries)s. Vypůjčení knihy z jedné z nich znovu obnoví spojení."
+msgstr[0] "%(libraries)s je třeba znovu připojit, než budou moci být zobrazeny její výpůjčky. Opětovná výpůjčka knihy z ní obnoví spojení."
+msgstr[1] "Tyto knihovny je třeba znovu připojit, než budou moci být zobrazeny jejich výpůjčky: %(libraries)s. Opětovná výpůjčka knihy z některé z nich obnoví spojení."
+msgstr[2] "Tyto knihovny je třeba znovu připojit, než budou moci být zobrazeny jejich výpůjčky: %(libraries)s. Opětovná výpůjčka knihy z některé z nich obnoví spojení."
 
 #: account/loans.html
 msgid "You've not checked out any books at this moment."
@@ -1791,13 +1791,13 @@ msgid "Works by Time Period"
 msgstr "Díla podle časového období"
 
 #: account/readinglog_stats.html
+msgid "Click on a bar to see matching works"
+msgstr "Kliknutím na sloupec zobrazíte odpovídající díla"
+
+#: account/readinglog_stats.html
 #, fuzzy
 msgid "Matching works"
 msgstr "Smazat tento záznam"
-
-#: account/readinglog_stats.html
-msgid "Click on a bar to see matching works"
-msgstr "Kliknutím na sloupec zobrazíte odpovídající díla"
 
 #: account/sidebar.html books/mybooks_breadcrumb_select.html openlibrary/plugins/upstream/mybooks.py
 msgid "My Feed"
@@ -4230,7 +4230,7 @@ msgstr "Vítejte v Open Library"
 #: borrow/provider_popup_result.html.jinja
 #, python-format
 msgid "Your loan is due %(due)s."
-msgstr "Vaše výpůjčka je splatná %(due)s."
+msgstr "Vaše výpůjčka musí být vrácena %(due)s."
 
 #: borrow/provider_popup_result.html.jinja
 msgid "Your loan has been created."
@@ -4254,7 +4254,7 @@ msgstr "Úkoly"
 
 #: contribute/dashboard.html.jinja
 msgid "Fill in what's missing on real books, one detail at a time."
-msgstr "Doplňte chybějící údaje u skutečných knih, jeden detail po druhém."
+msgstr "Doplňujte chybějící údaje u skutečných knih, jeden detail po druhém."
 
 #: contribute/dashboard.html.jinja
 msgid "Surprise me"
@@ -4326,6 +4326,49 @@ msgstr "Další úkol"
 msgid "Pick a different book"
 msgstr "Vybrat jinou knihu"
 
+#: contribute/landing.html.jinja
+msgid "Open Library Tasks"
+msgstr "Úkoly Open Library"
+
+#: contribute/landing.html.jinja
+#, python-format
+msgid "Open Library serves %(readers)s readers every month across %(books)s catalogued books, and its %(mark_start)sOpen Librarians%(mark_end)s make thousands of edits every week."
+msgstr "Open Library každý měsíc slouží %(readers)s čtenářům napříč %(books)s katalogizovanými knihami a její %(mark_start)sOpen Librarians%(mark_end)s provádějí každý týden tisíce úprav."
+
+#: contribute/landing.html.jinja
+msgid "Many books on Open Library are still missing a detail: a cover, a language, a publisher. You can help fill them in."
+msgstr "Mnoha knihám na Open Library stále chybí nějaký údaj: obálka, jazyk, vydavatel. Můžete pomoci je doplnit."
+
+#: contribute/landing.html.jinja
+msgid "Recent edits"
+msgstr "Nedávné úpravy"
+
+#: FulltextResultIA.html.jinja contribute/landing.html.jinja contribute/parts.html.jinja
+#, python-format
+msgid "by %(authors)s"
+msgstr "od %(authors)s"
+
+#: contribute/landing.html.jinja
+msgid "Quiet for the moment. Edits show up here as they happen."
+msgstr "Momentálně klid. Úpravy se zde zobrazují, jakmile nastanou."
+
+#: contribute/landing.html.jinja
+msgid "What a task looks like"
+msgstr "Jak vypadá úkol"
+
+#: contribute/landing.html.jinja
+msgid "Each task is one book and one empty field. Here are just a few examples."
+msgstr "Každý úkol představuje jednu knihu a jedno prázdné pole. Zde je jen několik příkladů."
+
+#: contribute/landing.html.jinja
+#, python-format
+msgid "Add %(field)s"
+msgstr "Přidat %(field)s"
+
+#: contribute/landing.html.jinja
+msgid "Join in"
+msgstr "Zapojte se"
+
 #: contribute/nothing.html.jinja
 #, python-format
 msgid "%(field)s is already filled in on this edition"
@@ -4333,7 +4376,7 @@ msgstr "%(field)s je u tohoto vydání již vyplněno"
 
 #: contribute/nothing.html.jinja
 msgid "Someone filled it in since the list was made. Thank you for checking."
-msgstr "Někdo to vyplnil od doby, kdy byl seznam vytvořen. Děkujeme za kontrolu."
+msgstr "Někdo to doplnil od doby, kdy byl seznam vytvořen. Děkujeme za kontrolu."
 
 #: contribute/nothing.html.jinja contribute/task.html.jinja
 msgid "Back to the list"
@@ -6453,6 +6496,10 @@ msgid "Contribute"
 msgstr "Přispěvatelé"
 
 #: shell/header.html.jinja
+msgid "Improve the Catalog"
+msgstr "Vylepšit katalog"
+
+#: shell/header.html.jinja
 msgid "Recent Community Edits"
 msgstr "Nedávné komunitní úpravy"
 
@@ -7697,11 +7744,6 @@ msgstr "Přejít na další sekci"
 msgid "Expires"
 msgstr "Propadlé výpůjčky"
 
-#: FulltextResultIA.html.jinja
-#, python-format
-msgid "by %(authors)s"
-msgstr "od %(authors)s"
-
 #: FulltextSearchSuggestion.html.jinja openlibrary/core/shell/search_modal.py
 msgid "Search inside books"
 msgstr "Hledat uvnitř knih"
@@ -8378,7 +8420,7 @@ msgstr "jedno z %(count)s vydání tohoto díla"
 #: contribute/parts.html.jinja
 #, python-format
 msgid "Why this book: on about %(count)s readers' shelves."
-msgstr "Proč tato kniha: je přibližně na %(count)s policích čtenářů."
+msgstr "Proč tato kniha: je v policích přibližně %(count)s čtenářů."
 
 #: contribute/parts.html.jinja
 msgid "Go to book page"
@@ -8394,7 +8436,7 @@ msgstr "Jak odpovědět"
 
 #: contribute/parts.html.jinja
 msgid "This edition has no ISBN to search by, so look it up by title and author."
-msgstr "Toto vydání nemá ISBN, podle kterého by se dalo vyhledávat, zkuste tedy hledat podle názvu a autora."
+msgstr "Toto vydání nemá ISBN, podle kterého by se dalo vyhledávat, proto ho vyhledejte podle názvu a autora."
 
 #: contribute/parts.html.jinja
 msgid "Guideline"
@@ -8408,17 +8450,17 @@ msgstr "Jak se tato úprava může pokazit"
 #, python-format
 msgid "The other edition"
 msgid_plural "The other %(count)d editions"
-msgstr[0] "Další vydání"
-msgstr[1] "Další %(count)d vydání"
-msgstr[2] "Dalších %(count)d vydání"
+msgstr[0] "Jiné vydání"
+msgstr[1] "%(count)d jiná vydání"
+msgstr[2] "%(count)d jiných vydání"
 
 #: contribute/parts.html.jinja
 #, python-format
 msgid "1 other value"
 msgid_plural "%(count)d other values"
-msgstr[0] "1 další hodnota"
-msgstr[1] "%(count)d další hodnoty"
-msgstr[2] "%(count)d dalších hodnot"
+msgstr[0] "1 jiná hodnota"
+msgstr[1] "%(count)d jiné hodnoty"
+msgstr[2] "%(count)d jiných hodnot"
 
 #: contribute/parts.html.jinja
 msgid "Not filled in"
@@ -8444,7 +8486,7 @@ msgstr "Bude uloženo jako %(value)s."
 
 #: contribute/parts.html.jinja
 msgid "Paste only the number, not the web address."
-msgstr "Vložte pouze číslo, ne webovou adresu."
+msgstr "Vložte pouze číslo, nikoli webovou adresu."
 
 #: contribute/parts.html.jinja openlibrary/contribute/save.py
 msgid "That is not a valid number for this catalog."
@@ -8470,17 +8512,17 @@ msgstr "Jiná vydání uvádějí"
 #, python-format
 msgid "%(value)s, on 1 edition"
 msgid_plural "%(value)s, on %(count)d editions"
-msgstr[0] "%(value)s, u 1 vydání"
-msgstr[1] "%(value)s, u %(count)d vydání"
-msgstr[2] "%(value)s, u %(count)d vydání"
+msgstr[0] "%(value)s, v 1 vydání"
+msgstr[1] "%(value)s, v %(count)d vydáních"
+msgstr[2] "%(value)s, v %(count)d vydáních"
 
 #: contribute/parts.html.jinja
 msgid "I opened the record and the year and publisher match this edition."
-msgstr "Záznam jsem otevřel(a) a rok i vydavatel odpovídají tomuto vydání."
+msgstr "Otevřel(a) jsem záznam a rok i vydavatel se shodují s tímto vydáním."
 
 #: contribute/parts.html.jinja
 msgid "Add a comment about your edit"
-msgstr "Přidat komentář k vaší úpravě"
+msgstr "Přidejte komentář ke své úpravě"
 
 #: contribute/parts.html.jinja
 msgid "Edit comment"
@@ -8488,15 +8530,15 @@ msgstr "Upravit komentář"
 
 #: contribute/parts.html.jinja
 msgid "Where you found it"
-msgstr "Kde jste to našli"
+msgstr "Kde jste to nalezli"
 
 #: contribute/parts.html.jinja
 msgid "Save and next"
-msgstr "Uložit a pokračovat"
+msgstr "Uložit a další"
 
 #: contribute/parts.html.jinja
 msgid "I couldn't find it"
-msgstr "Nenašel(a) jsem to"
+msgstr "Nepodařilo se mi to najít"
 
 #: contribute/parts.html.jinja
 #, python-format
@@ -8506,6 +8548,42 @@ msgstr "Další: náhodný úkol z %(filter)s"
 #: contribute/parts.html.jinja
 msgid "Next: a random task from all open tasks"
 msgstr "Další: náhodný úkol ze všech otevřených úkolů"
+
+#: openlibrary/contribute/feed.py
+msgid "Edited this book"
+msgstr "Úprava knihy"
+
+#: openlibrary/contribute/feed.py
+msgid "Added this book"
+msgstr "Přidání knihy"
+
+#: openlibrary/contribute/feed.py
+msgid "Added a cover"
+msgstr "Přidání obálky"
+
+#: openlibrary/contribute/feed.py
+msgid "Merged duplicate authors"
+msgstr "Sloučení duplicitních autorů"
+
+#: openlibrary/contribute/feed.py
+msgid "Merged duplicate works"
+msgstr "Sloučení duplicitních děl"
+
+#: openlibrary/contribute/feed.py
+msgid "Updated this record"
+msgstr "Aktualizace záznamu"
+
+#: openlibrary/contribute/feed.py
+msgid "Edited this author"
+msgstr "Úprava autora"
+
+#: openlibrary/contribute/feed.py
+msgid "Reverted an edit"
+msgstr "Vrácení úpravy"
+
+#: openlibrary/contribute/feed.py
+msgid "a visitor"
+msgstr "návštěvník"
 
 #: openlibrary/contribute/field_guides.py
 msgid "WorldCat"
@@ -8529,15 +8607,15 @@ msgstr "Doplnit jazyk"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Look the ISBN up in WorldCat or Google Books; both list the language of the text. The title page and cover tell you too."
-msgstr "Vyhledejte ISBN ve WorldCat nebo Google Books; obě uvádějí jazyk textu. Řekne vám to i titulní strana a obálka."
+msgstr "Vyhledejte ISBN ve WorldCat nebo Google Books; oba uvádějí jazyk textu. Řekne vám to i titulní strana a obálka."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Editions of a work usually share a language, but a translation won't. Check this edition's own text."
-msgstr "Vydání díla obvykle sdílejí stejný jazyk, překlad ale ne. Zkontrolujte text samotného tohoto vydání."
+msgstr "Vydání díla obvykle sdílejí stejný jazyk, překlad ale ne. Zkontrolujte text tohoto konkrétního vydání."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Record the language of the text, not the language of the title page. A translation is in the language it was translated into."
-msgstr "Zaznamenejte jazyk textu, ne jazyk titulní strany. Překlad je v jazyce, do kterého byl přeložen."
+msgstr "Zaznamenejte jazyk textu, nikoli jazyk titulní strany. Překlad je v jazyce, do kterého byl přeložen."
 
 #: openlibrary/contribute/field_guides.py
 msgid "For example English"
@@ -8557,11 +8635,11 @@ msgstr "Kolik stran má toto vydání?"
 
 #: openlibrary/contribute/field_guides.py
 msgid "WorldCat lists the page count in the record's description. Google Books calls it Length. Make sure the record is for this ISBN, not another printing."
-msgstr "WorldCat uvádí počet stran v popisu záznamu. Google Books to nazývá Length. Ujistěte se, že záznam odpovídá tomuto ISBN, ne jinému vydání."
+msgstr "WorldCat uvádí počet stran v popisu záznamu. Google Books to nazývá Length (Délka). Ujistěte se, že záznam odpovídá tomuto ISBN, a ne jinému vydání."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Catalogs count front matter differently, so numbers within a few pages of each other are the same count. Use the last numbered page of the main text."
-msgstr "Katalogy počítají úvodní strany různě, takže čísla lišící se o pár stran jsou ve skutečnosti stejný počet. Použijte poslední číslovanou stranu hlavního textu."
+msgstr "Katalogy počítají úvodní strany různě, takže čísla lišící se o pár stran jsou považována za stejný počet. Použijte poslední číslovanou stranu hlavního textu."
 
 #: openlibrary/contribute/field_guides.py
 msgid "For example 320"
@@ -8577,11 +8655,11 @@ msgstr "Kdo vydal toto vydání?"
 
 #: openlibrary/contribute/field_guides.py
 msgid "The imprint is printed on the title page and the spine. WorldCat and the Library of Congress list it under Publisher."
-msgstr "Nakladatelská značka je vytištěna na titulní straně a na hřbetu. WorldCat a Library of Congress ji uvádějí pod položkou Publisher."
+msgstr "Tiráž je vytištěna na titulní straně a na hřbetu knihy. WorldCat a Library of Congress ji uvádějí pod položkou Publisher (Vydavatel)."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Open Library records the imprint printed on the book, not the parent company. Anchor Books, not Penguin Random House."
-msgstr "Open Library zaznamenává nakladatelskou značku vytištěnou na knize, ne mateřskou společnost. Anchor Books, ne Penguin Random House."
+msgstr "Open Library zaznamenává vydavatelskou značku vytištěnou na knize, nikoli mateřskou společnost. Anchor Books, nikoli Penguin Random House."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Publisher as printed"
@@ -8597,7 +8675,7 @@ msgstr "Doplnit LCCN"
 
 #: openlibrary/contribute/field_guides.py
 msgid "What is this edition's Library of Congress number?"
-msgstr "Jaké je číslo Library of Congress tohoto vydání?"
+msgstr "Jaké je číslo LCCN tohoto vydání?"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Search the Library of Congress catalog for this ISBN. Open the record whose year and publisher match this edition, and copy the number shown as LCCN."
@@ -8605,15 +8683,15 @@ msgstr "Vyhledejte toto ISBN v katalogu Library of Congress. Otevřete záznam, 
 
 #: openlibrary/contribute/field_guides.py
 msgid "Hyphenated and padded forms are the same number: 75-425165 and 75425165. Paste either; Open Library stores the padded form."
-msgstr "Tvar se spojovníkem a doplněný tvar jsou stejné číslo: 75-425165 a 75425165. Vložte kterýkoli z nich; Open Library uloží doplněný tvar."
+msgstr "Tvar se spojovníkem a doplněný tvar jsou stejné číslo: 75-425165 a 75425165. Vložte kterýkoli z nich; Open Library ukládá doplněný tvar."
 
 #: openlibrary/contribute/field_guides.py
 msgid "The number belongs to a different printing. Search results lead with the best-known one, not with yours."
-msgstr "Číslo patří jinému vydání. Výsledky hledání na prvním místě ukazují nejznámější vydání, ne to vaše."
+msgstr "Číslo patří jinému vydání (tisku). Výsledky hledání jako první uvádějí nejznámější vydání, nikoli to vaše."
 
 #: openlibrary/contribute/field_guides.py
 msgid "The number is already on another edition of this work, which means one of the two records is wrong."
-msgstr "Číslo je již u jiného vydání tohoto díla, což znamená, že jeden ze dvou záznamů je chybný."
+msgstr "Číslo je již uvedeno u jiného vydání tohoto díla, což znamená, že jeden ze dvou záznamů je chybný."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Pasting the web address instead of the number itself."
@@ -8641,19 +8719,19 @@ msgstr "Vyhledejte toto ISBN ve WorldCat. Otevřete záznam, jehož rok, vydavat
 
 #: openlibrary/contribute/field_guides.py
 msgid "The OCLC number is how libraries the world over refer to one catalogued edition. It is one of the few fields Open Library uses to find duplicates of this book when new records arrive."
-msgstr "Číslo OCLC je způsob, jakým se knihovny po celém světě odkazují na jedno katalogizované vydání. Je to jedno z mála polí, která Open Library používá k nalezení duplicit této knihy, když přibudou nové záznamy."
+msgstr "Číslo OCLC slouží knihovnám po celém světě k odkazování na jedno katalogizované vydání. Je to jedno z mála polí, která Open Library používá k nalezení duplicit této knihy, když přibudou nové záznamy."
 
 #: openlibrary/contribute/field_guides.py
 msgid "The prefixes ocm, ocn, on and (OCoLC) are padding added by library systems, not part of the number. ocm00047810608 is 47810608."
-msgstr "Předpony ocm, ocn, on a (OCoLC) jsou doplněk přidaný knihovnickými systémy, nejsou součástí čísla. ocm00047810608 je 47810608."
+msgstr "Předpony ocm, ocn, on a (OCoLC) jsou výplň přidaná knihovními systémy, nejsou součástí čísla. ocm00047810608 je 47810608."
 
 #: openlibrary/contribute/field_guides.py
 msgid "The number belongs to a different printing, a book club edition, or the ebook rather than the print copy."
-msgstr "Číslo patří jinému vydání, edici knižního klubu, nebo e-knize místo tištěné verze."
+msgstr "Číslo patří jinému vydání, klubovému vydání nebo e-knize místo tištěné kopie."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Pasting the web address, or leaving the ocm/ocn prefix on."
-msgstr "Vložení webové adresy, nebo ponechání předpony ocm/ocn."
+msgstr "Vložení webové adresy nebo ponechání předpony ocm/ocn."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Digits only, for example 47810608"
@@ -8669,7 +8747,7 @@ msgstr "Zadejte počet stran jako celé číslo."
 
 #: openlibrary/contribute/save.py
 msgid "Fill in an answer, or choose “I couldn't find it”."
-msgstr "Doplňte odpověď, nebo zvolte „Nenašel(a) jsem to“."
+msgstr "Doplňte odpověď, nebo zvolte „Nepodařilo se mi to najít“."
 
 #: openlibrary/contribute/save.py
 msgid "This field can't be filled in here."
@@ -8678,7 +8756,7 @@ msgstr "Toto pole zde nelze vyplnit."
 #: openlibrary/contribute/save.py
 #, python-format
 msgid "Filled in %(field)s from Open Library Tasks"
-msgstr "Vyplněno %(field)s z Open Library Tasks"
+msgstr "Doplněno %(field)s z Open Library Tasks"
 
 #: openlibrary/core/bookshelves.py
 msgid "[Record deleted]"
@@ -9251,7 +9329,7 @@ msgstr "Filipínsky"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Tasks are open to librarians only, for now"
-msgstr "Úkoly jsou prozatím dostupné pouze knihovníkům"
+msgstr "Úkoly jsou prozatím otevřené pouze pro knihovníky"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Published"
@@ -9264,6 +9342,30 @@ msgstr "OCLC"
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "All open tasks"
 msgstr "Všechny otevřené úkoly"
+
+#: openlibrary/plugins/openlibrary/contribute.py
+msgid "Become an Open Librarian"
+msgstr "Staňte se Open Librarian"
+
+#: openlibrary/plugins/openlibrary/contribute.py
+msgid "Tasks are for Open Librarians. Applying takes a few minutes."
+msgstr "Úkoly jsou určeny pro Open Librarians. Přihláška zabere jen pár minut."
+
+#: openlibrary/plugins/openlibrary/contribute.py
+msgid "Applying takes a few minutes and asks for your Open Library username, so create a free account first."
+msgstr "Přihláška zabere jen pár minut a vyžaduje vaše uživatelské jméno na Open Library, proto si nejprve vytvořte bezplatný účet."
+
+#: openlibrary/plugins/openlibrary/contribute.py
+msgid "Create an account"
+msgstr "Vytvořit účet"
+
+#: openlibrary/plugins/openlibrary/contribute.py
+msgid "Log in"
+msgstr "Přihlásit se"
+
+#: openlibrary/plugins/openlibrary/contribute.py
+msgid "Book cover"
+msgstr "Obálka knihy"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 #, python-format
@@ -9583,9 +9685,25 @@ msgid "Choose a password"
 msgstr "Vyberte heslo"
 
 #: openlibrary/plugins/upstream/lenny.py
+msgid "Open Library could not reach that library to return this book. Please try again later."
+msgstr "Open Library se nepodařilo spojit s danou knihovnou a vrátit tuto knihu. Zkuste to prosím později."
+
+#: openlibrary/plugins/upstream/lenny.py
+msgid "Open Library is no longer connected to that library. Please borrow again to reconnect, then return."
+msgstr "Open Library již není s danou knihovnou propojena. Pro obnovení spojení si knihu znovu vypůjčte a poté ji vraťte."
+
+#: openlibrary/plugins/upstream/lenny.py
+msgid "That library could not return this book right now. Please try again later."
+msgstr "Tato knihovna nyní nemohla tuto knihu vrátit. Zkuste to prosím později."
+
+#: openlibrary/plugins/upstream/lenny.py
+msgid "This book has been returned."
+msgstr "Tato kniha byla vrácena."
+
+#: openlibrary/plugins/upstream/lenny.py
 #, python-format
 msgid "Borrowed from %(library)s. Your loan is due %(due)s."
-msgstr "Vypůjčeno z %(library)s. Vaše výpůjčka je splatná %(due)s."
+msgstr "Vypůjčeno z %(library)s. Vaše výpůjčka musí být vrácena %(due)s."
 
 #: openlibrary/plugins/upstream/lenny.py
 #, python-format

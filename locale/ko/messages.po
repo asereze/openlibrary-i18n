@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: account.html account/notifications.html account/privacy.html shell/header.html.jinja type/user/view.html
+#: account.html account/notifications.html account/privacy.html lib/nav_head.html type/user/view.html
 msgid "Settings"
 msgstr "설정"
 
@@ -448,7 +448,7 @@ msgstr "취소"
 msgid "Continue without waiting"
 msgstr "기다리지 않고 계속"
 
-#: library_explorer.html openlibrary/core/shell/nav.py
+#: library_explorer.html openlibrary/plugins/openlibrary/nav.py
 msgid "Library Explorer"
 msgstr "도서관 탐색기"
 
@@ -456,7 +456,7 @@ msgstr "도서관 탐색기"
 msgid "Loading..."
 msgstr "로딩 중..."
 
-#: login.html shell/header.html.jinja
+#: lib/nav_head.html login.html
 msgid "Log In"
 msgstr "로그인"
 
@@ -658,6 +658,14 @@ msgstr "다운로드 링크"
 #: showmarc.html type/tag/index.html
 msgid "Next"
 msgstr "다음"
+
+#: site.html.jinja
+msgid "Skip to main content"
+msgstr "본문으로 건너뛰기"
+
+#: site.html.jinja
+msgid "It looks like you're offline."
+msgstr "오프라인 상태인 것 같습니다."
 
 #: status.html
 msgid "Open Library server status"
@@ -871,7 +879,7 @@ msgstr "super librarians에게만 표시됩니다."
 msgid "Solr Editions"
 msgstr "Solr 에디션"
 
-#: account/reading_log.html openlibrary/core/shell/search_modal.py openlibrary/plugins/worksearch/code.py search/inside.html type/author/view.html work_search.html
+#: account/reading_log.html openlibrary/plugins/worksearch/code.py search/availability_i18n.html search/inside.html type/author/view.html work_search.html
 msgid "Readable Only"
 msgstr "읽기 가능만"
 
@@ -879,19 +887,19 @@ msgstr "읽기 가능만"
 msgid "Filter by availability"
 msgstr "이용 가능 여부로 필터링"
 
-#: openlibrary/contribute/field_guides.py openlibrary/core/shell/search_modal.py openlibrary/plugins/openlibrary/contribute.py openlibrary/plugins/worksearch/code.py search/inside.html type/edition/view.html type/work/view.html work_search.html
+#: openlibrary/contribute/field_guides.py openlibrary/plugins/openlibrary/contribute.py openlibrary/plugins/worksearch/code.py search/inside.html search/search_modal_i18n.html type/edition/view.html type/work/view.html work_search.html
 msgid "Language"
 msgstr "언어"
 
-#: openlibrary/core/shell/search_modal.py search/inside.html work_search.html
+#: search/inside.html search/search_modal_i18n.html work_search.html
 msgid "Search languages…"
 msgstr "언어 검색…"
 
-#: books/edit/edition.html contribute/parts.html.jinja languages/index.html openlibrary/core/shell/search_modal.py work_search.html
+#: books/edit/edition.html contribute/parts.html.jinja languages/index.html search/search_modal_i18n.html work_search.html
 msgid "Languages"
 msgstr "언어"
 
-#: openlibrary/core/shell/search_modal.py search/inside.html work_search.html
+#: search/inside.html search/search_modal_i18n.html work_search.html
 msgid "Loading…"
 msgstr "로딩 중…"
 
@@ -923,7 +931,7 @@ msgstr "Solr 디버깅:"
 msgid "Full URL:"
 msgstr "전체 URL:"
 
-#: openlibrary/core/shell/search_modal.py work_search.html
+#: search/search_modal_i18n.html work_search.html
 msgid "No matching books or authors"
 msgstr "일치하는 책이나 저자가 없습니다"
 
@@ -931,11 +939,11 @@ msgstr "일치하는 책이나 저자가 없습니다"
 msgid "Add a new book"
 msgstr "새 책 추가"
 
-#: SearchNavigation.html authors/index.html.jinja merge/authors.html openlibrary/core/shell/search_modal.py openlibrary/plugins/openlibrary/authors.py publishers/view.html shell/footer.html.jinja work_search.html
+#: SearchNavigation.html authors/index.html.jinja lib/nav_foot.html.jinja merge/authors.html openlibrary/plugins/openlibrary/authors.py publishers/view.html search/search_modal_i18n.html work_search.html
 msgid "Authors"
 msgstr "저자"
 
-#: SearchNavigation.html books/mybooks_breadcrumb_select.html openlibrary/core/shell/search_modal.py openlibrary/plugins/upstream/mybooks.py shell/footer.html.jinja work_search.html
+#: SearchNavigation.html books/mybooks_breadcrumb_select.html lib/nav_foot.html.jinja openlibrary/plugins/upstream/mybooks.py search/search_modal_i18n.html work_search.html
 msgid "Books"
 msgstr "책"
 
@@ -1028,7 +1036,7 @@ msgstr "적합한 프로그램을 선택해야 합니다"
 msgid "Sign Up to Open Library"
 msgstr "Open Library 회원가입"
 
-#: account/create.html shell/header.html.jinja
+#: account/create.html lib/nav_head.html
 msgid "Sign Up"
 msgstr "회원가입"
 
@@ -1237,13 +1245,13 @@ msgstr[0] "활성 대출 (%(count)d)"
 #, python-format
 msgid "%(libraries)s could not be reached, so any loans there are not shown."
 msgid_plural "These libraries could not be reached, so any loans there are not shown: %(libraries)s."
-msgstr[0] "%(libraries)s에 연결할 수 없어 해당 도서관의 대출 내역이 표시되지 않습니다."
+msgstr[0] "%(libraries)s에 연결할 수 없어 해당 대출 내역이 표시되지 않습니다."
 
 #: account/loans.html
 #, python-format
 msgid "%(libraries)s needs reconnecting before its loans can be shown. Borrowing a book from it again will restore the connection."
 msgid_plural "These libraries need reconnecting before their loans can be shown: %(libraries)s. Borrowing a book from one again will restore the connection."
-msgstr[0] "%(libraries)s의 대출 내역을 보려면 다시 연결해야 합니다. 해당 도서관에서 책을 다시 대출하면 연결이 복구됩니다."
+msgstr[0] "%(libraries)s를 다시 연결해야 대출 내역을 표시할 수 있습니다. 해당 도서관에서 책을 다시 대출하면 연결이 복구됩니다."
 
 #: account/loans.html
 msgid "You've not checked out any books at this moment."
@@ -1611,7 +1619,7 @@ msgstr "읽고 싶음"
 msgid "My %(shelf_name)s Stats"
 msgstr "내 %(shelf_name)s 통계"
 
-#: account/readinglog_stats.html openlibrary/core/shell/header.py shell/header.html.jinja
+#: account/readinglog_stats.html lib/nav_head.html
 msgid "My Books"
 msgstr "내 책"
 
@@ -1673,12 +1681,12 @@ msgid "Works by Time Period"
 msgstr "시기별 작품"
 
 #: account/readinglog_stats.html
-msgid "Click on a bar to see matching works"
-msgstr "막대를 클릭하면 일치하는 작품을 확인할 수 있습니다"
-
-#: account/readinglog_stats.html
 msgid "Matching works"
 msgstr "일치하는 작품"
+
+#: account/readinglog_stats.html
+msgid "Click on a bar to see matching works"
+msgstr "막대를 클릭하면 일치하는 작품을 확인할 수 있습니다"
 
 #: account/sidebar.html books/mybooks_breadcrumb_select.html openlibrary/plugins/upstream/mybooks.py
 msgid "My Feed"
@@ -1702,7 +1710,7 @@ msgstr "독서 기록"
 msgid "My lists"
 msgstr "내 리스트"
 
-#: EditionNavBar.html SearchNavigation.html account/sidebar.html lists/home.html openlibrary/core/shell/nav.py recentchanges/index.html type/edition/view.html type/list/embed.html type/user/view.html type/work/view.html
+#: EditionNavBar.html SearchNavigation.html account/sidebar.html lists/home.html openlibrary/plugins/openlibrary/nav.py recentchanges/index.html type/edition/view.html type/list/embed.html type/user/view.html type/work/view.html
 msgid "Lists"
 msgstr "리스트"
 
@@ -1915,7 +1923,7 @@ msgstr "일별 새 도서 가져오기"
 msgid "You need to have JavaScript turned on to see the nifty chart!"
 msgstr "멋진 차트를 보려면 JavaScript를 켜야 합니다!"
 
-#: admin/imports.html admin/imports_by_date.html admin/pd_dashboard.html shell/stats.html.jinja
+#: admin/imports.html admin/imports_by_date.html admin/pd_dashboard.html site/stats.html.jinja
 msgid "Summary"
 msgstr "요약"
 
@@ -2708,7 +2716,7 @@ msgstr "찾을 수 없음"
 msgid "Search for an Author"
 msgstr "저자 검색"
 
-#: PreviewSearchInside.html SubjectSearch.html authors/index.html.jinja lists/home.html openlibrary/core/shell/search_modal.py publishers/index.html publishers/notfound.html publishers/view.html search/advancedsearch.html search/publishers.html search/searchbox.html shell/header.html.jinja type/local_id/view.html
+#: PreviewSearchInside.html SubjectSearch.html authors/index.html.jinja lib/nav_head.html lists/home.html publishers/index.html publishers/notfound.html publishers/view.html search/advancedsearch.html search/publishers.html search/search_modal_i18n.html search/searchbox.html type/local_id/view.html
 msgid "Search"
 msgstr "검색"
 
@@ -3020,7 +3028,7 @@ msgstr "부제를 추가하려면 <b><i>제목: 부제</i></b> 형식을 사용�
 msgid "Required field"
 msgstr "필수 항목"
 
-#: SearchAuthorSuggestion.html TestingEnvironment.html.jinja books/add.html books/edit.html books/edit/edition.html openlibrary/core/shell/search_modal.py openlibrary/plugins/worksearch/code.py openlibrary/plugins/worksearch/facets.py search/advancedsearch.html
+#: SearchAuthorSuggestion.html TestingEnvironment.html.jinja books/add.html books/edit.html books/edit/edition.html openlibrary/plugins/worksearch/code.py openlibrary/plugins/worksearch/facets.py search/advancedsearch.html search/search_modal_i18n.html
 msgid "Author"
 msgstr "저자"
 
@@ -3125,7 +3133,7 @@ msgstr "이 저자 제거"
 msgid "Add another author?"
 msgstr "다른 저자를 추가할까요?"
 
-#: books/check.html shell/footer.html.jinja shell/header.html.jinja
+#: books/check.html lib/nav_foot.html.jinja lib/nav_head.html
 msgid "Add a Book"
 msgstr "책 추가"
 
@@ -3804,7 +3812,7 @@ msgstr "페이지 매김?"
 msgid "Note the highest number in each pagination pattern."
 msgstr "각 페이지 매김 패턴에서 가장 높은 번호를 적어 주세요."
 
-#: books/edit/edition.html shell/footer.html.jinja
+#: books/edit/edition.html lib/nav_foot.html.jinja
 msgid "Help"
 msgstr "도움말"
 
@@ -3982,9 +3990,9 @@ msgstr "\"좋은\" 자료란 스팸성 링크가 아닌 자료를 뜻합니다. 
 
 #: borrow/provider_popup_result.html.jinja
 msgid "Borrowed"
-msgstr "대출됨"
+msgstr "대출함"
 
-#: borrow/provider_popup_result.html.jinja openlibrary/plugins/openlibrary/api.py shell/footer.html.jinja shell/head.html.jinja
+#: borrow/provider_popup_result.html.jinja lib/nav_foot.html.jinja openlibrary/plugins/openlibrary/api.py site/head.html
 msgid "Open Library"
 msgstr "Open Library"
 
@@ -4015,11 +4023,11 @@ msgstr "작업"
 
 #: contribute/dashboard.html.jinja
 msgid "Fill in what's missing on real books, one detail at a time."
-msgstr "실제 책에서 누락된 정보를 하나씩 채워보세요."
+msgstr "실제 도서에서 빠진 정보를 한 번에 하나씩 채워보세요."
 
 #: contribute/dashboard.html.jinja
 msgid "Surprise me"
-msgstr "무작위로 선택"
+msgstr "무작위로 추천"
 
 #: contribute/dashboard.html.jinja
 msgid "A random book that needs a hand."
@@ -4065,15 +4073,15 @@ msgstr "%(title)s의 %(field)s"
 
 #: contribute/done.html.jinja
 msgid "The record is updated."
-msgstr "레코드가 업데이트되었습니다."
+msgstr "기록이 업데이트되었습니다."
 
 #: contribute/done.html.jinja
 msgid "See it in the record's history"
-msgstr "레코드 기록에서 확인하기"
+msgstr "기록 이력에서 확인하기"
 
 #: contribute/done.html.jinja
 msgid "Nothing on the record changed."
-msgstr "레코드에서 변경된 내용이 없습니다."
+msgstr "기록에서 변경된 내용이 없습니다."
 
 #: contribute/done.html.jinja
 msgid "While you're on this book"
@@ -4090,11 +4098,11 @@ msgstr "다른 책 선택"
 #: contribute/nothing.html.jinja
 #, python-format
 msgid "%(field)s is already filled in on this edition"
-msgstr "이 판에는 이미 %(field)s이(가) 입력되어 있습니다"
+msgstr "이 판본에는 이미 %(field)s이(가) 입력되어 있습니다"
 
 #: contribute/nothing.html.jinja
 msgid "Someone filled it in since the list was made. Thank you for checking."
-msgstr "목록이 작성된 이후 다른 사람이 이미 입력했습니다. 확인해 주셔서 감사합니다."
+msgstr "목록이 만들어진 이후 다른 사람이 입력했습니다. 확인해 주셔서 감사합니다."
 
 #: contribute/nothing.html.jinja contribute/task.html.jinja
 msgid "Back to the list"
@@ -4507,6 +4515,26 @@ msgid "%s ebook edition"
 msgid_plural "%s ebook editions"
 msgstr[0] "%s 전자책 판본"
 
+#: lib/browse_popover.html
+msgid "Browse books by topic"
+msgstr "주제별로 책 둘러보기"
+
+#: lib/browse_popover.html
+msgid "Most popular right now"
+msgstr "지금 가장 인기 있는"
+
+#: lib/browse_popover.html
+msgid "Browse the virtual shelves"
+msgstr "가상 서가 둘러보기"
+
+#: lib/browse_popover.html
+msgid "Reader-curated collections"
+msgstr "독자가 선별한 컬렉션"
+
+#: databarWork.html lib/browse_popover.html lib/nav_head.html
+msgid "Browse"
+msgstr "둘러보기"
+
 #: lib/edit_head.html lib/view_head.html
 msgid "This doc was last edited by"
 msgstr "이 문서의 마지막 편집자:"
@@ -4547,6 +4575,10 @@ msgstr "이 코드를 복사해 위키백과 페이지에 붙여넣으세요."
 msgid "Copy Wikipedia citation"
 msgstr "위키백과 인용 복사"
 
+#: lib/header_dropdown.html lib/nav_head.html
+msgid "Menu"
+msgstr "메뉴"
+
 #: databarDiff.html databarEdit.html databarTemplate.html databarView.html lib/history.html openlibrary/plugins/openlibrary/home.py
 msgid "History"
 msgstr "이력"
@@ -4575,6 +4607,248 @@ msgstr "생성일: by %(user)s"
 #, python-format
 msgid "Edited by %(user)s"
 msgstr "%(user)s님이 편집함"
+
+#: lib/nav_foot.html.jinja
+msgid "Vision"
+msgstr "비전"
+
+#: lib/nav_foot.html.jinja
+msgid "Volunteer"
+msgstr "자원봉사"
+
+#: lib/nav_foot.html.jinja
+msgid "Partner With Us"
+msgstr "파트너가 되기"
+
+#: lib/nav_foot.html.jinja
+msgid "Jobs"
+msgstr "채용"
+
+#: lib/nav_foot.html.jinja
+msgid "Careers"
+msgstr "커리어"
+
+#: lib/nav_foot.html.jinja
+msgid "Blog"
+msgstr "블로그"
+
+#: lib/nav_foot.html.jinja
+msgid "Terms of Service"
+msgstr "서비스 약관"
+
+#: lib/nav_foot.html.jinja site/alert.html.jinja
+msgid "Donate"
+msgstr "기부"
+
+#: lib/nav_foot.html.jinja
+msgid "Discover"
+msgstr "발견"
+
+#: lib/nav_foot.html.jinja
+msgid "Go home"
+msgstr "홈으로 이동"
+
+#: lib/nav_foot.html.jinja
+msgid "Home"
+msgstr "홈"
+
+#: lib/nav_foot.html.jinja
+msgid "Explore Books"
+msgstr "책 탐색"
+
+#: lib/nav_foot.html.jinja
+msgid "Explore authors"
+msgstr "저자 탐색"
+
+#: lib/nav_foot.html.jinja
+msgid "Explore subjects"
+msgstr "subjects 탐색"
+
+#: RelatedSubjects.html.jinja SearchNavigation.html SubjectTags.html lib/nav_foot.html.jinja openlibrary/plugins/openlibrary/nav.py openlibrary/plugins/worksearch/code.py subjects/notfound.html type/author/view.html type/list/view_body.html
+msgid "Subjects"
+msgstr "주제"
+
+#: lib/nav_foot.html.jinja
+msgid "Explore collections"
+msgstr "collections 탐색"
+
+#: lib/nav_foot.html.jinja openlibrary/plugins/openlibrary/nav.py type/page/view.html
+msgid "Collections"
+msgstr "컬렉션"
+
+#: SearchNavigation.html lib/nav_foot.html.jinja openlibrary/plugins/openlibrary/nav.py search/advancedsearch.html
+msgid "Advanced Search"
+msgstr "고급 검색"
+
+#: lib/nav_foot.html.jinja
+msgid "Navigate to top of this page"
+msgstr "이 페이지 맨 위로 이동"
+
+#: lib/nav_foot.html.jinja
+msgid "Return to Top"
+msgstr "맨 위로 돌아가기"
+
+#: lib/nav_foot.html.jinja
+msgid "Develop"
+msgstr "개발"
+
+#: lib/nav_foot.html.jinja
+msgid "Explore Open Library Developer Center"
+msgstr "Open Library Developer Center 탐색"
+
+#: lib/nav_foot.html.jinja lib/nav_head.html
+msgid "Developer Center"
+msgstr "개발자 센터"
+
+#: lib/nav_foot.html.jinja
+msgid "Explore Open Library APIs"
+msgstr "Open Library APIs 탐색"
+
+#: lib/nav_foot.html.jinja
+msgid "API Documentation"
+msgstr "API 문서"
+
+#: lib/nav_foot.html.jinja
+msgid "Bulk Open Library data"
+msgstr "Open Library 대량 데이터"
+
+#: lib/nav_foot.html.jinja
+msgid "Bulk Data Dumps"
+msgstr "대량 데이터 덤프"
+
+#: lib/nav_foot.html.jinja
+msgid "Write a bot"
+msgstr "봇 작성"
+
+#: lib/nav_foot.html.jinja
+msgid "Writing Bots"
+msgstr "봇 작성하기"
+
+#: lib/nav_foot.html.jinja
+msgid "Help Center"
+msgstr "도움말 센터"
+
+#: lib/nav_foot.html.jinja
+msgid "Contact"
+msgstr "문의"
+
+#: lib/nav_foot.html.jinja
+msgid "Contact Us"
+msgstr "문의하기"
+
+#: lib/nav_foot.html.jinja
+msgid "Suggest Edits"
+msgstr "편집 제안"
+
+#: lib/nav_foot.html.jinja
+msgid "Suggesting Edits"
+msgstr "편집 제안하기"
+
+#: lib/nav_foot.html.jinja
+msgid "Add a new book to Open Library"
+msgstr "Open Library에 새 책 추가"
+
+#: lib/nav_foot.html.jinja
+msgid "Release Notes"
+msgstr "릴리스 노트"
+
+#: lib/nav_foot.html.jinja
+msgid "Bluesky"
+msgstr "Bluesky"
+
+#: lib/nav_foot.html.jinja
+msgid "Open Library on Bluesky"
+msgstr "Bluesky의 Open Library"
+
+#: lib/nav_foot.html.jinja
+msgid "Twitter"
+msgstr "Twitter"
+
+#: lib/nav_foot.html.jinja
+msgid "Open Library on Twitter"
+msgstr "Twitter의 Open Library"
+
+#: lib/nav_foot.html.jinja
+msgid "GitHub"
+msgstr "GitHub"
+
+#: lib/nav_foot.html.jinja
+msgid "Open Library on GitHub"
+msgstr "GitHub의 Open Library"
+
+#: lib/nav_foot.html.jinja site/alert.html.jinja
+msgid "Change Website Language"
+msgstr "웹사이트 언어 변경"
+
+#: lib/nav_foot.html.jinja lib/nav_head.html type/list/embed.html
+msgid "Open Library logo"
+msgstr "Open Library 로고"
+
+#: lib/nav_foot.html.jinja
+msgid "Open Library is an initiative of the <a href=\"//archive.org/\">Internet Archive</a>, a 501(c)(3) non-profit, building a digital library of Internet sites and other cultural artifacts in  digital form. Other <a href=\"//archive.org/projects/\">projects</a> include the <a href=\"//archive.org/web/\">Wayback Machine</a>, <a href=\"//archive.org/\">archive.org</a> and <a href=\"//archive-it.org\">archive-it.org</a>"
+msgstr "Open Library는 501(c)(3) 비영리 단체인 <a href=\"//archive.org/\">Internet Archive</a>의 프로젝트로, 인터넷 사이트와 기타 문화 자료를 디지털 형태로 수집하는 디지털 도서관을 구축하고 있습니다. 다른 <a href=\"//archive.org/projects/\">프로젝트</a>로는 <a href=\"//archive.org/web/\">Wayback Machine</a>, <a href=\"//archive.org/\">archive.org</a>, <a href=\"//archive-it.org\">archive-it.org</a>가 있습니다."
+
+#: lib/nav_foot.html.jinja
+#, python-format
+msgid "version <a href=\"https://github.com/internetarchive/openlibrary/commit/%(git_rev_hash)s\">%(git_rev_hash)s</a>"
+msgstr "버전 <a href=\"https://github.com/internetarchive/openlibrary/commit/%(git_rev_hash)s\">%(git_rev_hash)s</a>"
+
+#: lib/nav_head.html
+msgid "The Internet Archive's Open Library: One page for every book"
+msgstr "Internet Archive의 Open Library: 모든 책을 위한 하나의 페이지"
+
+#: lib/nav_head.html
+msgid "Search by barcode"
+msgstr "바코드로 검색"
+
+#: lib/nav_head.html
+msgid "My account"
+msgstr "내 계정"
+
+#: lib/nav_head.html type/user/view.html
+#, python-format
+msgid "Joined %(date)s"
+msgstr "가입일: %(date)s"
+
+#: lib/nav_head.html
+msgid "My Open Library"
+msgstr "내 Open Library"
+
+#: lib/nav_head.html
+msgid "Loans, Reading Log, Lists, Stats"
+msgstr "대출, 독서 기록, 목록, 통계"
+
+#: lib/nav_head.html
+msgid "My Profile"
+msgstr "내 프로필"
+
+#: lib/nav_head.html
+msgid "Pending Merge Requests"
+msgstr "대기 중인 병합 요청"
+
+#: lib/nav_head.html
+msgid "Log out"
+msgstr "로그아웃"
+
+#: lib/nav_head.html
+msgid "Contribute"
+msgstr "기여"
+
+#: lib/nav_head.html
+msgid "Recent Community Edits"
+msgstr "최근 커뮤니티 편집"
+
+#: lib/nav_head.html
+msgid "Resources"
+msgstr "자료"
+
+#: lib/nav_head.html
+msgid "Help & Support"
+msgstr "도움말 및 지원"
+
+#: lib/nav_head.html
+msgid "Librarians Portal"
+msgstr "사서 포털"
 
 #: lib/not_logged.html
 msgid "<strong>You are not <a href=\"/account/login\" title=\"Log in now\">logged in</a>.</strong> Open Library will record your IP address and include it in this page's publicly accessible edit history. If you <a href=\"/account/create\" title=\"Create an Open Library account\">create an account</a>, your IP address is concealed and you can more easily keep track of all your edits and additions."
@@ -5531,10 +5805,6 @@ msgstr "<a href=\"$parent.url()\">%(kind)s</a> 실행 취소."
 msgid "%(count)d records modified."
 msgstr "%(count)d개 레코드가 수정되었습니다."
 
-#: SearchNavigation.html openlibrary/core/shell/nav.py search/advancedsearch.html shell/footer.html.jinja
-msgid "Advanced Search"
-msgstr "고급 검색"
-
 #: search/advancedsearch.html
 msgid "All fields"
 msgstr "모든 필드"
@@ -5584,12 +5854,24 @@ msgstr "저자 병합"
 msgid "No <strong>authors</strong> directly matched your search"
 msgstr "검색어와 직접 일치하는 <strong>저자</strong>가 없습니다"
 
+#: openlibrary/plugins/worksearch/code.py search/availability_i18n.html
+msgid "All books"
+msgstr "모든 책"
+
+#: openlibrary/plugins/worksearch/code.py search/availability_i18n.html
+msgid "Free to read now"
+msgstr "지금 무료로 읽기"
+
+#: openlibrary/plugins/worksearch/code.py search/availability_i18n.html
+msgid "Borrow online"
+msgstr "온라인 대출"
+
 #: search/inside.html
 #, python-format
 msgid "Search Open Library for %s"
 msgstr "Open Library에서 %s 검색"
 
-#: SearchNavigation.html openlibrary/core/shell/search_modal.py search/inside.html
+#: SearchNavigation.html search/inside.html search/search_modal_i18n.html
 msgid "Search Inside"
 msgstr "내부 검색"
 
@@ -5648,6 +5930,153 @@ msgstr "검색어와 직접 일치하는 <strong>목록</strong>이 없습니다
 #: search/publishers.html
 msgid "Publishers Search"
 msgstr "출판사 검색"
+
+#: search/search_modal_i18n.html
+msgid "Search Open Library"
+msgstr "Open Library 검색"
+
+#: search/search_modal_i18n.html
+msgid "Search books and authors…"
+msgstr "책과 저자 검색…"
+
+#: search/search_modal_i18n.html
+msgid "Close search"
+msgstr "검색 닫기"
+
+#: search/search_modal_i18n.html
+msgid "Clear search"
+msgstr "검색어 지우기"
+
+#: search/search_modal_i18n.html
+msgid "See results"
+msgstr "결과 보기"
+
+#: search/search_modal_i18n.html
+msgid "Go to full search"
+msgstr "전체 검색으로 이동"
+
+#: search/search_modal_i18n.html
+#, python-format
+msgid "See %s book"
+msgstr "%s권의 책 보기"
+
+#: search/search_modal_i18n.html
+#, python-format
+msgid "See %s books"
+msgstr "%s권의 책 보기"
+
+#: search/search_modal_i18n.html
+#, python-format
+msgid "See all %s books"
+msgstr "%s권의 책 모두 보기"
+
+#: search/search_modal_i18n.html
+#, python-format
+msgid "All %s books"
+msgstr "%s권의 모든 책"
+
+#: search/search_modal_i18n.html
+msgid "Clear all"
+msgstr "모두 지우기"
+
+#: search/search_modal_i18n.html
+msgid "Search scope"
+msgstr "검색 범위"
+
+#: search/search_modal_i18n.html
+msgid "Inside books"
+msgstr "도서 내부"
+
+#: search/search_modal_i18n.html
+msgid "Search filters"
+msgstr "검색 필터"
+
+#: search/search_modal_i18n.html type/work/editions_datatable.html
+msgid "Availability"
+msgstr "이용 가능 여부"
+
+#: search/search_modal_i18n.html
+msgid "Searching books and authors…"
+msgstr "도서 및 저자 검색 중…"
+
+#: search/search_modal_i18n.html
+msgid "Searching inside books…"
+msgstr "도서 내부 검색 중…"
+
+#: search/search_modal_i18n.html
+msgid "No results found"
+msgstr "결과를 찾을 수 없습니다"
+
+#: search/search_modal_i18n.html
+#, python-format
+msgid "Showing %s of %s results"
+msgstr "%s / %s개 결과 표시"
+
+#: search/search_modal_i18n.html
+msgid "Untitled"
+msgstr "제목 없음"
+
+#: search/search_modal_i18n.html
+msgid "Readable"
+msgstr "읽기 가능"
+
+#: search/search_modal_i18n.html
+#, python-format
+msgid "Readable in %s"
+msgstr "%s로 읽을 수 있음"
+
+#: search/search_modal_i18n.html
+msgid "Recent searches"
+msgstr "최근 검색어"
+
+#: search/search_modal_i18n.html
+#, python-format
+msgid "Remove \"%s\" from recent searches"
+msgstr "최근 검색어에서 \"%s\" 삭제"
+
+#: FulltextSearchSuggestion.html.jinja search/search_modal_i18n.html
+msgid "Search inside books"
+msgstr "책 내부 검색"
+
+#: search/search_modal_i18n.html
+#, python-format
+msgid "Search Inside %s book"
+msgstr "%s권의 도서 내부 검색"
+
+#: search/search_modal_i18n.html
+#, python-format
+msgid "Search Inside %s books"
+msgstr "%s권의 책 내부 검색"
+
+#: search/search_modal_i18n.html
+msgid "View all"
+msgstr "전체 보기"
+
+#: search/search_modal_i18n.html
+msgid "Search inside books…"
+msgstr "도서 내부 검색…"
+
+#: search/search_modal_i18n.html
+msgid "Type a word or phrase to find it on the pages of millions of books."
+msgstr "수백만 권의 도서 페이지에서 찾을 단어나 문구를 입력하세요."
+
+#: search/search_modal_i18n.html
+msgid "No matches inside books"
+msgstr "도서 내부에서 일치하는 항목이 없습니다"
+
+#: search/search_modal_i18n.html
+msgid "Search inside books is temporarily unavailable. Please try again later."
+msgstr "도서 내부 검색을 일시적으로 사용할 수 없습니다. 나중에 다시 시도해 주세요."
+
+#: search/search_modal_i18n.html
+#, python-format
+msgid "%s match found inside books"
+msgstr "책 내부에서 %s개의 일치 항목을 찾았습니다"
+
+#: search/search_modal_i18n.html
+#, python-format
+msgid "%s matches found inside books"
+msgstr "책 내부에서 %s개의 일치 항목을 찾았습니다"
 
 #: search/sort_options.html
 msgid "Relevance"
@@ -5713,7 +6142,7 @@ msgstr "높은 평점"
 msgid "Any"
 msgstr "전체"
 
-#: openlibrary/core/shell/nav.py search/sort_options.html
+#: openlibrary/plugins/openlibrary/nav.py search/sort_options.html
 msgid "Trending"
 msgstr "인기 상승"
 
@@ -5793,284 +6222,19 @@ msgstr "중복 항목 병합"
 msgid "Less"
 msgstr "접기"
 
-#: shell/alert.html.jinja
+#: site/alert.html.jinja
 msgid "Internet Archive logo"
 msgstr "Internet Archive 로고"
 
-#: shell/alert.html.jinja shell/footer.html.jinja
-msgid "Donate"
-msgstr "기부"
-
-#: shell/alert.html.jinja shell/footer.html.jinja
-msgid "Change Website Language"
-msgstr "웹사이트 언어 변경"
-
-#: shell/base.html.jinja
-msgid "Skip to main content"
-msgstr "본문으로 건너뛰기"
-
-#: shell/base.html.jinja
-msgid "It looks like you're offline."
-msgstr "오프라인 상태인 것 같습니다."
-
-#: shell/browse_popover.html.jinja
-msgid "Browse books by topic"
-msgstr "주제별로 책 둘러보기"
-
-#: shell/browse_popover.html.jinja
-msgid "Most popular right now"
-msgstr "지금 가장 인기 있는"
-
-#: shell/browse_popover.html.jinja
-msgid "Browse the virtual shelves"
-msgstr "가상 서가 둘러보기"
-
-#: shell/browse_popover.html.jinja
-msgid "Reader-curated collections"
-msgstr "독자가 선별한 컬렉션"
-
-#: databarWork.html shell/browse_popover.html.jinja shell/header.html.jinja
-msgid "Browse"
-msgstr "둘러보기"
-
-#: shell/footer.html.jinja
-msgid "Vision"
-msgstr "비전"
-
-#: shell/footer.html.jinja
-msgid "Volunteer"
-msgstr "자원봉사"
-
-#: shell/footer.html.jinja
-msgid "Partner With Us"
-msgstr "파트너가 되기"
-
-#: shell/footer.html.jinja
-msgid "Jobs"
-msgstr "채용"
-
-#: shell/footer.html.jinja
-msgid "Careers"
-msgstr "커리어"
-
-#: shell/footer.html.jinja
-msgid "Blog"
-msgstr "블로그"
-
-#: shell/footer.html.jinja
-msgid "Terms of Service"
-msgstr "서비스 약관"
-
-#: shell/footer.html.jinja
-msgid "Discover"
-msgstr "발견"
-
-#: shell/footer.html.jinja
-msgid "Go home"
-msgstr "홈으로 이동"
-
-#: shell/footer.html.jinja
-msgid "Home"
-msgstr "홈"
-
-#: shell/footer.html.jinja
-msgid "Explore Books"
-msgstr "책 탐색"
-
-#: shell/footer.html.jinja
-msgid "Explore authors"
-msgstr "저자 탐색"
-
-#: shell/footer.html.jinja
-msgid "Explore subjects"
-msgstr "subjects 탐색"
-
-#: RelatedSubjects.html.jinja SearchNavigation.html SubjectTags.html openlibrary/core/shell/nav.py openlibrary/plugins/worksearch/code.py shell/footer.html.jinja subjects/notfound.html type/author/view.html type/list/view_body.html
-msgid "Subjects"
-msgstr "주제"
-
-#: shell/footer.html.jinja
-msgid "Explore collections"
-msgstr "collections 탐색"
-
-#: openlibrary/core/shell/nav.py shell/footer.html.jinja type/page/view.html
-msgid "Collections"
-msgstr "컬렉션"
-
-#: shell/footer.html.jinja
-msgid "Navigate to top of this page"
-msgstr "이 페이지 맨 위로 이동"
-
-#: shell/footer.html.jinja
-msgid "Return to Top"
-msgstr "맨 위로 돌아가기"
-
-#: shell/footer.html.jinja
-msgid "Develop"
-msgstr "개발"
-
-#: shell/footer.html.jinja
-msgid "Explore Open Library Developer Center"
-msgstr "Open Library Developer Center 탐색"
-
-#: shell/footer.html.jinja shell/header.html.jinja
-msgid "Developer Center"
-msgstr "개발자 센터"
-
-#: shell/footer.html.jinja
-msgid "Explore Open Library APIs"
-msgstr "Open Library APIs 탐색"
-
-#: shell/footer.html.jinja
-msgid "API Documentation"
-msgstr "API 문서"
-
-#: shell/footer.html.jinja
-msgid "Bulk Open Library data"
-msgstr "Open Library 대량 데이터"
-
-#: shell/footer.html.jinja
-msgid "Bulk Data Dumps"
-msgstr "대량 데이터 덤프"
-
-#: shell/footer.html.jinja
-msgid "Write a bot"
-msgstr "봇 작성"
-
-#: shell/footer.html.jinja
-msgid "Writing Bots"
-msgstr "봇 작성하기"
-
-#: shell/footer.html.jinja
-msgid "Help Center"
-msgstr "도움말 센터"
-
-#: shell/footer.html.jinja
-msgid "Contact"
-msgstr "문의"
-
-#: shell/footer.html.jinja
-msgid "Contact Us"
-msgstr "문의하기"
-
-#: shell/footer.html.jinja
-msgid "Suggest Edits"
-msgstr "편집 제안"
-
-#: shell/footer.html.jinja
-msgid "Suggesting Edits"
-msgstr "편집 제안하기"
-
-#: shell/footer.html.jinja
-msgid "Add a new book to Open Library"
-msgstr "Open Library에 새 책 추가"
-
-#: shell/footer.html.jinja
-msgid "Release Notes"
-msgstr "릴리스 노트"
-
-#: shell/footer.html.jinja
-msgid "Bluesky"
-msgstr "Bluesky"
-
-#: shell/footer.html.jinja
-msgid "Open Library on Bluesky"
-msgstr "Bluesky의 Open Library"
-
-#: shell/footer.html.jinja
-msgid "Twitter"
-msgstr "Twitter"
-
-#: shell/footer.html.jinja
-msgid "Open Library on Twitter"
-msgstr "Twitter의 Open Library"
-
-#: shell/footer.html.jinja
-msgid "GitHub"
-msgstr "GitHub"
-
-#: shell/footer.html.jinja
-msgid "Open Library on GitHub"
-msgstr "GitHub의 Open Library"
-
-#: shell/footer.html.jinja shell/header.html.jinja type/list/embed.html
-msgid "Open Library logo"
-msgstr "Open Library 로고"
-
-#: shell/footer.html.jinja
-msgid "Open Library is an initiative of the <a href=\"//archive.org/\">Internet Archive</a>, a 501(c)(3) non-profit, building a digital library of Internet sites and other cultural artifacts in  digital form. Other <a href=\"//archive.org/projects/\">projects</a> include the <a href=\"//archive.org/web/\">Wayback Machine</a>, <a href=\"//archive.org/\">archive.org</a> and <a href=\"//archive-it.org\">archive-it.org</a>"
-msgstr "Open Library는 501(c)(3) 비영리 단체인 <a href=\"//archive.org/\">Internet Archive</a>의 프로젝트로, 인터넷 사이트와 기타 문화 자료를 디지털 형태로 수집하는 디지털 도서관을 구축하고 있습니다. 다른 <a href=\"//archive.org/projects/\">프로젝트</a>로는 <a href=\"//archive.org/web/\">Wayback Machine</a>, <a href=\"//archive.org/\">archive.org</a>, <a href=\"//archive-it.org\">archive-it.org</a>가 있습니다."
-
-#: shell/footer.html.jinja
-#, python-format
-msgid "version <a href=\"https://github.com/internetarchive/openlibrary/commit/%(git_rev_hash)s\">%(git_rev_hash)s</a>"
-msgstr "버전 <a href=\"https://github.com/internetarchive/openlibrary/commit/%(git_rev_hash)s\">%(git_rev_hash)s</a>"
-
-#: shell/head.html.jinja
+#: site/head.html
 msgid "Open Library is an open, editable library catalog, building towards a web page for every book ever published. Read, borrow, and discover more than 3M books for free."
 msgstr "Open Library는 출판된 모든 책에 대한 웹 페이지를 목표로 하는 개방형 도서관 카탈로그입니다. 300만 권 이상의 책을 무료로 읽고 대출하고 발견하세요."
 
-#: shell/header.html.jinja
-msgid "The Internet Archive's Open Library: One page for every book"
-msgstr "Internet Archive의 Open Library: 모든 책을 위한 하나의 페이지"
-
-#: shell/header.html.jinja
-msgid "Search by barcode"
-msgstr "바코드로 검색"
-
-#: shell/header.html.jinja shell/header_dropdown.html.jinja
-msgid "Menu"
-msgstr "메뉴"
-
-#: shell/header.html.jinja
-msgid "My account"
-msgstr "내 계정"
-
-#: shell/header.html.jinja
-msgid "My Open Library"
-msgstr "내 Open Library"
-
-#: shell/header.html.jinja
-msgid "Loans, Reading Log, Lists, Stats"
-msgstr "대출, 독서 기록, 목록, 통계"
-
-#: shell/header.html.jinja
-msgid "My Profile"
-msgstr "내 프로필"
-
-#: shell/header.html.jinja
-msgid "Pending Merge Requests"
-msgstr "대기 중인 병합 요청"
-
-#: shell/header.html.jinja
-msgid "Log out"
-msgstr "로그아웃"
-
-#: shell/header.html.jinja
-msgid "Contribute"
-msgstr "기여"
-
-#: shell/header.html.jinja
-msgid "Recent Community Edits"
-msgstr "최근 커뮤니티 편집"
-
-#: shell/header.html.jinja
-msgid "Resources"
-msgstr "자료"
-
-#: shell/header.html.jinja
-msgid "Help & Support"
-msgstr "도움말 및 지원"
-
-#: shell/header.html.jinja
-msgid "Librarians Portal"
-msgstr "사서 포털"
-
-#: shell/stats.html.jinja
+#: site/stats.html.jinja
 msgid "Debug Stats"
 msgstr "디버그 통계"
 
-#: EditionNavBar.html shell/stats.html.jinja
+#: EditionNavBar.html site/stats.html.jinja
 msgid "Details"
 msgstr "세부 정보"
 
@@ -6935,11 +7099,6 @@ msgstr "현재 편집 중:"
 msgid "Display Name"
 msgstr "표시 이름"
 
-#: openlibrary/core/shell/header.py type/user/view.html
-#, python-format
-msgid "Joined %(date)s"
-msgstr "가입일: %(date)s"
-
 #: type/user/view.html
 msgid "admin page"
 msgstr "관리자 페이지"
@@ -7010,10 +7169,6 @@ msgstr "%(count)d개 판 전체 보기?"
 #: type/work/editions_datatable.html
 msgid "Edition"
 msgstr "판"
-
-#: openlibrary/core/shell/search_modal.py type/work/editions_datatable.html
-msgid "Availability"
-msgstr "이용 가능 여부"
 
 #: OlPagination.html OlPaginationArrows.html type/work/editions_datatable.html
 msgid "Go to previous page"
@@ -7198,10 +7353,6 @@ msgstr "만료"
 #, python-format
 msgid "by %(authors)s"
 msgstr "%(authors)s 저"
-
-#: FulltextSearchSuggestion.html.jinja openlibrary/core/shell/search_modal.py
-msgid "Search inside books"
-msgstr "책 내부 검색"
 
 #: FulltextSearchSuggestion.html.jinja
 #, python-format
@@ -7837,7 +7988,7 @@ msgstr "이 책 구매"
 #: contribute/parts.html.jinja
 #, python-format
 msgid "one of %(count)s editions of this work"
-msgstr "이 작품의 %(count)s개 판 중 하나"
+msgstr "이 작품의 %(count)s개 판본 중 하나"
 
 #: contribute/parts.html.jinja
 #, python-format
@@ -7846,7 +7997,7 @@ msgstr "이 책을 추천하는 이유: 약 %(count)s명의 독자가 서재에 
 
 #: contribute/parts.html.jinja
 msgid "Go to book page"
-msgstr "책 페이지로 이동"
+msgstr "도서 페이지로 이동"
 
 #: contribute/parts.html.jinja
 msgid "Go to edit page"
@@ -7858,7 +8009,7 @@ msgstr "답변 방법"
 
 #: contribute/parts.html.jinja
 msgid "This edition has no ISBN to search by, so look it up by title and author."
-msgstr "이 판에는 검색할 ISBN이 없으므로 제목과 저자로 찾아보세요."
+msgstr "이 판본은 검색할 ISBN이 없으므로 제목과 저자로 찾아보세요."
 
 #: contribute/parts.html.jinja
 msgid "Guideline"
@@ -7866,19 +8017,19 @@ msgstr "가이드라인"
 
 #: contribute/parts.html.jinja
 msgid "How this edit goes wrong"
-msgstr "이 편집이 잘못되는 경우"
+msgstr "이 편집이 잘못될 수 있는 경우"
 
 #: contribute/parts.html.jinja
 #, python-format
 msgid "The other edition"
 msgid_plural "The other %(count)d editions"
-msgstr[0] "다른 %(count)d개 판"
+msgstr[0] "다른 판본"
 
 #: contribute/parts.html.jinja
 #, python-format
 msgid "1 other value"
 msgid_plural "%(count)d other values"
-msgstr[0] "%(count)d개의 다른 값"
+msgstr[0] "다른 값 1개"
 
 #: contribute/parts.html.jinja
 msgid "Not filled in"
@@ -7886,7 +8037,7 @@ msgstr "입력되지 않음"
 
 #: contribute/parts.html.jinja
 msgid "See each edition"
-msgstr "각 판 보기"
+msgstr "각 판본 보기"
 
 #: contribute/parts.html.jinja
 #, python-format
@@ -7924,25 +8075,25 @@ msgstr "일치하는 언어 없음"
 
 #: contribute/parts.html.jinja
 msgid "Other editions say"
-msgstr "다른 판에서는"
+msgstr "다른 판본에서는"
 
 #: contribute/parts.html.jinja
 #, python-format
 msgid "%(value)s, on 1 edition"
 msgid_plural "%(value)s, on %(count)d editions"
-msgstr[0] "%(value)s, %(count)d개 판에서"
+msgstr[0] "%(value)s, 판본 1개"
 
 #: contribute/parts.html.jinja
 msgid "I opened the record and the year and publisher match this edition."
-msgstr "레코드를 열어 확인했으며 연도와 출판사가 이 판과 일치합니다."
+msgstr "기록을 열어보니 연도와 출판사가 이 판본과 일치합니다."
 
 #: contribute/parts.html.jinja
 msgid "Add a comment about your edit"
-msgstr "편집에 대한 코멘트 추가"
+msgstr "편집에 대한 설명 추가"
 
 #: contribute/parts.html.jinja
 msgid "Edit comment"
-msgstr "편집 코멘트"
+msgstr "편집 설명"
 
 #: contribute/parts.html.jinja
 msgid "Where you found it"
@@ -7950,20 +8101,20 @@ msgstr "찾은 위치"
 
 #: contribute/parts.html.jinja
 msgid "Save and next"
-msgstr "저장하고 다음으로"
+msgstr "저장 후 다음"
 
 #: contribute/parts.html.jinja
 msgid "I couldn't find it"
-msgstr "찾을 수 없습니다"
+msgstr "찾을 수 없었습니다"
 
 #: contribute/parts.html.jinja
 #, python-format
 msgid "Next: a random task from %(filter)s"
-msgstr "다음: %(filter)s에서 무작위 작업"
+msgstr "다음: %(filter)s에서 임의의 작업"
 
 #: contribute/parts.html.jinja
 msgid "Next: a random task from all open tasks"
-msgstr "다음: 모든 미완료 작업 중에서 무작위 작업"
+msgstr "다음: 모든 열린 작업에서 임의의 작업"
 
 #: openlibrary/contribute/field_guides.py
 msgid "WorldCat"
@@ -7987,15 +8138,15 @@ msgstr "언어 입력"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Look the ISBN up in WorldCat or Google Books; both list the language of the text. The title page and cover tell you too."
-msgstr "WorldCat이나 Google Books에서 ISBN을 검색해 보세요. 두 곳 모두 텍스트의 언어를 표시합니다. 속표지와 표지에서도 확인할 수 있습니다."
+msgstr "ISBN을 WorldCat이나 Google Books에서 찾아보세요. 두 곳 모두 텍스트의 언어를 표시합니다. 속표지와 표지에서도 확인할 수 있습니다."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Editions of a work usually share a language, but a translation won't. Check this edition's own text."
-msgstr "같은 작품의 판들은 보통 같은 언어를 사용하지만 번역본은 다릅니다. 이 판 자체의 텍스트를 확인하세요."
+msgstr "한 작품의 판본들은 보통 같은 언어를 사용하지만, 번역본은 다릅니다. 이 판본 자체의 텍스트를 확인하세요."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Record the language of the text, not the language of the title page. A translation is in the language it was translated into."
-msgstr "속표지의 언어가 아니라 본문의 언어를 기록하세요. 번역본은 번역된 언어로 기록합니다."
+msgstr "속표지의 언어가 아니라 본문 텍스트의 언어를 기록하세요. 번역본은 번역된 언어로 기록합니다."
 
 #: openlibrary/contribute/field_guides.py
 msgid "For example English"
@@ -8003,23 +8154,23 @@ msgstr "예: 영어"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Page count"
-msgstr "페이지 수"
+msgstr "쪽수"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Fill in page count"
-msgstr "페이지 수 입력"
+msgstr "쪽수 입력"
 
 #: openlibrary/contribute/field_guides.py
 msgid "How many pages does this edition have?"
-msgstr "이 판은 몇 페이지입니까?"
+msgstr "이 판본은 몇 쪽입니까?"
 
 #: openlibrary/contribute/field_guides.py
 msgid "WorldCat lists the page count in the record's description. Google Books calls it Length. Make sure the record is for this ISBN, not another printing."
-msgstr "WorldCat은 레코드 설명에 페이지 수를 표시합니다. Google Books에서는 이를 '분량(Length)'이라고 부릅니다. 레코드가 다른 인쇄본이 아닌 이 ISBN에 해당하는지 확인하세요."
+msgstr "WorldCat은 쪽수를 설명란에 표시합니다. Google Books에서는 이를 Length라고 부릅니다. 이 기록이 다른 인쇄본이 아니라 이 ISBN에 해당하는지 확인하세요."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Catalogs count front matter differently, so numbers within a few pages of each other are the same count. Use the last numbered page of the main text."
-msgstr "카탈로그마다 서문 등의 페이지 계산 방식이 달라서 몇 페이지 정도 차이 나는 숫자는 같은 것으로 봅니다. 본문의 마지막 번호가 매겨진 페이지를 사용하세요."
+msgstr "카탈로그마다 본문 앞부분을 계산하는 방식이 달라서 몇 쪽 정도 차이 나는 숫자는 같은 쪽수로 봅니다. 본문의 마지막 번호가 매겨진 쪽을 사용하세요."
 
 #: openlibrary/contribute/field_guides.py
 msgid "For example 320"
@@ -8031,11 +8182,11 @@ msgstr "출판사 입력"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Who published this edition?"
-msgstr "이 판은 어디에서 출판했습니까?"
+msgstr "이 판본을 출판한 곳은 어디인가요?"
 
 #: openlibrary/contribute/field_guides.py
 msgid "The imprint is printed on the title page and the spine. WorldCat and the Library of Congress list it under Publisher."
-msgstr "임프린트는 속표지와 책등에 인쇄되어 있습니다. WorldCat과 미국 의회도서관에서는 이를 '출판사(Publisher)' 항목에 표시합니다."
+msgstr "임프린트는 속표지와 책등에 인쇄되어 있습니다. WorldCat과 미국 의회도서관에서는 이를 출판사(Publisher) 항목에 표시합니다."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Open Library records the imprint printed on the book, not the parent company. Anchor Books, not Penguin Random House."
@@ -8055,27 +8206,27 @@ msgstr "LCCN 입력"
 
 #: openlibrary/contribute/field_guides.py
 msgid "What is this edition's Library of Congress number?"
-msgstr "이 판의 미국 의회도서관 번호는 무엇입니까?"
+msgstr "이 판본의 미국 의회도서관 번호는 무엇인가요?"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Search the Library of Congress catalog for this ISBN. Open the record whose year and publisher match this edition, and copy the number shown as LCCN."
-msgstr "미국 의회도서관 카탈로그에서 이 ISBN을 검색하세요. 연도와 출판사가 이 판과 일치하는 레코드를 열어 LCCN으로 표시된 번호를 복사하세요."
+msgstr "미국 의회도서관 카탈로그에서 이 ISBN을 검색하세요. 연도와 출판사가 이 판본과 일치하는 기록을 열어, LCCN으로 표시된 번호를 복사하세요."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Hyphenated and padded forms are the same number: 75-425165 and 75425165. Paste either; Open Library stores the padded form."
-msgstr "하이픈이 있는 형식과 채워진(padded) 형식은 같은 번호입니다: 75-425165와 75425165. 둘 중 무엇을 붙여넣어도 되며, Open Library는 채워진 형식으로 저장합니다."
+msgstr "하이픈이 있는 형식과 자리수를 채운 형식은 같은 번호입니다. 예: 75-425165와 75425165. 둘 중 어느 것을 붙여넣어도 되며, Open Library는 자리수를 채운 형식으로 저장합니다."
 
 #: openlibrary/contribute/field_guides.py
 msgid "The number belongs to a different printing. Search results lead with the best-known one, not with yours."
-msgstr "이 번호는 다른 인쇄본의 것입니다. 검색 결과는 보통 가장 잘 알려진 판을 먼저 보여주며, 여러분이 가진 판이 아닐 수 있습니다."
+msgstr "그 번호는 다른 인쇄본의 것입니다. 검색 결과는 가장 잘 알려진 인쇄본을 먼저 보여주며, 이 책의 것이 아닐 수 있습니다."
 
 #: openlibrary/contribute/field_guides.py
 msgid "The number is already on another edition of this work, which means one of the two records is wrong."
-msgstr "이 번호가 이미 이 작품의 다른 판에 등록되어 있습니다. 즉, 두 레코드 중 하나가 잘못된 것입니다."
+msgstr "그 번호가 이미 이 작품의 다른 판본에 입력되어 있다면, 두 기록 중 하나가 잘못된 것입니다."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Pasting the web address instead of the number itself."
-msgstr "번호 자체가 아니라 웹 주소를 붙여넣는 경우입니다."
+msgstr "번호 대신 웹 주소를 붙여넣는 경우입니다."
 
 #: openlibrary/contribute/field_guides.py
 msgid "For example 75425165"
@@ -8091,23 +8242,23 @@ msgstr "OCLC 번호 입력"
 
 #: openlibrary/contribute/field_guides.py
 msgid "What is this edition's WorldCat (OCLC) number?"
-msgstr "이 판의 WorldCat(OCLC) 번호는 무엇입니까?"
+msgstr "이 판본의 WorldCat(OCLC) 번호는 무엇인가요?"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Search WorldCat for this ISBN. Open the record whose year, publisher and format match this edition, and copy the number shown as OCLC Number."
-msgstr "WorldCat에서 이 ISBN을 검색하세요. 연도, 출판사, 형식이 이 판과 일치하는 레코드를 열어 OCLC Number로 표시된 번호를 복사하세요."
+msgstr "WorldCat에서 이 ISBN을 검색하세요. 연도, 출판사, 형식이 이 판본과 일치하는 기록을 열어, OCLC Number로 표시된 번호를 복사하세요."
 
 #: openlibrary/contribute/field_guides.py
 msgid "The OCLC number is how libraries the world over refer to one catalogued edition. It is one of the few fields Open Library uses to find duplicates of this book when new records arrive."
-msgstr "OCLC 번호는 전 세계 도서관들이 카탈로그에 등록된 하나의 판을 가리킬 때 사용하는 번호입니다. Open Library가 새 레코드가 들어올 때 이 책의 중복을 찾는 데 사용하는 몇 안 되는 항목 중 하나입니다."
+msgstr "OCLC 번호는 전 세계 도서관이 카탈로그에 등록된 하나의 판본을 가리킬 때 사용하는 번호입니다. 새 기록이 들어올 때 Open Library가 이 책의 중복 여부를 확인하는 데 사용하는 몇 안 되는 항목 중 하나입니다."
 
 #: openlibrary/contribute/field_guides.py
 msgid "The prefixes ocm, ocn, on and (OCoLC) are padding added by library systems, not part of the number. ocm00047810608 is 47810608."
-msgstr "ocm, ocn, on, (OCoLC) 같은 접두사는 도서관 시스템이 추가한 채움 문자일 뿐, 번호의 일부가 아닙니다. ocm00047810608은 47810608입니다."
+msgstr "ocm, ocn, on, (OCoLC) 같은 접두사는 도서관 시스템이 덧붙인 것으로 번호의 일부가 아닙니다. ocm00047810608은 47810608입니다."
 
 #: openlibrary/contribute/field_guides.py
 msgid "The number belongs to a different printing, a book club edition, or the ebook rather than the print copy."
-msgstr "이 번호는 다른 인쇄본, 북클럽판, 또는 인쇄본이 아닌 전자책의 것일 수 있습니다."
+msgstr "그 번호가 다른 인쇄본, 북클럽판, 혹은 종이책이 아닌 전자책의 것일 수 있습니다."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Pasting the web address, or leaving the ocm/ocn prefix on."
@@ -8115,7 +8266,7 @@ msgstr "웹 주소를 붙여넣거나 ocm/ocn 접두사를 그대로 남겨두�
 
 #: openlibrary/contribute/field_guides.py
 msgid "Digits only, for example 47810608"
-msgstr "숫자만 입력, 예: 47810608"
+msgstr "숫자만, 예: 47810608"
 
 #: openlibrary/contribute/save.py
 msgid "Pick a language from the list."
@@ -8123,20 +8274,20 @@ msgstr "목록에서 언어를 선택하세요."
 
 #: openlibrary/contribute/save.py
 msgid "Enter the page count as a whole number."
-msgstr "페이지 수를 정수로 입력하세요."
+msgstr "쪽수를 정수로 입력하세요."
 
 #: openlibrary/contribute/save.py
 msgid "Fill in an answer, or choose “I couldn't find it”."
-msgstr "답을 입력하거나 “찾을 수 없습니다”를 선택하세요."
+msgstr "답변을 입력하거나 “찾을 수 없었습니다”를 선택하세요."
 
 #: openlibrary/contribute/save.py
 msgid "This field can't be filled in here."
-msgstr "이 항목은 여기에서 입력할 수 없습니다."
+msgstr "이 항목은 여기서 입력할 수 없습니다."
 
 #: openlibrary/contribute/save.py
 #, python-format
 msgid "Filled in %(field)s from Open Library Tasks"
-msgstr "Open Library Tasks에서 %(field)s 입력됨"
+msgstr "Open Library 작업에서 %(field)s 입력함"
 
 #: openlibrary/core/bookshelves.py
 msgid "[Record deleted]"
@@ -8145,169 +8296,6 @@ msgstr "[레코드 삭제됨]"
 #: openlibrary/core/edits.py
 msgid "Unknown"
 msgstr "알 수 없음"
-
-#: openlibrary/core/shell/nav.py
-msgid "K-12 Student Library"
-msgstr "K-12 학생 도서관"
-
-#: openlibrary/core/shell/nav.py
-msgid "Book Talks"
-msgstr "북 토크"
-
-#: openlibrary/core/shell/nav.py
-msgid "Random Book"
-msgstr "무작위 책"
-
-#: openlibrary/core/shell/search_modal.py openlibrary/plugins/worksearch/code.py
-msgid "All books"
-msgstr "모든 책"
-
-#: openlibrary/core/shell/search_modal.py openlibrary/plugins/worksearch/code.py
-msgid "Free to read now"
-msgstr "지금 무료로 읽기"
-
-#: openlibrary/core/shell/search_modal.py openlibrary/plugins/worksearch/code.py
-msgid "Borrow online"
-msgstr "온라인 대출"
-
-#: openlibrary/core/shell/search_modal.py
-msgid "Search Open Library"
-msgstr "Open Library 검색"
-
-#: openlibrary/core/shell/search_modal.py
-msgid "Search books and authors…"
-msgstr "책과 저자 검색…"
-
-#: openlibrary/core/shell/search_modal.py
-msgid "Close search"
-msgstr "검색 닫기"
-
-#: openlibrary/core/shell/search_modal.py
-msgid "Clear search"
-msgstr "검색어 지우기"
-
-#: openlibrary/core/shell/search_modal.py
-msgid "See results"
-msgstr "결과 보기"
-
-#: openlibrary/core/shell/search_modal.py
-msgid "Go to full search"
-msgstr "전체 검색으로 이동"
-
-#: openlibrary/core/shell/search_modal.py
-#, python-format
-msgid "See %s book"
-msgstr "%s권의 책 보기"
-
-#: openlibrary/core/shell/search_modal.py
-#, python-format
-msgid "See %s books"
-msgstr "%s권의 책 보기"
-
-#: openlibrary/core/shell/search_modal.py
-#, python-format
-msgid "See all %s books"
-msgstr "%s권의 책 모두 보기"
-
-#: openlibrary/core/shell/search_modal.py
-#, python-format
-msgid "All %s books"
-msgstr "%s권의 모든 책"
-
-#: openlibrary/core/shell/search_modal.py
-msgid "Clear all"
-msgstr "모두 지우기"
-
-#: openlibrary/core/shell/search_modal.py
-msgid "Search scope"
-msgstr "검색 범위"
-
-#: openlibrary/core/shell/search_modal.py
-msgid "Inside books"
-msgstr "도서 내부"
-
-#: openlibrary/core/shell/search_modal.py
-msgid "Search filters"
-msgstr "검색 필터"
-
-#: openlibrary/core/shell/search_modal.py
-msgid "Searching books and authors…"
-msgstr "도서 및 저자 검색 중…"
-
-#: openlibrary/core/shell/search_modal.py
-msgid "Searching inside books…"
-msgstr "도서 내부 검색 중…"
-
-#: openlibrary/core/shell/search_modal.py
-msgid "No results found"
-msgstr "결과를 찾을 수 없습니다"
-
-#: openlibrary/core/shell/search_modal.py
-#, python-format
-msgid "Showing %s of %s results"
-msgstr "%s / %s개 결과 표시"
-
-#: openlibrary/core/shell/search_modal.py
-msgid "Untitled"
-msgstr "제목 없음"
-
-#: openlibrary/core/shell/search_modal.py
-msgid "Readable"
-msgstr "읽기 가능"
-
-#: openlibrary/core/shell/search_modal.py
-#, python-format
-msgid "Readable in %s"
-msgstr "%s로 읽을 수 있음"
-
-#: openlibrary/core/shell/search_modal.py
-msgid "Recent searches"
-msgstr "최근 검색어"
-
-#: openlibrary/core/shell/search_modal.py
-#, python-format
-msgid "Remove \"%s\" from recent searches"
-msgstr "최근 검색어에서 \"%s\" 삭제"
-
-#: openlibrary/core/shell/search_modal.py
-#, python-format
-msgid "Search Inside %s book"
-msgstr "%s권의 도서 내부 검색"
-
-#: openlibrary/core/shell/search_modal.py
-#, python-format
-msgid "Search Inside %s books"
-msgstr "%s권의 책 내부 검색"
-
-#: openlibrary/core/shell/search_modal.py
-msgid "View all"
-msgstr "전체 보기"
-
-#: openlibrary/core/shell/search_modal.py
-msgid "Search inside books…"
-msgstr "도서 내부 검색…"
-
-#: openlibrary/core/shell/search_modal.py
-msgid "Type a word or phrase to find it on the pages of millions of books."
-msgstr "수백만 권의 도서 페이지에서 찾을 단어나 문구를 입력하세요."
-
-#: openlibrary/core/shell/search_modal.py
-msgid "No matches inside books"
-msgstr "도서 내부에서 일치하는 항목이 없습니다"
-
-#: openlibrary/core/shell/search_modal.py
-msgid "Search inside books is temporarily unavailable. Please try again later."
-msgstr "도서 내부 검색을 일시적으로 사용할 수 없습니다. 나중에 다시 시도해 주세요."
-
-#: openlibrary/core/shell/search_modal.py
-#, python-format
-msgid "%s match found inside books"
-msgstr "책 내부에서 %s개의 일치 항목을 찾았습니다"
-
-#: openlibrary/core/shell/search_modal.py
-#, python-format
-msgid "%s matches found inside books"
-msgstr "책 내부에서 %s개의 일치 항목을 찾았습니다"
 
 #: openlibrary/edition_scorecard.py
 msgid "Can be accessed in full online (read / borrowed)"
@@ -8707,7 +8695,7 @@ msgstr "OCLC"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "All open tasks"
-msgstr "모든 미완료 작업"
+msgstr "모든 열린 작업"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 #, python-format
@@ -8720,15 +8708,15 @@ msgstr "가장 필요함"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Nothing missing here right now. Thank you."
-msgstr "지금은 누락된 항목이 없습니다. 감사합니다."
+msgstr "지금은 여기에 누락된 항목이 없습니다. 감사합니다."
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Nothing to fill in here"
-msgstr "여기에 입력할 내용이 없습니다"
+msgstr "여기에 입력할 항목이 없습니다"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Open the record and confirm it matches this edition first."
-msgstr "먼저 레코드를 열어 이 판과 일치하는지 확인하세요."
+msgstr "먼저 기록을 열어 이 판본과 일치하는지 확인하세요."
 
 #: openlibrary/plugins/openlibrary/home.py
 msgid "Art"
@@ -8817,6 +8805,18 @@ msgstr "의회도서관 분류 있음"
 #: openlibrary/plugins/openlibrary/librarian_dashboard.py
 msgid "Has number of pages"
 msgstr "페이지 수 있음"
+
+#: openlibrary/plugins/openlibrary/nav.py
+msgid "K-12 Student Library"
+msgstr "K-12 학생 도서관"
+
+#: openlibrary/plugins/openlibrary/nav.py
+msgid "Book Talks"
+msgstr "북 토크"
+
+#: openlibrary/plugins/openlibrary/nav.py
+msgid "Random Book"
+msgstr "무작위 책"
 
 #: openlibrary/plugins/openlibrary/partials.py
 msgid "Better World Books"
