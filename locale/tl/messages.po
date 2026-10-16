@@ -744,7 +744,7 @@ msgstr "Taong ito"
 msgid "All Time"
 msgstr "Lahat ng Oras"
 
-#: home/index.html openlibrary/plugins/openlibrary/api.py trending.html
+#: openlibrary/plugins/openlibrary/api.py trending.html
 msgid "Trending Books"
 msgstr "Umangat na Mga Aklat"
 
@@ -1355,10 +1355,10 @@ msgid "<a href=\"/search\">Search for a book</a> to borrow."
 msgstr "<a href=\"/search\">Maghanap ng libro</a> upang manghiram."
 
 #: account/loans.html
-msgid "Looking for a book to borrow?  Check out our staff picks, or search for a book on a specific subject:"
-msgstr "Naghahanap ng libro upang manghiram? Suriin ang aming mga pinili ng tauhan, o maghanap para s"
+msgid "Looking for a book to borrow? Check out our staff picks:"
+msgstr "Naghahanap ng aklat na hihiramin? Tingnan ang aming mga pili ng staff:"
 
-#: account/loans.html home/index.html
+#: account/loans.html
 msgid "Books We Love"
 msgstr "Mga Librong Mahal Namin"
 
@@ -1412,6 +1412,10 @@ msgstr "Aking mga Pagsusuri"
 #: BookByline.html SearchResultsWork.html account/notes.html account/observations.html
 msgid "Unknown author"
 msgstr "Hindi Kilalang may-akda"
+
+#: account/notes.html
+msgid "My notes for this work"
+msgstr "Ang aking mga tala para sa akdang ito"
 
 #: account/notes.html
 msgid "My notes for an edition of "
@@ -2083,7 +2087,7 @@ msgstr "Mga May-akdad na Idinagdag"
 msgid "Covers Added"
 msgstr "Mga Pabalat na Idinagdag"
 
-#: admin/index.html home/stats.html
+#: admin/index.html openlibrary/plugins/openlibrary/home.py
 msgid "New Members"
 msgstr "Mga Bagong Miyembro"
 
@@ -2135,7 +2139,7 @@ msgstr "Mga Aklat na Naka"
 msgid "Star Rating Patrons"
 msgstr "Rating ng Bituin ng mga Patron"
 
-#: admin/index.html home/stats.html
+#: admin/index.html
 msgid "Unique Visitors"
 msgstr "Natatanging Bisita"
 
@@ -3189,6 +3193,37 @@ msgstr "Wala sa mga ito ang tugma sa librong gusto kong idagdag."
 msgid "Continue"
 msgstr "Magpatuloy"
 
+#: books/custom_carousel.html.jinja
+#, python-format
+msgid "See all %(title)s"
+msgstr "Tingnan lahat ng %(title)s"
+
+#: CarouselSkeleton.html.jinja books/custom_carousel.html.jinja lists/carousel.html.jinja lists/home.html lists/showcase.html
+msgid "See all"
+msgstr "Tingnan ang lahat"
+
+#: books/custom_carousel.html.jinja
+msgid "Previous page"
+msgstr "Nakaraang pahina"
+
+#: books/custom_carousel.html.jinja
+msgid "Next page"
+msgstr "Susunod na pahina"
+
+#: books/custom_carousel.html.jinja
+msgid "Carousel pages"
+msgstr "Mga pahina ng carousel"
+
+#: books/custom_carousel.html.jinja
+#, python-brace-format
+msgid "Go to page {page} of {total}"
+msgstr "Pumunta sa pahina {page} ng {total}"
+
+#: books/custom_carousel.html.jinja
+#, python-brace-format
+msgid "Page {page} of {total}"
+msgstr "Pahina {page} ng {total}"
+
 #: books/custom_carousel_card.html.jinja
 #, python-format
 msgid "1 person waiting"
@@ -4124,6 +4159,49 @@ msgstr "Susunod na gawain"
 msgid "Pick a different book"
 msgstr "Pumili ng ibang aklat"
 
+#: contribute/landing.html.jinja
+msgid "Open Library Tasks"
+msgstr "Mga Gawain sa Open Library"
+
+#: contribute/landing.html.jinja
+#, python-format
+msgid "Open Library serves %(readers)s readers every month across %(books)s catalogued books, and its %(mark_start)sOpen Librarians%(mark_end)s make thousands of edits every week."
+msgstr "Naglilingkod ang Open Library sa %(readers)s na mambabasa bawat buwan sa %(books)s na aklat na nakatala, at ang mga %(mark_start)sOpen Librarian%(mark_end)s nito ay gumagawa ng libu-libong pag-edit bawat linggo."
+
+#: contribute/landing.html.jinja
+msgid "Many books on Open Library are still missing a detail: a cover, a language, a publisher. You can help fill them in."
+msgstr "Maraming aklat sa Open Library ang kulang pa sa detalye: isang cover, isang wika, isang publisher. Matutulungan mo kaming punan ang mga ito."
+
+#: contribute/landing.html.jinja
+msgid "Recent edits"
+msgstr "Mga kamakailang pag-edit"
+
+#: FulltextResultIA.html.jinja contribute/landing.html.jinja contribute/parts.html.jinja
+#, python-format
+msgid "by %(authors)s"
+msgstr "ni %(authors)s"
+
+#: contribute/landing.html.jinja
+msgid "Quiet for the moment. Edits show up here as they happen."
+msgstr "Tahimik sa ngayon. Lilitaw dito ang mga pag-edit habang nangyayari ang mga ito."
+
+#: contribute/landing.html.jinja
+msgid "What a task looks like"
+msgstr "Ang hitsura ng isang gawain"
+
+#: contribute/landing.html.jinja
+msgid "Each task is one book and one empty field. Here are just a few examples."
+msgstr "Ang bawat gawain ay isang aklat at isang walang laman na field. Narito ang ilang halimbawa."
+
+#: contribute/landing.html.jinja
+#, python-format
+msgid "Add %(field)s"
+msgstr "Magdagdag ng %(field)s"
+
+#: contribute/landing.html.jinja
+msgid "Join in"
+msgstr "Sumali"
+
 #: contribute/nothing.html.jinja
 #, python-format
 msgid "%(field)s is already filled in on this edition"
@@ -4350,117 +4428,96 @@ msgstr "Tulad ng Wikipedia, maaari kang makapag-ambag ng bagong impormasyon o mg
 msgid "Latest Blog Posts"
 msgstr "Pinakabagong Mga Post sa Blog"
 
-#: home/categories.html
-msgid "Browse by Subject"
-msgstr "Mag-browse ayon sa Paksa"
+#: home/browse_stacks.html.jinja
+msgid "Browse the stacks"
+msgstr "Mag-browse sa mga istante"
 
-#: home/categories.html
+#: home/browse_stacks.html.jinja home/genre_shelf.html.jinja openlibrary/core/shell/nav.py openlibrary/plugins/openlibrary/partials.py search/sort_options.html
+msgid "Trending"
+msgstr "Kasalukuyang Uso"
+
+#: home/browse_stacks.html.jinja openlibrary/plugins/openlibrary/partials.py
 #, python-format
-msgid "%(count)s Book"
-msgid_plural "%(count)s Books"
-msgstr[0] "%(count)s Aklat"
-msgstr[1] "%(count)s Mga Aklat"
+msgid "Trending in %(genre)s"
+msgstr "Uso sa %(genre)s"
+
+#: home/browse_stacks.html.jinja home/genre_shelf.html.jinja
+msgid "Jump to"
+msgstr "Pumunta sa"
+
+#: home/genre_shelf.html.jinja
+#, python-format
+msgid "%(genre)s subgenres"
+msgstr "Mga subgenre ng %(genre)s"
+
+#: home/genre_shelf.html.jinja merge_request_table/table_header.html
+msgid "Newest"
+msgstr "Pinakabago"
+
+#: home/genre_shelf.html.jinja
+msgid "Top rated"
+msgstr "Pinakamataas ang rating"
+
+#: home/genre_shelf.html.jinja search/sort_options.html
+msgid "Sort by"
+msgstr "Ayusin ayon sa"
 
 #: home/index.html home/welcome.html
 msgid "Welcome to Open Library"
 msgstr "Maligayang pagdating sa Open Library"
 
-#: home/index.html openlibrary/plugins/openlibrary/api.py
-#, fuzzy
-msgid "Classic Books"
-msgstr "Klasikal na eBooks"
-
 #: home/index.html
-msgid "Recently Returned"
-msgstr "Kamakailan Lamang na Naibalik"
+msgid "Couldn't load this shelf. Try again?"
+msgstr "Hindi ma-load ang istanteng ito. Subukan ulit?"
 
-#: home/index.html openlibrary/plugins/openlibrary/api.py openlibrary/plugins/openlibrary/home.py
-#, fuzzy
-msgid "Romance"
-msgstr "Rumen"
+#: home/library_row.html.jinja
+msgid "A library made by the people who use it."
+msgstr "Isang aklatan na ginawa ng mga taong gumagamit nito."
 
-#: home/index.html openlibrary/plugins/openlibrary/api.py
-#, fuzzy
-msgid "Kids"
-msgstr "Uri"
+#: home/library_row.html.jinja
+msgid "A catalog for every book ever published, maintained by readers like you."
+msgstr "Isang katalogo para sa bawat aklat na nalathala, na pinananatili ng mga mambabasang tulad mo."
 
-#: home/index.html openlibrary/plugins/openlibrary/api.py
-#, fuzzy
-msgid "Thrillers"
-msgstr "Mga Manunulat"
+#: home/library_row.html.jinja openlibrary/plugins/openlibrary/contribute.py
+msgid "Become an Open Librarian"
+msgstr "Maging isang Open Librarian"
 
-#: home/index.html openlibrary/plugins/openlibrary/api.py openlibrary/plugins/openlibrary/home.py
-#, fuzzy
-msgid "Textbooks"
-msgstr "Ebooks"
+#: home/library_row.html.jinja
+msgid "Editable"
+msgstr "Nae-edit"
 
-#: home/index.html
-msgid "Authors Alliance & MIT Press"
-msgstr "Aliansa ng mga May-akda & MIT Press"
+#: home/library_row.html.jinja
+msgid "By anyone, like Wikipedia"
+msgstr "Ginagawa ng kahit sino, tulad ng Wikipedia"
 
-#: home/index.html
-msgid "Books in Local Environment"
-msgstr "Mga Aklat sa Local na Kapaligiran"
+#: home/library_row.html.jinja
+msgid "Public"
+msgstr "Pampubliko"
 
-#: home/stats.html
-msgid "Around the Library"
-msgstr "Sa Paligid ng Aklatan"
+#: home/library_row.html.jinja
+msgid "Every record, free to download"
+msgstr "Libre ang pag-download ng bawat tala"
 
-#: home/stats.html
-msgid "Here's what's happened over the last 28 days. More <a href=\"/recentchanges\">recent changes</a>"
-msgstr "Narito kung ano ang nangyari sa nakaraang 28 araw. Higit pang <a href=\"/recentchanges\">mga pagbabago</a>."
+#: home/library_row.html.jinja
+msgid "Nonprofit"
+msgstr "Walang-tubo"
 
-#: home/stats.html
-msgid "See all visitors to OpenLibrary.org"
-msgstr "Tingnan ang lahat ng bisita sa OpenLibrary.org"
+#: home/library_row.html.jinja
+msgid "Run by the Internet Archive"
+msgstr "Pinapatakbo ng Internet Archive"
 
-#: home/stats.html
-msgid "Area graph of recent unique visitors"
-msgstr "Graph ng lugar ng mga kamakailang natatanging bisita"
+#: home/library_row.html.jinja
+msgid "In the last month"
+msgstr "Sa nakaraang buwan"
 
-#: home/stats.html
-msgid "How many new Open Library members have we welcomed?"
-msgstr "Ilan ang mga bagong miyembro ng Open Library na ating tinanggap?"
+#: home/library_row.html.jinja
+msgid "Change over the month, by 7-day average"
+msgstr "Pagbabago sa loob ng buwan, batay sa 7-araw na average"
 
-#: home/stats.html
-msgid "Area graph of new members"
-msgstr "Graph ng lugar ng mga bagong miyembro"
-
-#: home/stats.html
-msgid "People are constantly updating the catalog"
-msgstr "Patuloy na ina-update ng mga tao ang katalogo"
-
-#: home/stats.html
-msgid "Area graph of recent catalog edits"
-msgstr "Graph ng lugar ng mga kamakailang pag-edit ng katalogo"
-
-#: home/stats.html
-msgid "Catalog Edits"
-msgstr "Mga Pag-edit ng Katalogo"
-
-#: home/stats.html
-msgid "Members can create Lists"
-msgstr "Maaari gumawa ang mga miyembro ng Mga Listahan"
-
-#: home/stats.html
-msgid "Area graph of lists created recently"
-msgstr "Graph ng lugar ng mga listahang nilikha kamakailan"
-
-#: home/stats.html
-msgid "Lists Created"
-msgstr "Mga Listahang Nilikha"
-
-#: home/stats.html
-msgid "We're a library, so we lend books, too"
-msgstr "Kami ay isang aklatan, kaya nagpapahiram din kami ng mga aklat"
-
-#: home/stats.html
-msgid "Area graph of ebooks borrowed recently"
-msgstr "Graph ng lugar ng mga eBooks na hiniram kamakailan"
-
-#: home/stats.html
-msgid "eBooks Borrowed"
-msgstr "Mga EBooks na Hiniram"
+#: home/library_row.html.jinja
+#, python-format
+msgid "Up %(percent)d%% over the month"
+msgstr "Tumaas ng %(percent)d%% sa loob ng buwan"
 
 #: home/welcome.html
 msgid "Read Free Library Books Online"
@@ -4501,14 +4558,6 @@ msgstr "Subukan ang Fulltext Search"
 #: home/welcome.html
 msgid "Find matching results within the text of millions of books"
 msgstr "Hanapin ang mga tumutugmang resulta sa loob ng teksto ng milyon-milyong aklat"
-
-#: home/welcome.html
-msgid "Be an Open Librarian"
-msgstr "Maging isang Open Librarian"
-
-#: home/welcome.html
-msgid "Dozens of ways you can help improve the library"
-msgstr "Sampu-sampung paraan na maaari mong tulungan na mapabuti ang aklatan"
 
 #: home/welcome.html
 msgid "Volunteer at Open Library"
@@ -4592,7 +4641,7 @@ msgstr "Kopyahin at i-paste ang code na ito sa iyong pahina ng Wikipedia."
 msgid "Copy Wikipedia citation"
 msgstr "Kopyahin ang sipi ng Wikipedia"
 
-#: databarDiff.html databarEdit.html databarTemplate.html databarView.html lib/history.html openlibrary/plugins/openlibrary/home.py
+#: databarDiff.html databarEdit.html databarTemplate.html databarView.html lib/history.html openlibrary/plugins/openlibrary/home.py openlibrary/plugins/openlibrary/home_genres.py
 msgid "History"
 msgstr "Kasaysayan"
 
@@ -4641,10 +4690,6 @@ msgstr "Talaan ng kalidad ng data"
 #: librarian_dashboard/data_quality_table.html
 msgid "Quality Criteria"
 msgstr "Mga Pamantayan ng Kalidad"
-
-#: lists/carousel.html.jinja lists/home.html lists/showcase.html
-msgid "See all"
-msgstr "Tingnan ang lahat"
 
 #: lists/export_as_html.html
 #, python-format
@@ -5063,10 +5108,6 @@ msgstr "I-sort ▾"
 #: merge_request_table/table_header.html
 msgid "Sort"
 msgstr "I-sort"
-
-#: merge_request_table/table_header.html
-msgid "Newest"
-msgstr "Pinakabago"
 
 #: merge_request_table/table_header.html
 msgid "Oldest"
@@ -5777,17 +5818,9 @@ msgstr "Pinakamataas na Rating"
 msgid "Any"
 msgstr "Anuman"
 
-#: openlibrary/core/shell/nav.py search/sort_options.html
-msgid "Trending"
-msgstr "Kasalukuyang Uso"
-
 #: search/sort_options.html
 msgid "Work Title (beta: Librarian only)"
 msgstr "Pamagat ng Trabaho (beta: Para lamang sa Librarian)"
-
-#: search/sort_options.html
-msgid "Sort by"
-msgstr "Ayusin ayon sa"
 
 #: search/sort_options.html
 msgid "Sort results"
@@ -6117,6 +6150,10 @@ msgstr "Mag-logout"
 #: shell/header.html.jinja
 msgid "Contribute"
 msgstr "Mag-ambag"
+
+#: shell/header.html.jinja
+msgid "Improve the Catalog"
+msgstr "Pagbutihin ang Katalogo"
 
 #: shell/header.html.jinja
 msgid "Recent Community Edits"
@@ -6859,7 +6896,7 @@ msgstr "Mga Manunulat:"
 msgid "Readers"
 msgstr "Mga Mambabasa"
 
-#: type/permission/view.html
+#: openlibrary/plugins/openlibrary/home_genres.py type/permission/view.html
 msgid "Writers"
 msgstr "Mga Manunulat"
 
@@ -7230,6 +7267,10 @@ msgstr "Preview ng Aklat"
 msgid "See more about this book on Archive.org"
 msgstr "Alamin pa ang tungkol sa aklat na ito sa Archive.org"
 
+#: CarouselSkeleton.html.jinja
+msgid "Loading carousel"
+msgstr "Nagloload ng carousel"
+
 #: CheckWorldcat.html ReadingOptionsMenu.html
 msgid "Nearby Libraries"
 msgstr "Mga Aklatang Malapit"
@@ -7276,11 +7317,6 @@ msgstr "Pumunta sa susunod na bahagi"
 #: FormatExpiry.html.jinja
 msgid "Expires"
 msgstr "Mag-e-expire"
-
-#: FulltextResultIA.html.jinja
-#, python-format
-msgid "by %(authors)s"
-msgstr "ni %(authors)s"
 
 #: FulltextSearchSuggestion.html.jinja openlibrary/core/shell/search_modal.py
 msgid "Search inside books"
@@ -8059,6 +8095,42 @@ msgstr "Susunod: isang random na gawain mula sa %(filter)s"
 msgid "Next: a random task from all open tasks"
 msgstr "Susunod: isang random na gawain mula sa lahat ng bukas na gawain"
 
+#: openlibrary/contribute/feed.py
+msgid "Edited this book"
+msgstr "Na-edit ang aklat na ito"
+
+#: openlibrary/contribute/feed.py
+msgid "Added this book"
+msgstr "Idinagdag ang aklat na ito"
+
+#: openlibrary/contribute/feed.py
+msgid "Added a cover"
+msgstr "Nagdagdag ng cover"
+
+#: openlibrary/contribute/feed.py
+msgid "Merged duplicate authors"
+msgstr "Pinagsama ang magkaparehong may-akda"
+
+#: openlibrary/contribute/feed.py
+msgid "Merged duplicate works"
+msgstr "Pinagsama ang magkaparehong akda"
+
+#: openlibrary/contribute/feed.py
+msgid "Updated this record"
+msgstr "Na-update ang talang ito"
+
+#: openlibrary/contribute/feed.py
+msgid "Edited this author"
+msgstr "Na-edit ang may-akdang ito"
+
+#: openlibrary/contribute/feed.py
+msgid "Reverted an edit"
+msgstr "Binawi ang isang pag-edit"
+
+#: openlibrary/contribute/feed.py
+msgid "a visitor"
+msgstr "isang bisita"
+
 #: openlibrary/contribute/field_guides.py
 msgid "WorldCat"
 msgstr "WorldCat"
@@ -8715,6 +8787,31 @@ msgstr "Gaano kahusay matutukoy ng isang patron kung ang edisyong ito ay may kau
 msgid "Search Results"
 msgstr "Mga Resulta ng Paghahanap"
 
+#: openlibrary/plugins/openlibrary/api.py
+#, fuzzy
+msgid "Classic Books"
+msgstr "Klasikal na eBooks"
+
+#: openlibrary/plugins/openlibrary/api.py openlibrary/plugins/openlibrary/home.py
+#, fuzzy
+msgid "Romance"
+msgstr "Rumen"
+
+#: openlibrary/plugins/openlibrary/api.py openlibrary/plugins/openlibrary/home_genres.py
+#, fuzzy
+msgid "Kids"
+msgstr "Uri"
+
+#: openlibrary/plugins/openlibrary/api.py
+#, fuzzy
+msgid "Thrillers"
+msgstr "Mga Manunulat"
+
+#: openlibrary/plugins/openlibrary/api.py openlibrary/plugins/openlibrary/home.py openlibrary/plugins/openlibrary/home_genres.py
+#, fuzzy
+msgid "Textbooks"
+msgstr "Ebooks"
+
 #: openlibrary/plugins/openlibrary/code.py
 msgid "Arabic"
 msgstr "Arabo"
@@ -8804,6 +8901,26 @@ msgid "All open tasks"
 msgstr "Lahat ng bukas na gawain"
 
 #: openlibrary/plugins/openlibrary/contribute.py
+msgid "Tasks are for Open Librarians. Applying takes a few minutes."
+msgstr "Ang mga gawain ay para sa mga Open Librarian. Tumatagal lamang ng ilang minuto ang pag-apply."
+
+#: openlibrary/plugins/openlibrary/contribute.py
+msgid "Applying takes a few minutes and asks for your Open Library username, so create a free account first."
+msgstr "Tumatagal ng ilang minuto ang pag-apply at hihilingin ang iyong Open Library username, kaya gumawa muna ng libreng account."
+
+#: openlibrary/plugins/openlibrary/contribute.py
+msgid "Create an account"
+msgstr "Gumawa ng account"
+
+#: openlibrary/plugins/openlibrary/contribute.py
+msgid "Log in"
+msgstr "Mag-log in"
+
+#: openlibrary/plugins/openlibrary/contribute.py
+msgid "Book cover"
+msgstr "Cover ng aklat"
+
+#: openlibrary/plugins/openlibrary/contribute.py
 #, python-format
 msgid "Missing: %(field)s"
 msgstr "Kulang: %(field)s"
@@ -8825,6 +8942,22 @@ msgid "Open the record and confirm it matches this edition first."
 msgstr "Buksan muna ang record at kumpirmahin na tumutugma ito sa edisyong ito."
 
 #: openlibrary/plugins/openlibrary/home.py
+msgid "Books Read"
+msgstr "Mga Aklat na Nabasa"
+
+#: openlibrary/plugins/openlibrary/home.py
+msgid "Catalog Edits"
+msgstr "Mga Pag-edit ng Katalogo"
+
+#: openlibrary/plugins/openlibrary/home.py
+msgid "Lists Updated"
+msgstr "Mga Listahang Na-update"
+
+#: openlibrary/plugins/openlibrary/home.py
+msgid "Lists Created"
+msgstr "Mga Listahang Nilikha"
+
+#: openlibrary/plugins/openlibrary/home.py openlibrary/plugins/openlibrary/home_genres.py
 msgid "Art"
 msgstr "Sining"
 
@@ -8832,7 +8965,7 @@ msgstr "Sining"
 msgid "Science Fiction"
 msgstr "Agham na Piksyon"
 
-#: openlibrary/plugins/openlibrary/home.py
+#: openlibrary/plugins/openlibrary/home.py openlibrary/plugins/openlibrary/home_genres.py
 msgid "Fantasy"
 msgstr "Pantasiya"
 
@@ -8852,7 +8985,7 @@ msgstr "Mga Bata"
 msgid "Medicine"
 msgstr "Medisina"
 
-#: openlibrary/plugins/openlibrary/home.py
+#: openlibrary/plugins/openlibrary/home.py openlibrary/plugins/openlibrary/home_genres.py
 msgid "Religion"
 msgstr "Relihiyon"
 
@@ -8868,9 +9001,145 @@ msgstr "Pagsasakatawan"
 msgid "Music"
 msgstr "Musika"
 
-#: openlibrary/plugins/openlibrary/home.py
+#: openlibrary/plugins/openlibrary/home.py openlibrary/plugins/openlibrary/home_genres.py
 msgid "Science"
 msgstr "Agham"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Biography"
+msgstr "Talambuhay"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Philosophy"
+msgstr "Pilosopiya"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Psychology"
+msgstr "Sikolohiya"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Poetry"
+msgstr "Tula"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Travel"
+msgstr "Paglalakbay"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Cooking"
+msgstr "Pagluluto"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Friendship"
+msgstr "Pagkakaibigan"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Adventure"
+msgstr "Pakikipagsapalaran"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Mystery"
+msgstr "Misteryo"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "School"
+msgstr "Paaralan"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Picture books"
+msgstr "Mga Aklat na may Larawan"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Humor"
+msgstr "Katatawanan"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "United States"
+msgstr "Estados Unidos"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Great Britain"
+msgstr "Great Britain"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "World War II"
+msgstr "Ikalawang Digmaang Pandaigdig"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Military"
+msgstr "Militar"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Ancient"
+msgstr "Sinaunang"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Middle Ages"
+msgstr "Edad Medya"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Historical"
+msgstr "Makasaysayan"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Western"
+msgstr "Western"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Regency"
+msgstr "Regency"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Paranormal"
+msgstr "Paranormal"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Contemporary"
+msgstr "Kontemporaryo"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Suspense"
+msgstr "Suspense"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Women"
+msgstr "Kababaihan"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Memoir"
+msgstr "Memoir"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Royalty"
+msgstr "Realeza"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Artists"
+msgstr "Mga Artista"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Presidents"
+msgstr "Mga Pangulo"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "What's new"
+msgstr "Ano ang bago"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Books we love"
+msgstr "Mga aklat na mahal namin"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Classics"
+msgstr "Mga Klasiko"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Most wanted"
+msgstr "Pinakahanap"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Featured"
+msgstr "Itinatampok"
 
 #: openlibrary/plugins/openlibrary/librarian_dashboard.py
 msgid "At least 1 subject"
@@ -8925,8 +9194,14 @@ msgid "This work does not appear on any lists."
 msgstr "Ang gawaing ito ay hindi lumalabas sa alinmang listahan."
 
 #: openlibrary/plugins/openlibrary/partials.py
-msgid "Loading carousel"
-msgstr "Nagloload ng carousel"
+#, python-format
+msgid "Newest in %(genre)s"
+msgstr "Pinakabago sa %(genre)s"
+
+#: openlibrary/plugins/openlibrary/partials.py
+#, python-format
+msgid "Top rated in %(genre)s"
+msgstr "Pinakamataas ang rating sa %(genre)s"
 
 #: openlibrary/plugins/openlibrary/partials.py
 msgid "On the Same Shelf"
@@ -9103,6 +9378,22 @@ msgstr "Ang iyong email address"
 #: openlibrary/plugins/upstream/forms.py
 msgid "Choose a password"
 msgstr "Pumili ng password"
+
+#: openlibrary/plugins/upstream/lenny.py
+msgid "Open Library could not reach that library to return this book. Please try again later."
+msgstr "Hindi ma-abot ng Open Library ang aklatang iyon para ibalik ang aklat na ito. Mangyaring subukan muli mamaya."
+
+#: openlibrary/plugins/upstream/lenny.py
+msgid "Open Library is no longer connected to that library. Please borrow again to reconnect, then return."
+msgstr "Hindi na nakakonekta ang Open Library sa aklatang iyon. Mangyaring humiram muli upang kumonekta ulit, pagkatapos ay ibalik."
+
+#: openlibrary/plugins/upstream/lenny.py
+msgid "That library could not return this book right now. Please try again later."
+msgstr "Hindi maibalik ng aklatang iyon ang aklat na ito sa ngayon. Mangyaring subukan muli mamaya."
+
+#: openlibrary/plugins/upstream/lenny.py
+msgid "This book has been returned."
+msgstr "Naibalik na ang aklat na ito."
 
 #: openlibrary/plugins/upstream/lenny.py
 #, python-format
@@ -10405,4 +10696,69 @@ msgstr "%(title)s - paghahanap"
 
 #~ msgid "Only a preview is available."
 #~ msgstr "Tanging preview lamang ang available."
+
+#~ msgid "Looking for a book to borrow?  Check out our staff picks, or search for a book on a specific subject:"
+#~ msgstr "Naghahanap ng libro upang manghiram? Suriin ang aming mga pinili ng tauhan, o maghanap para s"
+
+#~ msgid "Browse by Subject"
+#~ msgstr "Mag-browse ayon sa Paksa"
+
+#~ msgid "%(count)s Book"
+#~ msgid_plural "%(count)s Books"
+#~ msgstr[0] "%(count)s Aklat"
+#~ msgstr[1] "%(count)s Mga Aklat"
+
+#~ msgid "Recently Returned"
+#~ msgstr "Kamakailan Lamang na Naibalik"
+
+#~ msgid "Authors Alliance & MIT Press"
+#~ msgstr "Aliansa ng mga May-akda & MIT Press"
+
+#~ msgid "Books in Local Environment"
+#~ msgstr "Mga Aklat sa Local na Kapaligiran"
+
+#~ msgid "Around the Library"
+#~ msgstr "Sa Paligid ng Aklatan"
+
+#~ msgid "Here's what's happened over the last 28 days. More <a href=\"/recentchanges\">recent changes</a>"
+#~ msgstr "Narito kung ano ang nangyari sa nakaraang 28 araw. Higit pang <a href=\"/recentchanges\">mga pagbabago</a>."
+
+#~ msgid "See all visitors to OpenLibrary.org"
+#~ msgstr "Tingnan ang lahat ng bisita sa OpenLibrary.org"
+
+#~ msgid "Area graph of recent unique visitors"
+#~ msgstr "Graph ng lugar ng mga kamakailang natatanging bisita"
+
+#~ msgid "How many new Open Library members have we welcomed?"
+#~ msgstr "Ilan ang mga bagong miyembro ng Open Library na ating tinanggap?"
+
+#~ msgid "Area graph of new members"
+#~ msgstr "Graph ng lugar ng mga bagong miyembro"
+
+#~ msgid "People are constantly updating the catalog"
+#~ msgstr "Patuloy na ina-update ng mga tao ang katalogo"
+
+#~ msgid "Area graph of recent catalog edits"
+#~ msgstr "Graph ng lugar ng mga kamakailang pag-edit ng katalogo"
+
+#~ msgid "Members can create Lists"
+#~ msgstr "Maaari gumawa ang mga miyembro ng Mga Listahan"
+
+#~ msgid "Area graph of lists created recently"
+#~ msgstr "Graph ng lugar ng mga listahang nilikha kamakailan"
+
+#~ msgid "We're a library, so we lend books, too"
+#~ msgstr "Kami ay isang aklatan, kaya nagpapahiram din kami ng mga aklat"
+
+#~ msgid "Area graph of ebooks borrowed recently"
+#~ msgstr "Graph ng lugar ng mga eBooks na hiniram kamakailan"
+
+#~ msgid "eBooks Borrowed"
+#~ msgstr "Mga EBooks na Hiniram"
+
+#~ msgid "Be an Open Librarian"
+#~ msgstr "Maging isang Open Librarian"
+
+#~ msgid "Dozens of ways you can help improve the library"
+#~ msgstr "Sampu-sampung paraan na maaari mong tulungan na mapabuti ang aklatan"
 
