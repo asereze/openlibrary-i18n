@@ -1,4 +1,4 @@
-name: Bake regression
+name: Verify translations deploy cleanly
 
 # Would baking this repo into openlibrary (openlibrary#13070) turn strings that
 # openlibrary shows translated into English, or ship broken placeholders?
@@ -40,6 +40,10 @@ permissions:
 
 jobs:
   bake-regression:
+    # Display name = the status-check name shown on the PR and matched by the
+    # merge gate (scripts/merge_gate.py). The job id stays bake-regression so
+    # internal references (paths, artifact, ./i18n bake-regression) are unchanged.
+    name: Verify translations deploy cleanly
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

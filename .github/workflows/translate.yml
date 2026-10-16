@@ -133,7 +133,7 @@ jobs:
                 gh pr checks "$pr" --watch --interval 30 >/dev/null 2>&1 || true
                 checks="$(gh pr checks "$pr" --json name,bucket 2>/dev/null || echo '[]')"
                 if printf '%s' "$checks" \
-                     | python3 scripts/merge_gate.py --require validate --require bake-regression; then
+                     | python3 scripts/merge_gate.py --require validate --require "Verify translations deploy cleanly"; then
                   # Another matrix shard runs this same loop, so a merge may
                   # already have happened; tolerate that without aborting (set -e).
                   gh pr merge "$pr" --squash --delete-branch \
@@ -141,7 +141,7 @@ jobs:
                   break
                 fi
                 if printf '%s' "$checks" \
-                     | python3 scripts/merge_gate.py --mode settled --require validate --require bake-regression; then
+                     | python3 scripts/merge_gate.py --mode settled --require validate --require "Verify translations deploy cleanly"; then
                   echo "Leaving PR #$pr open: its required checks finished but did not all pass."
                   break
                 fi
