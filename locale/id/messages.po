@@ -753,7 +753,7 @@ msgstr "Tahun ini"
 msgid "All Time"
 msgstr "Sepanjang Waktu"
 
-#: home/index.html openlibrary/plugins/openlibrary/api.py trending.html
+#: openlibrary/plugins/openlibrary/api.py trending.html
 msgid "Trending Books"
 msgstr "Buku Tren"
 
@@ -1359,10 +1359,10 @@ msgid "<a href=\"/search\">Search for a book</a> to borrow."
 msgstr "<a href=\"/search\">Cari buku</a> untuk dipinjam."
 
 #: account/loans.html
-msgid "Looking for a book to borrow?  Check out our staff picks, or search for a book on a specific subject:"
-msgstr "Mencari buku untuk dipinjam? Lihat pilihan staf kami, atau cari buku berdasarkan subjek tertentu:"
+msgid "Looking for a book to borrow? Check out our staff picks:"
+msgstr "Mencari buku untuk dipinjam? Lihat pilihan staf kami:"
 
-#: account/loans.html home/index.html
+#: account/loans.html
 msgid "Books We Love"
 msgstr "Buku yang Kami Sukai"
 
@@ -1416,6 +1416,10 @@ msgstr "Ulasan Saya"
 #: BookByline.html SearchResultsWork.html account/notes.html account/observations.html
 msgid "Unknown author"
 msgstr "Penulis tidak diketahui"
+
+#: account/notes.html
+msgid "My notes for this work"
+msgstr "Catatan saya untuk karya ini"
 
 #: account/notes.html
 msgid "My notes for an edition of "
@@ -2089,7 +2093,7 @@ msgstr "Penulis Ditambahkan"
 msgid "Covers Added"
 msgstr "Sampul Ditambahkan"
 
-#: admin/index.html home/stats.html
+#: admin/index.html openlibrary/plugins/openlibrary/home.py
 msgid "New Members"
 msgstr "Anggota Baru"
 
@@ -2143,7 +2147,7 @@ msgstr "Buku Dibintangi"
 msgid "Star Rating Patrons"
 msgstr "Pengguna Memberi Bintang"
 
-#: admin/index.html home/stats.html
+#: admin/index.html
 msgid "Unique Visitors"
 msgstr "Pengunjung Unik"
 
@@ -3211,6 +3215,37 @@ msgstr "Tidak ada yang cocok dengan buku yang ingin saya tambahkan."
 msgid "Continue"
 msgstr "Lanjutkan"
 
+#: books/custom_carousel.html.jinja
+#, python-format
+msgid "See all %(title)s"
+msgstr "Lihat semua %(title)s"
+
+#: CarouselSkeleton.html.jinja books/custom_carousel.html.jinja lists/carousel.html.jinja lists/home.html lists/showcase.html
+msgid "See all"
+msgstr "Lihat semua"
+
+#: books/custom_carousel.html.jinja
+msgid "Previous page"
+msgstr "Halaman sebelumnya"
+
+#: books/custom_carousel.html.jinja
+msgid "Next page"
+msgstr "Halaman berikutnya"
+
+#: books/custom_carousel.html.jinja
+msgid "Carousel pages"
+msgstr "Halaman carousel"
+
+#: books/custom_carousel.html.jinja
+#, python-brace-format
+msgid "Go to page {page} of {total}"
+msgstr "Buka halaman {page} dari {total}"
+
+#: books/custom_carousel.html.jinja
+#, python-brace-format
+msgid "Page {page} of {total}"
+msgstr "Halaman {page} dari {total}"
+
 #: books/custom_carousel_card.html.jinja
 #, python-format
 msgid "1 person waiting"
@@ -4148,6 +4183,49 @@ msgstr "Tugas berikutnya"
 msgid "Pick a different book"
 msgstr "Pilih buku lain"
 
+#: contribute/landing.html.jinja
+msgid "Open Library Tasks"
+msgstr "Tugas Open Library"
+
+#: contribute/landing.html.jinja
+#, python-format
+msgid "Open Library serves %(readers)s readers every month across %(books)s catalogued books, and its %(mark_start)sOpen Librarians%(mark_end)s make thousands of edits every week."
+msgstr "Open Library melayani %(readers)s pembaca setiap bulan di %(books)s buku yang dikatalogkan, dan %(mark_start)sOpen Librarians%(mark_end)s-nya membuat ribuan suntingan setiap minggu."
+
+#: contribute/landing.html.jinja
+msgid "Many books on Open Library are still missing a detail: a cover, a language, a publisher. You can help fill them in."
+msgstr "Banyak buku di Open Library masih kekurangan detail: sampul, bahasa, penerbit. Anda dapat membantu melengkapinya."
+
+#: contribute/landing.html.jinja
+msgid "Recent edits"
+msgstr "Suntingan terbaru"
+
+#: FulltextResultIA.html.jinja contribute/landing.html.jinja contribute/parts.html.jinja
+#, python-format
+msgid "by %(authors)s"
+msgstr "oleh %(authors)s"
+
+#: contribute/landing.html.jinja
+msgid "Quiet for the moment. Edits show up here as they happen."
+msgstr "Sepi untuk saat ini. Suntingan akan muncul di sini saat terjadi."
+
+#: contribute/landing.html.jinja
+msgid "What a task looks like"
+msgstr "Seperti apa tugas itu"
+
+#: contribute/landing.html.jinja
+msgid "Each task is one book and one empty field. Here are just a few examples."
+msgstr "Setiap tugas adalah satu buku dan satu kolom kosong. Berikut beberapa contohnya."
+
+#: contribute/landing.html.jinja
+#, python-format
+msgid "Add %(field)s"
+msgstr "Tambahkan %(field)s"
+
+#: contribute/landing.html.jinja
+msgid "Join in"
+msgstr "Ikut serta"
+
 #: contribute/nothing.html.jinja
 #, python-format
 msgid "%(field)s is already filled in on this edition"
@@ -4375,111 +4453,97 @@ msgstr "Seperti Wikipedia, Anda dapat berkontribusi informasi baru atau koreksi 
 msgid "Latest Blog Posts"
 msgstr "Posting Blog Terbaru"
 
-#: home/categories.html
-msgid "Browse by Subject"
-msgstr "Telusuri Berdasarkan Subjek"
+#: home/browse_stacks.html.jinja
+msgid "Browse the stacks"
+msgstr "Jelajahi rak buku"
 
-#: home/categories.html
+#: home/browse_stacks.html.jinja home/genre_shelf.html.jinja openlibrary/core/shell/nav.py openlibrary/plugins/openlibrary/partials.py search/sort_options.html
+msgid "Trending"
+msgstr "Trending"
+
+#: home/browse_stacks.html.jinja openlibrary/plugins/openlibrary/partials.py
 #, python-format
-msgid "%(count)s Book"
-msgid_plural "%(count)s Books"
-msgstr[0] "%(count)s Buku"
+msgid "Trending in %(genre)s"
+msgstr "Tren di %(genre)s"
+
+#: home/browse_stacks.html.jinja home/genre_shelf.html.jinja
+msgid "Jump to"
+msgstr "Lompat ke"
+
+#: home/genre_shelf.html.jinja
+#, python-format
+msgid "%(genre)s subgenres"
+msgstr "Subgenre %(genre)s"
+
+#: home/genre_shelf.html.jinja merge_request_table/table_header.html
+#, fuzzy
+msgid "Newest"
+msgstr "Berikutnya"
+
+#: home/genre_shelf.html.jinja
+msgid "Top rated"
+msgstr "Peringkat teratas"
+
+#: home/genre_shelf.html.jinja search/sort_options.html
+msgid "Sort by"
+msgstr "Urutkan berdasarkan"
 
 #: home/index.html home/welcome.html
 msgid "Welcome to Open Library"
 msgstr "Selamat Datang di Open Library"
 
-#: home/index.html openlibrary/plugins/openlibrary/api.py
-msgid "Classic Books"
-msgstr "Buku Klasik"
-
 #: home/index.html
-msgid "Recently Returned"
-msgstr "Baru Dikembalikan"
+msgid "Couldn't load this shelf. Try again?"
+msgstr "Tidak dapat memuat rak ini. Coba lagi?"
 
-#: home/index.html openlibrary/plugins/openlibrary/api.py openlibrary/plugins/openlibrary/home.py
-msgid "Romance"
-msgstr "Roman"
+#: home/library_row.html.jinja
+msgid "A library made by the people who use it."
+msgstr "Perpustakaan yang dibuat oleh orang-orang yang menggunakannya."
 
-#: home/index.html openlibrary/plugins/openlibrary/api.py
-msgid "Kids"
-msgstr "Anak-anak"
+#: home/library_row.html.jinja
+msgid "A catalog for every book ever published, maintained by readers like you."
+msgstr "Katalog untuk setiap buku yang pernah diterbitkan, dikelola oleh pembaca seperti Anda."
 
-#: home/index.html openlibrary/plugins/openlibrary/api.py
-msgid "Thrillers"
-msgstr "Thriller"
+#: home/library_row.html.jinja openlibrary/plugins/openlibrary/contribute.py
+msgid "Become an Open Librarian"
+msgstr "Menjadi Open Librarian"
 
-#: home/index.html openlibrary/plugins/openlibrary/api.py openlibrary/plugins/openlibrary/home.py
-msgid "Textbooks"
-msgstr "Buku Teks"
+#: home/library_row.html.jinja
+msgid "Editable"
+msgstr "Dapat disunting"
 
-#: home/index.html
-msgid "Authors Alliance & MIT Press"
-msgstr "Authors Alliance & MIT Press"
+#: home/library_row.html.jinja
+msgid "By anyone, like Wikipedia"
+msgstr "Oleh siapa saja, seperti Wikipedia"
 
-#: home/index.html
-msgid "Books in Local Environment"
-msgstr "Buku di Lingkungan Lokal"
+#: home/library_row.html.jinja
+msgid "Public"
+msgstr "Publik"
 
-#: home/stats.html
-msgid "Around the Library"
-msgstr "Sekitar Perpustakaan"
+#: home/library_row.html.jinja
+msgid "Every record, free to download"
+msgstr "Setiap catatan, gratis untuk diunduh"
 
-#: home/stats.html
-msgid "Here's what's happened over the last 28 days. More <a href=\"/recentchanges\">recent changes</a>"
-msgstr "Inilah yang terjadi selama 28 hari terakhir. Lebih banyak <a href=\"/recentchanges\">perubahan terbaru</a>"
+#: home/library_row.html.jinja
+msgid "Nonprofit"
+msgstr "Nirlaba"
 
-#: home/stats.html
-msgid "See all visitors to OpenLibrary.org"
-msgstr "Lihat semua pengunjung OpenLibrary.org"
+#: home/library_row.html.jinja
+msgid "Run by the Internet Archive"
+msgstr "Dikelola oleh Internet Archive"
 
-#: home/stats.html
-msgid "Area graph of recent unique visitors"
-msgstr "Grafik area pengunjung unik terbaru"
+#: home/library_row.html.jinja
+msgid "In the last month"
+msgstr "Dalam sebulan terakhir"
 
-#: home/stats.html
-msgid "How many new Open Library members have we welcomed?"
-msgstr "Berapa banyak anggota Open Library baru yang kami sambut?"
+#: home/library_row.html.jinja
+msgid "Change over the month, by 7-day average"
+msgstr "Perubahan selama sebulan, berdasarkan rata-rata 7 hari"
 
-#: home/stats.html
-msgid "Area graph of new members"
-msgstr "Grafik area anggota baru"
-
-#: home/stats.html
-msgid "People are constantly updating the catalog"
-msgstr "Orang-orang terus memperbarui katalog"
-
-#: home/stats.html
-msgid "Area graph of recent catalog edits"
-msgstr "Grafik area pengeditan katalog terbaru"
-
-#: home/stats.html
-msgid "Catalog Edits"
-msgstr "Pengeditan Katalog"
-
-#: home/stats.html
-msgid "Members can create Lists"
-msgstr "Anggota dapat membuat Daftar"
-
-#: home/stats.html
-msgid "Area graph of lists created recently"
-msgstr "Grafik area daftar yang dibuat baru-baru ini"
-
-#: home/stats.html
-msgid "Lists Created"
-msgstr "Daftar Dibuat"
-
-#: home/stats.html
-msgid "We're a library, so we lend books, too"
-msgstr "Kami adalah perpustakaan, jadi kami juga meminjamkan buku"
-
-#: home/stats.html
-msgid "Area graph of ebooks borrowed recently"
-msgstr "Grafik area ebook yang dipinjam baru-baru ini"
-
-#: home/stats.html
-msgid "eBooks Borrowed"
-msgstr "eBook Dipinjam"
+#: home/library_row.html.jinja
+#, python-format
+msgid "Up %(percent)d%% over the month"
+msgstr "Naik %(percent)d%% selama sebulan"
 
 #: home/welcome.html
 msgid "Read Free Library Books Online"
@@ -4520,14 +4584,6 @@ msgstr "Coba Pencarian Teks Penuh"
 #: home/welcome.html
 msgid "Find matching results within the text of millions of books"
 msgstr "Temukan hasil yang cocok dalam teks jutaan buku"
-
-#: home/welcome.html
-msgid "Be an Open Librarian"
-msgstr "Jadilah Pustakawan Terbuka"
-
-#: home/welcome.html
-msgid "Dozens of ways you can help improve the library"
-msgstr "Puluhan cara Anda dapat membantu meningkatkan perpustakaan"
 
 #: home/welcome.html
 msgid "Volunteer at Open Library"
@@ -4611,7 +4667,7 @@ msgstr "Salin dan tempel kode ini ke halaman Wikipedia Anda."
 msgid "Copy Wikipedia citation"
 msgstr "Salin kutipan Wikipedia"
 
-#: databarDiff.html databarEdit.html databarTemplate.html databarView.html lib/history.html openlibrary/plugins/openlibrary/home.py
+#: databarDiff.html databarEdit.html databarTemplate.html databarView.html lib/history.html openlibrary/plugins/openlibrary/home.py openlibrary/plugins/openlibrary/home_genres.py
 msgid "History"
 msgstr "Riwayat"
 
@@ -4660,10 +4716,6 @@ msgstr "Tabel kualitas data"
 #: librarian_dashboard/data_quality_table.html
 msgid "Quality Criteria"
 msgstr "Kriteria Kualitas"
-
-#: lists/carousel.html.jinja lists/home.html lists/showcase.html
-msgid "See all"
-msgstr "Lihat semua"
 
 #: lists/export_as_html.html
 #, fuzzy, python-format
@@ -5078,11 +5130,6 @@ msgstr "Urutkan ▾"
 #, fuzzy
 msgid "Sort"
 msgstr "ATAU"
-
-#: merge_request_table/table_header.html
-#, fuzzy
-msgid "Newest"
-msgstr "Berikutnya"
 
 #: merge_request_table/table_header.html
 msgid "Oldest"
@@ -5788,17 +5835,9 @@ msgstr "Paling Tinggi Dinilai"
 msgid "Any"
 msgstr "Semua"
 
-#: openlibrary/core/shell/nav.py search/sort_options.html
-msgid "Trending"
-msgstr "Trending"
-
 #: search/sort_options.html
 msgid "Work Title (beta: Librarian only)"
 msgstr "Judul Karya (beta: Hanya Pustakawan)"
-
-#: search/sort_options.html
-msgid "Sort by"
-msgstr "Urutkan berdasarkan"
 
 #: search/sort_options.html
 msgid "Sort results"
@@ -6129,6 +6168,10 @@ msgstr "Keluar"
 #: shell/header.html.jinja
 msgid "Contribute"
 msgstr "Berkontribusi"
+
+#: shell/header.html.jinja
+msgid "Improve the Catalog"
+msgstr "Tingkatkan Katalog"
 
 #: shell/header.html.jinja
 msgid "Recent Community Edits"
@@ -6876,7 +6919,7 @@ msgstr "Penulis:"
 msgid "Readers"
 msgstr "Pembaca"
 
-#: type/permission/view.html
+#: openlibrary/plugins/openlibrary/home_genres.py type/permission/view.html
 msgid "Writers"
 msgstr "Penulis"
 
@@ -7246,6 +7289,10 @@ msgstr "Pratinjau Buku"
 msgid "See more about this book on Archive.org"
 msgstr "Lihat selengkapnya tentang buku ini di Archive.org"
 
+#: CarouselSkeleton.html.jinja
+msgid "Loading carousel"
+msgstr "Memuat korsel"
+
 #: CheckWorldcat.html ReadingOptionsMenu.html
 msgid "Nearby Libraries"
 msgstr "Perpustakaan Terdekat"
@@ -7290,11 +7337,6 @@ msgstr "Pergi ke bagian berikutnya"
 #: FormatExpiry.html.jinja
 msgid "Expires"
 msgstr "Kedaluwarsa"
-
-#: FulltextResultIA.html.jinja
-#, python-format
-msgid "by %(authors)s"
-msgstr "oleh %(authors)s"
 
 #: FulltextSearchSuggestion.html.jinja openlibrary/core/shell/search_modal.py
 msgid "Search inside books"
@@ -8069,6 +8111,42 @@ msgstr "Berikutnya: tugas acak dari %(filter)s"
 msgid "Next: a random task from all open tasks"
 msgstr "Berikutnya: tugas acak dari semua tugas terbuka"
 
+#: openlibrary/contribute/feed.py
+msgid "Edited this book"
+msgstr "Menyunting buku ini"
+
+#: openlibrary/contribute/feed.py
+msgid "Added this book"
+msgstr "Menambahkan buku ini"
+
+#: openlibrary/contribute/feed.py
+msgid "Added a cover"
+msgstr "Menambahkan sampul"
+
+#: openlibrary/contribute/feed.py
+msgid "Merged duplicate authors"
+msgstr "Menggabungkan penulis duplikat"
+
+#: openlibrary/contribute/feed.py
+msgid "Merged duplicate works"
+msgstr "Menggabungkan karya duplikat"
+
+#: openlibrary/contribute/feed.py
+msgid "Updated this record"
+msgstr "Memperbarui catatan ini"
+
+#: openlibrary/contribute/feed.py
+msgid "Edited this author"
+msgstr "Menyunting penulis ini"
+
+#: openlibrary/contribute/feed.py
+msgid "Reverted an edit"
+msgstr "Mengembalikan suntingan"
+
+#: openlibrary/contribute/feed.py
+msgid "a visitor"
+msgstr "pengunjung"
+
 #: openlibrary/contribute/field_guides.py
 msgid "WorldCat"
 msgstr "WorldCat"
@@ -8737,6 +8815,26 @@ msgstr "Seberapa baik pengguna perpustakaan dapat menentukan apakah edisi ini re
 msgid "Search Results"
 msgstr "Hasil Pencarian"
 
+#: openlibrary/plugins/openlibrary/api.py
+msgid "Classic Books"
+msgstr "Buku Klasik"
+
+#: openlibrary/plugins/openlibrary/api.py openlibrary/plugins/openlibrary/home.py
+msgid "Romance"
+msgstr "Roman"
+
+#: openlibrary/plugins/openlibrary/api.py openlibrary/plugins/openlibrary/home_genres.py
+msgid "Kids"
+msgstr "Anak-anak"
+
+#: openlibrary/plugins/openlibrary/api.py
+msgid "Thrillers"
+msgstr "Thriller"
+
+#: openlibrary/plugins/openlibrary/api.py openlibrary/plugins/openlibrary/home.py openlibrary/plugins/openlibrary/home_genres.py
+msgid "Textbooks"
+msgstr "Buku Teks"
+
 #: openlibrary/plugins/openlibrary/code.py
 msgid "Arabic"
 msgstr "Arab"
@@ -8827,6 +8925,26 @@ msgid "All open tasks"
 msgstr "Semua tugas terbuka"
 
 #: openlibrary/plugins/openlibrary/contribute.py
+msgid "Tasks are for Open Librarians. Applying takes a few minutes."
+msgstr "Tugas ini untuk Open Librarians. Pendaftaran hanya butuh beberapa menit."
+
+#: openlibrary/plugins/openlibrary/contribute.py
+msgid "Applying takes a few minutes and asks for your Open Library username, so create a free account first."
+msgstr "Pendaftaran hanya butuh beberapa menit dan memerlukan nama pengguna Open Library Anda, jadi buat akun gratis terlebih dahulu."
+
+#: openlibrary/plugins/openlibrary/contribute.py
+msgid "Create an account"
+msgstr "Buat akun"
+
+#: openlibrary/plugins/openlibrary/contribute.py
+msgid "Log in"
+msgstr "Masuk"
+
+#: openlibrary/plugins/openlibrary/contribute.py
+msgid "Book cover"
+msgstr "Sampul buku"
+
+#: openlibrary/plugins/openlibrary/contribute.py
 #, python-format
 msgid "Missing: %(field)s"
 msgstr "Hilang: %(field)s"
@@ -8848,6 +8966,22 @@ msgid "Open the record and confirm it matches this edition first."
 msgstr "Buka rekaman dan pastikan dulu bahwa itu cocok dengan edisi ini."
 
 #: openlibrary/plugins/openlibrary/home.py
+msgid "Books Read"
+msgstr "Buku Dibaca"
+
+#: openlibrary/plugins/openlibrary/home.py
+msgid "Catalog Edits"
+msgstr "Pengeditan Katalog"
+
+#: openlibrary/plugins/openlibrary/home.py
+msgid "Lists Updated"
+msgstr "Daftar Diperbarui"
+
+#: openlibrary/plugins/openlibrary/home.py
+msgid "Lists Created"
+msgstr "Daftar Dibuat"
+
+#: openlibrary/plugins/openlibrary/home.py openlibrary/plugins/openlibrary/home_genres.py
 msgid "Art"
 msgstr "Seni"
 
@@ -8855,7 +8989,7 @@ msgstr "Seni"
 msgid "Science Fiction"
 msgstr "Fiksi Ilmiah"
 
-#: openlibrary/plugins/openlibrary/home.py
+#: openlibrary/plugins/openlibrary/home.py openlibrary/plugins/openlibrary/home_genres.py
 msgid "Fantasy"
 msgstr "Fantasi"
 
@@ -8876,7 +9010,7 @@ msgstr "Anak-anak"
 msgid "Medicine"
 msgstr "Diubah"
 
-#: openlibrary/plugins/openlibrary/home.py
+#: openlibrary/plugins/openlibrary/home.py openlibrary/plugins/openlibrary/home_genres.py
 #, fuzzy
 msgid "Religion"
 msgstr "Revisi"
@@ -8893,9 +9027,145 @@ msgstr "Drama"
 msgid "Music"
 msgstr "Musik"
 
-#: openlibrary/plugins/openlibrary/home.py
+#: openlibrary/plugins/openlibrary/home.py openlibrary/plugins/openlibrary/home_genres.py
 msgid "Science"
 msgstr "Sains"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Biography"
+msgstr "Biografi"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Philosophy"
+msgstr "Filsafat"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Psychology"
+msgstr "Psikologi"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Poetry"
+msgstr "Puisi"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Travel"
+msgstr "Perjalanan"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Cooking"
+msgstr "Memasak"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Friendship"
+msgstr "Persahabatan"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Adventure"
+msgstr "Petualangan"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Mystery"
+msgstr "Misteri"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "School"
+msgstr "Sekolah"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Picture books"
+msgstr "Buku bergambar"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Humor"
+msgstr "Humor"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "United States"
+msgstr "Amerika Serikat"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Great Britain"
+msgstr "Britania Raya"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "World War II"
+msgstr "Perang Dunia II"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Military"
+msgstr "Militer"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Ancient"
+msgstr "Kuno"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Middle Ages"
+msgstr "Abad Pertengahan"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Historical"
+msgstr "Sejarah"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Western"
+msgstr "Barat"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Regency"
+msgstr "Regency"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Paranormal"
+msgstr "Paranormal"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Contemporary"
+msgstr "Kontemporer"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Suspense"
+msgstr "Suspens"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Women"
+msgstr "Perempuan"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Memoir"
+msgstr "Memoar"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Royalty"
+msgstr "Kerajaan"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Artists"
+msgstr "Seniman"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Presidents"
+msgstr "Presiden"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "What's new"
+msgstr "Yang terbaru"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Books we love"
+msgstr "Buku yang kami sukai"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Classics"
+msgstr "Klasik"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Most wanted"
+msgstr "Paling dicari"
+
+#: openlibrary/plugins/openlibrary/home_genres.py
+msgid "Featured"
+msgstr "Unggulan"
 
 #: openlibrary/plugins/openlibrary/librarian_dashboard.py
 msgid "At least 1 subject"
@@ -8950,8 +9220,14 @@ msgid "This work does not appear on any lists."
 msgstr "Karya ini tidak muncul dalam daftar mana pun."
 
 #: openlibrary/plugins/openlibrary/partials.py
-msgid "Loading carousel"
-msgstr "Memuat korsel"
+#, python-format
+msgid "Newest in %(genre)s"
+msgstr "Terbaru di %(genre)s"
+
+#: openlibrary/plugins/openlibrary/partials.py
+#, python-format
+msgid "Top rated in %(genre)s"
+msgstr "Peringkat teratas di %(genre)s"
 
 #: openlibrary/plugins/openlibrary/partials.py
 msgid "On the Same Shelf"
@@ -9128,6 +9404,22 @@ msgstr "Alamat email Anda"
 #: openlibrary/plugins/upstream/forms.py
 msgid "Choose a password"
 msgstr "Pilih kata sandi"
+
+#: openlibrary/plugins/upstream/lenny.py
+msgid "Open Library could not reach that library to return this book. Please try again later."
+msgstr "Open Library tidak dapat menghubungi perpustakaan tersebut untuk mengembalikan buku ini. Silakan coba lagi nanti."
+
+#: openlibrary/plugins/upstream/lenny.py
+msgid "Open Library is no longer connected to that library. Please borrow again to reconnect, then return."
+msgstr "Open Library tidak lagi terhubung dengan perpustakaan tersebut. Silakan pinjam lagi untuk menyambungkan kembali, lalu kembalikan."
+
+#: openlibrary/plugins/upstream/lenny.py
+msgid "That library could not return this book right now. Please try again later."
+msgstr "Perpustakaan tersebut tidak dapat mengembalikan buku ini saat ini. Silakan coba lagi nanti."
+
+#: openlibrary/plugins/upstream/lenny.py
+msgid "This book has been returned."
+msgstr "Buku ini telah dikembalikan."
 
 #: openlibrary/plugins/upstream/lenny.py
 #, python-format
@@ -10589,4 +10881,68 @@ msgstr "%(title)s - pencarian"
 
 #~ msgid "Only a preview is available."
 #~ msgstr "Hanya pratinjau yang tersedia."
+
+#~ msgid "Looking for a book to borrow?  Check out our staff picks, or search for a book on a specific subject:"
+#~ msgstr "Mencari buku untuk dipinjam? Lihat pilihan staf kami, atau cari buku berdasarkan subjek tertentu:"
+
+#~ msgid "Browse by Subject"
+#~ msgstr "Telusuri Berdasarkan Subjek"
+
+#~ msgid "%(count)s Book"
+#~ msgid_plural "%(count)s Books"
+#~ msgstr[0] "%(count)s Buku"
+
+#~ msgid "Recently Returned"
+#~ msgstr "Baru Dikembalikan"
+
+#~ msgid "Authors Alliance & MIT Press"
+#~ msgstr "Authors Alliance & MIT Press"
+
+#~ msgid "Books in Local Environment"
+#~ msgstr "Buku di Lingkungan Lokal"
+
+#~ msgid "Around the Library"
+#~ msgstr "Sekitar Perpustakaan"
+
+#~ msgid "Here's what's happened over the last 28 days. More <a href=\"/recentchanges\">recent changes</a>"
+#~ msgstr "Inilah yang terjadi selama 28 hari terakhir. Lebih banyak <a href=\"/recentchanges\">perubahan terbaru</a>"
+
+#~ msgid "See all visitors to OpenLibrary.org"
+#~ msgstr "Lihat semua pengunjung OpenLibrary.org"
+
+#~ msgid "Area graph of recent unique visitors"
+#~ msgstr "Grafik area pengunjung unik terbaru"
+
+#~ msgid "How many new Open Library members have we welcomed?"
+#~ msgstr "Berapa banyak anggota Open Library baru yang kami sambut?"
+
+#~ msgid "Area graph of new members"
+#~ msgstr "Grafik area anggota baru"
+
+#~ msgid "People are constantly updating the catalog"
+#~ msgstr "Orang-orang terus memperbarui katalog"
+
+#~ msgid "Area graph of recent catalog edits"
+#~ msgstr "Grafik area pengeditan katalog terbaru"
+
+#~ msgid "Members can create Lists"
+#~ msgstr "Anggota dapat membuat Daftar"
+
+#~ msgid "Area graph of lists created recently"
+#~ msgstr "Grafik area daftar yang dibuat baru-baru ini"
+
+#~ msgid "We're a library, so we lend books, too"
+#~ msgstr "Kami adalah perpustakaan, jadi kami juga meminjamkan buku"
+
+#~ msgid "Area graph of ebooks borrowed recently"
+#~ msgstr "Grafik area ebook yang dipinjam baru-baru ini"
+
+#~ msgid "eBooks Borrowed"
+#~ msgstr "eBook Dipinjam"
+
+#~ msgid "Be an Open Librarian"
+#~ msgstr "Jadilah Pustakawan Terbuka"
+
+#~ msgid "Dozens of ways you can help improve the library"
+#~ msgstr "Puluhan cara Anda dapat membantu meningkatkan perpustakaan"
 
