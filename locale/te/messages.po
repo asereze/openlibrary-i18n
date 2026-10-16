@@ -8767,7 +8767,7 @@ msgstr "ఈ ఫీల్డ్‌ను ఇక్కడ పూరించలే
 #: openlibrary/contribute/save.py
 #, python-format
 msgid "Filled in %(field)s from Open Library Tasks"
-msgstr ""
+msgstr "ఓపెన్ లైబ్రరీ పనుల నుండి %(field)s పూరించారు"
 
 #: openlibrary/core/bookshelves.py
 msgid "[Record deleted]"
@@ -9362,64 +9362,64 @@ msgstr "ఫిలిపినో"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Tasks are open to librarians only, for now"
-msgstr ""
+msgstr "ప్రస్తుతానికి పనులు లైబ్రేరియన్లకు మాత్రమే అందుబాటులో ఉన్నాయి"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Published"
-msgstr ""
+msgstr "ప్రచురించబడింది"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "OCLC"
-msgstr ""
+msgstr "OCLC"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "All open tasks"
-msgstr ""
+msgstr "అన్ని తెరిచి ఉన్న పనులు"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Tasks are for Open Librarians. Applying takes a few minutes."
-msgstr ""
+msgstr "పనులు ఓపెన్ లైబ్రేరియన్ల కోసం. దరఖాస్తు చేయడానికి కొన్ని నిమిషాలు పడుతుంది."
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Applying takes a few minutes and asks for your Open Library username, so create a free account first."
-msgstr ""
+msgstr "దరఖాస్తు చేయడానికి కొన్ని నిమిషాలు పడుతుంది మరియు మీ ఓపెన్ లైబ్రరీ వినియోగదారు పేరు అడుగుతుంది, కాబట్టి మొదట ఉచిత ఖాతాను సృష్టించండి."
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Create an account"
-msgstr ""
+msgstr "ఖాతాను సృష్టించండి"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Log in"
-msgstr ""
+msgstr "లాగిన్ అవ్వండి"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Book cover"
-msgstr ""
+msgstr "పుస్తక కవర్"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 #, python-format
 msgid "Missing: %(field)s"
-msgstr ""
+msgstr "లోపిస్తున్నది: %(field)s"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Most needed"
-msgstr ""
+msgstr "అత్యంత అవసరమైనవి"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Nothing missing here right now. Thank you."
-msgstr ""
+msgstr "ప్రస్తుతం ఇక్కడ ఏమీ లోపించలేదు. ధన్యవాదాలు."
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Nothing to fill in here"
-msgstr ""
+msgstr "ఇక్కడ పూరించడానికి ఏమీ లేదు"
 
 #: openlibrary/plugins/openlibrary/contribute.py
 msgid "Open the record and confirm it matches this edition first."
-msgstr ""
+msgstr "మొదట రికార్డును తెరిచి అది ఈ ఎడిషన్‌తో సరిపోలుతుందని నిర్ధారించుకోండి."
 
 #: openlibrary/plugins/openlibrary/home.py
 msgid "Books Read"
-msgstr ""
+msgstr "చదివిన పుస్తకాలు"
 
 #: openlibrary/plugins/openlibrary/home.py
 msgid "Catalog Edits"
@@ -9427,7 +9427,7 @@ msgstr "క్యాటలాగ్ మార్పులు"
 
 #: openlibrary/plugins/openlibrary/home.py
 msgid "Lists Updated"
-msgstr ""
+msgstr "నవీకరించిన జాబితాలు"
 
 #: openlibrary/plugins/openlibrary/home.py
 msgid "Lists Created"
@@ -9488,139 +9488,139 @@ msgstr "విజ్ఞానం"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Biography"
-msgstr ""
+msgstr "జీవిత చరిత్ర"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Philosophy"
-msgstr ""
+msgstr "తత్వశాస్త్రం"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Psychology"
-msgstr ""
+msgstr "మనస్తత్వశాస్త్రం"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Poetry"
-msgstr ""
+msgstr "కవిత్వం"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Travel"
-msgstr ""
+msgstr "ప్రయాణం"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Cooking"
-msgstr ""
+msgstr "వంట"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Friendship"
-msgstr ""
+msgstr "స్నేహం"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Adventure"
-msgstr ""
+msgstr "సాహసం"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Mystery"
-msgstr ""
+msgstr "రహస్యం"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "School"
-msgstr ""
+msgstr "పాఠశాల"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Picture books"
-msgstr ""
+msgstr "చిత్ర పుస్తకాలు"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Humor"
-msgstr ""
+msgstr "హాస్యం"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "United States"
-msgstr ""
+msgstr "యునైటెడ్ స్టేట్స్"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Great Britain"
-msgstr ""
+msgstr "గ్రేట్ బ్రిటన్"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "World War II"
-msgstr ""
+msgstr "రెండవ ప్రపంచ యుద్ధం"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Military"
-msgstr ""
+msgstr "సైనిక"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Ancient"
-msgstr ""
+msgstr "ప్రాచీన"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Middle Ages"
-msgstr ""
+msgstr "మధ్య యుగం"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Historical"
-msgstr ""
+msgstr "చారిత్రక"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Western"
-msgstr ""
+msgstr "పాశ్చాత్య"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Regency"
-msgstr ""
+msgstr "రీజెన్సీ"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Paranormal"
-msgstr ""
+msgstr "అతీంద్రియ"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Contemporary"
-msgstr ""
+msgstr "సమకాలీన"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Suspense"
-msgstr ""
+msgstr "ఉత్కంఠ"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Women"
-msgstr ""
+msgstr "మహిళలు"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Memoir"
-msgstr ""
+msgstr "జ్ఞాపకాలు"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Royalty"
-msgstr ""
+msgstr "రాజవంశం"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Artists"
-msgstr ""
+msgstr "కళాకారులు"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Presidents"
-msgstr ""
+msgstr "అధ్యక్షులు"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "What's new"
-msgstr ""
+msgstr "కొత్తవి ఏమిటి"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Books we love"
-msgstr ""
+msgstr "మాకు ఇష్టమైన పుస్తకాలు"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Classics"
-msgstr ""
+msgstr "క్లాసిక్‌లు"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Most wanted"
-msgstr ""
+msgstr "అత్యంత కోరుకున్నవి"
 
 #: openlibrary/plugins/openlibrary/home_genres.py
 msgid "Featured"
-msgstr ""
+msgstr "ఫీచర్ చేయబడినవి"
 
 #: openlibrary/plugins/openlibrary/librarian_dashboard.py
 msgid "At least 1 subject"
@@ -9685,12 +9685,12 @@ msgstr "ఈ రచన ఏ జాబితాలోనూ కనిపించ�
 #: openlibrary/plugins/openlibrary/partials.py
 #, python-format
 msgid "Newest in %(genre)s"
-msgstr ""
+msgstr "%(genre)sలో తాజావి"
 
 #: openlibrary/plugins/openlibrary/partials.py
 #, python-format
 msgid "Top rated in %(genre)s"
-msgstr ""
+msgstr "%(genre)sలో అత్యధిక రేటింగ్"
 
 #: openlibrary/plugins/openlibrary/partials.py
 msgid "On the Same Shelf"
@@ -9879,29 +9879,29 @@ msgstr "ఒక సంకేతపదం ఎంచుకోండి"
 
 #: openlibrary/plugins/upstream/lenny.py
 msgid "Open Library could not reach that library to return this book. Please try again later."
-msgstr ""
+msgstr "ఈ పుస్తకాన్ని తిరిగి ఇవ్వడానికి ఓపెన్ లైబ్రరీ ఆ లైబ్రరీని చేరుకోలేకపోయింది. దయచేసి తర్వాత మళ్ళీ ప్రయత్నించండి."
 
 #: openlibrary/plugins/upstream/lenny.py
 msgid "Open Library is no longer connected to that library. Please borrow again to reconnect, then return."
-msgstr ""
+msgstr "ఓపెన్ లైబ్రరీ ఇకపై ఆ లైబ్రరీకి అనుసంధానించబడలేదు. తిరిగి అనుసంధానించడానికి దయచేసి మళ్ళీ అరువు తీసుకుని, తర్వాత తిరిగి ఇవ్వండి."
 
 #: openlibrary/plugins/upstream/lenny.py
 msgid "That library could not return this book right now. Please try again later."
-msgstr ""
+msgstr "ఆ లైబ్రరీ ప్రస్తుతం ఈ పుస్తకాన్ని తిరిగి తీసుకోలేకపోయింది. దయచేసి తర్వాత మళ్ళీ ప్రయత్నించండి."
 
 #: openlibrary/plugins/upstream/lenny.py
 msgid "This book has been returned."
-msgstr ""
+msgstr "ఈ పుస్తకం తిరిగి ఇవ్వబడింది."
 
 #: openlibrary/plugins/upstream/lenny.py
 #, python-format
 msgid "Borrowed from %(library)s. Your loan is due %(due)s."
-msgstr ""
+msgstr "%(library)s నుండి అరువు తీసుకున్నారు. మీ అరువు గడువు %(due)s."
 
 #: openlibrary/plugins/upstream/lenny.py
 #, python-format
 msgid "Borrowed from %(library)s."
-msgstr ""
+msgstr "%(library)s నుండి అరువు తీసుకున్నారు."
 
 #: openlibrary/plugins/upstream/models.py
 #, python-format
