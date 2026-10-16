@@ -8450,159 +8450,159 @@ msgstr "ఎలా సమాధానం ఇవ్వాలి"
 
 #: contribute/parts.html.jinja
 msgid "This edition has no ISBN to search by, so look it up by title and author."
-msgstr ""
+msgstr "ఈ ఎడిషన్‌కు శోధించడానికి ISBN లేదు, కాబట్టి పేరు మరియు రచయిత ద్వారా చూడండి."
 
 #: contribute/parts.html.jinja
 msgid "Guideline"
-msgstr ""
+msgstr "మార్గదర్శకం"
 
 #: contribute/parts.html.jinja
 msgid "How this edit goes wrong"
-msgstr ""
+msgstr "ఈ సవరణ ఎలా తప్పుగా జరుగుతుంది"
 
 #: contribute/parts.html.jinja
 #, python-format
 msgid "The other edition"
 msgid_plural "The other %(count)d editions"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "ఇతర ఎడిషన్"
+msgstr[1] "ఇతర %(count)d ఎడిషన్లు"
 
 #: contribute/parts.html.jinja
 #, python-format
 msgid "1 other value"
 msgid_plural "%(count)d other values"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "1 ఇతర విలువ"
+msgstr[1] "%(count)d ఇతర విలువలు"
 
 #: contribute/parts.html.jinja
 msgid "Not filled in"
-msgstr ""
+msgstr "పూరించబడలేదు"
 
 #: contribute/parts.html.jinja
 msgid "See each edition"
-msgstr ""
+msgstr "ప్రతి ఎడిషన్‌ను చూడండి"
 
 #: contribute/parts.html.jinja
 #, python-format
 msgid "And %(count)s more."
-msgstr ""
+msgstr "మరియు %(count)s మరిన్ని."
 
 #: contribute/parts.html.jinja
 msgid "That looks like a valid number."
-msgstr ""
+msgstr "అది చెల్లుబాటు అయ్యే సంఖ్యలా కనిపిస్తోంది."
 
 #: contribute/parts.html.jinja
 #, python-format
 msgid "Will be stored as %(value)s."
-msgstr ""
+msgstr "%(value)sగా నిల్వ చేయబడుతుంది."
 
 #: contribute/parts.html.jinja
 msgid "Paste only the number, not the web address."
-msgstr ""
+msgstr "సంఖ్యను మాత్రమే అతికించండి, వెబ్ చిరునామాను కాదు."
 
 #: contribute/parts.html.jinja openlibrary/contribute/save.py
 msgid "That is not a valid number for this catalog."
-msgstr ""
+msgstr "ఇది ఈ కేటలాగ్‌కు చెల్లుబాటు అయ్యే సంఖ్య కాదు."
 
 #: contribute/parts.html.jinja
 msgid "Choose a language"
-msgstr ""
+msgstr "భాషను ఎంచుకోండి"
 
 #: contribute/parts.html.jinja
 msgid "Filter languages"
-msgstr ""
+msgstr "భాషలను వడపోయండి"
 
 #: contribute/parts.html.jinja
 msgid "No matching language"
-msgstr ""
+msgstr "సరిపోలే భాష లేదు"
 
 #: contribute/parts.html.jinja
 msgid "Other editions say"
-msgstr ""
+msgstr "ఇతర ఎడిషన్లు చెప్తున్నాయి"
 
 #: contribute/parts.html.jinja
 #, python-format
 msgid "%(value)s, on 1 edition"
 msgid_plural "%(value)s, on %(count)d editions"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%(value)s, 1 ఎడిషన్‌లో"
+msgstr[1] "%(value)s, %(count)d ఎడిషన్లలో"
 
 #: contribute/parts.html.jinja
 msgid "I opened the record and the year and publisher match this edition."
-msgstr ""
+msgstr "నేను రికార్డును తెరిచాను మరియు సంవత్సరం, ప్రచురణకర్త ఈ ఎడిషన్‌తో సరిపోలుతున్నాయి."
 
 #: contribute/parts.html.jinja
 msgid "Add a comment about your edit"
-msgstr ""
+msgstr "మీ సవరణ గురించి వ్యాఖ్య జోడించండి"
 
 #: contribute/parts.html.jinja
 msgid "Edit comment"
-msgstr ""
+msgstr "వ్యాఖ్యను సవరించండి"
 
 #: contribute/parts.html.jinja
 msgid "Where you found it"
-msgstr ""
+msgstr "మీరు దీన్ని ఎక్కడ కనుగొన్నారు"
 
 #: contribute/parts.html.jinja
 msgid "Save and next"
-msgstr ""
+msgstr "సేవ్ చేసి తదుపరికి వెళ్ళండి"
 
 #: contribute/parts.html.jinja
 msgid "I couldn't find it"
-msgstr ""
+msgstr "నేను దీన్ని కనుగొనలేకపోయాను"
 
 #: contribute/parts.html.jinja
 #, python-format
 msgid "Next: a random task from %(filter)s"
-msgstr ""
+msgstr "తదుపరి: %(filter)s నుండి యాదృచ్ఛిక పని"
 
 #: contribute/parts.html.jinja
 msgid "Next: a random task from all open tasks"
-msgstr ""
+msgstr "తదుపరి: అన్ని తెరిచి ఉన్న పనుల నుండి యాదృచ్ఛిక పని"
 
 #: openlibrary/contribute/feed.py
 msgid "Edited this book"
-msgstr ""
+msgstr "ఈ పుస్తకాన్ని సవరించారు"
 
 #: openlibrary/contribute/feed.py
 msgid "Added this book"
-msgstr ""
+msgstr "ఈ పుస్తకాన్ని జోడించారు"
 
 #: openlibrary/contribute/feed.py
 msgid "Added a cover"
-msgstr ""
+msgstr "కవర్‌ను జోడించారు"
 
 #: openlibrary/contribute/feed.py
 msgid "Merged duplicate authors"
-msgstr ""
+msgstr "నకిలీ రచయితలను విలీనం చేశారు"
 
 #: openlibrary/contribute/feed.py
 msgid "Merged duplicate works"
-msgstr ""
+msgstr "నకిలీ రచనలను విలీనం చేశారు"
 
 #: openlibrary/contribute/feed.py
 msgid "Updated this record"
-msgstr ""
+msgstr "ఈ రికార్డును నవీకరించారు"
 
 #: openlibrary/contribute/feed.py
 msgid "Edited this author"
-msgstr ""
+msgstr "ఈ రచయితను సవరించారు"
 
 #: openlibrary/contribute/feed.py
 msgid "Reverted an edit"
-msgstr ""
+msgstr "ఒక సవరణను తిప్పికొట్టారు"
 
 #: openlibrary/contribute/feed.py
 msgid "a visitor"
-msgstr ""
+msgstr "ఒక సందర్శకుడు"
 
 #: openlibrary/contribute/field_guides.py
 msgid "WorldCat"
-msgstr ""
+msgstr "WorldCat"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Google Books"
-msgstr ""
+msgstr "Google Books"
 
 #: openlibrary/contribute/field_guides.py openlibrary/plugins/openlibrary/partials.py
 msgid "Amazon"
@@ -8610,159 +8610,159 @@ msgstr "అమెజాన్"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Library of Congress"
-msgstr ""
+msgstr "Library of Congress"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Fill in language"
-msgstr ""
+msgstr "భాషను పూరించండి"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Look the ISBN up in WorldCat or Google Books; both list the language of the text. The title page and cover tell you too."
-msgstr ""
+msgstr "WorldCat లేదా Google Books లో ISBNని చూడండి; రెండూ వచనం యొక్క భాషను జాబితా చేస్తాయి. టైటిల్ పేజీ మరియు కవర్ కూడా మీకు తెలియజేస్తాయి."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Editions of a work usually share a language, but a translation won't. Check this edition's own text."
-msgstr ""
+msgstr "ఒక రచన యొక్క ఎడిషన్లు సాధారణంగా ఒకే భాషను పంచుకుంటాయి, కానీ అనువాదం అలా ఉండదు. ఈ ఎడిషన్ యొక్క స్వంత వచనాన్ని తనిఖీ చేయండి."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Record the language of the text, not the language of the title page. A translation is in the language it was translated into."
-msgstr ""
+msgstr "టైటిల్ పేజీ భాషను కాదు, వచనం యొక్క భాషను రికార్డు చేయండి. అనువాదం అనేది అది అనువదించబడిన భాషలో ఉంటుంది."
 
 #: openlibrary/contribute/field_guides.py
 msgid "For example English"
-msgstr ""
+msgstr "ఉదాహరణకు ఆంగ్లం"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Page count"
-msgstr ""
+msgstr "పేజీల సంఖ్య"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Fill in page count"
-msgstr ""
+msgstr "పేజీల సంఖ్యను పూరించండి"
 
 #: openlibrary/contribute/field_guides.py
 msgid "How many pages does this edition have?"
-msgstr ""
+msgstr "ఈ ఎడిషన్‌లో ఎన్ని పేజీలు ఉన్నాయి?"
 
 #: openlibrary/contribute/field_guides.py
 msgid "WorldCat lists the page count in the record's description. Google Books calls it Length. Make sure the record is for this ISBN, not another printing."
-msgstr ""
+msgstr "WorldCat రికార్డు వివరణలో పేజీల సంఖ్యను జాబితా చేస్తుంది. Google Books దీన్ని Length అని పిలుస్తుంది. రికార్డు ఈ ISBN కోసమే ఉందని నిర్ధారించుకోండి, వేరే ముద్రణ కోసం కాదు."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Catalogs count front matter differently, so numbers within a few pages of each other are the same count. Use the last numbered page of the main text."
-msgstr ""
+msgstr "కేటలాగ్‌లు ముందు భాగాన్ని వేర్వేరుగా లెక్కిస్తాయి, కాబట్టి కొన్ని పేజీల తేడా ఉన్న సంఖ్యలు ఒకే లెక్కగా పరిగణించండి. ప్రధాన వచనం యొక్క చివరి సంఖ్య గల పేజీని వాడండి."
 
 #: openlibrary/contribute/field_guides.py
 msgid "For example 320"
-msgstr ""
+msgstr "ఉదాహరణకు 320"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Fill in publisher"
-msgstr ""
+msgstr "ప్రచురణకర్తను పూరించండి"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Who published this edition?"
-msgstr ""
+msgstr "ఈ ఎడిషన్‌ను ఎవరు ప్రచురించారు?"
 
 #: openlibrary/contribute/field_guides.py
 msgid "The imprint is printed on the title page and the spine. WorldCat and the Library of Congress list it under Publisher."
-msgstr ""
+msgstr "ఇంప్రింట్ టైటిల్ పేజీపై మరియు వెన్నుపూస (స్పైన్) పై ముద్రించబడి ఉంటుంది. WorldCat మరియు Library of Congress దీన్ని Publisher కింద జాబితా చేస్తాయి."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Open Library records the imprint printed on the book, not the parent company. Anchor Books, not Penguin Random House."
-msgstr ""
+msgstr "ఓపెన్ లైబ్రరీ పుస్తకంపై ముద్రించిన ఇంప్రింట్‌ను రికార్డు చేస్తుంది, మాతృ సంస్థను కాదు. Penguin Random House కాదు, Anchor Books."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Publisher as printed"
-msgstr ""
+msgstr "ముద్రించిన విధంగా ప్రచురణకర్త"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Library of Congress number (LCCN)"
-msgstr ""
+msgstr "Library of Congress సంఖ్య (LCCN)"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Fill in LCCN"
-msgstr ""
+msgstr "LCCNను పూరించండి"
 
 #: openlibrary/contribute/field_guides.py
 msgid "What is this edition's Library of Congress number?"
-msgstr ""
+msgstr "ఈ ఎడిషన్ యొక్క Library of Congress సంఖ్య ఏమిటి?"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Search the Library of Congress catalog for this ISBN. Open the record whose year and publisher match this edition, and copy the number shown as LCCN."
-msgstr ""
+msgstr "ఈ ISBN కోసం Library of Congress కేటలాగ్‌లో శోధించండి. సంవత్సరం మరియు ప్రచురణకర్త ఈ ఎడిషన్‌తో సరిపోలే రికార్డును తెరిచి, LCCNగా చూపిన సంఖ్యను కాపీ చేయండి."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Hyphenated and padded forms are the same number: 75-425165 and 75425165. Paste either; Open Library stores the padded form."
-msgstr ""
+msgstr "హైఫన్‌తో మరియు ప్యాడెడ్ రూపాలు ఒకే సంఖ్య: 75-425165 మరియు 75425165. ఏదైనా అతికించండి; ఓపెన్ లైబ్రరీ ప్యాడెడ్ రూపాన్ని నిల్వ చేస్తుంది."
 
 #: openlibrary/contribute/field_guides.py
 msgid "The number belongs to a different printing. Search results lead with the best-known one, not with yours."
-msgstr ""
+msgstr "ఆ సంఖ్య వేరే ముద్రణకు చెందినది. శోధన ఫలితాలు మీది కాకుండా బాగా తెలిసిన దానితో ముందుగా చూపిస్తాయి."
 
 #: openlibrary/contribute/field_guides.py
 msgid "The number is already on another edition of this work, which means one of the two records is wrong."
-msgstr ""
+msgstr "ఆ సంఖ్య ఇప్పటికే ఈ రచన యొక్క వేరే ఎడిషన్‌పై ఉంది, అంటే రెండు రికార్డులలో ఒకటి తప్పు అని అర్థం."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Pasting the web address instead of the number itself."
-msgstr ""
+msgstr "సంఖ్యకు బదులుగా వెబ్ చిరునామాను అతికించడం."
 
 #: openlibrary/contribute/field_guides.py
 msgid "For example 75425165"
-msgstr ""
+msgstr "ఉదాహరణకు 75425165"
 
 #: openlibrary/contribute/field_guides.py
 msgid "OCLC/WorldCat number"
-msgstr ""
+msgstr "OCLC/WorldCat సంఖ్య"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Fill in OCLC number"
-msgstr ""
+msgstr "OCLC సంఖ్యను పూరించండి"
 
 #: openlibrary/contribute/field_guides.py
 msgid "What is this edition's WorldCat (OCLC) number?"
-msgstr ""
+msgstr "ఈ ఎడిషన్ యొక్క WorldCat (OCLC) సంఖ్య ఏమిటి?"
 
 #: openlibrary/contribute/field_guides.py
 msgid "Search WorldCat for this ISBN. Open the record whose year, publisher and format match this edition, and copy the number shown as OCLC Number."
-msgstr ""
+msgstr "ఈ ISBN కోసం WorldCat లో శోధించండి. సంవత్సరం, ప్రచురణకర్త మరియు ఫార్మాట్ ఈ ఎడిషన్‌తో సరిపోలే రికార్డును తెరిచి, OCLC Number గా చూపిన సంఖ్యను కాపీ చేయండి."
 
 #: openlibrary/contribute/field_guides.py
 msgid "The OCLC number is how libraries the world over refer to one catalogued edition. It is one of the few fields Open Library uses to find duplicates of this book when new records arrive."
-msgstr ""
+msgstr "OCLC సంఖ్య ప్రపంచవ్యాప్తంగా ఉన్న లైబ్రరీలు ఒక కేటలాగ్ చేసిన ఎడిషన్‌ను సూచించే విధానం. కొత్త రికార్డులు వచ్చినప్పుడు ఈ పుస్తకం యొక్క నకిలీలను కనుగొనడానికి ఓపెన్ లైబ్రరీ ఉపయోగించే కొన్ని ఫీల్డ్‌లలో ఇది ఒకటి."
 
 #: openlibrary/contribute/field_guides.py
 msgid "The prefixes ocm, ocn, on and (OCoLC) are padding added by library systems, not part of the number. ocm00047810608 is 47810608."
-msgstr ""
+msgstr "ocm, ocn, on మరియు (OCoLC) అనే ప్రిఫిక్స్‌లు లైబ్రరీ వ్యవస్థలు జోడించిన ప్యాడింగ్, సంఖ్యలో భాగం కాదు. ocm00047810608 అంటే 47810608."
 
 #: openlibrary/contribute/field_guides.py
 msgid "The number belongs to a different printing, a book club edition, or the ebook rather than the print copy."
-msgstr ""
+msgstr "ఆ సంఖ్య వేరే ముద్రణకు, బుక్ క్లబ్ ఎడిషన్‌కు, లేదా ముద్రిత ప్రతికి బదులుగా ఈ-పుస్తకానికి చెందినది."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Pasting the web address, or leaving the ocm/ocn prefix on."
-msgstr ""
+msgstr "వెబ్ చిరునామాను అతికించడం, లేదా ocm/ocn ప్రిఫిక్స్‌ను అలాగే ఉంచడం."
 
 #: openlibrary/contribute/field_guides.py
 msgid "Digits only, for example 47810608"
-msgstr ""
+msgstr "అంకెలు మాత్రమే, ఉదాహరణకు 47810608"
 
 #: openlibrary/contribute/save.py
 msgid "Pick a language from the list."
-msgstr ""
+msgstr "జాబితా నుండి ఒక భాషను ఎంచుకోండి."
 
 #: openlibrary/contribute/save.py
 msgid "Enter the page count as a whole number."
-msgstr ""
+msgstr "పేజీల సంఖ్యను పూర్ణ సంఖ్యగా నమోదు చేయండి."
 
 #: openlibrary/contribute/save.py
 msgid "Fill in an answer, or choose “I couldn't find it”."
-msgstr ""
+msgstr "సమాధానం పూరించండి, లేదా “నేను దీన్ని కనుగొనలేకపోయాను” అని ఎంచుకోండి."
 
 #: openlibrary/contribute/save.py
 msgid "This field can't be filled in here."
-msgstr ""
+msgstr "ఈ ఫీల్డ్‌ను ఇక్కడ పూరించలేరు."
 
 #: openlibrary/contribute/save.py
 #, python-format
