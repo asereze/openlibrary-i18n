@@ -38,36 +38,11 @@ jobs:
 
       - name: Compute batches
         id: get-batches
-        env:
-          GH_TOKEN: ${{ github.token }}
         run: |
           if [ -n "${{ inputs.language }}" ]; then
-            # Manual single-language debug run bypasses the serialize gate.
             BATCHES='[["${{ inputs.language }}"]]'
           else
-            # Serialize across runs. The per-language PRs from ONE run all carry
-            # the same messages.pot snapshot and merge cleanly; but a PR left open
-            # from an EARLIER run carries a different snapshot, so starting a new
-            # run on top of it reintroduces the pairwise messages.pot conflict
-            # that jammed auto-merge (#151). So: if any i18n/ai-* PR is still
-            # open, do nothing this run and let the open ones land first. A read-
-            # only `gh pr list` with github.token triggers no workflows.
-            OPEN=$(gh pr list --repo "$GITHUB_REPOSITORY" --state open \
-              --json headRefName \
-              --jq '[.[] | select(.headRefName | startswith("i18n/ai-"))] | length' \
-              2>/dev/null || true)
-            if ! printf '%s' "$OPEN" | grep -qE '^[0-9]+$'; then
-              # Fail CLOSED: if we cannot determine the open-PR count, skip this
-              # run rather than translate and risk stacking a divergent
-              # messages.pot on top of PRs we could not see (#151).
-              echo "::warning::could not read open i18n/ai-* PR count (got '$OPEN'); skipping this run to stay safe."
-              BATCHES='[]'
-            elif [ "$OPEN" -gt 0 ]; then
-              echo "::notice::$OPEN open i18n/ai-* PR(s) pending; skipping this run until they land (serialize, #151)."
-              BATCHES='[]'
-            else
-              BATCHES=$(./i18n batch | python3 -c "import json,sys; print(json.dumps(json.load(sys.stdin)['batches']))")
-            fi
+            BATCHES=$(./i18n batch | python3 -c "import json,sys; print(json.dumps(json.load(sys.stdin)['batches']))")
           fi
           echo "batches=$BATCHES" >> $GITHUB_OUTPUT
           echo "Batches: $BATCHES"
@@ -88,25 +63,13 @@ jobs:
       matrix:
         batch: ${{ fromJSON(needs.plan.outputs.batches) }}
       fail-fast: false
-      # One PR per language can fan a single run out to ~1 agent per incomplete
-      # language (~24 after a large messages.pot update). Each shard is a full
-      # claude-code-action run against a shared API token, and the fleet has hit
-      # token exhaustion before, so cap concurrency to pace the fan-out. This
-      # stays effectively one-PR-per-language -- the cap only queues the shards,
-      # it does not group languages.
-      max-parallel: 4
     steps:
       - uses: actions/checkout@v4
         with:
-          # Persist OL_BOT_PAT -- NOT the default GITHUB_TOKEN -- as the git
-          # credential, so the translation agent's `git push` is authenticated
-          # as the PAT. Pushes made with GITHUB_TOKEN spawn no new workflow runs
-          # (documented GitHub behavior), so validate-pr / bake-regression never
-          # fired on bot-pushed PRs and `gh pr merge` then waited forever on
-          # checks that never arrived (#151: e.g. #131 had 0 checks, committer
-          # github-actions[bot]). A PAT push triggers the `pull_request` checks
-          # the merge gate below requires. `repo` scope suffices -- translation
-          # branches never touch .github/workflows, so no `workflow` scope needed.
+          # Persist OL_BOT_PAT (not the default GITHUB_TOKEN) as the git
+          # credential: a push authed with GITHUB_TOKEN does not trigger the
+          # pull_request checks the merge gate waits on, so the bot PR never
+          # goes green and nothing self-merges. #151.
           token: ${{ secrets.OL_BOT_PAT }}
 
       - uses: actions/setup-python@v5
@@ -139,27 +102,8 @@ jobs:
           claude_code_oauth_token: ${{ secrets.OL_BOT_CLAUDE_OAUTH_TOKEN }}
           github_token: ${{ secrets.OL_BOT_PAT }}
 
-  merge:
-    # Merge green translation PRs. This runs as its OWN job, after translate,
-    # with `if: always()` so it ALSO runs on a serialized no-op run (when plan
-    # emitted no batches because i18n/ai-* PRs are still open) and on a run where
-    # translate failed. The merge sweep used to be a step inside translate, but
-    # the serialize gate (#151) skips translate whenever a PR is open -- which
-    # would leave a PR that went green *after* its own run's bounded poll with
-    # nothing to ever merge it, wedging the pipeline until a human stepped in.
-    # As its own always-on job it sweeps pending green PRs on every dispatch,
-    # which is also what clears the serialize gate for the next run.
-    needs: translate
-    if: always()
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
       - name: Merge translation PRs that pass required checks
+        if: success()
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -190,8 +134,8 @@ jobs:
                 checks="$(gh pr checks "$pr" --json name,bucket 2>/dev/null || echo '[]')"
                 if printf '%s' "$checks" \
                      | python3 scripts/merge_gate.py --require validate --require bake-regression; then
-                  # Another iteration/run may have merged already; tolerate that
-                  # without aborting (set -e).
+                  # Another matrix shard runs this same loop, so a merge may
+                  # already have happened; tolerate that without aborting (set -e).
                   gh pr merge "$pr" --squash --delete-branch \
                     || echo "note: merge of PR #$pr did not complete (already merged, or its state changed)"
                   break

@@ -9,7 +9,8 @@ Open Library i18n toolbox — ./i18n <command>
   incomplete             JSON list of languages with untranslated strings,
                          sorted by count descending.
   batch                  JSON batches to process; one batch = one PR.
-                         One language per batch (one PR per language).
+                         Langs with <= BATCH_SIZE strings share a batch;
+                         langs with more each get their own.
   untranslated <lang>    JSON list of untranslated strings.
     [--limit N]
   apply <lang> <json>    Apply {msgid: msgstr} translations file to .po.
@@ -36,6 +37,7 @@ REPO_ROOT = Path(__file__).parent
 LOCALE_DIR = REPO_ROOT / "locale"
 MESSAGES_POT = REPO_ROOT / "messages.pot"
 TESTS_DIR = REPO_ROOT / "tests"
+BATCH_SIZE = 75
 
 OL_MESSAGES_POT_URL = (
     "https://raw.githubusercontent.com/internetarchive/openlibrary"
@@ -299,20 +301,32 @@ def _fix_header_fuzzy(catalog) -> int:
     return 0
 
 
-def _batches_from_counts(counts: list[dict]) -> list[list[str]]:
+def _batches_from_counts(counts: list[dict], batch_size: int = BATCH_SIZE) -> list[list[str]]:
     """
     Pure function: given counts (list of {lang, untranslated}), return batches.
 
-    One PR per language: every language with outstanding work gets its own
-    single-language batch; languages with 0 untranslated are excluded.
-
-    Grouping several small languages into one shared batch (the old behavior)
-    made that shared PR overlap the per-language PRs -- and any long-lived batch
-    PR -- on the same locale/<lang> files, so they went DIRTY and could not
-    auto-merge (#151). One language per PR keeps every PR disjoint (it touches
-    only locale/<lang>/*), so translation PRs never collide with each other.
+    Each batch is a list of language codes that maps to one PR:
+    - Langs with 0 < untranslated <= batch_size are grouped into one shared batch.
+    - Langs with untranslated > batch_size each get their own single-lang batch.
+    - Langs with untranslated == 0 are excluded.
     """
-    return [[c["lang"]] for c in counts if c["untranslated"] > 0]
+    shared: list[str] = []
+    solo: list[str] = []
+    for c in counts:
+        n = c["untranslated"]
+        if n <= 0:
+            continue
+        if n <= batch_size:
+            shared.append(c["lang"])
+        else:
+            solo.append(c["lang"])
+
+    batches: list[list[str]] = []
+    if shared:
+        batches.append(shared)
+    for lang in solo:
+        batches.append([lang])
+    return batches
 
 
 # ---------------------------------------------------------------------------
@@ -405,9 +419,9 @@ def get_incomplete() -> list[dict]:
     )
 
 
-def get_batches() -> list[list[str]]:
+def get_batches(batch_size: int = BATCH_SIZE) -> list[list[str]]:
     counts = [get_counts(lang) for lang in known_langs()]
-    return _batches_from_counts(counts)
+    return _batches_from_counts(counts, batch_size)
 
 
 # ---------------------------------------------------------------------------
