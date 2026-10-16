@@ -1444,6 +1444,10 @@ msgid "Unknown author"
 msgstr "Bilinmeyen yazar"
 
 #: account/notes.html
+msgid "My notes for this work"
+msgstr "Bu çalışmaya ait notlarım"
+
+#: account/notes.html
 msgid "My notes for an edition of "
 msgstr "Bir baskıya ait notlarım "
 
