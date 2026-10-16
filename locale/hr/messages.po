@@ -5737,6 +5737,21 @@ msgstr[1] "%(start)s - %(end)s od otprilike %(total)s rezultata"
 msgstr[2] "%(start)s - %(end)s od otprilike %(total)s rezultata"
 
 #: search/inside.html
+#, python-format
+msgid "No exact matches for \"%(query)s\". Showing books containing all of these words."
+msgstr "Nema točnih podudaranja za \"%(query)s\". Prikazuju se knjige koje sadrže sve ove riječi."
+
+#: search/inside.html
+#, python-format
+msgid "Showing exact matches for \"%(query)s\". %(link_start)sSearch for all of these words instead.%(link_end)s"
+msgstr "Prikazuju se točna podudaranja za \"%(query)s\". %(link_start)sUmjesto toga pretražite sve ove riječi.%(link_end)s"
+
+#: search/inside.html
+#, python-format
+msgid "Showing all of these words, in any order. %(link_start)sSearch for the exact phrase instead.%(link_end)s"
+msgstr "Prikazuju se sve ove riječi, bilo kojim redoslijedom. %(link_start)sUmjesto toga pretražite točan izraz.%(link_end)s"
+
+#: search/inside.html
 msgid "No results found. Try a different word or phrase."
 msgstr "Nema pronađenih rezultata. Pokušajte s drugom riječi ili izrazom."
 
@@ -8489,6 +8504,28 @@ msgstr "Nema podudaranja unutar knjiga"
 #: openlibrary/core/shell/search_modal.py
 msgid "Search inside books is temporarily unavailable. Please try again later."
 msgstr "Pretraga unutar knjiga privremeno nije dostupna. Pokušajte ponovo kasnije."
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "Showing exact matches for \"%s\"."
+msgstr "Prikazuju se točna podudaranja za \"%s\"."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search for all of these words instead."
+msgstr "Umjesto toga pretražite sve ove riječi."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Showing all of these words, in any order."
+msgstr "Prikazuju se sve ove riječi, bilo kojim redoslijedom."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search for the exact phrase instead."
+msgstr "Umjesto toga pretražite točan izraz."
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "No exact matches for \"%s\". Showing books containing all of these words."
+msgstr "Nema točnih podudaranja za \"%s\". Prikazuju se knjige koje sadrže sve ove riječi."
 
 #: openlibrary/core/shell/search_modal.py
 #, python-format

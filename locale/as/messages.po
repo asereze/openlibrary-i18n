@@ -5704,6 +5704,21 @@ msgstr[0] "%(start)s - %(end)s, প্ৰায় %(total)s ফলাফলৰ"
 msgstr[1] "%(start)s - %(end)s, প্ৰায় %(total)s টা ফলাফলৰ"
 
 #: search/inside.html
+#, python-format
+msgid "No exact matches for \"%(query)s\". Showing books containing all of these words."
+msgstr "\"%(query)s\" ৰ বাবে একেবাৰে মিল থকা কোনো ফলাফল নাই। এই সকলো শব্দ থকা কিতাপ দেখুওৱা হৈছে।"
+
+#: search/inside.html
+#, python-format
+msgid "Showing exact matches for \"%(query)s\". %(link_start)sSearch for all of these words instead.%(link_end)s"
+msgstr "\"%(query)s\" ৰ বাবে একেবাৰে মিল থকা ফলাফল দেখুওৱা হৈছে। %(link_start)sইয়াৰ সলনি এই সকলো শব্দৰ বাবে সন্ধান কৰক।%(link_end)s"
+
+#: search/inside.html
+#, python-format
+msgid "Showing all of these words, in any order. %(link_start)sSearch for the exact phrase instead.%(link_end)s"
+msgstr "এই সকলো শব্দ, যিকোনো ক্ৰমত, দেখুওৱা হৈছে। %(link_start)sইয়াৰ সলনি সঠিক বাক্যাংশৰ বাবে সন্ধান কৰক।%(link_end)s"
+
+#: search/inside.html
 msgid "No results found. Try a different word or phrase."
 msgstr "কোনো ফলাফল পোৱা নগল। এটা বেলেগ শব্দ বা বাক্যাংশ চেষ্টা কৰক।"
 
@@ -8440,6 +8455,28 @@ msgstr "কিতাপৰ ভিতৰত কোনো মিল পোৱা �
 #: openlibrary/core/shell/search_modal.py
 msgid "Search inside books is temporarily unavailable. Please try again later."
 msgstr "কিতাপৰ ভিতৰত সন্ধান সাময়িকভাৱে উপলব্ধ নহয়। অনুগ্ৰহ কৰি পিছত আকৌ চেষ্টা কৰক।"
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "Showing exact matches for \"%s\"."
+msgstr "\"%s\" ৰ বাবে একেবাৰে মিল থকা ফলাফল দেখুওৱা হৈছে।"
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search for all of these words instead."
+msgstr "ইয়াৰ সলনি এই সকলো শব্দৰ বাবে সন্ধান কৰক।"
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Showing all of these words, in any order."
+msgstr "এই সকলো শব্দ, যিকোনো ক্ৰমত, দেখুওৱা হৈছে।"
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search for the exact phrase instead."
+msgstr "ইয়াৰ সলনি সঠিক বাক্যাংশৰ বাবে সন্ধান কৰক।"
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "No exact matches for \"%s\". Showing books containing all of these words."
+msgstr "\"%s\" ৰ বাবে একেবাৰে মিল থকা কোনো ফলাফল নাই। এই সকলো শব্দ থকা কিতাপ দেখুওৱা হৈছে।"
 
 #: openlibrary/core/shell/search_modal.py
 #, python-format

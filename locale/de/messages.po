@@ -5924,6 +5924,21 @@ msgstr[0] "%(start)s - %(end)s von etwa %(total)s Ergebnis"
 msgstr[1] "%(start)s - %(end)s von etwa %(total)s Ergebnissen"
 
 #: search/inside.html
+#, python-format
+msgid "No exact matches for \"%(query)s\". Showing books containing all of these words."
+msgstr "Keine genauen Treffer für \"%(query)s\". Es werden Bücher angezeigt, die alle diese Wörter enthalten."
+
+#: search/inside.html
+#, python-format
+msgid "Showing exact matches for \"%(query)s\". %(link_start)sSearch for all of these words instead.%(link_end)s"
+msgstr "Genaue Treffer für \"%(query)s\" werden angezeigt. %(link_start)sStattdessen nach all diesen Wörtern suchen.%(link_end)s"
+
+#: search/inside.html
+#, python-format
+msgid "Showing all of these words, in any order. %(link_start)sSearch for the exact phrase instead.%(link_end)s"
+msgstr "Alle diese Wörter werden in beliebiger Reihenfolge angezeigt. %(link_start)sStattdessen nach der genauen Phrase suchen.%(link_end)s"
+
+#: search/inside.html
 msgid "No results found. Try a different word or phrase."
 msgstr "Keine Ergebnisse gefunden. Versuchen Sie ein anderes Wort oder eine andere Phrase."
 
@@ -8762,6 +8777,28 @@ msgstr "Keine Treffer in Büchern"
 #: openlibrary/core/shell/search_modal.py
 msgid "Search inside books is temporarily unavailable. Please try again later."
 msgstr "Die Suche in Büchern ist vorübergehend nicht verfügbar. Bitte versuchen Sie es später erneut."
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "Showing exact matches for \"%s\"."
+msgstr "Genaue Treffer für \"%s\" werden angezeigt."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search for all of these words instead."
+msgstr "Stattdessen nach all diesen Wörtern suchen."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Showing all of these words, in any order."
+msgstr "Alle diese Wörter werden in beliebiger Reihenfolge angezeigt."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search for the exact phrase instead."
+msgstr "Stattdessen nach der genauen Phrase suchen."
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "No exact matches for \"%s\". Showing books containing all of these words."
+msgstr "Keine genauen Treffer für \"%s\". Es werden Bücher angezeigt, die alle diese Wörter enthalten."
 
 #: openlibrary/core/shell/search_modal.py
 #, python-format

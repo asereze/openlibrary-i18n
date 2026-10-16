@@ -5694,6 +5694,21 @@ msgstr[0] "Təxminən %(total)s nəticədən %(start)s - %(end)s"
 msgstr[1] "Təxminən %(total)s nəticədən %(start)s - %(end)s"
 
 #: search/inside.html
+#, python-format
+msgid "No exact matches for \"%(query)s\". Showing books containing all of these words."
+msgstr "\"%(query)s\" üçün dəqiq uyğunluq tapılmadı. Bu sözlərin hamısını ehtiva edən kitablar göstərilir."
+
+#: search/inside.html
+#, python-format
+msgid "Showing exact matches for \"%(query)s\". %(link_start)sSearch for all of these words instead.%(link_end)s"
+msgstr "\"%(query)s\" üçün dəqiq uyğunluqlar göstərilir. %(link_start)sƏvəzinə bu sözlərin hamısını axtarın.%(link_end)s"
+
+#: search/inside.html
+#, python-format
+msgid "Showing all of these words, in any order. %(link_start)sSearch for the exact phrase instead.%(link_end)s"
+msgstr "Bu sözlərin hamısı, istənilən sırada, göstərilir. %(link_start)sƏvəzinə dəqiq ifadəni axtarın.%(link_end)s"
+
+#: search/inside.html
 msgid "No results found. Try a different word or phrase."
 msgstr "Nəticə tapılmadı. Başqa söz və ya ifadə sınayın."
 
@@ -8425,6 +8440,28 @@ msgstr "Kitabların daxilində uyğunluq tapılmadı"
 #: openlibrary/core/shell/search_modal.py
 msgid "Search inside books is temporarily unavailable. Please try again later."
 msgstr "Kitabların daxilində axtarış müvəqqəti əlçatan deyil. Zəhmət olmasa daha sonra yenidən cəhd edin."
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "Showing exact matches for \"%s\"."
+msgstr "\"%s\" üçün dəqiq uyğunluqlar göstərilir."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search for all of these words instead."
+msgstr "Əvəzinə bu sözlərin hamısını axtarın."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Showing all of these words, in any order."
+msgstr "Bu sözlərin hamısı, istənilən sırada, göstərilir."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search for the exact phrase instead."
+msgstr "Əvəzinə dəqiq ifadəni axtarın."
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "No exact matches for \"%s\". Showing books containing all of these words."
+msgstr "\"%s\" üçün dəqiq uyğunluq tapılmadı. Bu sözlərin hamısını ehtiva edən kitablar göstərilir."
 
 #: openlibrary/core/shell/search_modal.py
 #, python-format

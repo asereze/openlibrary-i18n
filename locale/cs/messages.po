@@ -6010,6 +6010,21 @@ msgstr[1] "%(start)s - %(end)s z přibližně %(total)s výsledků"
 msgstr[2] "%(start)s - %(end)s z přibližně %(total)s výsledků"
 
 #: search/inside.html
+#, python-format
+msgid "No exact matches for \"%(query)s\". Showing books containing all of these words."
+msgstr "Žádné přesné shody pro \"%(query)s\". Zobrazují se knihy obsahující všechna tato slova."
+
+#: search/inside.html
+#, python-format
+msgid "Showing exact matches for \"%(query)s\". %(link_start)sSearch for all of these words instead.%(link_end)s"
+msgstr "Zobrazují se přesné shody pro \"%(query)s\". %(link_start)sMísto toho vyhledejte všechna tato slova.%(link_end)s"
+
+#: search/inside.html
+#, python-format
+msgid "Showing all of these words, in any order. %(link_start)sSearch for the exact phrase instead.%(link_end)s"
+msgstr "Zobrazují se všechna tato slova, v libovolném pořadí. %(link_start)sMísto toho vyhledejte přesnou frázi.%(link_end)s"
+
+#: search/inside.html
 msgid "No results found. Try a different word or phrase."
 msgstr "Nebyly nalezeny žádné výsledky. Zkuste jiné slovo nebo frázi."
 
@@ -8918,6 +8933,28 @@ msgstr "Žádné shody uvnitř knih"
 #: openlibrary/core/shell/search_modal.py
 msgid "Search inside books is temporarily unavailable. Please try again later."
 msgstr "Hledání uvnitř knih je dočasně nedostupné. Zkuste to prosím později."
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "Showing exact matches for \"%s\"."
+msgstr "Zobrazují se přesné shody pro \"%s\"."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search for all of these words instead."
+msgstr "Místo toho vyhledejte všechna tato slova."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Showing all of these words, in any order."
+msgstr "Zobrazují se všechna tato slova, v libovolném pořadí."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search for the exact phrase instead."
+msgstr "Místo toho vyhledejte přesnou frázi."
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "No exact matches for \"%s\". Showing books containing all of these words."
+msgstr "Žádné přesné shody pro \"%s\". Zobrazují se knihy obsahující všechna tato slova."
 
 #: openlibrary/core/shell/search_modal.py
 #, python-format

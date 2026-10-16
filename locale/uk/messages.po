@@ -1477,6 +1477,10 @@ msgid "Unknown author"
 msgstr "Невідомий автор"
 
 #: account/notes.html
+msgid "My notes for this work"
+msgstr "Мої нотатки до цього твору"
+
+#: account/notes.html
 msgid "My notes for an edition of "
 msgstr "Мої нотатки для видання "
 
@@ -5985,6 +5989,21 @@ msgstr[1] "%(start)s - %(end)s з приблизно %(total)s результа�
 msgstr[2] "%(start)s - %(end)s з приблизно %(total)s результатів"
 
 #: search/inside.html
+#, python-format
+msgid "No exact matches for \"%(query)s\". Showing books containing all of these words."
+msgstr "Точних збігів для \"%(query)s\" не знайдено. Показано книги, що містять усі ці слова."
+
+#: search/inside.html
+#, python-format
+msgid "Showing exact matches for \"%(query)s\". %(link_start)sSearch for all of these words instead.%(link_end)s"
+msgstr "Показано точні збіги для \"%(query)s\". %(link_start)sШукати натомість усі ці слова.%(link_end)s"
+
+#: search/inside.html
+#, python-format
+msgid "Showing all of these words, in any order. %(link_start)sSearch for the exact phrase instead.%(link_end)s"
+msgstr "Показано всі ці слова в будь-якому порядку. %(link_start)sШукати натомість точну фразу.%(link_end)s"
+
+#: search/inside.html
 msgid "No results found. Try a different word or phrase."
 msgstr "Результатів не знайдено. Спробуйте інше слово або фразу."
 
@@ -8828,6 +8847,28 @@ msgstr "Немає збігів усередині книг"
 #: openlibrary/core/shell/search_modal.py
 msgid "Search inside books is temporarily unavailable. Please try again later."
 msgstr "Пошук усередині книг тимчасово недоступний. Будь ласка, спробуйте пізніше."
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "Showing exact matches for \"%s\"."
+msgstr "Показано точні збіги для \"%s\"."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search for all of these words instead."
+msgstr "Шукати натомість усі ці слова."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Showing all of these words, in any order."
+msgstr "Показано всі ці слова в будь-якому порядку."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search for the exact phrase instead."
+msgstr "Шукати натомість точну фразу."
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "No exact matches for \"%s\". Showing books containing all of these words."
+msgstr "Точних збігів для \"%s\" не знайдено. Показано книги, що містять усі ці слова."
 
 #: openlibrary/core/shell/search_modal.py
 #, python-format

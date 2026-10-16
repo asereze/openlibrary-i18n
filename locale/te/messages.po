@@ -6052,6 +6052,21 @@ msgstr[0] "సుమారు %(total)s ఫలితాలలో %(start)s - %(e
 msgstr[1] "సుమారు %(total)s ఫలితాలలో %(start)s - %(end)s"
 
 #: search/inside.html
+#, python-format
+msgid "No exact matches for \"%(query)s\". Showing books containing all of these words."
+msgstr "\"%(query)s\" కోసం ఖచ్చితమైన సరిపోలికలు లేవు. ఈ పదాలన్నీ ఉన్న పుస్తకాలు చూపబడుతున్నాయి."
+
+#: search/inside.html
+#, python-format
+msgid "Showing exact matches for \"%(query)s\". %(link_start)sSearch for all of these words instead.%(link_end)s"
+msgstr "\"%(query)s\" కోసం ఖచ్చితమైన సరిపోలికలు చూపబడుతున్నాయి. %(link_start)sబదులుగా ఈ పదాలన్నింటి కోసం శోధించండి.%(link_end)s"
+
+#: search/inside.html
+#, python-format
+msgid "Showing all of these words, in any order. %(link_start)sSearch for the exact phrase instead.%(link_end)s"
+msgstr "ఈ పదాలన్నీ, ఏ క్రమంలోనైనా, చూపబడుతున్నాయి. %(link_start)sబదులుగా ఖచ్చితమైన పదబంధం కోసం శోధించండి.%(link_end)s"
+
+#: search/inside.html
 msgid "No results found. Try a different word or phrase."
 msgstr "ఫలితాలు కనబడలేదు. వేరే పదం లేదా పదబంధాన్ని ప్రయత్నించండి."
 
@@ -8941,6 +8956,28 @@ msgstr "పుస్తకాల లోపల సరిపోలికలు ల
 #: openlibrary/core/shell/search_modal.py
 msgid "Search inside books is temporarily unavailable. Please try again later."
 msgstr "పుస్తకాల లోపల శోధన తాత్కాలికంగా అందుబాటులో లేదు. దయచేసి తర్వాత మళ్లీ ప్రయత్నించండి."
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "Showing exact matches for \"%s\"."
+msgstr "\"%s\" కోసం ఖచ్చితమైన సరిపోలికలు చూపబడుతున్నాయి."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search for all of these words instead."
+msgstr "బదులుగా ఈ పదాలన్నింటి కోసం శోధించండి."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Showing all of these words, in any order."
+msgstr "ఈ పదాలన్నీ, ఏ క్రమంలోనైనా, చూపబడుతున్నాయి."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search for the exact phrase instead."
+msgstr "బదులుగా ఖచ్చితమైన పదబంధం కోసం శోధించండి."
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "No exact matches for \"%s\". Showing books containing all of these words."
+msgstr "\"%s\" కోసం ఖచ్చితమైన సరిపోలికలు లేవు. ఈ పదాలన్నీ ఉన్న పుస్తకాలు చూపబడుతున్నాయి."
 
 #: openlibrary/core/shell/search_modal.py
 #, python-format

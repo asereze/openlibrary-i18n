@@ -5731,6 +5731,21 @@ msgid_plural "%(start)s - %(end)s of about %(total)s results"
 msgstr[0] "%(start)s - %(end)s dari sekitar %(total)s hasil"
 
 #: search/inside.html
+#, python-format
+msgid "No exact matches for \"%(query)s\". Showing books containing all of these words."
+msgstr "Tidak ada kecocokan persis untuk \"%(query)s\". Menampilkan buku yang mengandung semua kata ini."
+
+#: search/inside.html
+#, python-format
+msgid "Showing exact matches for \"%(query)s\". %(link_start)sSearch for all of these words instead.%(link_end)s"
+msgstr "Menampilkan kecocokan persis untuk \"%(query)s\". %(link_start)sCari semua kata ini sebagai gantinya.%(link_end)s"
+
+#: search/inside.html
+#, python-format
+msgid "Showing all of these words, in any order. %(link_start)sSearch for the exact phrase instead.%(link_end)s"
+msgstr "Menampilkan semua kata ini, dalam urutan apa pun. %(link_start)sCari frasa persis sebagai gantinya.%(link_end)s"
+
+#: search/inside.html
 msgid "No results found. Try a different word or phrase."
 msgstr "Tidak ada hasil yang ditemukan. Coba kata atau frasa lain."
 
@@ -8492,6 +8507,28 @@ msgstr "Tidak ada kecocokan di dalam buku"
 #: openlibrary/core/shell/search_modal.py
 msgid "Search inside books is temporarily unavailable. Please try again later."
 msgstr "Pencarian di dalam buku untuk sementara tidak tersedia. Silakan coba lagi nanti."
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "Showing exact matches for \"%s\"."
+msgstr "Menampilkan kecocokan persis untuk \"%s\"."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search for all of these words instead."
+msgstr "Cari semua kata ini sebagai gantinya."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Showing all of these words, in any order."
+msgstr "Menampilkan semua kata ini, dalam urutan apa pun."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search for the exact phrase instead."
+msgstr "Cari frasa persis sebagai gantinya."
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "No exact matches for \"%s\". Showing books containing all of these words."
+msgstr "Tidak ada kecocokan persis untuk \"%s\". Menampilkan buku yang mengandung semua kata ini."
 
 #: openlibrary/core/shell/search_modal.py
 #, python-format

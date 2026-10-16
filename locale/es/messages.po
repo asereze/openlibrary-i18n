@@ -5697,6 +5697,21 @@ msgstr[0] "%(start)s - %(end)s de aproximadamente %(total)s resultado"
 msgstr[1] "%(start)s - %(end)s de aproximadamente %(total)s resultados"
 
 #: search/inside.html
+#, python-format
+msgid "No exact matches for \"%(query)s\". Showing books containing all of these words."
+msgstr "No hay coincidencias exactas para \"%(query)s\". Se muestran los libros que contienen todas estas palabras."
+
+#: search/inside.html
+#, python-format
+msgid "Showing exact matches for \"%(query)s\". %(link_start)sSearch for all of these words instead.%(link_end)s"
+msgstr "Se muestran las coincidencias exactas para \"%(query)s\". %(link_start)sBuscar en su lugar todas estas palabras.%(link_end)s"
+
+#: search/inside.html
+#, python-format
+msgid "Showing all of these words, in any order. %(link_start)sSearch for the exact phrase instead.%(link_end)s"
+msgstr "Se muestran todas estas palabras, en cualquier orden. %(link_start)sBuscar en su lugar la frase exacta.%(link_end)s"
+
+#: search/inside.html
 msgid "No results found. Try a different word or phrase."
 msgstr "No se encontraron resultados. Pruebe con otra palabra o frase."
 
@@ -8434,6 +8449,28 @@ msgstr "Sin coincidencias dentro de libros"
 #: openlibrary/core/shell/search_modal.py
 msgid "Search inside books is temporarily unavailable. Please try again later."
 msgstr "La búsqueda dentro de libros no está disponible temporalmente. Inténtalo de nuevo más tarde."
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "Showing exact matches for \"%s\"."
+msgstr "Se muestran las coincidencias exactas para \"%s\"."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search for all of these words instead."
+msgstr "Buscar en su lugar todas estas palabras."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Showing all of these words, in any order."
+msgstr "Se muestran todas estas palabras, en cualquier orden."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search for the exact phrase instead."
+msgstr "Buscar en su lugar la frase exacta."
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "No exact matches for \"%s\". Showing books containing all of these words."
+msgstr "No hay coincidencias exactas para \"%s\". Se muestran los libros que contienen todas estas palabras."
 
 #: openlibrary/core/shell/search_modal.py
 #, python-format

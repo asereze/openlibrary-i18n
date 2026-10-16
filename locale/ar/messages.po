@@ -5957,6 +5957,21 @@ msgstr[1] "%(start)s - %(end)s من حوالي %(total)s نتائج"
 msgstr[2] ""
 
 #: search/inside.html
+#, python-format
+msgid "No exact matches for \"%(query)s\". Showing books containing all of these words."
+msgstr "لا توجد نتائج مطابقة تمامًا لـ \"%(query)s\". يتم عرض الكتب التي تحتوي على جميع هذه الكلمات."
+
+#: search/inside.html
+#, python-format
+msgid "Showing exact matches for \"%(query)s\". %(link_start)sSearch for all of these words instead.%(link_end)s"
+msgstr "يتم عرض النتائج المطابقة تمامًا لـ \"%(query)s\". %(link_start)sابحث عن جميع هذه الكلمات بدلاً من ذلك.%(link_end)s"
+
+#: search/inside.html
+#, python-format
+msgid "Showing all of these words, in any order. %(link_start)sSearch for the exact phrase instead.%(link_end)s"
+msgstr "يتم عرض جميع هذه الكلمات، بأي ترتيب. %(link_start)sابحث عن العبارة الدقيقة بدلاً من ذلك.%(link_end)s"
+
+#: search/inside.html
 msgid "No results found. Try a different word or phrase."
 msgstr "لم يتم العثور على نتائج. جرب كلمة أو عبارة مختلفة."
 
@@ -8802,6 +8817,28 @@ msgstr "لا توجد نتائج مطابقة داخل الكتب"
 #: openlibrary/core/shell/search_modal.py
 msgid "Search inside books is temporarily unavailable. Please try again later."
 msgstr "البحث داخل الكتب غير متوفر مؤقتًا. يرجى المحاولة مرة أخرى لاحقًا."
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "Showing exact matches for \"%s\"."
+msgstr "يتم عرض النتائج المطابقة تمامًا لـ \"%s\"."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search for all of these words instead."
+msgstr "ابحث عن جميع هذه الكلمات بدلاً من ذلك."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Showing all of these words, in any order."
+msgstr "يتم عرض جميع هذه الكلمات، بأي ترتيب."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search for the exact phrase instead."
+msgstr "ابحث عن العبارة الدقيقة بدلاً من ذلك."
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "No exact matches for \"%s\". Showing books containing all of these words."
+msgstr "لا توجد نتائج مطابقة تمامًا لـ \"%s\". يتم عرض الكتب التي تحتوي على جميع هذه الكلمات."
 
 #: openlibrary/core/shell/search_modal.py
 #, python-format

@@ -5751,6 +5751,21 @@ msgstr[0] "%(start)s - %(end)s de a prus pagu %(total)s resurtadu"
 msgstr[1] "%(start)s - %(end)s de a prus pagu %(total)s resurtados"
 
 #: search/inside.html
+#, python-format
+msgid "No exact matches for \"%(query)s\". Showing books containing all of these words."
+msgstr "Perunu resurtadu esatu pro \"%(query)s\". Si ammustrant is libros chi cuntenint totu custas paràulas."
+
+#: search/inside.html
+#, python-format
+msgid "Showing exact matches for \"%(query)s\". %(link_start)sSearch for all of these words instead.%(link_end)s"
+msgstr "Si ammustrant is resurtados esatos pro \"%(query)s\". %(link_start)sChirca imbetzes totu custas paràulas.%(link_end)s"
+
+#: search/inside.html
+#, python-format
+msgid "Showing all of these words, in any order. %(link_start)sSearch for the exact phrase instead.%(link_end)s"
+msgstr "Si ammustrant totu custas paràulas, in cale si siat òrdine. %(link_start)sChirca imbetzes sa fràsia esata.%(link_end)s"
+
+#: search/inside.html
 msgid "No results found. Try a different word or phrase."
 msgstr "Perunu resurtadu atzapadu. Proa cun un'àtera paràula o fràsia."
 
@@ -8522,6 +8537,28 @@ msgstr "Perunu resultadu intro de sos libros"
 #: openlibrary/core/shell/search_modal.py
 msgid "Search inside books is temporarily unavailable. Please try again later."
 msgstr "Sa chirca intro de sos libros no est disponìbile temporaneamente. Torra a proare prus a tardu, pro praghere."
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "Showing exact matches for \"%s\"."
+msgstr "Si ammustrant is resurtados esatos pro \"%s\"."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search for all of these words instead."
+msgstr "Chirca imbetzes totu custas paràulas."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Showing all of these words, in any order."
+msgstr "Si ammustrant totu custas paràulas, in cale si siat òrdine."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search for the exact phrase instead."
+msgstr "Chirca imbetzes sa fràsia esata."
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "No exact matches for \"%s\". Showing books containing all of these words."
+msgstr "Perunu resurtadu esatu pro \"%s\". Si ammustrant is libros chi cuntenint totu custas paràulas."
 
 #: openlibrary/core/shell/search_modal.py
 #, python-format

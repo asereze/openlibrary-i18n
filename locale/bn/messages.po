@@ -5948,6 +5948,21 @@ msgstr[0] "%(start)s - %(end)s, প্রায় %(total)s ফলাফলে�
 msgstr[1] "%(start)s - %(end)s, প্রায় %(total)s টি ফলাফলের"
 
 #: search/inside.html
+#, python-format
+msgid "No exact matches for \"%(query)s\". Showing books containing all of these words."
+msgstr "\"%(query)s\"-এর জন্য হুবহু মিল পাওয়া যায়নি। এই সকল শব্দ রয়েছে এমন বই দেখানো হচ্ছে।"
+
+#: search/inside.html
+#, python-format
+msgid "Showing exact matches for \"%(query)s\". %(link_start)sSearch for all of these words instead.%(link_end)s"
+msgstr "\"%(query)s\"-এর জন্য হুবহু মিল দেখানো হচ্ছে। %(link_start)sএর পরিবর্তে এই সকল শব্দের জন্য খুঁজুন।%(link_end)s"
+
+#: search/inside.html
+#, python-format
+msgid "Showing all of these words, in any order. %(link_start)sSearch for the exact phrase instead.%(link_end)s"
+msgstr "এই সকল শব্দ, যেকোনো ক্রমে, দেখানো হচ্ছে। %(link_start)sএর পরিবর্তে হুবহু বাক্যাংশের জন্য খুঁজুন।%(link_end)s"
+
+#: search/inside.html
 msgid "No results found. Try a different word or phrase."
 msgstr "কোনো ফলাফল পাওয়া যায়নি। একটি ভিন্ন শব্দ বা বাক্যাংশ চেষ্টা করুন।"
 
@@ -8749,6 +8764,28 @@ msgstr "বইয়ের ভিতরে কোনো মিল পাওয�
 #: openlibrary/core/shell/search_modal.py
 msgid "Search inside books is temporarily unavailable. Please try again later."
 msgstr "বইয়ের ভিতরে অনুসন্ধান সাময়িকভাবে অনুপলব্ধ। পরে আবার চেষ্টা করুন।"
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "Showing exact matches for \"%s\"."
+msgstr "\"%s\"-এর জন্য হুবহু মিল দেখানো হচ্ছে।"
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search for all of these words instead."
+msgstr "এর পরিবর্তে এই সকল শব্দের জন্য খুঁজুন।"
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Showing all of these words, in any order."
+msgstr "এই সকল শব্দ, যেকোনো ক্রমে, দেখানো হচ্ছে।"
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search for the exact phrase instead."
+msgstr "এর পরিবর্তে হুবহু বাক্যাংশের জন্য খুঁজুন।"
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "No exact matches for \"%s\". Showing books containing all of these words."
+msgstr "\"%s\"-এর জন্য হুবহু মিল পাওয়া যায়নি। এই সকল শব্দ রয়েছে এমন বই দেখানো হচ্ছে।"
 
 #: openlibrary/core/shell/search_modal.py
 #, python-format

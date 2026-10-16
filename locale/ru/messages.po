@@ -6057,6 +6057,21 @@ msgstr[1] "%(start)s - %(end)s из примерно %(total)s результа�
 msgstr[2] "%(start)s - %(end)s из примерно %(total)s результатов"
 
 #: search/inside.html
+#, python-format
+msgid "No exact matches for \"%(query)s\". Showing books containing all of these words."
+msgstr "Точных совпадений для \"%(query)s\" не найдено. Показаны книги, содержащие все эти слова."
+
+#: search/inside.html
+#, python-format
+msgid "Showing exact matches for \"%(query)s\". %(link_start)sSearch for all of these words instead.%(link_end)s"
+msgstr "Показаны точные совпадения для \"%(query)s\". %(link_start)sВместо этого искать все эти слова.%(link_end)s"
+
+#: search/inside.html
+#, python-format
+msgid "Showing all of these words, in any order. %(link_start)sSearch for the exact phrase instead.%(link_end)s"
+msgstr "Показаны все эти слова в любом порядке. %(link_start)sВместо этого искать точную фразу.%(link_end)s"
+
+#: search/inside.html
 msgid "No results found. Try a different word or phrase."
 msgstr "Результаты не найдены. Попробуйте другое слово или фразу."
 
@@ -8919,6 +8934,28 @@ msgstr "Совпадений внутри книг не найдено"
 #: openlibrary/core/shell/search_modal.py
 msgid "Search inside books is temporarily unavailable. Please try again later."
 msgstr "Поиск внутри книг временно недоступен. Пожалуйста, повторите попытку позже."
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "Showing exact matches for \"%s\"."
+msgstr "Показаны точные совпадения для \"%s\"."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search for all of these words instead."
+msgstr "Вместо этого искать все эти слова."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Showing all of these words, in any order."
+msgstr "Показаны все эти слова в любом порядке."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search for the exact phrase instead."
+msgstr "Вместо этого искать точную фразу."
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "No exact matches for \"%s\". Showing books containing all of these words."
+msgstr "Точных совпадений для \"%s\" не найдено. Показаны книги, содержащие все эти слова."
 
 #: openlibrary/core/shell/search_modal.py
 #, python-format

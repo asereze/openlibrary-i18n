@@ -5973,6 +5973,21 @@ msgstr[0] "%(start)s - %(end)s sur environ %(total)s résultat"
 msgstr[1] "%(start)s - %(end)s sur environ %(total)s résultats"
 
 #: search/inside.html
+#, python-format
+msgid "No exact matches for \"%(query)s\". Showing books containing all of these words."
+msgstr "Aucune correspondance exacte pour \"%(query)s\". Affichage des livres contenant tous ces mots."
+
+#: search/inside.html
+#, python-format
+msgid "Showing exact matches for \"%(query)s\". %(link_start)sSearch for all of these words instead.%(link_end)s"
+msgstr "Affichage des correspondances exactes pour \"%(query)s\". %(link_start)sRechercher plutôt tous ces mots.%(link_end)s"
+
+#: search/inside.html
+#, python-format
+msgid "Showing all of these words, in any order. %(link_start)sSearch for the exact phrase instead.%(link_end)s"
+msgstr "Affichage de tous ces mots, dans n'importe quel ordre. %(link_start)sRechercher plutôt la phrase exacte.%(link_end)s"
+
+#: search/inside.html
 msgid "No results found. Try a different word or phrase."
 msgstr "Aucun résultat trouvé. Essayez un autre mot ou une autre phrase."
 
@@ -8796,6 +8811,28 @@ msgstr "Aucun résultat à l'intérieur des livres"
 #: openlibrary/core/shell/search_modal.py
 msgid "Search inside books is temporarily unavailable. Please try again later."
 msgstr "La recherche à l'intérieur des livres est temporairement indisponible. Veuillez réessayer plus tard."
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "Showing exact matches for \"%s\"."
+msgstr "Affichage des correspondances exactes pour \"%s\"."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search for all of these words instead."
+msgstr "Rechercher plutôt tous ces mots."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Showing all of these words, in any order."
+msgstr "Affichage de tous ces mots, dans n'importe quel ordre."
+
+#: openlibrary/core/shell/search_modal.py
+msgid "Search for the exact phrase instead."
+msgstr "Rechercher plutôt la phrase exacte."
+
+#: openlibrary/core/shell/search_modal.py
+#, python-format
+msgid "No exact matches for \"%s\". Showing books containing all of these words."
+msgstr "Aucune correspondance exacte pour \"%s\". Affichage des livres contenant tous ces mots."
 
 #: openlibrary/core/shell/search_modal.py
 #, python-format
