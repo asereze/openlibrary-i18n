@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import os
 import subprocess
 import sys
 from io import BytesIO
@@ -30,6 +31,12 @@ _fix_format_errors = _mod._fix_format_errors
 _fix_format_type_mismatch = _mod._fix_format_type_mismatch
 _fix_header_fuzzy = _mod._fix_header_fuzzy
 _fix_html_attrs = _mod._fix_html_attrs
+_fix_plural_placeholder_defects = _mod._fix_plural_placeholder_defects
+_repair_plural_form = _mod._repair_plural_form
+_did_translation_work = _mod._did_translation_work
+_as_tuple = _mod._as_tuple
+check_scope = _mod.check_scope
+isolate = _mod.isolate
 _batches_from_counts = _mod._batches_from_counts
 _stats_from_catalog = _mod._stats_from_catalog
 _untranslated_from_catalog = _mod._untranslated_from_catalog
@@ -353,6 +360,251 @@ class TestFixFormatErrorsPluralPlaceholders:
         cat = self._cat(header, "Vor Ihnen sind %(count)d Personen.",
                         'msgstr[1] "Vor Ihnen sind %(count)d Personen."\n')
         assert _fix_format_errors(cat) == ["There is one person ahead of you."]
+
+
+# ---------------------------------------------------------------------------
+# _fix_plural_placeholder_defects / _repair_plural_form
+# ---------------------------------------------------------------------------
+
+class TestFixPluralPlaceholderDefects:
+    """``./i18n fix`` self-heals the exact class that passes ``validate`` (it matches
+    the singular msgid) but FAILS the bake-regression gate: a plural form reused for
+    n>1 that hardcodes the number instead of carrying msgid_plural's placeholder.
+    This is the damage that hit id/ja/ko/ru/uk in PR #188.
+
+    Every case is proven against bake-regression's own detector — the same one the
+    CI gate runs — so the test cannot pass while the gate would still reject: the
+    defect is flagged BEFORE the fix and gone AFTER. The header carries ``Language:``
+    because the detector compiles the catalog to a .mo and reads the plural rule back
+    from it; without it the round-trip defaults to the Germanic (n!=1) rule and the
+    single ja form would be mis-read as singular-only.
+    """
+
+    HEADER_JA = (
+        b'msgid ""\nmsgstr ""\n"Content-Type: text/plain; charset=UTF-8\\n"\n'
+        b'"Language: ja\\n"\n"Plural-Forms: nplurals=1; plural=0;\\n"\n\n'
+    )
+    MSGID = (
+        'msgid "%(value)s, on 1 edition"\n'
+        'msgid_plural "%(value)s, on %(count)d editions"\n'
+    )
+    KEY = ("%(value)s, on 1 edition", "%(value)s, on %(count)d editions")
+    LIVE = {(None, "%(value)s, on 1 edition")}
+
+    def _cat(self, msgstr0: str):
+        return _catalog(self.HEADER_JA + (self.MSGID + f'msgstr[0] "{msgstr0}"\n').encode())
+
+    def _gate(self, cat):
+        """Findings from the exact detector the bake-regression check gates on."""
+        return _mod._bake_regression().find_placeholder_defects("ja", cat, self.LIVE)
+
+    def test_repairs_hardcoded_number_the_gate_rejects(self):
+        cat = self._cat("%(value)s, sur 1 edition")  # dropped %(count)d, hardcoded 1
+        assert len(self._gate(cat)) == 1  # prove the gate rejects it first
+        repaired, cleared = _fix_plural_placeholder_defects(cat, "ja")
+        assert repaired == ["%(value)s, on 1 edition"]
+        assert cleared == []
+        assert cat[self.KEY].string == ("%(value)s, sur %(count)d edition",)
+        assert self._gate(cat) == []  # gate clean after
+
+    def test_clears_when_two_bare_integers_make_the_swap_ambiguous(self):
+        cat = self._cat("1 / 1 %(value)s")  # which integer is the count?
+        assert len(self._gate(cat)) == 1
+        repaired, cleared = _fix_plural_placeholder_defects(cat, "ja")
+        assert repaired == []
+        assert cleared == ["%(value)s, on 1 edition"]
+        assert cat[self.KEY].string == ("",)  # cleared -> re-translated next loop
+        assert self._gate(cat) == []
+
+    def test_clears_cjk_number_the_regex_cannot_isolate(self):
+        # "1件" — the digit abuts a CJK word char, so no unambiguous swap exists.
+        cat = self._cat("%(value)s（1件の版より）")
+        assert len(self._gate(cat)) == 1
+        repaired, cleared = _fix_plural_placeholder_defects(cat, "ja")
+        assert cleared == ["%(value)s, on 1 edition"]
+        assert cat[self.KEY].string == ("",)
+        assert self._gate(cat) == []
+
+    def test_leaves_a_correct_form_untouched(self):
+        cat = self._cat("%(value)s（%(count)d件の版より）")
+        assert self._gate(cat) == []
+        repaired, cleared = _fix_plural_placeholder_defects(cat, "ja")
+        assert repaired == []
+        assert cleared == []
+        assert cat[self.KEY].string == ("%(value)s（%(count)d件の版より）",)
+
+    def test_ignores_singular_only_messages(self):
+        # Singular-only entries are _fix_format_errors' job; this must skip them.
+        cat = _catalog(_po('msgid "Hello %(name)s"\nmsgstr "Hola"'))
+        assert _fix_plural_placeholder_defects(cat, "xx") == ([], [])
+
+
+class TestRepairPluralForm:
+    def test_swaps_the_single_bare_integer(self):
+        assert _repair_plural_form("on 1 edition", {"%(count)d"}) == "on %(count)d edition"
+
+    def test_none_when_more_than_one_specifier_is_missing(self):
+        assert _repair_plural_form("on 1 edition", {"%(count)d", "%(value)s"}) is None
+
+    def test_none_when_not_exactly_one_bare_integer(self):
+        assert _repair_plural_form("1 of 1", {"%(count)d"}) is None
+        assert _repair_plural_form("no number here", {"%(count)d"}) is None
+
+    def test_does_not_mistake_a_placeholder_digit_for_a_bare_integer(self):
+        assert (
+            _repair_plural_form("%(value)s and 1 more", {"%(count)d"})
+            == "%(value)s and %(count)d more"
+        )
+
+
+# ---------------------------------------------------------------------------
+# Scope guard: _did_translation_work / check_scope / isolate
+# ---------------------------------------------------------------------------
+
+class TestDidTranslationWork:
+    def test_as_tuple_normalises_both_shapes(self):
+        assert _as_tuple("x") == ("x",)
+        assert _as_tuple(["a", "b"]) == ("a", "b")
+        assert _as_tuple(("a",)) == ("a",)
+
+    def test_new_non_empty_msgstr_is_work(self):
+        base = _catalog(_po('msgid "A"\nmsgstr ""'))
+        head = _catalog(_po('msgid "A"\nmsgstr "\xc3\x84"'))
+        assert _did_translation_work(base, head) is True
+
+    def test_changed_existing_msgstr_is_work(self):
+        base = _catalog(_po('msgid "A"\nmsgstr "old"'))
+        head = _catalog(_po('msgid "A"\nmsgstr "new"'))
+        assert _did_translation_work(base, head) is True
+
+    def test_identical_content_is_not_work(self):
+        base = _catalog(_po('msgid "A"\nmsgstr "same"'))
+        head = _catalog(_po('msgid "A"\nmsgstr "same"'))
+        assert _did_translation_work(base, head) is False
+
+    def test_added_empty_stub_is_not_work(self):
+        # The #188 stray signature: a language gains entries but none translated.
+        base = _catalog(_po('msgid "A"\nmsgstr "same"'))
+        head = _catalog(_po('msgid "A"\nmsgstr "same"', 'msgid "B"\nmsgstr ""'))
+        assert _did_translation_work(base, head) is False
+
+    def test_clearing_a_translation_counts_as_change(self):
+        # Removing content is still a content change -> the language stays in scope.
+        base = _catalog(_po('msgid "A"\nmsgstr "was"'))
+        head = _catalog(_po('msgid "A"\nmsgstr ""'))
+        assert _did_translation_work(base, head) is True
+
+
+def _init_locale_repo(tmp_path: Path, langs: dict[str, bytes]) -> tuple[Path, str]:
+    """A throwaway git repo with locale/<lang>/messages.po committed as the base.
+    Returns (root, base_sha). The scope guard runs its real git plumbing against it."""
+    (tmp_path / "locale").mkdir()
+    for lang, po in langs.items():
+        d = tmp_path / "locale" / lang
+        d.mkdir()
+        (d / "messages.po").write_bytes(po)
+    env = {
+        **os.environ,
+        "GIT_AUTHOR_NAME": "t", "GIT_AUTHOR_EMAIL": "t@t",
+        "GIT_COMMITTER_NAME": "t", "GIT_COMMITTER_EMAIL": "t@t",
+    }
+    run = lambda *a: subprocess.run(["git", *a], cwd=tmp_path, env=env, check=True,
+                                    capture_output=True)
+    run("init", "-q")
+    run("add", "-A")
+    run("commit", "-qm", "base")
+    sha = subprocess.run(["git", "rev-parse", "HEAD"], cwd=tmp_path,
+                         capture_output=True, text=True).stdout.strip()
+    return tmp_path, sha
+
+
+class TestScopeGuardIntegration:
+    """Runs the shipping check_scope/isolate against a real git repo (not a mock),
+    so the git diff/show plumbing is exercised exactly as it is in CI."""
+
+    def _setup(self, tmp_path, monkeypatch, langs):
+        root, sha = _init_locale_repo(tmp_path, langs)
+        monkeypatch.setattr(_mod, "REPO_ROOT", root)
+        monkeypatch.setattr(_mod, "LOCALE_DIR", root / "locale")
+        return root, sha
+
+    def test_passes_when_every_changed_language_has_work(self, tmp_path, monkeypatch):
+        root, sha = self._setup(tmp_path, monkeypatch, {
+            "de": _po('msgid "A"\nmsgstr "alt"'),
+            "fr": _po('msgid "A"\nmsgstr "ancien"'),
+        })
+        (root / "locale" / "de" / "messages.po").write_bytes(_po('msgid "A"\nmsgstr "neu"'))
+        assert check_scope(ref=sha) == 0
+
+    def test_fails_on_a_changed_language_with_no_work(self, tmp_path, monkeypatch, capsys):
+        root, sha = self._setup(tmp_path, monkeypatch, {
+            "de": _po('msgid "A"\nmsgstr "alt"'),
+            "cs": _po('msgid "A"\nmsgstr "stary"'),
+        })
+        (root / "locale" / "de" / "messages.po").write_bytes(_po('msgid "A"\nmsgstr "neu"'))
+        # cs: gains an empty stub (file changes) but translates nothing new.
+        (root / "locale" / "cs" / "messages.po").write_bytes(
+            _po('msgid "A"\nmsgstr "stary"', 'msgid "B"\nmsgstr ""'))
+        assert check_scope(ref=sha) == 1
+        assert "cs" in capsys.readouterr().out
+
+    def test_allows_a_brand_new_language(self, tmp_path, monkeypatch):
+        root, sha = self._setup(tmp_path, monkeypatch, {"de": _po('msgid "A"\nmsgstr "alt"')})
+        d = root / "locale" / "sw"
+        d.mkdir()
+        (d / "messages.po").write_bytes(_po('msgid "A"\nmsgstr "mpya"'))
+        assert check_scope(ref=sha) == 0
+
+    def test_isolate_resets_other_languages_and_keeps_the_batch(self, tmp_path, monkeypatch):
+        root, sha = self._setup(tmp_path, monkeypatch, {
+            "de": _po('msgid "A"\nmsgstr "alt"'),
+            "it": _po('msgid "A"\nmsgstr "vecchio"'),
+        })
+        (root / "locale" / "de" / "messages.po").write_bytes(_po('msgid "A"\nmsgstr "neu"'))
+        (root / "locale" / "it" / "messages.po").write_bytes(_po('msgid "A"\nmsgstr "STRAY"'))
+        isolate(["de"], base=sha)
+        it = (root / "locale" / "it" / "messages.po").read_bytes()
+        de = (root / "locale" / "de" / "messages.po").read_bytes()
+        assert b"STRAY" not in it and b"vecchio" in it  # it reset to base
+        assert b"neu" in de  # de (the batch) kept
+
+    def test_flags_a_stray_even_when_main_advanced_it_meanwhile(self, tmp_path, monkeypatch, capsys):
+        """The exact #188 shape: while the batch PR is open, another PR merges to
+        main and advances a language the batch only re-synced. Compared against
+        main's TIP the batch's version differs (so it would escape); compared
+        against the merge-base it correctly shows no work. The guard must flag it."""
+        env = {
+            **os.environ,
+            "GIT_AUTHOR_NAME": "t", "GIT_AUTHOR_EMAIL": "t@t",
+            "GIT_COMMITTER_NAME": "t", "GIT_COMMITTER_EMAIL": "t@t",
+        }
+        root, base_sha = self._setup(tmp_path, monkeypatch, {
+            "de": _po('msgid "A"\nmsgstr ""'),           # untranslated at branch point
+            "it": _po('msgid "A"\nmsgstr "vecchio"'),    # already translated
+        })
+
+        def git(*a, **kw):
+            return subprocess.run(["git", *a], cwd=root, env=env, check=True,
+                                  capture_output=True, text=True, **kw)
+
+        # main advances `it` with a brand-new real translation (a concurrent PR).
+        git("checkout", "-qb", "mainline")
+        (root / "locale" / "it" / "messages.po").write_bytes(
+            _po('msgid "A"\nmsgstr "vecchio"', 'msgid "B"\nmsgstr "nuovo"'))
+        git("commit", "-qam", "concurrent it translation")
+        main_tip = git("rev-parse", "HEAD").stdout.strip()
+
+        # The batch PR: branch from the original base, translate `de`, only re-sync
+        # `it` (add the same empty stub for B, no translation) — the #188 stray.
+        git("checkout", "-qb", "pr", base_sha)
+        (root / "locale" / "de" / "messages.po").write_bytes(_po('msgid "A"\nmsgstr "neu"'))
+        (root / "locale" / "it" / "messages.po").write_bytes(
+            _po('msgid "A"\nmsgstr "vecchio"', 'msgid "B"\nmsgstr ""'))
+        git("commit", "-qam", "batch: translate de, resync it")
+
+        assert check_scope(ref=main_tip) == 1
+        out = capsys.readouterr().out
+        assert "it" in out  # it flagged as a stray despite main advancing it
 
 
 # ---------------------------------------------------------------------------
