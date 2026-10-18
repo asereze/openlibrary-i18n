@@ -5,6 +5,8 @@ on:
     paths:
       - "locale/**"
       - "messages.pot"
+      - "scripts/pytest_k_expr.py"
+      - "tests/test_pytest_k_expr.py"
 
 jobs:
   validate:
@@ -43,13 +45,18 @@ jobs:
 
       - name: Run test_po_files (HTML structure)
         run: |
+          # Only test the languages this PR changed, so a PR is never failed for a
+          # language it did not touch. scripts/pytest_k_expr.py builds the -k
+          # expression and is unit-tested (tests/test_pytest_k_expr.py). Keeping it
+          # out of inline shell is what stops the old `paste -sd ' or '` class of
+          # bug (an invalid -k on any multi-language PR) from silently returning.
+          # $LANGS unquoted so each code is its own argv.
           LANGS="${{ steps.changed-langs.outputs.langs }}"
-          if [ -z "$LANGS" ]; then
+          K_EXPR=$(python scripts/pytest_k_expr.py $LANGS)
+          if [ -z "$K_EXPR" ]; then
             echo "No locale changes detected — running full suite"
             python -m pytest tests/test_po_files.py -q
           else
-            # Build -k expression: "de or es or fr"
-            K_EXPR=$(echo "$LANGS" | tr ' ' '\n' | grep -v '^$' | paste -sd ' or ')
             echo "Testing languages: $K_EXPR"
             python -m pytest tests/test_po_files.py -k "$K_EXPR" -q
           fi
@@ -59,7 +66,7 @@ jobs:
       # real locale file, so it is left out.
       - name: Run plural-form and toolbox tests
         run: |
-          python -m pytest tests/test_plural_forms.py tests/test_i18n.py -q \
+          python -m pytest tests/test_plural_forms.py tests/test_i18n.py tests/test_pytest_k_expr.py -q \
             --deselect tests/test_i18n.py::TestCLI::test_sync_suppresses_pybabel_stderr
 
       - name: Validate format strings
