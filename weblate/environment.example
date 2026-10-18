@@ -42,9 +42,21 @@ WEBLATE_PORT=8098
 # (OL_BOT_PAT / OL_BOT_CLAUDE_OAUTH_TOKEN). See README.md.
 # ALL THREE are required together — setting USERNAME/TOKEN without HOST fails
 # startup (ImproperlyConfigured: missing WEBLATE_GITHUB_HOST).
-#WEBLATE_GITHUB_HOST=github.com
+# HOST MUST be api.github.com, NOT github.com: the "GitHub pull request" backend
+# resolves format_api_host("github.com") -> "api.github.com" and looks up the
+# credential under THAT key, so a github.com key raises "GitHub pull request API
+# access for api.github.com is not configured" and the component auto-locks
+# (MergeFailure + PushFailure). Verified against Weblate 2026.10, GithubRepository
+# in weblate/vcs/git.py (fixed live 2026-10-18 after the component locked).
+#WEBLATE_GITHUB_HOST=api.github.com
 #WEBLATE_GITHUB_USERNAME=openlibrary-bot
 #WEBLATE_GITHUB_TOKEN=
+#
+# The above authenticates only the PR *API*. The git *push* authenticates ONLY via
+# credentials embedded in the push URL — Weblate has no HTTPS credential helper /
+# askpass anywhere in weblate/vcs. So the component's push URL must carry the token:
+#   https://openlibrary-bot:<PAT>@github.com/internetarchive/openlibrary-i18n.git
+# setup_component.py builds this automatically when OLI_PUSH_TOKEN is set.
 
 # LOCAL INTEGRATION TEST ONLY — do NOT set for a real GitHub deployment.
 # Weblate blocks file:// VCS by default (VCS_ALLOW_SCHEMES defaults to https,ssh);

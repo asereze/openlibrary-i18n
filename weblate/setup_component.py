@@ -41,7 +41,21 @@ TOKEN = os.environ["WEBLATE_TOKEN"]
 REPO = os.environ.get(
     "OLI_REPO", "https://github.com/internetarchive/openlibrary-i18n.git"
 )
-PUSH = os.environ.get("OLI_PUSH", REPO)
+# The git push authenticates ONLY via credentials embedded in the push URL —
+# Weblate has no HTTPS credential helper, and GITHUB_CREDENTIALS covers only the PR
+# API (keyed by api.github.com, see README "Real-repo wiring"). So for the github
+# backend the push URL must carry the bot token. Provide it via OLI_PUSH_TOKEN
+# (+ OLI_PUSH_USER, default openlibrary-bot), or set OLI_PUSH to a full authed URL.
+if "OLI_PUSH" in os.environ:
+    PUSH = os.environ["OLI_PUSH"]
+elif os.environ.get("OLI_PUSH_TOKEN"):
+    from urllib.parse import quote
+
+    _user = quote(os.environ.get("OLI_PUSH_USER", "openlibrary-bot"), safe="")
+    _tok = quote(os.environ["OLI_PUSH_TOKEN"], safe="")
+    PUSH = REPO.replace("https://", f"https://{_user}:{_tok}@", 1)
+else:
+    PUSH = REPO
 BRANCH = os.environ.get("OLI_BRANCH", "main")
 # The branch model: push OUTSIDE the i18n/ namespace so the AI pipeline never
 # auto-merges or counts Weblate PRs. See README.md.

@@ -137,14 +137,14 @@ create or use it** — it is Mek's to issue.
 
 **2. Give it to Weblate** (in `environment`) — **all three are required:**
 ```ini
-WEBLATE_GITHUB_HOST=github.com               # REQUIRED; omitting it fails startup
+WEBLATE_GITHUB_HOST=api.github.com           # MUST be api.github.com, not github.com (see below)
 WEBLATE_GITHUB_USERNAME=openlibrary-bot      # the account the PAT belongs to
 WEBLATE_GITHUB_TOKEN=<the fine-grained PAT>
 ```
 If a username/token is set without `WEBLATE_GITHUB_HOST`, the container refuses to
 boot with `ImproperlyConfigured: Incomplete GITHUB_CREDENTIALS configuration:
 missing WEBLATE_GITHUB_HOST` (verified on 2026.10 in `get_env_credentials()`). (The
-equivalent one-liner is `WEBLATE_GITHUB_CREDENTIALS={"github.com": {"username":
+equivalent one-liner is `WEBLATE_GITHUB_CREDENTIALS={"api.github.com": {"username":
 "openlibrary-bot", "token": "..."}}`.) Weblate uses these to open PRs via the GitHub
 API. **Set them before creating the component:** the `github` ("GitHub pull request")
 VCS backend only registers once GitHub credentials are configured (verified against
@@ -154,10 +154,27 @@ Without them, selecting that backend fails because it isn't available. (Weblate
 2026.10 also offers a `github-app` backend that authenticates as a GitHub App
 instead of a PAT; this stand-up uses the simpler PAT path.)
 
+> **Two separate auths — both required (learned the hard way, 2026-10-18).**
+> 1. **The PR API** uses `GITHUB_CREDENTIALS`, and the key MUST be **`api.github.com`**,
+>    not `github.com`: the `GithubRepository` backend resolves
+>    `format_api_host("github.com") -> "api.github.com"` and looks up the credential
+>    under that host. A `github.com` key raises *"GitHub pull request API access for
+>    api.github.com is not configured"*, which surfaces as `MergeFailure` +
+>    `PushFailure` alerts and **auto-locks the component** ("temporarily closed for
+>    maintenance"). Hence `WEBLATE_GITHUB_HOST=api.github.com` above.
+> 2. **The git push** authenticates ONLY via credentials embedded in the push URL —
+>    there is no HTTPS credential helper / askpass anywhere in `weblate/vcs`, and
+>    `GITHUB_CREDENTIALS` is used *only* for the PR API. So the component's **push URL
+>    must carry the token** (next section). Without it the push fails with *"could not
+>    read Username for 'https://github.com'"*. Fetch of a public repo stays anonymous,
+>    so only the push breaks.
+
 **3. Configure the component** (UI → *Manage → Repository maintenance*, or the API):
 - **Source code repository:** `https://github.com/internetarchive/openlibrary-i18n.git`
 - **Repository branch:** `main`
-- **Repository push URL:** `https://github.com/internetarchive/openlibrary-i18n.git`
+- **Repository push URL:** `https://openlibrary-bot:<PAT>@github.com/internetarchive/openlibrary-i18n.git`
+  — the token **must** be embedded here (see "Two separate auths" above); a bare
+  `https://github.com/...` push URL fails with *"could not read Username"*.
 - **Push branch:** `weblate` (or `weblate/<lang>` for per-language components)
 - **File mask:** `locale/*/messages.po`
 - **File format:** `gettext PO file`
@@ -170,8 +187,11 @@ instead of a PAT; this stand-up uses the simpler PAT path.)
 `setup_component.py` automates this: with its default `OLI_VCS=github` it creates
 the component on the `github` backend with `push_branch=weblate` and
 `merge_style=rebase`, so a run against the real repo opens PRs rather than pushing
-directly. (The `github` backend is what makes it a *pull request*; the plain `git`
-backend used by the local test only pushes the branch.)
+directly. Set `OLI_PUSH_TOKEN` (the bot PAT; `OLI_PUSH_USER` defaults to
+`openlibrary-bot`) so it builds the authenticated push URL described above —
+otherwise the push URL is unauthenticated and pushes fail. (The `github` backend is
+what makes it a *pull request*; the plain `git` backend used by the local test only
+pushes the branch.)
 
 With that, a Weblate edit → commit on `weblate` → **pull request to `main`**, which
 a maintainer reviews and merges, exactly as the branch model prescribes.
