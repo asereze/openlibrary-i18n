@@ -9,15 +9,17 @@ msgstr ""
 "Project-Id-Version: Open Library VERSION\n"
 "Report-Msgid-Bugs-To: traduc@traduc.org\n"
 "POT-Creation-Date: 2026-04-28 18:58-0400\n"
-"PO-Revision-Date: 2023-04-27 18:20+0200\n"
-"Last-Translator: Julien Lepiller <julien@lepiller.eu>\n"
+"PO-Revision-Date: 2026-10-19 13:33+0000\n"
+"Last-Translator: Ezra Wingard <emwingard07@gmail.com>\n"
 "Language: fr\n"
-"Language-Team: fr <traduc@traduc.org>\n"
-"Plural-Forms: nplurals=2; plural=(n >= 2);\n"
+"Language-Team: French <https://translate-openlibrary.tail10ea94.ts.net/"
+"projects/openlibrary/website/fr/>\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
+"X-Generator: Weblate 2026.10\n"
 
 #: account.html account/notifications.html account/privacy.html shell/header.html.jinja type/user/view.html
 msgid "Settings"
@@ -1126,9 +1128,12 @@ msgid "Sign Up with Email"
 msgstr "S'inscrire avec une adresse e-mail"
 
 #: account/create.html
-#, fuzzy
 msgid "By signing up, you agree to the Internet Archive's <a class=\"ol-signup-form__link\" href=\"//archive.org/about/terms.php\" target=\"_blank\" rel=\"noopener noreferrer\">Terms of Service</a>."
-msgstr "Je reconnais que mon utilisation d'Open Library est soumise aux <a href='//archive.org/about/terms.php' target='_new' class=\"ol-signup-form__link\" rel=\"noopener noreferrer\">termes d'utilisation</a> d'Internet Archive."
+msgstr ""
+"Je reconnais que mon utilisation d'Open Library est soumise aux les <a "
+"class=\"ol-signup-form__link\" href=\"//archive.org/about/terms.php\" "
+"target=\"_blank\" rel=\"noopener noreferrer\">Conditions de service</a> "
+"d'Internet Archive."
 
 #: account/create.html
 msgid "Already have an account? <a href=\"/account/login\">Log in</a>"
@@ -5393,9 +5398,8 @@ msgid "Click to close this Merge Request"
 msgstr "Cliquez pour supprimer ce volet"
 
 #: merge_request_table/table_row.html
-#, fuzzy
 msgid "Review <!-- (merge request) -->"
-msgstr "Demande de fusion en attente"
+msgstr "Vérifier <!-- (merge request) -->"
 
 #: merge_request_table/table_row.html
 #, fuzzy
@@ -7237,9 +7241,13 @@ msgid "We require a minimum set of fields to create a new collection tag."
 msgstr "Nous avons au moins besoin des champs suivants pour créer une nouvelle entrée."
 
 #: EditButtons.html type/tag/form.html
-#, fuzzy
 msgid "By saving a change to this wiki, you agree that your contribution is given freely to the world under <a href=\"https://creativecommons.org/publicdomain/zero/1.0/\" target=\"_blank\" rel=\"noopener noreferrer\" title=\"This link to Creative Commons will open in a new window\">CC0</a>. Yippee!"
-msgstr "En enregistrant votre contribution sur ce wiki, vous acceptez de la placer irrévocablement sous licence <a href=\"https://creativecommons.org/publicdomain/zero/1.0/\" target=\"_blank\" title=\"Ouvrir les termes de la Creative Commons dans une nouvelle fenêtre\" rel=\"noopener noreferrer\">CC0</a>. Youpi !"
+msgstr ""
+"En enregistrant votre contribution sur ce wiki, vous acceptez de la placer "
+"irrévocablement sous licence <a href=\"https://creativecommons.org/"
+"publicdomain/zero/1.0/\" target=\"_blank\" rel=\"noopener noreferrer\" "
+"title=\"Ouvrir les termes de la Creative Commons dans une nouvelle fenêtre\">"
+"CC0</a>. Youpi !"
 
 #: type/tag/form.html
 #, fuzzy
@@ -7567,7 +7575,10 @@ msgstr "Vendu par %(seller)s"
 
 #: AffiliateLinks.html.jinja
 msgid "When you buy books using these links the Internet Archive may earn a <a class=\"nostyle\" href=\"/help/faq/about#selling\">small commission</a>."
-msgstr "Lorsque vous achetez des livres via ces liens, l'Internet Archive peut percevoir une <a href=\"/affiliate/disclosure\" class=\"nostyle\">commission d'affiliation</a>."
+msgstr ""
+"Lorsque vous achetez des livres via ces liens, l'Internet Archive peut "
+"percevoir une <a class=\"nostyle\" href=\"/help/faq/about#selling\">"
+"commission d'affiliation</a>."
 
 #: BatchImportNavigation.html
 #, fuzzy
@@ -11494,4 +11505,3 @@ msgstr "%(title)s - recherche"
 
 #~ msgid "Dozens of ways you can help improve the library"
 #~ msgstr "Des douzaines de manière d'améliorer la bibliothèque"
-
