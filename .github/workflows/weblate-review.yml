@@ -1,0 +1,169 @@
+name: Weblate translation review
+
+# Patron translation PRs (head branch `weblate`) get an agentic safety/quality
+# review and, if it passes, auto-merge. Split into two jobs on purpose:
+#
+#   review   runs the agent with READ-ONLY permissions. The translation diff is
+#            attacker-controllable, so a prompt-injected agent must have no power
+#            to act -- in this job its token cannot write, comment, push or merge.
+#            It only reads the diff and writes a verdict file (data).
+#
+#   enforce  runs NO agent. It performs every privileged action deterministically,
+#            gated on THREE things, all required:
+#              1. the agent verdict is "safe"           (scripts/weblate_review_guard.py)
+#              2. the diff is translation-only           (scripts/weblate_review_guard.py)
+#              3. the other required checks are green     (scripts/merge_gate.py)
+#            Both scripts are unit-tested. The job FAILS CLOSED: a missing or
+#            malformed verdict parses as "unknown" and never merges.
+#
+# This is the ONLY automation permitted to merge a `weblate` PR; translate.yml and
+# reconcile.yml are scoped to i18n/ai-* and cannot touch it. See
+# weblate-review-instructions.md for the review criteria.
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+concurrency:
+  group: weblate-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    if: github.head_ref == 'weblate'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build the translation diff for the agent
+        run: |
+          git fetch origin "${{ github.base_ref }}"
+          git diff "origin/${{ github.base_ref }}...HEAD" -- 'locale/*/messages.po' > pr.diff
+          echo "diff lines: $(wc -l < pr.diff)"
+
+      - name: Agentic review (verdict only; read-only job)
+        uses: anthropics/claude-code-action@v1
+        with:
+          prompt: "@weblate-review-instructions.md"
+          # Pinned model id: see translate.yml for why the id is pinned, not left
+          # to the CLI default. The agent only needs to read pr.diff and write
+          # review-verdict.json; this job's read-only token is what actually
+          # confines it, not the permission mode.
+          claude_args: "--max-turns 40 --model claude-sonnet-5 --permission-mode acceptEdits"
+          show_full_output: true
+          claude_code_oauth_token: ${{ secrets.OL_BOT_CLAUDE_OAUTH_TOKEN }}
+
+      - name: Fail closed if the agent produced no verdict
+        if: always()
+        run: |
+          if [ ! -f review-verdict.json ]; then
+            echo '{"verdict":"unknown","summary":"The review agent did not produce a verdict; failing closed (no auto-merge)."}' > review-verdict.json
+          fi
+          echo "verdict file:"; cat review-verdict.json
+
+      - name: Upload verdict
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: weblate-review-verdict
+          path: review-verdict.json
+
+  enforce:
+    needs: review
+    if: always() && github.head_ref == 'weblate' && needs.review.result != 'skipped'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ secrets.OL_BOT_PAT }}
+      PR: ${{ github.event.pull_request.number }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.OL_BOT_PAT }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Download verdict
+        uses: actions/download-artifact@v4
+        with:
+          name: weblate-review-verdict
+        continue-on-error: true
+
+      - name: Fail closed if no verdict artifact
+        run: |
+          if [ ! -f review-verdict.json ]; then
+            echo '{"verdict":"unknown","summary":"No verdict artifact was produced; failing closed (no auto-merge)."}' > review-verdict.json
+          fi
+          echo "verdict:"; cat review-verdict.json
+
+      - name: Compute changed files
+        run: |
+          git fetch origin "${{ github.base_ref }}"
+          git diff --name-only "origin/${{ github.base_ref }}...HEAD" > changed-files.txt
+          echo "changed files:"; cat changed-files.txt
+
+      - name: Post review comment
+        run: |
+          python - <<'PY'
+          import json, os, subprocess
+          try:
+              d = json.load(open("review-verdict.json"))
+              if not isinstance(d, dict):
+                  raise ValueError
+          except Exception:
+              d = {"verdict": "unknown", "summary": "Could not read the review verdict."}
+          verdict = str(d.get("verdict", "unknown"))
+          summary = str(d.get("summary", ""))
+          issues = d.get("issues") if isinstance(d.get("issues"), list) else []
+          lines = [f"**Agentic translation review: `{verdict}`**", "", summary]
+          for it in issues[:10]:
+              if isinstance(it, dict):
+                  lines.append(f"- `{it.get('lang','?')}` {it.get('msgid','')}: {it.get('problem','')}")
+          if verdict != "safe":
+              lines += ["", "_This PR stays open for human review until the issues above are resolved._"]
+          body = "\n".join(l for l in lines if l is not None)
+          subprocess.run(["gh", "pr", "comment", os.environ["PR"], "--body", body], check=False)
+          PY
+
+      - name: Enforce verdict + blast-radius gate
+        id: guard
+        run: |
+          python scripts/weblate_review_guard.py \
+            --verdict-file review-verdict.json \
+            --changed-files changed-files.txt
+
+      - name: Merge once the other required checks are green
+        run: |
+          set -euo pipefail
+          # The guard (verdict + translation-only) has passed. Merge ONLY after the
+          # OTHER required checks have actually passed, decided by the unit-tested
+          # merge_gate.py (never the review check itself -- that would deadlock).
+          for _ in $(seq 1 20); do
+            gh pr checks "$PR" --watch --interval 30 >/dev/null 2>&1 || true
+            checks="$(gh pr checks "$PR" --json name,bucket 2>/dev/null || echo '[]')"
+            if printf '%s' "$checks" \
+                 | python3 scripts/merge_gate.py --require validate --require "Verify translations deploy cleanly"; then
+              gh pr merge "$PR" --squash --delete-branch \
+                || echo "note: merge of PR #$PR did not complete (already merged, or state changed)"
+              exit 0
+            fi
+            if printf '%s' "$checks" \
+                 | python3 scripts/merge_gate.py --mode settled --require validate --require "Verify translations deploy cleanly"; then
+              echo "Leaving PR #$PR open: required checks finished but did not all pass."
+              exit 0
+            fi
+            echo "Waiting for required checks on PR #$PR to register/complete..."
+            sleep 30
+          done
+          echo "Required checks did not settle in time; leaving PR #$PR open."
