@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Open Library VERSION\n"
 "Report-Msgid-Bugs-To: traduc@traduc.org\n"
 "POT-Creation-Date: 2026-04-28 18:58-0400\n"
-"PO-Revision-Date: 2026-10-19 13:33+0000\n"
+"PO-Revision-Date: 2026-10-19 14:33+0000\n"
 "Last-Translator: Ezra Wingard <emwingard07@gmail.com>\n"
 "Language: fr\n"
 "Language-Team: French <https://translate-openlibrary.tail10ea94.ts.net/"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: account.html account/notifications.html account/privacy.html shell/header.html.jinja type/user/view.html
 msgid "Settings"
-msgstr "Paramètres"
+msgstr "Réglages"
 
 #: account.html
 msgid "Settings & Privacy"
@@ -95,9 +95,8 @@ msgid "Barcode Scanner (Beta)"
 msgstr "Scanner de code-barres (Beta)"
 
 #: batch_import.html
-#, fuzzy
 msgid "Batch Imports"
-msgstr "Imports"
+msgstr "Imports pour le lot"
 
 #: BatchImportNavigation.html batch_import.html
 msgid "New Batch Import"
@@ -108,9 +107,11 @@ msgid "Attach a JSONL formatted document with import records or copy/paste the J
 msgstr "Joignez un document au format JSONL contenant des enregistrements d'import ou copiez-collez le texte JSONL dans la zone de texte."
 
 #: batch_import.html
-#, fuzzy
 msgid "See the <a href=\"https://github.com/internetarchive/openlibrary-client/tree/master/olclient/schemata\">olclient import schemata</a> for more."
 msgstr ""
+"Regardez le <a href=\"https://github.com/internetarchive/openlibrary-client/"
+"tree/master/olclient/schemata\">schéma importation pour le client</a> pour "
+"obtenir plus d'information."
 
 #: batch_import.html
 msgid "Attach a file:"
@@ -121,14 +122,12 @@ msgid "Or copy/paste JSONL text:"
 msgstr "Ou copiez/collez le texte JSONL :"
 
 #: batch_import.html import_preview.html
-#, fuzzy
 msgid "Import"
-msgstr "Imports"
+msgstr "Importer"
 
 #: batch_import.html
-#, fuzzy
 msgid "Import failed."
-msgstr "La mise à jour du mot de passe a échoué."
+msgstr "Échec de l'importation."
 
 #: batch_import.html
 msgid "No import will be queued until *every* record validates successfully."
@@ -148,9 +147,8 @@ msgid "Line %d:"
 msgstr "Ligne %d :"
 
 #: batch_import.html
-#, fuzzy
 msgid "Import results for batch:"
-msgstr ""
+msgstr "Importer les résulats pour le lot :"
 
 #: batch_import.html
 msgid "Records submitted:"
@@ -213,9 +211,8 @@ msgid "Batch Name:"
 msgstr "Nom :"
 
 #: batch_import_view.html
-#, fuzzy
 msgid "Submitter:"
-msgstr "Auteur"
+msgstr "Auteur:"
 
 #: batch_import_view.html
 #, fuzzy
@@ -598,9 +595,9 @@ msgid "Looking for a template/macro?"
 msgstr "Vous recherchez un modèle/macro ?"
 
 #: permission.html
-#, fuzzy, python-format
+#, python-format
 msgid "Permission of %(key)s"
-msgstr ""
+msgstr "Permission de %(key)s"
 
 #: permission.html
 msgid "Permission of"
@@ -1617,14 +1614,16 @@ msgid "%(username)s stopped reading %(total)d books. Join %(username)s on OpenLi
 msgstr "%(username)s veut lire %(total)d livres. Rejoignez %(username)s sur OpenLibrary.org et partagez les livres que vous allez bientôt lire !"
 
 #: account/reading_log.html
-#, fuzzy, python-format
+#, python-format
 msgid "Books %(username)s has read in %(year)d"
-msgstr ""
+msgstr "Livres qui %(username)s a lu en %(year)d"
 
 #: account/reading_log.html
-#, fuzzy, python-format
+#, python-format
 msgid "%(username)s has read %(total)d books in %(year)d. Join %(username)s on OpenLibrary.org and tell the world about the books that you care about."
 msgstr ""
+"%(username)s a lu %(total)d livres en %(year)d. Joindre %(username)s en "
+"OpenLibrary.org et ranconter au monde les livres qui t'intéresse."
 
 #: account/reading_log.html
 #, python-format
@@ -1700,9 +1699,12 @@ msgid "My Books"
 msgstr "Mes livres"
 
 #: account/readinglog_stats.html
-#, fuzzy, python-format
+#, python-format
 msgid "Displaying stats about <strong>%(works_count)d</strong> books. Note all charts show only the top 20 bars. Note reading log stats are private."
 msgstr ""
+"Visualization de statistiques sur <strong>%(works_count)d</strong> livres. "
+"Remarque que les tableaux montrent seulement les 20 bandes supérieurs. Les "
+"statistiques du registre de lecture sont privés."
 
 #: account/readinglog_stats.html
 msgid "Author Stats"
@@ -1725,9 +1727,14 @@ msgid "Works by Author Country of Birth"
 msgstr "Œuvres par lieu de naissance des auteurs"
 
 #: account/readinglog_stats.html
-#, fuzzy
 msgid "Demographic statistics powered by <a href=\"https://www.wikidata.org/\">Wikidata</a>. Here's a <a id=\"wd-query-sample\" href=\"\">sample</a> of the query used. <br />Improve these stats by adding the Wikidata author identifier following <a href=\"https://openlibrary.org/help/faq/editing.en#author-identifiers-purpose\">these instructions</a>."
 msgstr ""
+"Les statistiques démographiques fonctionne à <a href=\"https://"
+"www.wikidata.org/\">Wikidata</a>. Voici un <a id=\"wd-query-sample\" "
+"href=\"\">exemple</a> d'une requête employé. <br />Améliore les statistiques "
+"par ajouter l'identifiant d'auteur Wikidata suivant <a href=\"https://"
+"openlibrary.org/help/faq/editing.en#author-identifiers-purpose\">les "
+"instructions</a>."
 
 #: account/readinglog_stats.html
 msgid "Work Stats"
@@ -3493,7 +3500,13 @@ msgstr "Voir la liste sur Open Library."
 
 #: books/daisy.html
 msgid "In addition to<a href=\"/subjects/accessible_book\" title=\"Subject: Accessible book\"> loads of open DAISYs</a>, the Open Library lists a smaller selection of<a href=\"/subjects/protected_DAISY\" title=\"Subject: Protected DAISY\"> protected DAISY titles</a> accessible to those with a Library of Congress NLS key. These titles are brought to you by the<a href=\"//archive.org/\"> Internet Archive</a>."
-msgstr "En plus de<a href=\"/subjects/accessible_book\" title=\"Subject: Accessible book\"> nombreux DAISY ouverts</a>, Open Library propose une sélection de<a href=\"/subjects/protected_DAISY\" title=\"Subject: Protected DAISY\"> titres DAISY protégés</a> accessibles aux détenteurs d'une clé NLS de la Bibliothèque du Congrès. Ces titres vous sont proposés par l'<a href=\"//archive.org/\">Internet Archive</a>."
+msgstr ""
+"En plus de<a href=\"/subjects/accessible_book\" title=\"Subject: Accessible "
+"book\"> nombreux DAISY ouverts</a>, Open Library propose une sélection de<a "
+"href=\"/subjects/protected_DAISY\" title=\"Subject: Protected DAISY\"> "
+"titres DAISY protégés</a> accessibles aux détenteurs d'une clé NLS de la "
+"Bibliothèque du Congrès. Ces titres vous sont proposés par l'<a href=\"//"
+"archive.org/\"> Internet Archive</a>."
 
 #: books/daisy.html
 msgid "Looking for a specific title? The best way to find it is to<a href=\"/search\"> search for it</a>."
