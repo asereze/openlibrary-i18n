@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: Open Library VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2026-04-28 18:58-0400\n"
-"PO-Revision-Date: 2026-10-18 21:33+0000\n"
-"Last-Translator: Mek <michael.karpeles@gmail.com>\n"
+"PO-Revision-Date: 2026-10-21 14:33+0000\n"
+"Last-Translator: Kintu <kintu@disroot.org>\n"
 "Language-Team: Catalan <https://translate-openlibrary.tail10ea94.ts.net/"
 "projects/openlibrary/website/ca/>\n"
 "MIME-Version: 1.0\n"
@@ -22,15 +22,15 @@ msgstr ""
 
 #: account.html account/notifications.html account/privacy.html shell/header.html.jinja type/user/view.html
 msgid "Settings"
-msgstr ""
+msgstr "Configuració"
 
 #: account.html
 msgid "Settings & Privacy"
-msgstr ""
+msgstr "Configuració i privacitat"
 
 #: account.html databarDiff.html
 msgid "View"
-msgstr ""
+msgstr "Mostra"
 
 #: account.html
 msgid "or"
@@ -38,51 +38,51 @@ msgstr "o"
 
 #: account.html databarHistory.html databarTemplate.html databarView.html reading_goals/reading_goal_progress.html.jinja subjects.html type/edition/compact_title.html type/user/view.html
 msgid "Edit"
-msgstr ""
+msgstr "Edita"
 
 #: account.html
 msgid "Your Profile Page"
-msgstr ""
+msgstr "El teu perfil"
 
 #: account.html
 msgid "View or Edit your Reading Log"
-msgstr ""
+msgstr "Mostra o Edita el teu Registre de lectura"
 
 #: account.html
 msgid "View or Edit your Lists"
-msgstr ""
+msgstr "Mostra o edita les teves Llistes"
 
 #: account.html account/mybooks.html account/sidebar.html account/topmenu.html books/mybooks_breadcrumb_select.html openlibrary/plugins/upstream/account.py
 msgid "Import your data"
-msgstr ""
+msgstr "Importa les teves dades"
 
 #: account.html books/mybooks_breadcrumb_select.html openlibrary/plugins/upstream/account.py
 msgid "Export your data"
-msgstr ""
+msgstr "Exporta les teves dades"
 
 #: account.html
 msgid "Manage Privacy & Content Moderation Settings"
-msgstr ""
+msgstr "Gestiona la configuració de privacitat i de moderació de contingut"
 
 #: account.html
 msgid "Manage Notifications Settings"
-msgstr ""
+msgstr "Gestiona la configuració de les notificacions"
 
 #: account.html
 msgid "Manage Mailing List Subscriptions"
-msgstr ""
+msgstr "Gestiona les subscripcions a llistes de correu"
 
 #: account.html
 msgid "Change Password"
-msgstr ""
+msgstr "Canvia la contrasenya"
 
 #: account.html
 msgid "Update Email Address"
-msgstr ""
+msgstr "Actualitza l'adreça de correu"
 
 #: account.html
 msgid "Deactivate Account"
-msgstr ""
+msgstr "Desactiva el compte"
 
 #: account.html
 msgid "Please contact us if you need help with anything else."
@@ -90,15 +90,15 @@ msgstr ""
 
 #: barcodescanner.html
 msgid "Barcode Scanner (Beta)"
-msgstr ""
+msgstr "Escàner de codi de barres (Beta)"
 
 #: batch_import.html
 msgid "Batch Imports"
-msgstr ""
+msgstr "Importacions en bloc"
 
 #: BatchImportNavigation.html batch_import.html
 msgid "New Batch Import"
-msgstr ""
+msgstr "Nova importació en bloc"
 
 #: batch_import.html
 msgid "Attach a JSONL formatted document with import records or copy/paste the JSONL text into the textarea."
@@ -110,7 +110,7 @@ msgstr ""
 
 #: batch_import.html
 msgid "Attach a file:"
-msgstr ""
+msgstr "Adjunta un fitxer:"
 
 #: batch_import.html
 msgid "Or copy/paste JSONL text:"
@@ -118,11 +118,11 @@ msgstr ""
 
 #: batch_import.html import_preview.html
 msgid "Import"
-msgstr ""
+msgstr "Importa"
 
 #: batch_import.html
 msgid "Import failed."
-msgstr ""
+msgstr "Importació fallida."
 
 #: batch_import.html
 msgid "No import will be queued until *every* record validates successfully."
@@ -134,12 +134,12 @@ msgstr ""
 
 #: batch_import.html
 msgid "Validation errors:"
-msgstr ""
+msgstr "Errors de validació:"
 
 #: batch_import.html
 #, python-format
 msgid "Line %d:"
-msgstr ""
+msgstr "Línia %d:"
 
 #: batch_import.html
 msgid "Import results for batch:"
@@ -179,7 +179,7 @@ msgstr ""
 
 #: account/import.html account/loans.html admin/imports.html admin/imports_by_date.html admin/loans_table.html admin/menu.html batch_import_pending_view.html batch_import_view.html librarian_dashboard/data_quality_table.html status.html
 msgid "Status"
-msgstr ""
+msgstr "Estat"
 
 #: batch_import_pending_view.html batch_import_view.html merge_request_table/table_header.html
 msgid "Submitter"
@@ -187,7 +187,7 @@ msgstr ""
 
 #: batch_import_pending_view.html batch_import_view.html
 msgid "Comments"
-msgstr ""
+msgstr "Comentaris"
 
 #: batch_import_view.html
 msgid "Batch Import Status"
@@ -215,7 +215,7 @@ msgstr ""
 
 #: batch_import_view.html
 msgid "Approve"
-msgstr ""
+msgstr "Aprova"
 
 #: batch_import_view.html
 msgid "Import Items"
@@ -227,7 +227,7 @@ msgstr ""
 
 #: account/import.html admin/imports.html admin/imports_by_date.html batch_import_view.html librarian_dashboard/data_quality_table.html
 msgid "Error"
-msgstr ""
+msgstr "Error"
 
 #: batch_import_view.html
 msgid "IA ID"
@@ -253,31 +253,31 @@ msgstr ""
 #: diff.html
 #, python-format
 msgid "Revision %d"
-msgstr ""
+msgstr "Revisió %d"
 
 #: books/check.html covers/book_cover.html diff.html jsdef/LazyWorkPreview.html
 msgid "by"
-msgstr ""
+msgstr "per"
 
 #: diff.html
 msgid "by Anonymous"
-msgstr ""
+msgstr "per Anònim"
 
 #: diff.html
 msgid "history"
-msgstr ""
+msgstr "historial"
 
 #: diff.html
 msgid "Added"
-msgstr ""
+msgstr "Afegit"
 
 #: admin/imports_by_date.html diff.html
 msgid "Modified"
-msgstr ""
+msgstr "Modificat"
 
 #: diff.html
 msgid "Removed"
-msgstr ""
+msgstr "Eliminat"
 
 #: diff.html
 msgid "Not changed"
@@ -285,15 +285,15 @@ msgstr ""
 
 #: diff.html
 msgid "Differences"
-msgstr ""
+msgstr "Diferències"
 
 #: diff.html
 msgid "Both the revisions are identical."
-msgstr ""
+msgstr "Les dues revisions són idèntiques."
 
 #: edit_yaml.html lib/edit_head.html
 msgid "You're in edit mode."
-msgstr ""
+msgstr "Estàs en el mode d'edició."
 
 #: edit_yaml.html lib/edit_head.html
 msgid "Cancel, and go back."
@@ -301,7 +301,7 @@ msgstr ""
 
 #: edit_yaml.html
 msgid "YAML Representation:"
-msgstr ""
+msgstr "Representació YAML:"
 
 #: BookPreview.html PreviewSearchInside.html book_providers/read_button.html books/edit/edition.html editpage.html import_preview.html
 msgid "Preview"
@@ -310,11 +310,11 @@ msgstr ""
 #: history.html
 #, python-format
 msgid "Compare revisions %(a)s and %(b)s"
-msgstr ""
+msgstr "Compara les revisions %(a)s i %(b)s"
 
 #: history.html
 msgid "History of edits to"
-msgstr ""
+msgstr "Historial d'edicions de"
 
 #: history.html
 msgid "Revision comparison"
@@ -330,15 +330,15 @@ msgstr ""
 
 #: RecentChanges.html admin/ip/view.html admin/people/edits.html history.html recentchanges/render.html recentchanges/updated_records.html
 msgid "When"
-msgstr ""
+msgstr "Quan"
 
 #: RecentChanges.html admin/history.html admin/ip/view.html admin/loans_table.html admin/people/edits.html history.html recentchanges/render.html
 msgid "Who"
-msgstr ""
+msgstr "Qui"
 
 #: RecentChanges.html admin/history.html admin/ip/view.html admin/people/edits.html history.html recentchanges/render.html recentchanges/updated_records.html
 msgid "Comment"
-msgstr ""
+msgstr "Comentari"
 
 #: history.html
 msgid "Diff"
@@ -347,12 +347,12 @@ msgstr ""
 #. Column header labeling the "A" side (the earlier/left revision) of a revision comparison on a page's edit-history table. Keep extremely short; a single letter is ideal. Pairs with "B".
 #: history.html
 msgid "A"
-msgstr ""
+msgstr "A"
 
 #. Column header labeling the "B" side (the later/right revision) of a revision comparison on a page's edit-history table. Keep extremely short; a single letter is ideal. Pairs with "A".
 #: history.html
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: history.html lib/history.html
 #, python-format
@@ -361,7 +361,7 @@ msgstr ""
 
 #: history.html
 msgid "Changes"
-msgstr ""
+msgstr "Canvis"
 
 #: history.html
 msgid "Compare this revision with the current version"
@@ -369,7 +369,7 @@ msgstr ""
 
 #: history.html
 msgid "vs current"
-msgstr ""
+msgstr "vs actual"
 
 #: history.html
 #, python-format
@@ -464,11 +464,11 @@ msgstr ""
 
 #: login.html
 msgid "email:"
-msgstr ""
+msgstr "correu electrònic:"
 
 #: login.html
 msgid "password:"
-msgstr ""
+msgstr "contrasenya:"
 
 #: login.html
 msgid "Log in to use your free Open Library card to borrow digital books from the nonprofit Internet Archive"
@@ -493,7 +493,7 @@ msgstr ""
 
 #: login.html openlibrary/plugins/upstream/forms.py
 msgid "Email"
-msgstr ""
+msgstr "Correu electrònic"
 
 #: login.html
 msgid "Forgot your Internet Archive email?"
@@ -501,11 +501,11 @@ msgstr ""
 
 #: account/email/forgot-ia.html login.html openlibrary/plugins/upstream/forms.py
 msgid "Password"
-msgstr ""
+msgstr "Contrasenya"
 
 #: login.html
 msgid "Forgot your Password?"
-msgstr ""
+msgstr "Has oblidat la teva contrasenya?"
 
 #: account/create.html login.html
 msgid "Toggle Password Visibility"
@@ -513,7 +513,7 @@ msgstr ""
 
 #: login.html
 msgid "Remember me"
-msgstr ""
+msgstr "Recorda'm"
 
 #: login.html
 msgid "Don't have an account? <a href=\"/account/create\">Sign up now</a>."
@@ -541,7 +541,7 @@ msgstr ""
 
 #: ObservationsModal.html account/loans.html contribute/task.html.jinja lists/lists.html merge/authors.html native_dialog.html.jinja type/edition/notes_modal_i18n.html type/list/view_body.html
 msgid "Close"
-msgstr ""
+msgstr "Tanca"
 
 #: notfound.html
 #, python-format
@@ -719,23 +719,23 @@ msgstr ""
 
 #: trending.html
 msgid "Now"
-msgstr ""
+msgstr "Ara"
 
 #: admin/graphs.html admin/index.html my_books/shelf_button_i18n.html trending.html
 msgid "Today"
-msgstr ""
+msgstr "Avui"
 
 #: admin/graphs.html trending.html
 msgid "This Week"
-msgstr ""
+msgstr "Aquesta setmana"
 
 #: admin/graphs.html stats/readinglog.html trending.html
 msgid "This Month"
-msgstr ""
+msgstr "Aquest mes"
 
 #: trending.html
 msgid "This Year"
-msgstr ""
+msgstr "Aquest any"
 
 #: admin/index.html books/year_breadcrumb_select.html trending.html
 msgid "All Time"
@@ -764,7 +764,7 @@ msgstr ""
 
 #: LoanReadForm.html ReadButton.html account/loan_actions.html admin/inspect/memcache.html book_providers/read_button.html books/edit/edition.html trending.html type/list/embed.html widget.html
 msgid "Read"
-msgstr ""
+msgstr "Llegit"
 
 #. Display name for the "stopped-reading" reading log shelf used in page headings and breadcrumbs.
 #: account/mybooks.html account/readinglog_shelf_name.html account/sidebar.html my_books/shelf_button_i18n.html search/sort_options.html trending.html
@@ -854,7 +854,7 @@ msgstr ""
 
 #: work_search.html
 msgid "Search Books"
-msgstr ""
+msgstr "Cerca llibres"
 
 #: work_search.html
 msgid "Keywords"
@@ -945,7 +945,7 @@ msgstr ""
 
 #: about/index.html
 msgid "The Open Library Team"
-msgstr ""
+msgstr "L'equip d'Open Library"
 
 #: about/index.html
 msgid "Open Library is made possible because of a dedicated team of staff and over 100 volunteers from around the globe."
